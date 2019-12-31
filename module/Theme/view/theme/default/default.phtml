@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="zh_cn" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="zh_cn" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="zh_cn">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo $this->escapeHtml($this->theme_info->theme_name.$this->theme_info->theme_extend_name); ?></title>
+    <base href="<?php echo $this->serverUrl(true); ?>" />
+    <meta name="description" content="<?php echo $this->escapeHtml($this->theme_info->theme_description); ?>" />
+    <meta name="keywords" content="<?php echo $this->escapeHtml($this->theme_info->theme_keywords); ?>" />
+    <link rel="shortcut icon" href="<?php echo ($this->frontwebsite()->websiteInfo('shop_ico') != '' ? $this->basePath($this->frontwebsite()->websiteInfo('shop_ico')) : ''); ?>" type="image/x-icon" />
+    <script src="<?php echo $this->basePath('public/theme/default/jquery-2.1.1.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo $this->basePath('public/theme/default/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+    <link href="<?php echo $this->basePath('public/theme/default/stylesheet/stylesheet.css'); ?>" rel="stylesheet">
+    <link href="<?php echo $this->basePath('public/theme/default/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $this->basePath('public/theme/default/swiper/swiper.min.css'); ?>" type="text/css" rel="stylesheet" media="screen" />
+    <script src="<?php echo $this->basePath('public/theme/default/swiper/swiper.min.js'); ?>" type="text/javascript"></script>
+</head>
+<body class="common-home">
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div id="logo"><a href="<?php echo $this->url('shopfront/default'); ?>">
+                        <img src="<?php echo ($this->frontwebsite()->websiteInfo('shop_logo') != '' ? $this->basePath($this->frontwebsite()->websiteInfo('shop_logo')) : $this->basePath('/public/css/default/img/shop_logo.png')); ?>" class="img-responsive" style="height: 50px;" /></a>
+                </div>
+            </div>
+            <div class="col-sm-6 hidden-sm hidden-xs">
+                <form method="get" target="_blank" class="form-search" action="<?php echo $this->url('frontgoodslist/default', array('action'=>'goodsSearch')); ?>">
+                <div id="search" class="input-group">
+                    <input type="text" name="keywords" value="" placeholder="搜索" class=" form-control" />
+                    <span class="input-group-btn">
+	                    <button type="submit" class="btn btn-primary">搜索</button>
+                    </span>
+                </div>
+                </form>
+            </div>
+            <div class="col-sm-3 hidden-sm hidden-xs"><div id="cart" class="btn-group btn-block">
+                    <button type="button" class="btn btn-lg btn-inverse btn-block dropdown-toggle">
+                        <a href="<?php echo $this->url('frontcart/default'); ?>" target="_blank">
+                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                            <span id="cart-total"><?php echo $this->frontwebsite()->cartGoodsNum(); ?> 件商品</span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="content">
+    <div class="swiper-viewport module-slideshow">
+        <div id="slideshow0" class="swiper-container">
+            <div class="swiper-wrapper">
+                <?php if(isset($this->ad['top_slide']) and !empty($this->ad['top_slide'])) {
+                    foreach ($this->ad['top_slide'] as $slideValue) {
+                ?>
+                        <div class="swiper-slide">
+                            <a href="<?php echo $slideValue['theme_ad_slide_url']; ?>" target="_blank">
+                                <div class="swiper-slide text-center">
+                                    <img src="<?php echo $this->basePath($slideValue['theme_ad_slide_image']); ?>" alt="<?php echo $this->escapeHtml($slideValue['theme_ad_slide_info']); ?>" class="img-responsive" />
+                                </div>
+                            </a>
+                        </div>
+                <?php
+                    }
+                } ?>
+            </div>
+        </div>
+        <div class="swiper-pagination slideshow0"></div>
+        <div class="swiper-pager">
+            <div class="swiper-button-next slideshow-next0"></div>
+            <div class="swiper-button-prev slideshow-prev0"></div>
+        </div>
+    </div>
+    <script type="text/javascript"><!--
+        var slideshow0_swiper = new Swiper('#slideshow0', {
+            effect : 'fade',
+            slidesPerView: 1,
+            pagination: {el: '.slideshow0'},
+            navigation: {
+                nextEl: '.slideshow-next0',
+                prevEl: '.slideshow-prev0',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            loop: true,
+        });
+        $('.module-slideshow').hover(function() {
+            slideshow0_swiper.autoplay.stop();
+        }, function() {
+            slideshow0_swiper.autoplay.start();
+        });
+        --></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <?php if(isset($this->ad['image_ad_1']) and !empty($this->ad['image_ad_1'])) { ?>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="item module-banner-wrapper">
+                                <a href="<?php echo $this->ad['image_ad_1']['theme_ad_url']; ?>" target="_blank"><img src="<?php echo $this->basePath($this->ad['image_ad_1']['theme_ad_body']); ?>" class="img-responsive"></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="module-transverse mb-2">
+                    <div class="inner-list">
+                        <?php if(isset($this->ad['image_ad_2']) and !empty($this->ad['image_ad_2'])) { ?>
+                        <a href="<?php echo $this->ad['image_ad_2']['theme_ad_url']; ?>" target="_blank">
+                            <img src="<?php echo $this->basePath($this->ad['image_ad_2']['theme_ad_body']); ?>" class="img-responsive">
+                        </a>
+                        <?php } ?>
+                        <?php if(isset($this->ad['image_ad_3']) and !empty($this->ad['image_ad_3'])) { ?>
+                            <a href="<?php echo $this->ad['image_ad_3']['theme_ad_url']; ?>" target="_blank">
+                                <img src="<?php echo $this->basePath($this->ad['image_ad_3']['theme_ad_body']); ?>" class="img-responsive">
+                            </a>
+                        <?php } ?>
+                        <?php if(isset($this->ad['image_ad_4']) and !empty($this->ad['image_ad_4'])) { ?>
+                            <a href="<?php echo $this->ad['image_ad_4']['theme_ad_url']; ?>" target="_blank">
+                                <img src="<?php echo $this->basePath($this->ad['image_ad_4']['theme_ad_body']); ?>" class="img-responsive">
+                            </a>
+                        <?php } ?>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container"><div class="row"><div class="col-sm-12">
+                <div class="flash-wrapper mb-2 mt-2">
+                    <h3 class="flash-widget-title">
+                        <img src="<?php echo $this->basePath('public/theme/default/images/flash-icon.png'); ?>">
+                        <span><?php if(isset($this->goods_type_title['hot_goods'])) echo $this->escapeHtml($this->goods_type_title['hot_goods']); else echo '热门商品'; ?></span>
+                        <img src="<?php echo $this->basePath('public/theme/default/images/flash-icon.png'); ?>">
+                    </h3>
+                    <div class="row">
+                        <div class="col-sm-12 swiper-viewport flash-swiper-wrap">
+                            <div class="product-wrapper swiper-container" id="flash-swiper0">
+                                <div class="swiper-wrapper">
+                                    <?php if(isset($this->goods['hot_goods']) and !empty($this->goods['hot_goods'])) {
+                                    foreach ($this->goods['hot_goods'] as $goodsValue) {
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="product-layout">
+                                            <div class="sell-out-ing">热门</div>
+                                            <div class="product-thumb">
+                                                <div class="image">
+                                                    <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goodsValue['goods_id'], 'class_id'=>$goodsValue['one_class_id'])); ?>" target="_blank">
+                                                        <img src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goodsValue['goods_thumbnail_image'])); ?>" alt="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>" title="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>" class="img-responsive" />
+                                                    </a>
+                                                    <!--span class="sales">销量 </span-->
+                                                </div>
+                                                <div class="caption">
+                                                    <h4 class="product-name">
+                                                        <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goodsValue['goods_id'], 'class_id'=>$goodsValue['one_class_id'])); ?>" target="_blank" title="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>">
+                                                            <?php echo $this->escapeHtml($goodsValue['goods_name']); ?>
+                                                        </a>
+                                                    </h4>
+                                                    <p class="price">
+                                                        <span class="price-new"><?php echo $this->frontwebsite()->shopPriceExtend($goodsValue['goods_shop_price']); ?></span>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <?php } } ?>
+
+                                </div>
+                                <div class="swiper-pager">
+                                    <div class="swiper-button-next flash-next"></div>
+                                    <div class="swiper-button-prev flash-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div></div></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var flash_product_swiper0 = new Swiper('#flash-swiper0', {
+                slidesPerView: 5,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 6
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                    },
+                    992: {
+                        slidesPerView: 3
+                    }
+                },
+                navigation: {
+                    nextEl: '.flash-next',
+                    prevEl: '.flash-prev'
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false
+                },
+                loop: true,
+                spaceBetween: 15
+            });
+
+            $('#flash-swiper0').hover(function() {
+                flash_product_swiper0.autoplay.stop();
+            }, function() {
+                flash_product_swiper0.autoplay.start();
+            });
+
+        });
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h3 class="widget-title">
+                    <span><?php if(isset($this->goods_type_title['recom_goods'])) echo $this->escapeHtml($this->goods_type_title['recom_goods']); else echo '推荐商品'; ?></span></h3>
+                <div class="row">
+                    <div class="product-wrapper">
+                        <?php if(isset($this->goods['recom_goods']) and !empty($this->goods['recom_goods'])) {
+                        foreach ($this->goods['recom_goods'] as $goodsValue) {
+                        ?>
+                        <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="product-thumb">
+                                <div class="image">
+                                    <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goodsValue['goods_id'], 'class_id'=>$goodsValue['one_class_id'])); ?>" target="_blank">
+                                        <img src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goodsValue['goods_thumbnail_image'])); ?>" alt="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>" title="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>" class="img-responsive" />
+                                    </a>
+
+                                    <!--span class="sales">销量 </span-->
+
+                                </div>
+                                <div class="caption">
+                                    <h4 class="product-name">
+                                        <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goodsValue['goods_id'], 'class_id'=>$goodsValue['one_class_id'])); ?>" target="_blank" title="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>">
+                                            <?php echo $this->escapeHtml($goodsValue['goods_name']); ?>
+                                        </a>
+                                    </h4>
+                                    <p class="price">
+                                        <?php echo $this->frontwebsite()->shopPriceExtend($goodsValue['goods_shop_price']); ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } } ?>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h3 class="widget-title">
+                    <span><?php if(isset($this->goods_type_title['new_goods'])) echo $this->escapeHtml($this->goods_type_title['new_goods']); else echo '最新商品'; ?></span>
+                </h3>
+                <div class="row mb-1">
+                    <div class="product-wrapper">
+                        <?php if(isset($this->goods['new_goods']) and !empty($this->goods['new_goods'])) {
+                        foreach ($this->goods['new_goods'] as $goodsValue) {
+                        ?>
+                        <div class="latest-wrapper col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                            <div class="product-thumb">
+                                <div class="image">
+                                    <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goodsValue['goods_id'], 'class_id'=>$goodsValue['one_class_id'])); ?>" target="_blank">
+                                        <img src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goodsValue['goods_thumbnail_image'])); ?>" alt="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>" title="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>" class="img-responsive" />
+                                    </a>
+
+                                    <!--span class="sales">销量 </span-->
+
+                                </div>
+                                <div class="caption">
+                                    <h4 class="product-name">
+                                        <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goodsValue['goods_id'], 'class_id'=>$goodsValue['one_class_id'])); ?>" target="_blank" title="<?php echo $this->escapeHtml($goodsValue['goods_name']); ?>">
+                                            <?php echo $this->escapeHtml($goodsValue['goods_name']); ?>
+                                        </a>
+                                    </h4>
+                                    <p class="price">
+                                        <?php echo $this->frontwebsite()->shopPriceExtend($goodsValue['goods_shop_price']); ?>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <?php } } ?>
+                    </div>
+                </div>
+
+            </div></div></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <?php if(isset($this->ad['image_ad_5']) and !empty($this->ad['image_ad_5'])) { ?>
+                    <div class="col-sm-6 col-xs-6">
+                        <div class="item module-banner-wrapper">
+                            <a href="<?php echo $this->ad['image_ad_5']['theme_ad_url']; ?>" target="_blank">
+                                <img src="<?php echo $this->basePath($this->ad['image_ad_5']['theme_ad_body']); ?>" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <?php if(isset($this->ad['image_ad_6']) and !empty($this->ad['image_ad_6'])) { ?>
+                    <div class="col-sm-6 col-xs-6">
+                        <div class="item module-banner-wrapper">
+                            <a href="<?php echo $this->ad['image_ad_6']['theme_ad_url']; ?>" target="_blank">
+                                <img src="<?php echo $this->basePath($this->ad['image_ad_6']['theme_ad_body']); ?>" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-bottom">
+        <a href="<?php echo DBSHOP_FRONT_COPYRIGHT_URL; ?>"><?php echo DBSHOP_FRONT_COPYRIGHT; ?></a>
+    </div>
+</footer>
+<?php echo $this->frontwebsite()->getSystemContent('statistics'); ?>
+</body>
+</html>
+

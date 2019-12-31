@@ -1,0 +1,1 @@
+<a target="_blank" href=""><img src="/public/upload/ad/45/f1d612c698723df65c9d03b0b85f7a1a.png" border='0'/></a>

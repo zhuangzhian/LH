@@ -1,0 +1,166 @@
+<div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+              	<li><h5><?php echo $this->translate('客户组信息'); ?></h5></li>
+                <li class="active"><a data-toggle="tab" href="#user_regextend_a"><?php echo $this->translate('基本信息'); ?></a></li>
+              </ul>
+              <form class="form-horizontal" name="user_extend_field_form" id="user_extend_field_form" method="post" action="">
+              <input type="hidden" name="field_id" id="field_id" value="<?php if($this->field_info) echo $this->field_info->field_id; else echo ''; ?>" />
+              <div class="tab-content">
+    			<div style="height:30px;border-bottom:4px solid #DFDFDF;">
+        			<div class="pull-left" style="font-size:16px;line-height:30px;"><strong><?php if($this->field_info) echo $this->translate('编辑'); else echo $this->translate('新加'); ?><?php echo $this->translate('客户扩展信息'); ?></strong></div>
+        			<div class="pull-right">
+                	<a href="<?php echo $this->url('user/default',array('action'=>'userRegExtend')); ?>" class="btn btn-small"><i class="icon-arrow-left"></i> <?php echo $this->translate('返回扩展信息列表'); ?></a>&nbsp;
+                	<a href="<?php echo $this->serverUrl(true); ?>" class="btn btn-small btn-warning"><i class="icon-repeat icon-white"></i> <?php echo $this->translate('刷新'); ?></a>&nbsp;
+                    <?php if($this->field_info and $this->field_info->field_id > 0) { ?>
+                    <a href="javascript:;" onclick="return field_del_js(<?php echo $this->field_info->field_id ?>);" class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> <?php echo $this->translate('删除扩展信息'); ?></a>&nbsp;
+                    <?php } ?>
+                	<button type="submit" class="btn btn-small btn-primary"><i class="icon-ok icon-white"></i> <?php echo $this->translate('保存客户扩展信息'); ?></button>&nbsp;
+					<a href="<?php echo $this->myviewalias()->dbshopHelpUrl('user_reg_ext_set'); ?>" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+                	</div>
+        		</div>
+                <div id="user_a" class="tab-pane active">
+                	<div class="well admin_add_header_well"><?php echo $this->translate('基本信息'); ?></div>
+                	<div class="well admin_add_well"> 
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('字段名称'); ?><span class="must_add_value">*</span>：</label>
+           					<div class="controls">
+              					<input type="text" id="field_name" name="field_name" class="span3" <?php if($this->field_info) echo 'disabled'; ?> placeholder="<?php echo $this->translate('输入字段名称，请不要使用中文'); ?>" value="<?php echo ($this->field_info ? $this->escapeHtml($this->field_info->field_name) : ''); ?>">
+            				</div>                        
+                        </div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('字段标题'); ?><span class="must_add_value">*</span>：</label>
+							<div class="controls">
+								<input type="text" id="field_title"  name="field_title" class="span3" placeholder="<?php echo $this->translate('请输入字段标题'); ?>" value="<?php echo ($this->field_info ? $this->escapeHtml($this->field_info->field_title) : ''); ?>">
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('字段类型'); ?><span class="must_add_value">*</span>：</label>
+							<div class="controls">
+								<select name="field_type" id="field_type" <?php if($this->field_info) echo 'disabled'; ?> onchange="select_field_type();" class="span2">
+									<option value=""><?php echo $this->translate('请选择类型'); ?></option>
+									<option value="radio" <?php if($this->field_info and $this->field_info->field_type == 'radio') echo 'selected'; ?>><?php echo $this->translate('单选表单'); ?></option>
+									<option value="checkbox" <?php if($this->field_info and $this->field_info->field_type == 'checkbox') echo 'selected'; ?>><?php echo $this->translate('多选表单'); ?></option>
+									<option value="select" <?php if($this->field_info and $this->field_info->field_type == 'select') echo 'selected'; ?>><?php echo $this->translate('下拉表单'); ?></option>
+									<!--option value="upload" <?php if($this->field_info and $this->field_info->field_type == 'upload') echo 'selected'; ?>><?php echo $this->translate('上传附件表单'); ?></option-->
+									<option value="text" <?php if($this->field_info and $this->field_info->field_type == 'text') echo 'selected'; ?>><?php echo $this->translate('单行文本表单'); ?></option>
+									<option value="textarea" <?php if($this->field_info and $this->field_info->field_type == 'textarea') echo 'selected'; ?>><?php echo $this->translate('多行文本表单'); ?></option>
+								</select>
+							</div>
+						</div>
+						<div class="control-group radio-checkbox-select" <?php if(($this->field_info and in_array($this->field_info->field_type, array('text', 'textarea', 'upload'))) or !isset($this->field_info)) echo 'style="display: none;"'; ?>>
+							<label for="input01" class="control-label"><?php echo $this->translate('选项值'); ?>：</label>
+							<div class="controls">
+								<textarea name="field_radio_checkbox_select" rows="4" placeholder="<?php echo $this->translate('例子：1=北京 一行一条信息，= 前面是键值请使用数字，= 后面是键名用于显示'); ?>" class="span3"><?php if($this->field_info) echo $this->field_info->field_radio_checkbox_select; ?></textarea>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('允许为空'); ?>：</label>
+							<div class="controls">
+								<label class="radio inline"><input type="radio" name="field_null" value="1" <?php if(($this->field_info and $this->field_info->field_null == 1) or !isset($this->field_info)) echo 'checked="checked"'; ?>><?php echo $this->translate('是'); ?></label>
+								<label class="radio inline"><input type="radio" name="field_null" value="2" <?php if($this->field_info and $this->field_info->field_null == 2) echo 'checked="checked"'; ?>><?php echo $this->translate('否'); ?></label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('状态'); ?>：</label>
+							<div class="controls">
+								<label class="radio inline"><input type="radio" name="field_state" value="1" <?php if(($this->field_info and $this->field_info->field_state == 1) or !isset($this->field_info)) echo 'checked="checked"'; ?>><?php echo $this->translate('开启'); ?></label>
+								<label class="radio inline"><input type="radio" name="field_state" value="2" <?php if($this->field_info and $this->field_info->field_state == 2) echo 'checked="checked"'; ?>><?php echo $this->translate('关闭'); ?></label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('排序'); ?>：</label>
+							<div class="controls">
+								<input type="text" name="field_sort" id="field_sort" value="255" class="span1">
+							</div>
+						</div>
+                  	</div>
+                </div>
+             </div>
+              </form>
+</div>
+<script>
+//客户分组保存验证
+$(document).ready(function() {
+	$("#user_extend_field_form").validate({
+		success : function(label){
+			label.addClass('validate_right').text('OK!');
+		},
+		rules: {
+			<?php if(!$this->field_info) { ?>
+			field_name: {
+				required: true,
+				isEngOrNum: true,
+				remote :{
+					url : '<?php echo $this->url('user/default',array('action'=>'checkfield')); ?>',
+					type : 'post',
+					date : {
+						field_name :function(){
+							return $('#field_name').val();
+						}
+					}
+				}
+
+			},
+			<?php } ?>
+			field_title: {
+				required: true
+			},
+			field_type: {
+				required: true
+			}
+			,
+			field_sort: {
+				number: true,
+				min: 1,
+				max: 255
+			}
+		},
+		messages: {
+			<?php if(!$this->field_info) { ?>
+			field_name: {
+				required: "<?php echo $this->translate('请输入字段名称！'); ?>",
+				isEngOrNum: "<?php echo $this->translate('请输入英文字符串（可以包含下划线或者数字）！'); ?>",
+				remote: "<?php echo $this->translate('该字段名称已经存在！'); ?>"
+			},
+			<?php } ?>
+			field_title: {
+				required: "<?php echo $this->translate('请输入字段标题不能为空！'); ?>"
+			}
+			,
+			field_type: {
+				required: "<?php echo $this->translate('请输入字段类型不能为空！'); ?>"
+			}
+			,
+			field_sort: {
+				number: "<?php echo $this->translate('排序必须是数字！'); ?>",
+				min: "<?php echo $this->translate('最小值为1！'); ?>",
+				max: "<?php echo $this->translate('最大值为255！'); ?>"
+			}
+		}
+	});
+});
+
+function select_field_type() {
+	var field_type = $('#field_type').val();
+	if(field_type == 'radio' || field_type == 'checkbox' || field_type == 'select') {
+		$('.radio-checkbox-select').show();
+	} else {
+		$('.radio-checkbox-select').hide();
+	}
+}
+//客户扩展删除js
+function field_del_js(field_id) {
+	if(window.confirm('<?php echo $this->translate('您确实要删除该客户扩展信息吗？'); ?>')) {
+	$.post("<?php echo $this->url('user/default',array('action'=>'delUserRegExtend')); ?>",{field_id:field_id},
+	function(data){
+		if(data != 'false') {
+			window.location.href='<?php echo $this->url('user/default',array('action'=>'userRegExtend')); ?>';
+			return true;
+		} else {
+			alert('<?php echo $this->translate('扩展删除失败！'); ?>');
+		}
+	});
+	}
+	return false;
+}
+</script>

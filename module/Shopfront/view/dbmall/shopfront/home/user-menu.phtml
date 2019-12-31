@@ -1,0 +1,17 @@
+<div class="more">
+    <?php if($this->myviewalias()->returnActionname() != 'useredit') { ?>
+        <a class="btn btn-small btn-primary" href="<?php echo $this->url('fronthome/default', array('action'=>'useredit')); ?>"><?php echo $this->translate('基本信息'); ?></a>
+    <?php } ?>
+    <?php if($this->myviewalias()->returnActionname() != 'userpasswd') { ?>
+        <a class="btn btn-small btn-primary" href="<?php echo $this->url('fronthome/default', array('action'=>'userpasswd')); ?>"><?php echo $this->translate('密码修改'); ?></a>
+    <?php } ?>
+    <?php if ($this->frontwebsite()->getUserIni('qq_login_state') == 'true' and $this->myviewalias()->returnActionname() != 'qqset') { ?>
+        <a class="btn btn-small btn-primary" href="<?php echo $this->url('fronthome/default', array('action'=>'qqset')); ?>"><?php echo $this->translate('QQ绑定'); ?></a>
+    <?php } ?>
+    <?php if ($this->frontwebsite()->getUserIni('weixin_login_state') == 'true' and $this->myviewalias()->returnActionname() != 'weixinset') { ?>
+        <a class="btn btn-small btn-primary" href="<?php echo $this->url('fronthome/default', array('action'=>'weixinset')); ?>"><?php echo $this->translate('微信绑定'); ?></a>
+    <?php } ?>
+    <?php if ($this->frontwebsite()->getUserIni('alipay_login_state') == 'true' and $this->myviewalias()->returnActionname() != 'alipayset') { ?>
+        <a class="btn btn-small btn-primary" href="<?php echo $this->url('fronthome/default', array('action'=>'alipayset')); ?>"><?php echo $this->translate('支付宝绑定'); ?></a>
+    <?php } ?>
+</div>

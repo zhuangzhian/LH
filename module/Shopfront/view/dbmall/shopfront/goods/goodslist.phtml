@@ -1,0 +1,264 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a><span class="sep">/</span>
+    <?php if($this->class_menu) { foreach($this->class_menu as $menu_val) {
+    if($menu_val['class_id'] != $this->class_info->class_id) {
+    ?>
+    <a href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$menu_val['class_id'])); ?>"><?php echo $this->escapeHtml($menu_val['class_name']); ?></a><span class="sep">/</span>
+    <?php } } } ?>
+    <span><?php echo $this->class_info->class_name; ?></span>
+</div>
+
+<?php
+//商品列表头部广告
+$goodslist_top_banner_ad = $this->frontwebsite()->getShopAd('goodsclass', 'goodslist_top_banner', 'pc', $this->class_info->class_id);
+if($goodslist_top_banner_ad) {
+    ?>
+    <div class="container">
+        <div>
+            <?php echo $goodslist_top_banner_ad; ?>
+        </div>
+    </div>
+<?php } ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-4">
+            <div class="goodslist-left-sidebar">
+                <div class="left-title"><?php echo $this->translate('当前分类'); ?></div>
+                <div class="left-sidebar-content">
+                    <ul class="list-unstyled goodsclass-list">
+                        <?php foreach ($this->current_class as $curr_class_val) { if($curr_class_val['class_state'] == 0) continue; ?>
+                        <li <?php if($curr_class_val['class_id'] == $this->class_info->class_id) echo 'class="active"'; ?>><span></span><a href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$curr_class_val['class_id'])); ?>"><?php echo $this->escapeHtml($curr_class_val['class_name']); ?></a>
+                            <?php if($curr_class_val['class_id'] == $this->class_info->class_id and $this->sub_class) { ?>
+                            <ul class="list-unstyled">
+                                <?php foreach($this->sub_class as $sub_class_val) { if($sub_class_val['class_state'] == 0) continue; ?>
+                                <li class=""><span></span><a href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$sub_class_val['class_id'])); ?>"><?php echo $this->escapeHtml($sub_class_val['class_name']); ?></a></li>
+                                <?php } ?>
+                            </ul>
+                            <?php } ?>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+
+            <?php
+            //商品列表左侧，商品分类下面
+            $goodslist_left_ad = $this->frontwebsite()->getShopAd('goodsclass', 'goodslist_left_ad', 'pc', $this->class_info->class_id);
+            if($goodslist_left_ad) {
+                ?>
+                <div class="goodslist-left-ad">
+                        <?php echo $goodslist_left_ad; ?>
+                </div>
+            <?php } ?>
+
+            <?php if(isset($_COOKIE['view_goods'])) { ?>
+            <div class="goodslist-left-sidebar view_goods_log">
+                <div class="left-title"><?php echo $this->translate('最近浏览'); ?></div>
+                <div class="left-sidebar-content">
+                    <?php
+                    $viewGoodsArray = unserialize($_COOKIE['view_goods']);
+                    if(is_array($viewGoodsArray) and !empty($viewGoodsArray)) {
+                    foreach($viewGoodsArray as $vGoodsValue) { ?>
+                    <div class="product-side-block">
+                        <div class="product-block-left">
+                            <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$vGoodsValue['goods_id'], 'class_id'=>$vGoodsValue['class_id'])); ?>"><img class="img-responsive" title="<?php echo $this->escapeHtml($vGoodsValue['goods_name']); ?>" alt="<?php echo $this->escapeHtml($vGoodsValue['goods_name']); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($vGoodsValue['image'])); ?>"></a>
+                        </div>
+                        <div class="product-block-right">
+                            <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$vGoodsValue['goods_id'], 'class_id'=>$vGoodsValue['class_id'])); ?>"><?php echo $this->escapeHtml($vGoodsValue['goods_name']); ?></a>
+                            <div class="price">
+                                <span class="price-old"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } } ?>
+                </div>
+            </div>
+            <?php } ?>
+
+        </div>
+
+        <div class="col col-16">
+            <div class="goodslist-right">
+                <div class="xm-line-box filter-box">
+                    <div class="box-hd">
+                        <h3 class="title"><?php echo $this->class_info->class_name; ?></h3>
+                    </div>
+                    <div class="box-bd">
+                        <div class="filter-lists">
+                            <?php
+                            $tag_c_str    = $this->tag_c != ''  ? '&tag_c=' . $this->tag_c   : '';
+                            $sort_c_str   = $this->sort_c != '' ? '&sort_c=' . $this->sort_c : '';
+                            $sort_tag_str = $tag_c_str . $sort_c_str;
+
+                            if ($this->goods_tag_group) {
+                                foreach($this->goods_tag_group as $tag_group_key => $tag_group) {
+                                    ?>
+                                    <dl class="xm-filter-list  category-filter-list clearfix">
+                                        <dt><?php echo $tag_group; ?>：</dt>
+                                        <dd>
+                                            <ul class="clearfix" id="typeAdapt">
+                                                <li class="first <?php if (!isset($this->s_tag[$tag_group_key])) echo 'current'; ?>"><a href="?tag_id=<?php echo '|' . $tag_group_key . $tag_c_str; ?>"><?php echo $this->translate('全部'); ?></a></li>
+                                                <?php if ($this->goods_tag[$tag_group_key]) {
+                                                    foreach($this->goods_tag[$tag_group_key] as $tag_val) {
+                                                        ?>
+                                                        <li <?php if(isset($this->s_tag[$tag_group_key]) and $this->s_tag[$tag_group_key] ==$tag_val['tag_id']) echo 'class="current"'; ?>><a rel="nofollow" href="?tag_id=<?php echo $tag_val['tag_id'] . '|' . $tag_group_key . $sort_tag_str; ?>"><?php echo $tag_val['tag_name']; ?></a></li>
+                                                    <?php } } ?>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                <?php } } ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xm-line-box goods-list-box">
+                    <div class="box-hd">
+                        <div class="filter-lists">
+                            <dl class="xm-filter-list xm-filter-list-first category-filter-list clearfix">
+                                <dd>
+                                    <ul class="clearfix" id="typeOrder">
+                                        <li <?php if($sort_tag_str == '') echo 'class="current first"'; ?>>
+                                            <a rel="nofollow" href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$this->class_info->class_id)); ?>"><?php echo $this->translate('最新'); ?></a>
+                                        </li>
+                                        <li <?php if(isset($this->sort_selected) and $this->sort_selected == 'goods_shop_priceDESC') echo 'class="current"'; ?>>
+                                            <a rel="nofollow" href="?price_sort=DESC<?php echo $sort_tag_str; ?>"><?php echo $this->translate('价格从高到低'); ?></a>
+                                        </li>
+                                        <li <?php if(isset($this->sort_selected) and $this->sort_selected == 'goods_shop_priceASC') echo 'class="current"'; ?>>
+                                            <a rel="nofollow" href="?price_sort=ASC<?php echo $sort_tag_str; ?>"><?php echo $this->translate('价格从低到高'); ?></a>
+                                        </li>
+                                        <li <?php if(isset($this->sort_selected) and $this->sort_selected == 'goods_clickDESC') echo 'class="current"'; ?>>
+                                            <a rel="nofollow" href="?click_sort=DESC<?php echo $sort_tag_str; ?>"><?php echo $this->translate('人气从高到低'); ?></a>
+                                        </li>
+                                        <li <?php if(isset($this->sort_selected) and $this->sort_selected == 'goods_clickASC') echo 'class="current"'; ?>>
+                                            <a rel="nofollow" href="?click_sort=ASC<?php echo $sort_tag_str; ?>"><?php echo $this->translate('人气从低到高'); ?></a>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="more">
+                            <div class="filter-stock">
+                                <?php echo $this->translate('共'); ?> <font color="#ED154B"><?php echo $this->goods_list->getTotalItemCount(); ?><?php echo $this->translate('个'); ?></font> <?php echo $this->translate('商品'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-bd">
+                        <div class="goods-list-section">
+                            <div class="xm-goods-list-wrap xm-goods-list-wrap-col20" style="padding-bottom: 60px;">
+                                <ul class="xm-goods-list clearfix">
+                                    <?php
+                                    $goodsIdStr = '';
+                                    if ($this->goods_list->getTotalItemCount() > 0) { foreach ($this->goods_list as $goods_value) {
+                                        $goodsIdStr .= $goods_value['goods_id'] . ',';
+                                        ?>
+                                        <li class="">
+                                            <div class="xm-goods-item">
+                                                <div class="item-thumb"> <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goods_value['goods_id'], 'class_id'=>$this->class_info->class_id)); ?>" title="<?php echo $this->escapeHtml($goods_value['goods_name']); ?>"> <img alt="<?php echo $this->escapeHtml($goods_value['goods_name']); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goods_value['goods_thumbnail_image'])); ?>"></a></div>
+                                                <div class="item-info">
+                                                    <div class="item-price"> <span id="goods_price_<?=$goods_value['goods_id']?>"><?php
+                                                        $goodsPrice = (isset($goods_value['group_price']) and $goods_value['group_price'] > 0) ? $goods_value['group_price'] : $goods_value['goods_shop_price'];
+                                                        echo $this->frontwebsite()->shopPriceExtend($goodsPrice);
+                                                            ?></span><?php if(isset($goods_value['goods_price']) && $goods_value['goods_price'] > 0) { ?><span class="sep">|</span><del><?php echo $this->frontwebsite()->shopPriceExtend($goods_value['goods_price']); ?></del> <?php } ?></div>
+                                                    <h3 class="item-title"> <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goods_value['goods_id'], 'class_id'=>$this->class_info->class_id)); ?>" title="<?php echo $this->escapeHtml($goods_value['goods_name']); ?>"><?php echo $this->escapeHtml($goods_value['goods_name']); ?></a> </h3>
+                                                    <div class="item-star"><?php echo $this->escapeHtml($goods_value['goods_extend_name']); ?></div>
+                                                    <div class="item-actions item_goods_<?php echo $goods_value['goods_id']; ?>">
+                                                        <a onclick="add_cart(<?php echo $goods_value['goods_id']; ?>, <?php echo $this->class_info->class_id; ?>);" href="javascript: void(0);" class="btn btn-small btn-primary J_addCart"><i class="iconfont"></i><?php echo $this->translate('购物车'); ?></a>
+                                                        <a onclick="add_fav(<?php echo $goods_value['goods_id']; ?>, <?php echo $this->class_info->class_id; ?>);" href="javascript: void(0);" class="btn btn-dake btn-small J_addFav"><i class="iconfont"></i><?php echo $this->translate('收藏'); ?></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } } ?>
+                                </ul>
+                            </div>
+                            <?php echo ( count($this->goods_list) > 0 ) ? $this->paginationControl($this->goods_list, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('frontgoodslist/default',array('class_id'=>$this->class_info->class_id)))) : ""; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<?php
+//商品列表下部广告
+$goodslist_footer_banner_ad = $this->frontwebsite()->getShopAd('goodsclass', 'goodslist_footer_banner', 'pc', $this->class_info->class_id);
+if($goodslist_footer_banner_ad) {
+    ?>
+    <div class="container">
+        <div>
+            <?php echo $goodslist_footer_banner_ad; ?>
+        </div>
+    </div>
+<?php } ?>
+
+<script>
+    function add_cart(goods_id, class_id) {
+        $.post("<?php echo $this->url('frontcart/default', array('action'=>'getAddCartInfo')); ?>",{goods_id:goods_id, class_id:class_id},
+            function (data) {
+                if(data != '') {
+                    $.post("<?php echo $this->url('frontcart/default', array('action'=>'addCart')); ?>",{goods_id:data.goods_id, class_id:data.class_id, buy_goods_num:1, select_color_value:data.select_color_value, select_size_value:data.select_size_value, selected_spec_tag_id_str:data.selected_spec_tag_id_str},
+                        function(datasta) {
+                            if(datasta == 'true') {
+                                $('.item_goods_'+goods_id).append('<div id="item-action-state-goodsid-'+goods_id+'" class="item-action-state" style="bottom: 0px;"><?php echo $this->translate('已成功加入购物车'); ?></div>');
+
+                                var cart_goods_num = parseInt($('#top_cart').html()) + 1;
+                                $('#top_cart').css('display','');
+                                $('#top_cart').html(cart_goods_num);
+
+                                setTimeout(function(){$('#item-action-state-goodsid-'+goods_id).remove();},3000);
+                                return true;
+                            } else {
+                                alert(datasta);
+                            }
+                        }
+                    );
+                }
+            },'json');
+    }
+    function add_fav(goods_id, class_id) {
+        $.post("<?php echo $this->url('frontuser/default',array('action'=>'addFavorites')); ?>",{goods_id:goods_id,class_id:class_id},
+            function(data){
+                if(data == 'true') {
+                    $('.item_goods_'+goods_id).append('<div id="item-action-state-goodsid-'+goods_id+'" class="item-action-state" style="bottom: 0px;"><?php echo $this->translate('该商品成功加入收藏！'); ?></div>');
+                    setTimeout(function(){$('#item-action-state-goodsid-'+goods_id).remove();},3000);
+                    return true;
+                } else {
+                    var message = '';
+                    if(data == 'login_false') {
+                        message = '<?php echo $this->translate('您还没有登录，无法收藏商品！'); ?>';
+                    } else if (data == 'goods_exists') {
+                        message = '<?php echo $this->translate('您已经收藏过该商品！'); ?>';
+                    } else {
+                        message = '<?php echo $this->translate('商品收藏不成功！'); ?>';
+                    }
+                    $("#message_show").html(message);
+                    $("#message_url").html('<a class="btn btn-primary J_btnCancel" data-dismiss="modal"><?php echo $this->translate('关闭'); ?></a>');
+                }
+                $('#myModal').modal('show');
+            });
+    }
+</script>
+<?php if(defined('FRONT_CACHE_STATE') and FRONT_CACHE_STATE == 'true') { ?>
+    <script>
+        $.post('<?php echo $this->url('frontgoodslist/default',array('action'=>'ajaxGoodsGroupPrice')); ?>',{goodsIdStr:'<?=$goodsIdStr?>'}, function(data){
+            if(data.state == 'true') {
+                for (var i = 0; i < data.list.length; i++) {
+                    $('#goods_price_'+data.list[i].id).html(data.list[i].price);
+                }
+            }
+        },'json');
+    </script>
+<?php } ?>

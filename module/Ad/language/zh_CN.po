@@ -1,0 +1,397 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DBShop V1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-21 21:24+0800\n"
+"PO-Revision-Date: 2017-06-21 21:25+0800\n"
+"Last-Translator: DBShop <team@dbshop.net>\n"
+"Language-Team: DBShop <team@dbshop.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../src/Ad/Controller/AdController.php:124
+#: ../src/Ad/Controller/AdController.php:196
+#: ../src/Ad/Controller/AdController.php:236
+#: ../src/Ad/Controller/AdController.php:347
+#: ../src/Ad/Controller/AdController.php:425
+#: ../src/Ad/Controller/AdController.php:465
+msgid "广告管理"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:124
+msgid "添加电脑端广告"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:196
+msgid "更新电脑端广告"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:236
+msgid "删除电脑端广告"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:347
+msgid "添加手机端广告"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:425
+msgid "更新手机端广告"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:465
+msgid "删除手机端广告"
+msgstr ""
+
+#: ../src/Ad/Controller/AdController.php:507
+msgid "推荐尺寸"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:3 ../view/ad/ad/mobile-add.phtml:3
+msgid "广告"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:4 ../view/ad/ad/add.phtml:22
+#: ../view/ad/ad/mobile-add.phtml:4 ../view/ad/ad/mobile-add.phtml:22
+msgid "基本信息"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:10 ../view/ad/ad/mobile-add.phtml:10
+#: ../view/ad/ad/mobile-setad.phtml:44 ../view/ad/ad/setad.phtml:44
+msgid "编辑"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:10 ../view/ad/ad/mobile-add.phtml:10
+msgid "新加"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:10
+msgid "电脑端广告"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:12
+msgid "返回广告设置"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:13 ../view/ad/ad/mobile-add.phtml:13
+msgid "刷新"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:15 ../view/ad/ad/mobile-add.phtml:15
+msgid "删除广告"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:17 ../view/ad/ad/mobile-add.phtml:17
+msgid "保存广告信息"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:18 ../view/ad/ad/index.phtml:4
+#: ../view/ad/ad/mobile-add.phtml:18 ../view/ad/ad/mobile-index.phtml:4
+#: ../view/ad/ad/mobile-setad.phtml:6 ../view/ad/ad/setad.phtml:6
+msgid "查看帮助说明"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:25 ../view/ad/ad/index.phtml:10
+#: ../view/ad/ad/mobile-add.phtml:25 ../view/ad/ad/mobile-index.phtml:10
+msgid "广告类别"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:31 ../view/ad/ad/mobile-add.phtml:31
+#: ../view/ad/ad/mobile-setad.phtml:14 ../view/ad/ad/setad.phtml:14
+msgid "广告位置"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:34 ../view/ad/ad/mobile-add.phtml:34
+msgid "请选择"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:42 ../view/ad/ad/mobile-add.phtml:42
+#: ../view/ad/ad/mobile-setad.phtml:12 ../view/ad/ad/setad.phtml:12
+msgid "广告名称"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:50 ../view/ad/ad/mobile-add.phtml:50
+msgid "对应商品分类"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:52 ../view/ad/ad/mobile-add.phtml:52
+msgid "无 已选分类 视为默认全部分类"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:62 ../view/ad/ad/mobile-add.phtml:62
+msgid "开始时间"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:65 ../view/ad/ad/mobile-add.phtml:65
+#, php-format
+msgid ""
+"%s开始时间%s：当开始时间为空时为不限制，如填写时间，开始时间必须小于结束时"
+"间。"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:69 ../view/ad/ad/mobile-add.phtml:69
+msgid "结束时间"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:72 ../view/ad/ad/mobile-add.phtml:72
+#, php-format
+msgid ""
+"%s结束时间%s：当结束时间为空时为不限制，如填写时间，结束时间必须大于开始时"
+"间。"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:76 ../view/ad/ad/mobile-add.phtml:76
+#: ../view/ad/ad/mobile-setad.phtml:13 ../view/ad/ad/setad.phtml:13
+msgid "广告类型"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:79 ../view/ad/ad/mobile-add.phtml:79
+msgid "请选择广告类型"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:80 ../view/ad/ad/mobile-add.phtml:80
+#: ../view/ad/ad/mobile-setad.phtml:21 ../view/ad/ad/setad.phtml:21
+msgid "图片"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:81 ../view/ad/ad/mobile-add.phtml:81
+#: ../view/ad/ad/mobile-setad.phtml:21 ../view/ad/ad/setad.phtml:21
+msgid "文字"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:82 ../view/ad/ad/mobile-add.phtml:82
+#: ../view/ad/ad/mobile-setad.phtml:21 ../view/ad/ad/setad.phtml:21
+msgid "代码"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:83 ../view/ad/ad/mobile-add.phtml:83
+#: ../view/ad/ad/mobile-setad.phtml:21 ../view/ad/ad/setad.phtml:21
+msgid "幻灯片"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:89 ../view/ad/ad/mobile-add.phtml:89
+msgid "广告图片"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:100 ../view/ad/ad/mobile-add.phtml:100
+msgid "广告文字"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:106 ../view/ad/ad/mobile-add.phtml:106
+msgid "广告代码"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:112 ../view/ad/ad/mobile-add.phtml:112
+msgid "幻灯片图片1"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:118 ../view/ad/ad/add.phtml:150
+#: ../view/ad/ad/add.phtml:182 ../view/ad/ad/add.phtml:214
+#: ../view/ad/ad/add.phtml:246 ../view/ad/ad/mobile-add.phtml:118
+#: ../view/ad/ad/mobile-add.phtml:150 ../view/ad/ad/mobile-add.phtml:182
+#: ../view/ad/ad/mobile-add.phtml:214 ../view/ad/ad/mobile-add.phtml:246
+msgid "删除图片"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:126 ../view/ad/ad/mobile-add.phtml:126
+msgid "显示文字1"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:132 ../view/ad/ad/mobile-add.phtml:132
+msgid "链接地址1"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:138 ../view/ad/ad/mobile-add.phtml:138
+msgid "排序1"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:144 ../view/ad/ad/mobile-add.phtml:144
+msgid "幻灯片图片2"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:158 ../view/ad/ad/mobile-add.phtml:158
+msgid "显示文字2"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:164 ../view/ad/ad/mobile-add.phtml:164
+msgid "链接地址2"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:170 ../view/ad/ad/mobile-add.phtml:170
+msgid "排序2"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:176 ../view/ad/ad/mobile-add.phtml:176
+msgid "幻灯片图片3"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:190 ../view/ad/ad/mobile-add.phtml:190
+msgid "显示文字3"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:196 ../view/ad/ad/mobile-add.phtml:196
+msgid "链接地址3"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:202 ../view/ad/ad/mobile-add.phtml:202
+msgid "排序3"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:208 ../view/ad/ad/mobile-add.phtml:208
+msgid "幻灯片图片4"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:222 ../view/ad/ad/mobile-add.phtml:222
+msgid "显示文字4"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:228 ../view/ad/ad/mobile-add.phtml:228
+msgid "链接地址4"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:234 ../view/ad/ad/mobile-add.phtml:234
+msgid "排序4"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:240 ../view/ad/ad/mobile-add.phtml:240
+msgid "幻灯片图片5"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:254 ../view/ad/ad/mobile-add.phtml:254
+msgid "显示文字5"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:260 ../view/ad/ad/mobile-add.phtml:260
+msgid "链接地址5"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:266 ../view/ad/ad/mobile-add.phtml:266
+msgid "排序5"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:272 ../view/ad/ad/mobile-add.phtml:272
+msgid "广告URL地址"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:278 ../view/ad/ad/mobile-add.phtml:278
+msgid "状态"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:280 ../view/ad/ad/mobile-add.phtml:280
+#: ../view/ad/ad/mobile-setad.phtml:42 ../view/ad/ad/setad.phtml:42
+msgid "启用"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:281 ../view/ad/ad/mobile-add.phtml:281
+#: ../view/ad/ad/mobile-setad.phtml:42 ../view/ad/ad/setad.phtml:42
+msgid "禁用"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:319 ../view/ad/ad/mobile-add.phtml:319
+msgid "广告位置不能为空！"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:322 ../view/ad/ad/mobile-add.phtml:322
+msgid "广告名称不能为空！"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:323 ../view/ad/ad/mobile-add.phtml:323
+msgid "广告名称最多输入80个汉字！"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:326 ../view/ad/ad/mobile-add.phtml:326
+msgid "广告类型不能为空！"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:358 ../view/ad/ad/mobile-add.phtml:358
+#: ../view/ad/ad/mobile-setad.phtml:57 ../view/ad/ad/setad.phtml:57
+msgid "您确实要删除该广告吗？"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:365 ../view/ad/ad/mobile-add.phtml:365
+#: ../view/ad/ad/mobile-setad.phtml:64 ../view/ad/ad/setad.phtml:64
+msgid "广告删除失败！"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:373 ../view/ad/ad/mobile-add.phtml:373
+msgid "您确实要删除该图片吗？"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:380 ../view/ad/ad/mobile-add.phtml:380
+msgid "图片删除失败！"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:393 ../view/ad/ad/mobile-add.phtml:393
+msgid "待选分类"
+msgstr ""
+
+#: ../view/ad/ad/add.phtml:394 ../view/ad/ad/mobile-add.phtml:394
+msgid "已选分类"
+msgstr ""
+
+#: ../view/ad/ad/index.phtml:2 ../view/ad/ad/setad.phtml:2
+msgid "电脑端广告(PC)"
+msgstr ""
+
+#: ../view/ad/ad/index.phtml:11 ../view/ad/ad/mobile-index.phtml:11
+msgid "广告数量"
+msgstr ""
+
+#: ../view/ad/ad/index.phtml:12 ../view/ad/ad/mobile-index.phtml:12
+#: ../view/ad/ad/mobile-setad.phtml:17 ../view/ad/ad/setad.phtml:17
+msgid "操作"
+msgstr ""
+
+#: ../view/ad/ad/index.phtml:19 ../view/ad/ad/mobile-index.phtml:19
+msgid "设置广告"
+msgstr ""
+
+#: ../view/ad/ad/mobile-add.phtml:10
+msgid "手机端广告"
+msgstr ""
+
+#: ../view/ad/ad/mobile-add.phtml:12
+msgid "返回手机端广告设置"
+msgstr ""
+
+#: ../view/ad/ad/mobile-index.phtml:2 ../view/ad/ad/mobile-setad.phtml:2
+msgid "手机端广告(Phone)"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:4 ../view/ad/ad/setad.phtml:4
+msgid "返回广告管理"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:5 ../view/ad/ad/setad.phtml:5
+msgid "添加广告"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:15 ../view/ad/ad/setad.phtml:15
+msgid "广告开始/结束时间"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:16 ../view/ad/ad/setad.phtml:16
+msgid "广告状态"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:32 ../view/ad/ad/setad.phtml:32
+msgid "无限制"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:34 ../view/ad/ad/setad.phtml:34
+msgid "已经过期"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:36 ../view/ad/ad/setad.phtml:36
+msgid "无"
+msgstr ""
+
+#: ../view/ad/ad/mobile-setad.phtml:46 ../view/ad/ad/setad.phtml:46
+msgid "删除"
+msgstr ""

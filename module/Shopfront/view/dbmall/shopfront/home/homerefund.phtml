@@ -1,0 +1,106 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('退货申请'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box">
+                    <h3 class="right-more-title">
+                        <form class="form-search" style="margin: 0;" method="get">
+                            <?php echo $this->translate('退货申请'); ?>
+                            <div class="pull-right">
+                                <input type="text" name="search_content" value="<?php echo isset($_GET['search_content']) ? $this->escapehtml($_GET['search_content']) : ''; ?>" placeholder="<?php echo $this->translate('输入订单编号'); ?>" style="height:16px;width: 240px;padding-top: 5px;margin-bottom: 3px;">&nbsp;<button type="submit" class="btn btn-small btn-primary" style="width: 50px;"><?php echo $this->translate('搜索'); ?></button>
+                            </div>
+                        </form>
+                    </h3>
+                    <div class="box-hd-more">
+                        <div class="span16">
+                            <div class="span14 pull-left left-menu-more">
+                                <div class="uc-order-list-type">
+                                    <a href="<?php echo $this->url('frontrefund/default'); ?>" <?php if($this->myviewalias()->returnActionname() == 'index') echo 'class="current"'; ?>><?php echo $this->translate('退货记录'); ?></a>
+                                </div>
+                            </div>
+                            <?php
+                            $refundState  = $this->frontwebsite()->getOrderConfig('user_order_refund');
+                            if($refundState == 'true') {
+                            ?>
+                            <div class="span2 pull-right">
+                                <a href="<?php echo $this->url('frontrefund/default', array('action'=>'addRefund')); ?>" class="btn btn-small btn-danger" type="button"><?php echo $this->translate('点此申请退货'); ?></a>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="box-bd">
+                        <?php
+                        if ($this->user_order_refund->getTotalItemCount() > 0){
+                            $type_array  = array(1=>$this->translate('退款到账户余额'), 2=>$this->translate('退款到银行'), 3=>$this->translate('退款到第三方支付'));
+                            $state_array = array(0=>$this->translate('等待处理'), 1=>$this->translate('退款成功'), 2=>$this->translate('退款拒绝'));
+                            ?>
+                            <table class="table table-bordered table-hover" style="margin-top: 15px;">
+                                <thead>
+                                <tr>
+                                    <th width="12%"><?php echo $this->translate('订单编号'); ?></th>
+                                    <th width="12%"><?php echo $this->translate('退款方式'); ?></th>
+                                    <th width="12%"><?php echo $this->translate('申请时间'); ?></th>
+                                    <th width="8%"><?php echo $this->translate('处理状态'); ?></th>
+                                    <th width="12%"><?php echo $this->translate('操作'); ?></th>
+                                </tr>
+                                </thead>
+                                <?php foreach ($this->user_order_refund as $log_value) { ?>
+                                    <tr>
+                                        <td><?php echo $log_value['order_sn']; ?></td>
+                                        <td><?php echo $type_array[$log_value['refund_type']]; ?></td>
+                                        <td><?php echo date("Y-m-d H:i:s", $log_value['refund_time']); ?></td>
+                                        <td><?php echo $state_array[$log_value['refund_state']]; ?></td>
+                                        <td>
+                                            <a href="<?php echo $this->url('frontrefund/default/refund_id', array('action'=>'refundShow', 'refund_id'=>$log_value['refund_id'])); ?>"><?php echo $this->translate('查看退货详情'); ?></a>
+                                            <?php if($log_value['refund_state'] == 0) { ?>
+                                                &nbsp;&nbsp;
+                                                <a href="javascript:;" onclick="del_refund(<?php echo $log_value['refund_id']; ?>);"><?php echo $this->translate('删除'); ?></a>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                            <div>
+                                    <?php echo ( count($this->user_order_refund) > 0 ) ? $this->paginationControl($this->user_order_refund, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('frontrefund/default'))) : ""; ?>
+                            </div>
+                        <?php } else { ?>
+                            <?php echo $this->translate('暂无记录！'); ?>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function del_refund(refund_id) {
+        if(window.confirm('<?php echo $this->translate('您确实要删除该记录吗？'); ?>')) {
+            $.post("<?php echo $this->url('frontrefund/default',array('action'=>'delRefund')); ?>",{refund_id:refund_id},
+                function(data){
+                    if(data == 'true') {
+                        window.location.reload();
+                        return true;
+                    } else {
+                        alert('<?php echo $this->translate('退货记录删除失败！'); ?>');
+                    }
+                });
+        }
+        return false;
+    }
+</script>

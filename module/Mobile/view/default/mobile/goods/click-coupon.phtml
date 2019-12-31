@@ -1,0 +1,192 @@
+<style>
+    .stamp {
+        width: 97%;
+        min-height: 140px;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+    .stamp:before {
+        content: '';
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:10px;
+        right:10px;
+        z-index: -1;
+    }
+    .stamp i {
+        position: absolute;
+        left: 20%;
+        top: 45px;
+        height: 190px;
+        width: 390px;
+        background-color: rgba(255, 255, 255, .15);
+        transform: rotate(-30deg);
+    }
+    .stamp .par {
+        float: left;
+        padding: 16px 15px;
+        width: 220px;
+        border-right:2px dashed rgba(255, 255, 255, .3);
+        text-align: left;
+    }
+    .stamp .par p {
+        color:#fff;
+        font-size: 16px;
+        line-height: 21px;
+    }
+    .stamp .par span {
+        font-size: 50px;
+        color:#fff;
+        margin-right: 5px;
+        line-height: 65px;
+    }
+    .stamp .par .sign {
+        font-size: 34px;
+    }
+    .stamp .par sub {
+        position: relative;
+        top:-5px;
+        color:rgba(255, 255, 255, .8);
+    }
+    .stamp .copy {
+        display: inline-block;
+        padding:21px 14px;
+        width:100px;
+        vertical-align: text-bottom;
+        font-size: 30px;
+        color:rgb(255,255,255);
+        text-align: center;
+        line-height: initial;
+    }
+    .stamp .copy p {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    .stamp03 {
+        background-color:#D24161;
+        background-position: 9px 3px;
+    }
+    .stamp03:before {
+        background-color:#D24161;
+    }
+    .stamp03 .copy {
+        padding: 10px 6px 10px 12px;
+        font-size: 24px;
+    }
+    .stamp03 .copy p {
+        font-size: 14px;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+    .stamp03 .copy a {
+        background-color:#fff;
+        color:#333;
+        font-size: 14px;
+        text-decoration:none;
+        padding:5px 10px;
+        border-radius:3px;
+        display: block;
+    }
+
+    /* 已领取 */
+    .stamp03.have {
+        background-color:#9C9A9C;
+        color:#C1C1C1;
+    }
+</style>
+<div>
+    <?php if(!empty($this->goods_coupon)) foreach ($this->goods_coupon as $gCouponValue) { ?>
+    <?php
+    $startDate  = '';
+    $endDate    = '';
+    $dateHtml   = '';
+    $active     = true;
+    if(!empty($gCouponValue['get_coupon_start_time'])) {
+        $startDate   = date("Y-m-d H:i:s", $gCouponValue['get_coupon_start_time']);
+        $dateHtml .= $this->translate('开始').'：'.$startDate;
+        if(time()<$gCouponValue['get_coupon_start_time']) $active = false;
+    }
+    if(!empty($gCouponValue['get_coupon_end_time'])) {
+        $endDate       = date("Y-m-d H:i:s", $gCouponValue['get_coupon_end_time']);
+        $dateHtml .= '&nbsp;'.$this->translate('结束').'：'.$endDate;
+        if(time()>$gCouponValue['get_coupon_end_time']) $active = false;
+    }
+
+    $couponUsedState = $this->translate('立即领取');
+    if(isset($this->user_coupon_id_array) and !empty($this->user_coupon_id_array) and in_array($gCouponValue['coupon_id'], $this->user_coupon_id_array)) {
+        $couponUsedState = $this->translate('已领取');
+        $active = false;
+    }
+    ?>
+    <div id="style-one-<?=$gCouponValue['coupon_id']?>" class="stamp stamp03 <?php echo ($active ? '' : 'have');  ?>">
+        <div class="par">
+            <p><?=$this->escapeHtml($gCouponValue['coupon_name'])?></p>
+            <sub class="sign"><?=$this->frontwebsite()->shopPriceSymbol()?></sub><span><?=$this->frontwebsite()->currencyPrice($gCouponValue['shopping_discount'], $this->frontwebsite()->getFrontDefaultCurrency())?></span>
+            <p>
+                <?php echo ($gCouponValue['coupon_goods_type'] == 'all_goods' ? '('.$this->translate('全品类通用').')' : ''); ?>
+                <?php if(!empty($gCouponValue['user_group'])) echo implode(',', $gCouponValue['user_group']) . $this->translate('可领取'); ?>
+            </p>
+        </div>
+        <div class="copy"><?=$this->translate('优惠券')?>
+            <p><?=$startDate?><br><?=$endDate?></p>
+            <a href="javascript:;" id="coupon-<?=$gCouponValue['coupon_id']?>" <?php if($active) { ?>onclick="getCoupon(<?=$gCouponValue['coupon_id']?>);"<?php } ?>><?=$couponUsedState?></a></div>
+    </div>
+    <?php } ?>
+
+
+    <?php if(!empty($this->general_coupon)) foreach ($this->general_coupon as $couponValue) { ?>
+    <?php
+    $startDate  = '';
+    $endDate    = '';
+    $dateHtml   = '';
+    $active     = true;
+    if(!empty($couponValue['get_coupon_start_time'])) {
+        $startDate   = date("Y-m-d H:i:s", $couponValue['get_coupon_start_time']);
+        $dateHtml .= $this->translate('开始').'：'.$startDate;
+        if(time()<$couponValue['get_coupon_start_time']) $active = false;
+    }
+    if(!empty($couponValue['get_coupon_end_time'])) {
+        $endDate       = date("Y-m-d H:i:s", $couponValue['get_coupon_end_time']);
+        $dateHtml .= '&nbsp;'.$this->translate('结束').'：'.$endDate;
+        if(time()>$couponValue['get_coupon_end_time']) $active = false;
+    }
+
+    $couponUsedState = $this->translate('立即领取');
+    if(isset($this->user_coupon_id_array) and !empty($this->user_coupon_id_array) and in_array($couponValue['coupon_id'], $this->user_coupon_id_array)) {
+        $couponUsedState = $this->translate('已领取');
+        $active = false;
+    }
+    ?>
+    <div id="style-one-<?=$couponValue['coupon_id']?>" class="stamp stamp03 <?php echo ($active ? '' : 'have');  ?>">
+        <div class="par">
+            <p><?=$this->escapeHtml($couponValue['coupon_name'])?></p>
+            <sub class="sign"><?=$this->frontwebsite()->shopPriceSymbol()?></sub><span><?=$this->frontwebsite()->currencyPrice($couponValue['shopping_discount'], $this->frontwebsite()->getFrontDefaultCurrency())?></span>
+            <p>
+                <?php echo ($couponValue['coupon_goods_type'] == 'all_goods' ? '('.$this->translate('全品类通用').')' : ''); ?>
+                <?php if(!empty($couponValue['user_group'])) echo implode(',', $couponValue['user_group']) . $this->translate('可领取'); ?>
+            </p>
+        </div>
+        <div class="copy"><?=$this->translate('优惠券')?>
+            <p><?=$startDate?><br><?=$endDate?></p>
+            <a href="javascript:;" id="coupon-<?=$couponValue['coupon_id']?>" <?php if($active) { ?>onclick="getCoupon(<?=$couponValue['coupon_id']?>);"<?php } ?>><?=$couponUsedState?></a></div>
+    </div>
+    <?php } ?>
+    <script>
+        function getCoupon(coupon_id) {
+            $.post("<?php echo $this->url('frontgoods/default', array('action'=>'clickGetCoupon')); ?>",{coupon_id:coupon_id, goods_id:<?=$this->goods_id?>},
+                function(data){
+                    if(data.state == 'true') {
+                        $('#style-one-'+coupon_id).addClass('have');
+                        $('#coupon-'+coupon_id).html('已领取');
+                    } else {
+                        alert(data.message);
+                    }
+                }, 'json');
+        }
+    </script>
+</div>

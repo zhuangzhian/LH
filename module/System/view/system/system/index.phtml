@@ -1,0 +1,472 @@
+<div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+              	<li><h5><?php echo $this->translate('系统设置'); ?></h5></li>
+                <li class="active"><a data-toggle="tab" href="#system_a"><?php echo $this->translate('基本信息'); ?></a></li>
+                <!-- <li><a data-toggle="tab" href="#system_b"><?php echo $this->translate('常规信息'); ?></a></li> -->
+                <li><a data-toggle="tab" href="#system_c"><?php echo $this->translate('内容信息'); ?></a></li>
+                <li><a data-toggle="tab" href="#system_d"><?php echo $this->translate('验证码设置'); ?></a></li>
+                <li><a data-toggle="tab" href="#system_e"><?php echo $this->translate('邮件服务器'); ?></a></li>
+                <li><a data-toggle="tab" href="#system_f"><?php echo $this->translate('商品设置'); ?></a></li>
+                <li><a data-toggle="tab" href="#system_h"><?php echo $this->translate('二维码设置'); ?></a></li>
+                <li><a data-toggle="tab" href="#system_i"><?php echo $this->translate('统计设置'); ?></a></li>
+                <li><a data-toggle="tab" href="#system_j"><?php echo $this->translate('订单设置'); ?></a></li>
+                  <li><a data-toggle="tab" href="#system_g"><?php echo $this->translate('前台底部'); ?></a></li>
+              </ul>
+              <form class="form-horizontal" enctype="multipart/form-data" name="system_form" id="system_form" method="post">
+              <div class="tab-content">
+    			<div id="sticky_navigation" style="height:30px;border-bottom:4px solid #DFDFDF;">
+        			<div class="pull-left" style="font-size:16px;line-height:30px;"><strong><?php echo $this->translate('系统设置'); ?></strong></div>
+        			<div class="pull-right">
+        			<a href="<?php echo $this->serverUrl(true); ?>" class="btn btn-small btn-warning"><i class="icon-repeat icon-white"></i> <?php echo $this->translate('刷新'); ?></a>
+                    &nbsp;<button type="submit" class="btn btn-small btn-primary"><i class="icon-ok icon-white"></i> <?php echo $this->translate('保存系统设置'); ?></button>
+					&nbsp;<a href="<?php echo $this->myviewalias()->dbshopHelpUrl('system_set'); ?>" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+                	</div>
+        		</div>
+                <div id="system_a" class="tab-pane active">
+                	<div class="well admin_add_header_well"><?php echo $this->translate('基本信息'); ?></div>
+                	<div class="well admin_add_well">
+                	    <div class="message_one">
+                    	</div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('网站名称'); ?><span class="must_add_value">*</span>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_name" id="shop_name" value="<?php if(isset($this->system_config['shop_system']['shop_name'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_name']); ?>" class="span8">
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('扩展名称'); ?>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_extend_name" id="shop_extend_name" value="<?php if(isset($this->system_config['shop_system']['shop_extend_name'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_extend_name']); ?>" class="span8">
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('网站关键字'); ?>：</label>
+           					<div class="controls">
+              					<textarea class="span12" name="shop_keywords" id="shop_keywords" rows="2"><?php if(isset($this->system_config['shop_system']['shop_keywords'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_keywords']); ?></textarea>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('网站描述'); ?>：</label>
+           					<div class="controls">
+              					<textarea class="span12" name="shop_description" id="shop_description" rows="4"><?php if(isset($this->system_config['shop_system']['shop_description'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_description']); ?></textarea>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('热门关键字'); ?>：</label>
+           					<div class="controls">
+              					<textarea class="span8" name="shop_hot_keywords" id="shop_hot_keywords" rows="2"><?php if(isset($this->system_config['shop_system']['shop_hot_keywords'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_hot_keywords']); ?></textarea>
+                                <i class="cus-help shop_admin_help_note" data-content="<?php echo $this->translate('热门关键字请用 | 分割，如 手机|手表|服装'); ?>"></i>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('网站LOGO'); ?>：</label>
+           					<div class="controls">
+                            	<?php if(isset($this->system_config['shop_system']['shop_logo']) and !empty($this->system_config['shop_system']['shop_logo'])) { ?>
+                            	<img src="<?php echo $this->basePath($this->system_config['shop_system']['shop_logo']); ?>" border="0" style="height: 90px;" /><br />
+                                <?php } ?>
+              					<input type="file" name="shop_logo" /> <?php echo $this->myviewalias()->defaultShopSet('shop_logo'); ?>
+              					<input type="hidden" name="old_shop_logo" value="<?php if(isset($this->system_config['shop_system']['shop_logo'])) echo $this->system_config['shop_system']['shop_logo']; ?>">
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('网站favicon'); ?>：</label>
+           					<div class="controls">
+                                <?php if(isset($this->system_config['shop_system']['shop_ico']) and !empty($this->system_config['shop_system']['shop_ico'])) { ?>
+                            	<img src="<?php echo $this->basePath($this->system_config['shop_system']['shop_ico']); ?>" border="0" style="height: 32px;" /><br />
+                                <?php } ?>
+              					<input type="file" name="shop_ico" /> <?php echo $this->myviewalias()->defaultShopSet('shop_ico'); ?>
+              					<input type="hidden" name="old_shop_ico" value="<?php if(isset($this->system_config['shop_system']['shop_ico'])) echo $this->system_config['shop_system']['shop_ico']; ?>">
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('网站备案号'); ?>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_icp" id="shop_icp" value="<?php if(isset($this->system_config['shop_system']['shop_icp'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_icp']); ?>" class="span5">
+            				</div>                        
+                        </div>
+                        <div class="control-group">
+                            <label for="input01" class="control-label"><?php echo $this->translate('购物发票'); ?>：</label>
+                            <div class="controls">
+                                <label class="checkbox inline"><input type="checkbox" name="shop_invoice" id="shop_invoice" value="true" <?php if(isset($this->system_config['shop_system']['shop_invoice']) and $this->system_config['shop_system']['shop_invoice'] == 'true') echo 'checked="checked"'; ?>><?php echo $this->translate('启用'); ?></label>
+                            </div>
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('暂时关闭'); ?>：</label>
+           					<div class="controls">
+              					<label class="checkbox inline"><input type="checkbox" name="shop_close" id="shop_close" value="close" <?php if(isset($this->system_config['shop_system']['shop_close']) and $this->system_config['shop_system']['shop_close'] == 'close') echo 'checked="checked"'; ?>></label>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('关闭原因'); ?>：</label>
+           					<div class="controls">
+              					<textarea class="span12" name="shop_close_info" rows="4"><?php if(isset($this->system_config['shop_system']['shop_close_info'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_close_info']); ?></textarea>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('系统时区'); ?><span class="must_add_value">*</span>：</label>
+           					<div class="controls">
+              					<select name="dbshop_timezone" id="dbshop_timezone" class="span2">
+              					<?php
+                     	              foreach($this->time_zone_array as $time_array) {
+                     		             echo '<optgroup label="' . $time_array[0] . '">';
+							             foreach($time_array[1] as $array_key => $array_value) {
+								            echo '<option value="' . $array_key . '" '.($array_key == $this->selected_timezone ? 'selected="selected"' : '').'>' . $array_value . '</option>';
+							             }
+                     	              }
+					               ?>
+              					</select>
+            				</div>                        
+                        </div>
+                        <!-- 
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商店地址'); ?>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_address" id="shop_address" value="<?php if(isset($this->system_config['shop_system']['shop_address'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_address']); ?>" class="span5">
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商店电话'); ?>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_call" id="shop_call" value="<?php if(isset($this->system_config['shop_system']['shop_call'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_call']); ?>" class="span5">
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商店邮编'); ?>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_zip" id="shop_zip" value="<?php if(isset($this->system_config['shop_system']['shop_zip'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_zip']); ?>" class="span5">
+            				</div>                        
+                        </div> -->
+                        <div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商店邮箱'); ?>：</label>
+           					<div class="controls">
+              					<input type="text" name="shop_email" id="shop_email" value="<?php if(isset($this->system_config['shop_system']['shop_email'])) echo $this->escapeHtml($this->system_config['shop_system']['shop_email']); ?>" class="span5">
+            				</div>                        
+                        </div>
+                  	</div>
+                </div>              
+                 <div id="system_b" class="tab-pane">
+                	<div class="well admin_add_header_well"><?php echo $this->translate('常规信息'); ?></div>
+                	<div class="well admin_add_well">
+                	    <div class="message_one">
+                    	</div>
+  
+                                                                
+                  	</div>                                         	
+              </div>
+                 <div id="system_c" class="tab-pane">
+                	<div class="well admin_add_header_well"><?php echo $this->translate('内容信息'); ?></div>
+                	<div class="well admin_add_well">
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商品品质保证内容'); ?>：</label>
+           					<div class="controls">
+                            	<textarea name="goods_quality" rows="5" class="span12"><?php echo $this->escapeHtml($this->goods_quality); ?></textarea>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商品售后服务'); ?>：</label>
+           					<div class="controls">
+              					<script type="text/plain" id="buy_service" name="buy_service"><?php echo $this->buy_service_body; ?></script>
+            				</div>                        
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商品如何购买'); ?>：</label>
+           					<div class="controls">
+              					<script type="text/plain" id="buy" name="buy"><?php echo $this->buy_body; ?></script>
+            				</div>                        
+                        </div>                     
+                  	</div>                                         	
+              </div>
+                 <div id="system_d" class="tab-pane">
+                	<div class="well admin_add_header_well"><?php echo $this->translate('验证码设置'); ?></div>
+                	<div class="well admin_add_well">
+                	    <div class="message_one">
+                    	</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('类型说明'); ?>：</label>
+							<div class="controls">
+								<label style="height: 30px;line-height: 30px;font-weight: bold;"><?php echo $this->translate('系统内置验证码'); ?></label>
+							</div>
+						</div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('注册需验证码'); ?>：</label>
+           					<div class="controls">
+								<label class="checkbox">
+									<input type="checkbox" name="user_register_captcha" id="user_register_captcha" <?php if(isset($this->captcha_config['user_register_captcha']) and $this->captcha_config['user_register_captcha'] == 'true') echo 'checked="checked"'; ?> value="true">
+									<?php echo $this->translate('启用'); ?>
+								</label>
+            				</div>
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('登录需验证码'); ?>：</label>
+           					<div class="controls">
+								<label class="checkbox">
+									<input type="checkbox" name="user_login_captcha" id="user_login_captcha" <?php if(isset($this->captcha_config['user_login_captcha']) and $this->captcha_config['user_login_captcha'] == 'true') echo 'checked="checked"'; ?> value="true">
+									<?php echo $this->translate('启用'); ?>
+								</label>
+            				</div>
+                        </div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商品咨询需验证码'); ?>：</label>
+           					<div class="controls">
+								<label class="checkbox">
+									<input type="checkbox" name="goods_ask_captcha" id="goods_ask_captcha" <?php if(isset($this->captcha_config['goods_ask_captcha']) and $this->captcha_config['goods_ask_captcha'] == 'true') echo 'checked="checked"'; ?> value="true">
+									<?php echo $this->translate('启用'); ?>
+								</label>
+            				</div>
+                        </div>
+						<hr>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('类型说明'); ?>：</label>
+							<div class="controls">
+								<label style="height: 30px;line-height: 30px;"><b><?php echo $this->translate('手机短信验证码'); ?></b>&nbsp;&nbsp;[<font color="red"><?php echo $this->translate('启用前，请确保您已经开通并启用手机短信功能，启用方式 系统管理-》消息提醒设置-》手机短信提醒设置'); ?></font>]</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('注册需验证码'); ?>：</label>
+							<div class="controls">
+								<label class="checkbox">
+									<input type="checkbox" name="phone_user_register_captcha" id="phone_user_register_captcha" <?php if(isset($this->captcha_config['phone_user_register_captcha']) and ($this->captcha_config['phone_user_register_captcha'] == 'true')) echo 'checked="checked"'; ?> value="true">
+									<?php echo $this->translate('启用'); ?>&nbsp;&nbsp;[<font color="red"><?php echo $this->translate('启用手机验证码，需要同时启用手机注册项 设置地址 系统设置 -》客户设置-》注册与登录'); ?></font>]<br>
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('验证码间隔时间'); ?>：</label>
+							<div class="controls">
+								<select name="phone_captcha_time" class="span2">
+									<option value="60" <?php if(isset($this->captcha_config['phone_captcha_time']) and $this->captcha_config['phone_captcha_time'] == '60') echo 'selected'; ?> >60</option>
+									<option value="120" <?php if(isset($this->captcha_config['phone_captcha_time']) and $this->captcha_config['phone_captcha_time'] == '120') echo 'selected'; ?>>120</option>
+									<option value="180" <?php if(isset($this->captcha_config['phone_captcha_time']) and $this->captcha_config['phone_captcha_time'] == '180') echo 'selected'; ?>>180</option>
+								</select>
+								<?php echo $this->translate('秒'); ?>
+							</div>
+						</div>
+                  	</div>                                         	
+              </div>
+              
+              <div id="system_e" class="tab-pane">                        	
+              </div>
+              
+              <div id="system_f" class="tab-pane">
+                	<div class="well admin_add_header_well"><?php echo $this->translate('商品设置'); ?></div>
+                	<div class="well admin_add_well">
+                	    <div class="message_one">
+                    	</div>
+                    	<div class="control-group">
+                  			<label for="input01" class="control-label"><?php echo $this->translate('商品分享'); ?>：</label>
+           					<div class="controls">
+              					<select name="dbshop_goods_share" id="dbshop_goods_share" class="span3">
+              					     <option value="" <?php if(!isset($this->goods_config['shop_goods']['dbshop_goods_share']) or empty($this->goods_config['shop_goods']['dbshop_goods_share'])) echo 'selected="selected"'; ?>><?php echo $this->translate('不启用分享'); ?></option>
+              					     <option value="/jiathis/jiathisico.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/jiathis/jiathisico.php') echo 'selected="selected"'; ?>><?php echo $this->translate('JiaThis(图标式)'); ?></option>
+              					     <option value="/jiathis/jiathisright.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/jiathis/jiathisright.php') echo 'selected="selected"'; ?>><?php echo $this->translate('JiaThis(侧边栏)'); ?></option>
+              					     <option value="/baidu/ico.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/baidu/ico.php') echo 'selected="selected"'; ?>><?php echo $this->translate('百度分享(图标式)'); ?></option>
+              					     <option value="/baidu/text.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/baidu/text.php') echo 'selected="selected"'; ?>><?php echo $this->translate('百度分享(文字式)'); ?></option>
+              					     <option value="/baidu/window.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/baidu/window.php') echo 'selected="selected"'; ?>><?php echo $this->translate('百度分享(侧边栏)'); ?></option>
+									<option value="/baidu/httpsico.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/baidu/httpsico.php') echo 'selected="selected"'; ?>><?php echo $this->translate('百度分享(图标式)').' - https'; ?></option>
+									<option value="/baidu/httpstext.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/baidu/httpstext.php') echo 'selected="selected"'; ?>><?php echo $this->translate('百度分享(文字式)').' - https'; ?></option>
+									<option value="/baidu/httpswindow.php" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_share']) and $this->goods_config['shop_goods']['dbshop_goods_share'] == '/baidu/httpswindow.php') echo 'selected="selected"'; ?>><?php echo $this->translate('百度分享(侧边栏)').' - https'; ?></option>
+								</select>
+              					<i class="cus-help shop_admin_help_note" data-content="<?php echo $this->translate('显示在前台商品详细页面，用于分享商品到其他系统功能。'); ?>"></i>
+            				</div>                        
+                        </div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('商品货号前缀'); ?>：</label>
+							<div class="controls">
+								<input type="text" name="dbshop_goods_sn_prefix" id="dbshop_goods_sn_prefix" value="<?php if(isset($this->goods_config['shop_goods']['dbshop_goods_sn_prefix'])) echo $this->escapeHtml($this->goods_config['shop_goods']['dbshop_goods_sn_prefix']); ?>" class="span3">
+								<i class="cus-help shop_admin_help_note" data-content="<?php echo $this->translate('当添加商品时，没有添加商品货号，商品货号会自动生成，货号前缀+数字字符串'); ?>"></i>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('前台会员组价格'); ?>：</label>
+							<div class="controls">
+								<label class="checkbox inline">
+									<input type="checkbox" name="dbshop_goods_usergroup_price_show" value="1" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_usergroup_price_show']) and $this->goods_config['shop_goods']['dbshop_goods_usergroup_price_show'] == 1) echo 'checked'; ?>><?php echo $this->translate('显示'); ?>
+								</label>
+								<i class="cus-help shop_admin_help_note" data-content="<?php echo $this->translate('前台商品详情内，如果有会员组价格，是否全部显示'); ?>"></i>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="input01" class="control-label"><?php echo $this->translate('使用商品规格'); ?>：</label>
+							<div class="controls">
+								<select name="goods_spec" id="goods_spec" class="span3">
+									<option value="1" <?php if((isset($this->goods_config['shop_goods']['goods_spec']) and $this->goods_config['shop_goods']['goods_spec'] == 1) or !isset($this->goods_config['shop_goods']['goods_spec'])) echo 'selected'; ?>><?php echo $this->translate('普通规格(旧)'); ?></option>
+									<option value="2" <?php if(isset($this->goods_config['shop_goods']['goods_spec']) and $this->goods_config['shop_goods']['goods_spec'] == 2) echo 'selected'; ?>><?php echo $this->translate('高级规格(新)'); ?></option>
+								</select>
+							</div>
+						</div>
+                        <div class="control-group">
+                            <label for="input01" class="control-label"><?php echo $this->translate('登录后商品价格可见'); ?>：</label>
+                            <div class="controls">
+                                <label class="checkbox inline">
+                                    <input type="checkbox" name="dbshop_login_goods_price_show" value="1" <?php if(isset($this->goods_config['shop_goods']['dbshop_login_goods_price_show']) and $this->goods_config['shop_goods']['dbshop_login_goods_price_show'] == 1) echo 'checked'; ?>><?php echo $this->translate('启用'); ?>
+                                </label>
+                                <input type="text" id="dbshop_login_goods_price_word" name="dbshop_login_goods_price_word" value="<?php if(isset($this->goods_config['shop_goods']['dbshop_login_goods_price_word']) and !empty($this->goods_config['shop_goods']['dbshop_login_goods_price_word'])) echo $this->goods_config['shop_goods']['dbshop_login_goods_price_word']; else echo  $this->translate('登录后可见'); ?>" class="span4" placeholder="<?php echo $this->translate('填写显示文字'); ?>">
+                                <span style="color: red;"><?php echo $this->translate('启用该功能必须关闭 系统管理->性能优化->前台缓存'); ?></span>
+                            </div>
+                        </div>
+                  	</div>                                         	
+              </div>
+
+				  <div id="system_g" class="tab-pane">
+					  <div class="well admin_add_header_well"><?php echo $this->translate('前台底部'); ?></div>
+					  <div class="well admin_add_well">
+						  <div class="message_one">
+						  </div>
+						  <div class="control-group alidayu">
+							  <label style="font-weight: bold;"><?php echo $this->translate('该功能为了方便要求在前台底部需要放图片标识的使用者而提供的'); ?></label>
+						  </div>
+                          <?php for ($i=1; $i<=5; $i++) { ?>
+                          <div class="control-group">
+                              <label for="input01" class="control-label"><?php echo $this->translate('图片'); ?><?=$i?>：</label>
+                              <div class="controls">
+                                  <?php if($this->front_footer[$i]['image'] and !empty($this->front_footer[$i]['image'])) {
+                                      $file_md5_str = md5($this->front_footer[$i]['image']);
+                                      ?>
+                                      <img class="<?php echo $file_md5_str; ?>" src="<?php echo $this->basePath($this->front_footer[$i]['image']); ?>" border="0" style="max-width:150px;" />
+                                      <a href="javascript:;" class="badge badge-important <?php echo$file_md5_str; ?>" onclick="del_image(<?=$i?>, '<?php echo $this->front_footer[$i]['image']; ?>');" title="<?php echo $this->translate('删除图片'); ?>">X</a>
+                                      <input class="<?php echo $file_md5_str; ?>" type="hidden" name="old_image_<?=$i?>" value="<?php echo $this->front_footer[$i]['image']; ?>" />
+                                      <br class="<?php echo $file_md5_str; ?>" />
+                                  <?php } ?>
+                                  <input type="file" name="image_<?=$i?>" />
+                              </div>
+                          </div>
+                          <div class="control-group">
+                              <label for="input01" class="control-label"><?php echo $this->translate('链接地址'); ?><?=$i?>：</label>
+                              <div class="controls">
+                                  <input type="text"  name="image_url_<?=$i?>" class="span8" value="">
+                              </div>
+                          </div>
+                          <?php if($i <=4) echo '<hr/>'; } ?>
+
+					  </div>
+				  </div>
+
+				  <div id="system_h" class="tab-pane">
+					  <div class="well admin_add_header_well"><?php echo $this->translate('二维码设置'); ?></div>
+					  <div class="well admin_add_well">
+						  <div class="message_one">
+						  </div>
+						  <div class="control-group">
+							  <label for="input01" class="control-label"><?php echo $this->translate('站点二维码'); ?>：</label>
+							  <div class="controls">
+								  <label class="checkbox inline"><input type="checkbox" name="shop_QRcode" id="shop_QRcode" value="true" <?php if(isset($this->system_config['shop_system']['shop_QRcode']) and $this->system_config['shop_system']['shop_QRcode'] == 'true') echo 'checked="checked"'; ?>><?php echo $this->translate('启用'); ?></label>
+								  <i class="cus-help shop_admin_help_note" data-content="<?php echo $this->translate('开启后，前台顶部出现二维码，用户可以通过手机扫描，进行手机访问'); ?>"></i>
+							  </div>
+						  </div>
+						  <div class="control-group">
+							  <label for="input01" class="control-label"><?php echo $this->translate('前台商品二维码'); ?>：</label>
+							  <div class="controls">
+								  <select name="dbshop_goods_QRcode" id="dbshop_goods_QRcode" class="span3">
+									  <option value="" <?php if(!isset($this->goods_config['shop_goods']['dbshop_goods_QRcode']) or empty($this->goods_config['shop_goods']['dbshop_goods_QRcode'])) echo 'selected="selected"'; ?>><?php echo $this->translate('关闭'); ?></option>
+									  <option value="1" <?php if(isset($this->goods_config['shop_goods']['dbshop_goods_QRcode']) and $this->goods_config['shop_goods']['dbshop_goods_QRcode'] == '1') echo 'selected="selected"'; ?>><?php echo $this->translate('开启'); ?></option>
+								  </select>
+								  <i class="cus-help shop_admin_help_note" data-content="<?php echo $this->translate('启用前台商品二维码后，用户通过手机扫描前台商品内容页面里的二维码，可以进行手机访问。'); ?>"></i>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+
+				  <div id="system_i" class="tab-pane">
+					  <div class="well admin_add_header_well"><?php echo $this->translate('统计设置'); ?></div>
+					  <div class="well admin_add_well">
+						  <div class="message_one">
+						  </div>
+						  <div class="control-group">
+							  <label for="input01" class="control-label"><?php echo $this->translate('统计代码'); ?>：</label>
+							  <div class="controls">
+								  <textarea class="span10" name="shop_statistics_code" rows="4"><?php if(isset($this->shop_statistics_code)) echo $this->escapeHtml($this->shop_statistics_code); ?></textarea>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+
+				  <div id="system_j" class="tab-pane">
+					  <div class="well admin_add_header_well"><?php echo $this->translate('订单设置'); ?></div>
+					  <div class="well admin_add_well">
+						  <div class="message_one">
+						  </div>
+
+						  <div class="control-group">
+							  <label for="input01" class="control-label"><?php echo $this->translate('退货申请'); ?>：</label>
+							  <div class="controls">
+								  <label class="checkbox">
+									  <input type="checkbox" name="user_order_refund" id="user_order_refund" <?php if(isset($this->order_config['user_order_refund']) and $this->order_config['user_order_refund'] == 'true') echo 'checked="checked"'; ?> value="true">
+									  <?php echo $this->translate('启用'); ?>
+								  </label>
+							  </div>
+						  </div>
+                          <div class="control-group">
+                              <label for="input01" class="control-label"><?php echo $this->translate('退货时限'); ?>：</label>
+                              <div class="controls">
+                                  <?php echo $this->translate('确认收货后'); ?>
+                                  <input type="number" name="refund_time_limit" id="refund_time_limit" value="<?php echo isset($this->order_config['refund_time_limit']) ? $this->order_config['refund_time_limit'] : 15; ?>" min="1" class="span2" >
+                                  <?php echo $this->translate('天内，准许退货'); ?>
+                              </div>
+                          </div>
+                          <div class="control-group">
+                              <label for="input01" class="control-label"><?php echo $this->translate('选择送货时间显示'); ?>：</label>
+                              <div class="controls">
+                                  <label class="checkbox">
+                                      <input type="checkbox" name="user_shipping_date" id="user_shipping_date" <?php if(isset($this->order_config['user_shipping_date']) and $this->order_config['user_shipping_date'] == 'true') echo 'checked="checked"'; ?> value="true">
+                                      <?php echo $this->translate('启用'); ?>
+                                  </label>
+                              </div>
+                          </div>
+
+					  </div>
+				  </div>
+
+			  </div>
+              </form>
+</div>
+<?php echo $this->partial('common/editor',array('edit_array'=>array('buy_service','buy'),'edit_config'=>array('initialFrameHeight:300'))); ?>
+<script>
+<?php if ($this->success_msg != '') { ?>
+show_message('.message_one','<?php echo date("Y-m-d H:i:s"); ?>','<?php echo $this->success_msg; ?>','alert-success');
+<?php } ?>
+
+//系统设置保存
+$(document).ready(function() {
+	$("#system_form").validate({
+		rules: {
+			shop_name: {
+				required: true
+			},
+			dbshop_timezone: {
+				required: true
+			},
+			send_from_mail: {
+				email:true
+			}
+		},
+		messages: {
+			shop_name: {
+				required: "<?php echo $this->translate('网站名称不能为空'); ?>"
+			},
+			dbshop_timezone: {
+				required: "<?php echo $this->translate('系统时区不能为空'); ?>"
+			},
+			send_from_mail: {
+				email:"<?php echo $this->translate('请正确填写邮件地址'); ?>"
+			}
+		}
+	});
+});
+
+$("#system_e").load('<?php echo $this->url('email/default',array('action'=>'emailconfig','controller'=>'email')); ?>');
+
+function del_image(id, image_path) {
+    if(window.confirm('<?php echo $this->translate('您确实要删除该图片吗？'); ?>')) {
+        $.post("<?php echo $this->url('system/default',array('action'=>'delFooterImage')); ?>",{id:id,image_path:image_path},
+            function(data){
+                if(data != 'false') {
+                    $('.'+data).remove();
+                    return true;
+                } else {
+                    alert('<?php echo $this->translate('图片删除失败！'); ?>');
+                }
+            });
+    }
+    return false;
+}
+</script>

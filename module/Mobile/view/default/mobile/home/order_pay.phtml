@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title><?php echo $this->translate('微信支付'); ?></title>
+
+    <script type="text/javascript">
+        window.onload = callpay();
+        function jsApiCall(){
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                <?php echo $this->jsApiParameters;?>,
+                function(res){
+                    if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+                        window.location.href="<?php echo $this->url('m_wx/default/wx_order_id', array('action'=>'wxpayfinish', 'order_id'=>$this->order_id), array('query'=>array('state'=>'ok'))); ?>";
+                    }else if(res.err_msg == "get_brand_wcpay_request:cancel"){
+                        window.location.href="<?php echo $this->url('m_wx/default/wx_order_id', array('action'=>'wxpayfinish', 'order_id'=>$this->order_id), array('query'=>array('state'=>'cancel'))); ?>";
+                    }else{
+                        window.location.href="<?php echo $this->url('m_wx/default/wx_order_id', array('action'=>'wxpayfinish', 'order_id'=>$this->order_id), array('query'=>array('state'=>'false'))); ?>";
+                    }
+                }
+            );
+        }
+
+        function callpay(){
+            if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                }else if (document.attachEvent){
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            }else{
+                jsApiCall();
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

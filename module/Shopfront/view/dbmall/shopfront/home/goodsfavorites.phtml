@@ -1,0 +1,61 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('我的收藏'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-favorite-box">
+                    <div class="box-hd">
+                        <h3 class="title">
+                            <?php echo $this->translate('我的收藏'); ?>
+                        </h3>
+                    </div>
+                    <div class="box-bd">
+                        <div class="xm-goods-list-wrap">
+                            <?php if ($this->favorites_list->getTotalItemCount() > 0) { ?>
+                                <ul class="xm-goods-list clearfix">
+                                <?php foreach ($this->favorites_list as $favorites_value) { ?>
+                                <li class="">
+                                    <div class="xm-goods-item">
+                                        <div class="item-thumb">
+                                            <a target="_blank" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$favorites_value['goods_id'], 'class_id'=>$favorites_value['class_id'])); ?>"><img src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($favorites_value['goods_thumbnail_image'])); ?>"></a>
+                                        </div>
+                                        <div class="item-info">
+
+                                        </div>
+                                        <h3 class="item-title"><a target="_blank" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$favorites_value['goods_id'], 'class_id'=>$favorites_value['class_id'])); ?>"><?php echo $this->escapeHtml($favorites_value['goods_name']); ?></a></h3>
+                                        <div class="item-price">&nbsp;</div>
+                                        <div class="item-star">
+                                            <span class="item-comments">&nbsp;</span>
+                                        </div>
+                                        <div class="item-actions">
+                                            <a href="<?php echo $this->url('frontfavorites/default/favorites_id', array('action'=>'del','favorites_id'=>$favorites_value['favorites_id'])); ?>" onclick="return window.confirm('<?php echo $this->translate('您确实要删除该收藏商品吗？'); ?>');" class="btn  btn-small btn-yellow J_delFav"><?php echo $this->translate('删除'); ?></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                            <?php echo ( count($this->favorites_list) > 0 ) ? $this->paginationControl($this->favorites_list, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('frontfavorites/default/favorites_page', array('action'=>'index')))) : ""; ?>
+                            <?php } else { ?>
+                            <p><?php echo $this->translate('暂无商品收藏！'); ?></p>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

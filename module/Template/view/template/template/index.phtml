@@ -1,0 +1,164 @@
+<div style="height:30px;border-bottom:4px solid #DFDFDF;">
+  <p class="pull-left chanage-button">
+      <a href="<?php echo $this->url('template/default'); ?>" class="selected"><?php echo $this->translate('电脑模板管理'); ?></a>
+      <a href="<?php echo $this->url('phonetemplate/default'); ?>"><?php echo $this->translate('手机模板管理'); ?></a>
+      <small><strong style="color: red;"><?php echo $this->translate('特别提醒：启用不同模板，首页和广告等需要单独设置(切换不会丢失)，可点击模板教程查看详情。'); ?></strong></small>
+  </p>
+  <p class="pull-right">
+      <a href="<?php echo $this->url('template/default', array('controller'=>'Template', 'action'=>'installTemplate')); ?>" class="btn btn-small btn-primary"><i class="icon-plus icon-white"></i> <?php echo $this->translate('在线安装新模板'); ?></a>&nbsp;
+      <a href="<?php echo $this->myviewalias()->dbshopHelpUrl('admin_template'); ?>" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+  </p>
+</div>
+<div class="well well-small" style="margin-top:6px; background-color:#FFF;">
+    <table width="100%">
+        <tbody>
+        <?php
+        if(isset($this->other_template) and !empty($this->other_template)) {
+            $b_num = count($this->other_template)-1;
+            foreach($this->other_template as $b_key => $other_template) {
+                $b_y_num = $b_key%4; if ($b_key == 0) echo '<tr>';
+                if ($b_y_num==0 and $b_key!=0) echo '</tr><tr>';
+                if ($b_num==$b_key) {
+        ?>
+            <td width="25%">
+        	<div style="border: 1px solid #aaa;margin: 5px 8px 5px 8px;padding: 5px;position: relative;">
+                <?php if(isset($other_template['template_info']['version_number']) and isset($this->onlineTemplte[$other_template['template_name']]['template_version_number']) and $this->onlineTemplte[$other_template['template_name']]['template_version_number'] > $other_template['template_info']['version_number']) { ?>
+                <div class="template-update" id="template-update-<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>">
+                    <strong><?php echo $this->translate('模板有更新'); ?></strong>&nbsp;
+                    <button class="btn btn-primary btn-small" onclick="start_update_template(<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>);"><?php echo $this->translate('点击更新'); ?></button>
+                    <button class="btn btn-small" onclick="show_online_template_info(<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>,'<?php echo $this->onlineTemplte[$other_template['template_name']]['template_name']; ?>');"><?php echo $this->translate('查看更新内容'); ?></button>
+                    <div id="template_info_<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>" style="display: none;"><?php echo $this->onlineTemplte[$other_template['template_name']]['template_version_update_info']; ?></div>
+                </div>
+                <?php } ?>
+        		<img src="<?php echo $this->basePath('/public/css/'.$other_template['template_name'].'/img/'.$other_template['template_name'].'.jpg'); ?>" style="width: 100%;"  />
+            	<div class="caption">
+                	<table width="100%">
+                    	<tr bgcolor="#CCCCCC">
+                            <td><h3>&nbsp;<?php echo $other_template['template_name']; ?></h3></td>
+                            <td align="right">
+                                <?php if(isset($other_template['template_info']['help_document_url']) and !empty($other_template['template_info']['help_document_url'])) { ?>
+                                <a href="<?php echo $other_template['template_info']['help_document_url']; ?>" target="_blank" style="cursor:pointer;" class="btn btn-info btn-large"><?php echo $this->translate('教程'); ?></a>&nbsp;
+                                <?php } ?>
+
+                                <?php if($b_key == 0) { ?>
+                                    <button class="btn btn-large btn-success"><?php echo $this->translate('已启用'); ?></button>&nbsp;
+                                <?php } else { ?>
+                                    <a href="<?php echo $this->url('template/default/templateinfo', array('controller'=>'Template', 'action'=>'changeTemplate', 'template_name'=>$other_template['template_name'])); ?>" class="btn btn-primary btn-large" style="cursor:pointer;"><?php echo $this->translate('启用'); ?></a>&nbsp;
+                                <?php } ?>
+
+                                <?php if(isset($this->onlineTemplte[$other_template['template_name']]['template_version_number'])) { ?>
+                                <span id="template-install-<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>"><a href="javascript:;" onclick="start_install_template(<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>);" class="btn btn-warning btn-large" style="cursor:pointer;"><?php echo $this->translate('重装'); ?></a></span>&nbsp;
+                                <?php } ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        	</div>
+            </td>
+            <?php $y_td_num = 4-$b_y_num-1;
+            for($i=1;$i<=$y_td_num; $i++) {
+                echo '<td width="25%"></td>';
+            }
+            ?>
+            </tr>
+        <?php } else { ?>
+            <td width="25%">
+                    	<div style="border: 1px solid #aaa;margin: 5px 8px 5px 8px;padding: 5px;position: relative;">
+                <?php if(isset($other_template['template_info']['version_number']) and isset($this->onlineTemplte[$other_template['template_name']]['template_version_number']) and $this->onlineTemplte[$other_template['template_name']]['template_version_number'] > $other_template['template_info']['version_number']) { ?>
+                <div class="template-update" id="template-update-<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>">
+                    <strong><?php echo $this->translate('模板有更新'); ?></strong>&nbsp;
+                    <button class="btn btn-primary btn-small" onclick="start_update_template(<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>);"><?php echo $this->translate('点击更新'); ?></button>
+                    <button class="btn btn-small" onclick="show_online_template_info(<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>,'<?php echo $this->onlineTemplte[$other_template['template_name']]['template_name']; ?>');"><?php echo $this->translate('查看更新内容'); ?></button>
+                    <div id="template_info_<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>" style="display: none;"><?php echo $this->onlineTemplte[$other_template['template_name']]['template_version_update_info']; ?></div>
+                </div>
+                <?php } ?>
+        		<img src="<?php echo $this->basePath('/public/css/'.$other_template['template_name'].'/img/'.$other_template['template_name'].'.jpg'); ?>" style="width: 100%;" />
+            	<div class="caption">
+                	<table width="100%">
+                    	<tr bgcolor="#CCCCCC">
+                            <td><h3>&nbsp;<?php echo $other_template['template_name']; ?></h3></td>
+                            <td align="right">
+                                <?php if(isset($other_template['template_info']['help_document_url']) and !empty($other_template['template_info']['help_document_url'])) { ?>
+                                <a href="<?php echo $other_template['template_info']['help_document_url']; ?>" target="_blank" style="cursor:pointer;" class="btn btn-info btn-large"><?php echo $this->translate('教程'); ?></a>&nbsp;
+                                <?php } ?>
+
+                                <?php if($b_key == 0) { ?>
+                                    <button class="btn btn-large btn-success"><?php echo $this->translate('已启用'); ?></button>&nbsp;
+                                <?php } else { ?>
+                                    <a href="<?php echo $this->url('template/default/templateinfo', array('controller'=>'Template', 'action'=>'changeTemplate', 'template_name'=>$other_template['template_name'])); ?>" class="btn btn-primary btn-large" style="cursor:pointer;"><?php echo $this->translate('启用'); ?></a>&nbsp;
+                                <?php } ?>
+
+                                <?php if(isset($this->onlineTemplte[$other_template['template_name']]['template_version_number'])) { ?>
+                                <span id="template-install-<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>"><a href="javascript:;" onclick="start_install_template(<?php echo $this->onlineTemplte[$other_template['template_name']]['template_id']; ?>);" class="btn btn-warning btn-large" style="cursor:pointer;"><?php echo $this->translate('重装'); ?></a></span>&nbsp;
+                                <?php } ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        	</div>
+            </td>
+        <?php } } } ?>
+        </tbody>
+    </table>
+</div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel"></h3>
+    </div>
+    <div class="modal-body">
+        <div class="control-group">
+            <label class="control-label"><?php echo $this->translate('更新内容'); ?></label>
+            <div class="controls" id="show_template_body">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" aria-hidden="true" class="btn"><?php echo $this->translate('关闭'); ?></button>
+    </div>
+</div>
+<script>
+    function show_online_template_info(template_id, tempalate_title) {
+        $('#myModalLabel').html(tempalate_title);
+        $('#show_template_body').html($('#template_info_'+template_id).html());
+        $('#myModal').modal('show');
+    }
+    function start_update_template(template_id) {
+        if(window.confirm('<?php echo $this->translate('更新模板，将对现有模板文件进行覆盖，如果您对模板文件代码有所改动，请提前备份。您确定要更新这套模板吗？'); ?>')) {
+            var img_str = '<img src="<?php echo $this->basePath('public/admin/img/update_loading_red.gif'); ?>" border="0" /><strong><?php echo $this->translate('更新中……'); ?></strong>';
+            $('#template-update-'+template_id).html(img_str);
+
+            $.post("<?php echo $this->url('template/default',array('controller'=>'Template', 'action'=>'startInstallTemplate')); ?>",{template_id:template_id},
+                function(data){
+                    if(data == 'true') {
+                        alert('<?php echo $this->translate('模板更新成功！'); ?>');
+                    } else {
+                        alert(data);
+                        $('#template-update-'+template_id).html('<?php echo $this->translate('刷新页面，再次尝试更新！'); ?>');
+                        return false;
+                    }
+                    window.location.href="<?php echo $this->url('template/default'); ?>";
+                });
+        }
+    }
+    function start_install_template(template_id) {
+        if(window.confirm('<?php echo $this->translate('重装模板，将对现有模板文件进行覆盖，如果您对模板文件代码有所改动，请提前备份。您确定要重新安装这套模板吗？'); ?>')) {
+            var img_str = '<img src="<?php echo $this->basePath('public/admin/img/update_loading_black.gif'); ?>" border="0" />';
+            $('#template-install-'+template_id).html(img_str);
+
+            $.post("<?php echo $this->url('template/default',array('controller'=>'Template', 'action'=>'startInstallTemplate')); ?>",{template_id:template_id},
+                function(data){
+                    if(data == 'true') {
+                        alert('<?php echo $this->translate('模板重装成功！'); ?>');
+                    } else {
+                        alert(data);
+                        $('#template-install-'+template_id).html('<?php echo $this->translate('刷新页面，再次尝试重装！'); ?>');
+                        return false;
+                    }
+                    window.location.href="<?php echo $this->url('template/default'); ?>";
+                });
+        }
+    }
+</script>

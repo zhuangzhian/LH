@@ -1,0 +1,1 @@
+您在{shopname}购买的虚拟商品{goodsname} 账号：{virtualaccount} 密码：{virtualpassword}

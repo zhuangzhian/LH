@@ -1,0 +1,90 @@
+<!--顶部-->
+<div class="site-topbar" id="site-topbar">
+<?php if(!defined('FRONT_CACHE_STATE') or FRONT_CACHE_STATE != 'true') { ?>
+    <div class="container">
+        <div class="topbar-nav">
+            <?php
+            $frontCurrency = $this->frontwebsite()->getFrontCurrency();
+            if($frontCurrency and count($frontCurrency)>1) {
+                foreach($frontCurrency as $currency_value) {
+                    if($currency_value['currency_state'] == '0') continue;
+                    ?>
+                    <a style="cursor: pointer;" href="<?php echo $this->url('shopfront/default/currency-code', array('action'=>'chanageCurrency','code'=>$currency_value['currency_code'])); ?>"><span class="badge  <?php if($this->frontwebsite()->getFrontDefaultCurrency()) { if ($this->frontwebsite()->getFrontDefaultCurrency() == $currency_value['currency_code']) echo 'badge-success'; } elseif ($currency_value['currency_type'] == 1) echo 'badge-success'; ?>"><?php echo $currency_value['currency_name']; ?></span></a>
+                <?php } } ?>
+        </div>
+        <div class="topbar-info J_userInfo">
+            <ul class="list-inline">
+            <?php if($this->frontwebsite()->getUserSession('user_id') != '') {  ?>
+                <?php echo $this->translate('欢迎您'); ?>，<li><a href="<?php echo $this->url('fronthome/default', array('action'=>'useredit')); ?>"><?php echo $this->escapeHtml($this->frontwebsite()->getUserSession('user_name')); ?></a></li><li><a href="<?php echo $this->url('frontuser/default',array('action'=>'loginout')); ?>"><?php echo $this->translate('退出'); ?></a></li><span class="sep">|</span>
+            <?php } elseif($this->frontwebsite()->getUserIni('front_other_login_show') == '1') { ?>
+                <?php
+                $otherLoginArray = $this->frontwebsite()->getUserOtherLoginIni();
+                if(!empty($otherLoginArray)) {
+                foreach($otherLoginArray as $othKey => $othValue) {
+                if($othValue['login_state'] == 'true') {
+                    $othKey = strtolower($othKey);
+                    ?>
+                <li><a href="<?php echo $this->url('frontuser/default',array('action'=>'otherlogin'), array('query'=>array('login_type'=>$othKey))); ?>"><img src="<?php echo $this->basePath('public/img/login/'.$othKey.'_login.png'); ?>"></a></li>
+                    <?php
+                        }
+                    }
+                }
+            ?>
+            <?php } ?>
+            <li><a href="<?php echo $this->url('fronthome/default'); ?>"><?php echo $this->translate('用户中心'); ?></a></li>
+            <li><a href="<?php echo $this->url('frontorder/default'); ?>"><?php echo $this->translate('我的订单'); ?></a></li>
+            <?php if($this->frontwebsite()->getUserSession('user_id') == '') {  ?>
+                <li><a href="<?php echo $this->url('frontuser/default',array('action'=>'login')); ?>"><?php echo $this->translate('登录'); ?></a></li>
+                <li><a href="<?php echo $this->url('frontuser/default',array('action'=>'register')); ?>"><?php echo $this->translate('注册'); ?></a></li>
+            <?php } ?>
+            <?php
+            $shop_top_menu = $this->frontwebsite()->shopFrontMenu(1);
+            if(is_array($shop_top_menu) and !empty($shop_top_menu)) {
+                foreach($shop_top_menu as $top_value) {
+                    ?>
+                    <li><a href="<?php echo $top_value['navigation_url']; ?>" <?php if($top_value['navigation_new_window'] == 1) echo 'target="_blank"'; ?>><?php echo $top_value['navigation_title']; ?></a></li>
+                <?php } } ?>
+            </ul>
+        </div>
+    </div>
+<?php } ?>
+</div>
+<!--头部-->
+<div class="site-header">
+    <div class="container">
+        <div class="site-logo"> <a href="<?php echo $this->url('shopfront/default'); ?>" class="logo"><img src="<?php echo ($this->frontwebsite()->websiteInfo('shop_logo') != '' ? $this->basePath($this->frontwebsite()->websiteInfo('shop_logo')) : $this->basePath('/public/css/dbmall/img/shop_logo.png')); ?>" style="height: 90px;"></a></div>
+        <div class="header-info">
+            <?php if($this->frontwebsite()->websiteInfo('shop_QRcode')) { ?>
+                <img alt="<?php echo $this->translate('手机扫描后，访问手机站点'); ?>" title="<?php echo $this->translate('手机扫描后，访问手机站点'); ?>" src="<?php echo  $this->basePath($this->frontwebsite()->createQRcode($this->serverUrl().$this->url('mobile/default'), $this->serverUrl().$this->url('mobile/default'), 'shop')); ?>" style="width: 50px;height: 50px;margin-right: 10px;">
+            <?php } ?>
+            <div class="search-section">
+                <form method="get" action="<?php echo $this->url('frontgoodslist/default', array('action'=>'goodsSearch')); ?>" class="search-form clearfix">
+                    <input type="text" name="keywords" value="<?php echo isset($_GET['keywords']) ? $this->escapehtml($_GET['keywords']) : ''; ?>" placeholder="<?php echo $this->translate('简简单单搜索'); ?>" autocomplete="off" class="search-text">
+                    <input type="submit" class="search-btn iconfont" value="">
+                </form>
+            </div>
+            <div class="cart-section">
+                <a href="<?php echo $this->url('frontcart/default'); ?>" class="mini-cart" id="J_miniCart"><i class="iconfont"></i><?php echo $this->translate('购物车'); ?>&nbsp;
+                    <?php if(!defined('FRONT_CACHE_STATE') or FRONT_CACHE_STATE != 'true') { ?>
+                        <?php $dbshopHeaderCartNum = $this->frontwebsite()->cartGoodsNum(); ?>
+                        <span class="mini-cart-num J_cartNum" id="top_cart" style="<?php if ($dbshopHeaderCartNum <= 0) echo 'display:none;';?>"><?php echo $dbshopHeaderCartNum; ?></span>
+                    <?php } else { ?>
+                        <span class="mini-cart-num J_cartNum" id="top_cart" style="display:none;">0</span>
+                    <?php } ?>
+                </a>
+            </div>
+        </div>
+    </div>
+    <?php if(defined('FRONT_CACHE_STATE') and FRONT_CACHE_STATE == 'true') { ?>
+    <script>
+        $.get('<?php echo $this->url('frontcart/default',array('action'=>'ajaxShopInfo')); ?>',{}, function(data){
+            if(data.goods_num > 0 ) {
+                $("#top_cart").html(data.goods_num);
+                $('#top_cart').css('display','');
+            }
+        },'json');
+        $.get('<?php echo $this->url('shopfront/default',array('action'=>'ajaxheader')); ?>',{}, function(html){
+            $("#site-topbar").html(html);
+        });
+    </script>
+<?php } ?>

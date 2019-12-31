@@ -1,0 +1,45 @@
+<div style="border-bottom:none;" class="ect-pro-list user-order">
+    <ul>
+        <?php if ($this->user_coupon_list->getTotalItemCount() > 0) { ?>
+            <?php foreach ($this->user_coupon_list as $coupon_value) { ?>
+            <li class="single_item">
+            <img class="pull-left" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage('')); ?>">
+                <dl>
+                    <dt>
+                    <h4 class="title"><?php echo $this->translate('名称'); ?>：<?php echo $this->escapeHtml($coupon_value['coupon_name']); ?></h4>
+                    </dt>
+                    <dd><?php echo $this->translate('描述'); ?>：<?php echo $this->escapeHtml($coupon_value['coupon_info']); ?></dd>
+                    <dd><?php echo $this->translate('状态'); ?>：
+                        <span>
+                                    <?php
+                                    $couponStateArray = array(0=>$this->translate('未生效优惠券'), 1=>$this->translate('可用优惠券'), 2=>$this->translate('已用优惠券'), 3=>$this->translate('过期优惠券'));
+                                    $color = array(0=>'#999', 1=>'#468847', 2=>'#3a87ad', 3=>'#dd4b39');
+                                    echo '<strong style="color:'.$color[$coupon_value['coupon_use_state']].'">'.$couponStateArray[$coupon_value['coupon_use_state']].'</strong>';
+                                    ?>
+                        </span>
+                    </dd>
+                    <dd><?php echo $this->translate('期限'); ?>：
+                        <?php
+                        $start_time = empty($coupon_value['coupon_start_use_time']) ? '' : date("Y-m-d H:i", $coupon_value['coupon_start_use_time']);
+                        $end_time   = empty($coupon_value['coupon_expire_time']) ? '' : date("Y-m-d H:i", $coupon_value['coupon_expire_time']);
+                        if($start_time == '' and $end_time == '') {
+                            $start_and_end_time = $this->translate('长期有效');
+                        } elseif ($end_time != '' and time() > $coupon_value['coupon_expire_time']) {
+                            $start_and_end_time = '<font color="#FF0000">' . $this->translate('已经过期') . '</font>';
+                        } else {
+                            $start_and_end_time = (empty($start_time) ? $this->translate('无') : $start_time) . ' / ' . (empty($end_time) ? $this->translate('无') : $end_time);
+                        }
+
+                        echo $start_and_end_time; ?>
+                    </dd>
+                </dl>
+        </li>
+        <?php } ?>
+        <div>
+            <?php echo ( count($this->user_coupon_list) > 0 ) ? $this->paginationControl($this->user_coupon_list, 'Sliding', 'mobile/page',array('page_url'=>$this->url('m_home/default', array('action'=>'userCoupon')))) : ""; ?>
+        </div>
+        <?php } else { ?>
+        <li><?php echo '<p>' . $this->translate('暂无优惠券！') . '</p>'; ?></li>
+        <?php } ?>
+    </ul>
+</div>

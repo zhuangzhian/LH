@@ -1,0 +1,62 @@
+2019-12-23T08:58:15+08:00 ERR (3): Exception:
+1: Connect Error: SQLSTATE[HY000] [1045] Access denied for user 'sql_127_0_0_21'@'localhost' (using password: YES)
+2: SQLSTATE[HY000] [1045] Access denied for user 'sql_127_0_0_21'@'localhost' (using password: YES)
+Trace:
+#0 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Pdo.php(249): Zend\Db\Adapter\Driver\Pdo\Connection->connect()
+#1 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\Sql\Sql.php(128): Zend\Db\Adapter\Driver\Pdo\Pdo->createStatement()
+#2 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(237): Zend\Db\Sql\Sql->prepareStatementForSqlObject(Object(Zend\Db\Sql\Select))
+#3 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#4 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(195): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#5 D:\wwwroot\dbshop21\module\Links\src\Links\Model\LinksTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->select(Object(Closure))
+#6 D:\wwwroot\dbshop21\module\Shopfront\src\Shopfront\Controller\IndexController.php(78): Links\Model\LinksTable->listLinks(Array)
+#7 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(82): Shopfront\Controller\IndexController->indexAction()
+#8 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 D:\wwwroot\dbshop21\index.php(43): Zend\Mvc\Application->run()
+#18 {main}
+2019-12-23T11:39:22+08:00 ERR (3): Exception:
+1: Statement could not be executed (42S02 - 1146 - Table 'sql_127_0_0_21.dbshop_links' doesn't exist)
+2: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sql_127_0_0_21.dbshop_links' doesn't exist
+Trace:
+#0 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(238): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(195): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\wwwroot\dbshop21\module\Links\src\Links\Model\LinksTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->select(Object(Closure))
+#4 D:\wwwroot\dbshop21\module\Shopfront\src\Shopfront\Controller\IndexController.php(78): Links\Model\LinksTable->listLinks(Array)
+#5 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(82): Shopfront\Controller\IndexController->indexAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\wwwroot\dbshop21\index.php(43): Zend\Mvc\Application->run()
+#16 {main}
+2019-12-23T11:50:04+08:00 ERR (3): Exception:
+1: Bad Request
+Trace:
+#0 D:\wwwroot\dbshop21\module\Package\src\Package\Controller\PackageController.php(262): SoapClient->__call('checkUcenterUse...', Array)
+#1 D:\wwwroot\dbshop21\module\Package\src\Package\Controller\PackageController.php(246): Package\Controller\PackageController->dbshopSoapClient('checkUcenterUse...', Array)
+#2 D:\wwwroot\dbshop21\module\Package\src\Package\Controller\PackageController.php(41): Package\Controller\PackageController->checkUpdateUserLogin()
+#3 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(82): Package\Controller\PackageController->indexAction()
+#4 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 D:\wwwroot\dbshop21\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 D:\wwwroot\dbshop21\index.php(43): Zend\Mvc\Application->run()
+#14 {main}

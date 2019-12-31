@@ -1,0 +1,59 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('微信绑定'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-order-detail-box">
+                    <div class="box-hd">
+                        <h3 class="title">
+                            <?php echo $this->translate('微信绑定'); ?>
+                        </h3>
+                        <?php echo $this->partial('shopfront/home/user-menu.phtml'); ?>
+                    </div>
+                    <div class="box-bd">
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label"><?php echo $this->translate('绑定状态'); ?>：</label>
+                                <div class="controls" style="font-size: 14px;padding-top: 5px;">
+                                    <?php if(isset($this->other_login->ol_id) and !empty($this->other_login->ol_id)) { ?>
+                                        <strong style="color: red;"><?php echo $this->translate('已经与微信绑定完成'); ?></strong>
+                                    <?php } else echo $this->translate('未绑定'); ?>
+                                </div>
+                            </div>
+                            <?php if(!isset($this->other_login->ol_id)) { ?>
+                                <div class="control-group">
+                                    <label class="control-label"><?php echo $this->translate('微信绑定'); ?>：</label>
+                                    <div class="controls">
+                                        <a href="<?php echo $this->url('frontuser/default', array('action'=>'otherlogin'), array('query'=>array('login_type'=>'weixin'))); ?>" class="btn btn-primary"><?php echo $this->translate('点击完成微信绑定'); ?></a>
+                                    </div>
+                                </div>
+                            <?php } else { ?>
+                                <div class="control-group">
+                                    <label class="control-label"><?php echo $this->translate('微信解绑'); ?>：</label>
+                                    <div class="controls">
+                                        <a onclick="return window.confirm('您确实要解绑微信吗？')" href="<?php echo $this->url('fronthome/default', array('action'=>'delotherlogin'), array('query'=>array('login_type'=>'weixin'))); ?>" class="btn btn-danger"><?php echo $this->translate('点击解绑微信'); ?></a>
+                                        <P style="color: red;font-size: 14px;">(<?php echo $this->translate('如果您要解绑并且从来没有设置过登陆密码，请在解绑前设置登录密码，否则解绑后将无法登陆'); ?>)</P>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

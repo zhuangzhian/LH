@@ -1,0 +1,29 @@
+<?php
+if(isset($this->message) and !empty($this->message)) {
+ echo $this->message;
+} else {
+?>
+<form class="validforms" method="post" action="">
+    <input type="hidden" name="step" value="step4">
+    <div class="flow-consignee ect-bg-colorf">
+        <section>
+            <ul>
+                <li>
+                    <div class="input-text"><b><?php echo $this->translate('用户名称'); ?>：</b><span><?php echo $this->escapeHtml($this->user_name); ?></span></div>
+                </li>
+                <li>
+                    <div class="input-text"><b><?php echo $this->translate('新密码'); ?><font class="must_add_value">*</font>：</b><span>
+                <input type="password" datatype="*6-16" name="user_password" class="inputBg" placeholder="<?php echo $this->translate('请输入新密码'); ?>" nullmsg="<?php echo $this->translate('请输入新密码'); ?>">
+                </span></div>
+                </li>
+                <li>
+                    <div class="input-text"><b><?php echo $this->translate('确认密码'); ?><font class="must_add_value">*</font>：</b><span>
+                <input type="password" datatype="*6-16" name="user_com_passwd" recheck="user_password"  class="inputBg" placeholder="<?php echo $this->translate('请输入确认密码'); ?>" errormsg="<?php echo $this->translate('您两次输入的账号密码不一致！'); ?>">
+                </span></div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="ect-padding-lr ect-padding-tb"> <input type="submit" value="修改" class="btn btn-info ect-btn-info ect-colorf"></div>
+</form>
+<?php } ?>

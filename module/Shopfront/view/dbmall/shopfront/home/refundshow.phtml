@@ -1,0 +1,233 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('退货详情'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-order-detail-box">
+                    <div class="box-hd">
+                        <h3 class="title">
+                            <?php echo $this->translate('订单编号'); ?>：<?php echo $this->refund_info->order_sn; ?>
+                        </h3>
+                        <div class="more">
+                            <?php
+                            $type_array  = array(1=>$this->translate('退款到账户余额'), 2=>$this->translate('退款到银行'), 3=>$this->translate('退款到第三方支付'));
+                            $state_array = array(0=>$this->translate('等待处理'), 1=>$this->translate('退款成功'), 2=>$this->translate('退款拒绝'));
+                            ?>
+                            <?php echo $this->translate('退货状态'); ?>：<?php echo $state_array[$this->refund_info->refund_state]; ?>
+                            <a href="<?php echo $this->url('frontrefund/default'); ?>" class="btn btn-primary btn-small"><?php echo $this->translate('返回列表'); ?></a>
+                        </div>
+                    </div>
+
+                    <div class="order-delivery-address" style="margin-top: 15px;">
+                        <div class="order-text-section">
+                            <h4><?php echo $this->translate('申请详情'); ?></h4>
+                            <table class="order-text-table">
+                                <tbody>
+                                <tr>
+                                    <td width="50%"><?php echo $this->translate('订单编号'); ?>：<?php echo $this->refund_info->order_sn; ?></td>
+                                    <td width="50%"><?php echo $this->translate('申请时间'); ?>：<?php echo date("Y".$this->translate('年')."m".$this->translate('月')."d".$this->translate('日')." H".$this->translate('时')."i".$this->translate('分')."s".$this->translate('秒'), $this->refund_info->refund_time); ?></td>
+                                </tr>
+                                <tr>
+                                    <td <?php if($this->refund_info->refund_type == 1) echo 'colspan="2"'; ?>><?php echo $this->translate('退款方式'); ?>：<?php echo $type_array[$this->refund_info->refund_type]; ?></td>
+                                    <?php if($this->refund_info->refund_type != 1) { ?>
+                                    <td>
+                                        <?php if($this->refund_info->refund_type == 2) { ?>
+                                            <?php echo $this->translate('开户银行').'：'.$this->escapeHtml($this->refund_info->bank_name); ?><br>
+                                            <?php echo $this->translate('开户姓名').'：'.$this->escapeHtml($this->refund_info->bank_account); ?><br>
+                                            <?php echo $this->translate('收款卡号').'：'.$this->escapeHtml($this->refund_info->bank_card_number); ?>
+                                        <?php } ?>
+                                        <?php if($this->refund_info->refund_type == 3) { ?>
+                                            <?php echo $this->translate('支付名称').'：'.$this->escapeHtml($this->refund_info->bank_name); ?><br>
+                                            <?php echo $this->translate('真实姓名').'：'.$this->escapeHtml($this->refund_info->bank_account); ?><br>
+                                            <?php echo $this->translate('收款账号').'：'.$this->escapeHtml($this->refund_info->bank_card_number); ?>
+                                        <?php } ?>
+                                    </td>
+                                    <?php } ?>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><?php echo $this->translate('退货原因').'：'.$this->escapeHtml($this->refund_info->refund_info); ?></td>
+                                </tr>
+                                <tr style="background-color: #a7a7a7;color: #fff;">
+                                    <td colspan="2"><?php echo $this->translate('退货商品'); ?></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="font-size: 13px;">
+                                        <?php
+                                        $refundGoods = explode(',', $this->refund_info->goods_id_str);
+                                        foreach($this->order_goods as $g_value) {
+                                            if(!in_array($g_value['order_goods_id'], $refundGoods)) continue;
+                                            ?>
+                                            <p><?php echo $this->escapeHtml($g_value['goods_name']); ?></p>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="order-text-section">
+                            <h4><?php echo $this->translate('处理详情'); ?> </h4>
+                            <table class="order-text-table">
+                                <tbody>
+                                <?php if(empty($this->refund_info->finish_refund_time)) { ?>
+                                <tr>
+                                    <td colspan="2"><?php echo $this->translate('等待处理，暂无信息'); ?></td>
+                                </tr>
+                                <?php } else { ?>
+                                    <tr>
+                                        <td width="50%"><b><?php echo $this->translate('处理结果：'); ?></b><?php echo $state_array[$this->refund_info->refund_state]; ?></td>
+                                        <td width="50%"><b><?php echo $this->translate('处理时间：'); ?></b><?php echo date("Y".$this->translate('年')."m".$this->translate('月')."d".$this->translate('日')." H".$this->translate('时')."i".$this->translate('分')."s".$this->translate('秒'), $this->refund_info->finish_refund_time); ?></td>
+                                    </tr>
+                                    <?php if($this->refund_info->refund_state == 1) { ?>
+                                        <tr>
+                                            <td colspan="2"><b><?php echo $this->translate('退货金额：'); ?></b><?php echo $this->refund_info->refund_price; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <tr>
+                                        <td colspan="2"><b><?php echo $this->translate('处理意见：'); ?></b><?php echo $this->escapeHtml($this->refund_info->re_refund_info); ?></td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="box-bd">
+                        <div class="order-detail-tables">
+                            <table class="order-detail-table">
+                                <tbody>
+                                <?php foreach ($this->order_goods as $goods_value) { ?>
+                                <tr>
+                                    <td class="column-detail">
+                                        <ul class="order-goods-list">
+                                            <li class="first">
+                                                <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goods_value['goods_id'], 'class_id'=>$goods_value['class_id'])); ?>" target="_blank"><img alt="<?php echo $this->escapeHtml($goods_value['goods_name']); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goods_value['goods_image'])); ?>" class="goods-thumb"></a>
+                                                <a class="goods-name" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goods_value['goods_id'], 'class_id'=>$goods_value['class_id'])); ?>" target="_blank"><?php echo $this->escapeHtml($goods_value['goods_name']); ?></a>
+                                                <span class="goods-price"><?php echo $this->order_info->currency_symbol . $goods_value['goods_shop_price'] . $this->order_info->currency_unit; ?></span>
+                                                <span class="goods-amount">x <?php echo $goods_value['buy_num']; ?></span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="column-price">
+                                        <div class="order-info order-price"><?php echo $this->escapeHtml($goods_value['goods_item']);?></div>
+                                    </td>
+                                    <td class="column-date">
+                                        <?php
+                                        if($goods_value['goods_extend_info']) {
+                                            echo $goods_value['goods_extend_info'];
+                                        } else {
+                                            echo $this->translate('无');
+                                        }
+                                        ?>
+                                    </td>
+                                    <td class="column-action">
+                                        <strong><?php echo $this->order_info->currency_symbol . $goods_value['goods_amount'] . $this->order_info->currency_unit; ?></strong>
+                                    </td>
+                                    <td class="column-action">
+                                        <?php if(in_array($goods_value['order_goods_id'], $refundGoods)) echo '<strong style="color: red">'.$this->translate('已申请退货').'</strong>'; ?>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                <tr>
+                                    <td colspan="5" class="column-delivery">
+                                        <div class="order-delivery-status">
+                                            <ol class="order-delivery-steps clearfix">
+                                                <li class="step step-first step-now">
+                                                    <div class="progress">
+                                                        <span class="text"><?php echo $this->translate('下单时间'); ?></span>
+                                                    </div>
+                                                    <div class="info"><?php echo date("Y".$this->translate('年')."m".$this->translate('月')."d".$this->translate('日')." H".$this->translate('时')."i".$this->translate('分'), $this->order_info->order_time); ?></div>
+                                                </li>
+                                                <li class="step <?php if($this->order_info->pay_time != '') echo 'step-now'; ?>">
+                                                    <div class="progress">
+                                                        <span class="text"><?php echo $this->translate('付款时间'); ?></span>
+                                                    </div>
+                                                    <div class="info">
+                                                        <?php if($this->order_info->pay_time != '') echo date("Y".$this->translate('年')."m".$this->translate('月')."d".$this->translate('日')." H".$this->translate('时')."i".$this->translate('分'), $this->order_info->pay_time); ?>
+                                                    </div>
+                                                </li>
+                                                <li class="step <?php if($this->order_info->express_time != '') echo 'step-now'; ?>">
+                                                    <div class="progress">
+                                                        <span class="text"><?php echo $this->translate('发货时间'); ?></span>
+                                                    </div>
+                                                    <div class="info">
+                                                        <?php if($this->order_info->express_time != '') echo date("Y".$this->translate('年')."m".$this->translate('月')."d".$this->translate('日')." H".$this->translate('时')."i".$this->translate('分'), $this->order_info->express_time); ?>
+                                                    </div>
+                                                </li>
+                                                <li class="step step-last <?php if($this->order_info->finish_time != '') echo 'step-now'; ?>">
+                                                    <div class="progress">
+                                                        <span class="text"><?php echo $this->translate('完成时间'); ?></span>
+                                                    </div>
+                                                    <div class="info">
+                                                        <?php if($this->order_info->finish_time != '') echo date("Y".$this->translate('年')."m".$this->translate('月')."d".$this->translate('日')." H".$this->translate('时')."i".$this->translate('分'), $this->order_info->finish_time); ?>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="order-detail-total clearfix">
+                                <?php if ($this->order_info->integral_num > 0) { ?>
+                                    <p style="text-align: right;margin-bottom: 10px;"><?php echo $this->translate('消费积分'); ?>(<?php if ($this->order_info->integral_rule_info != '') {echo $this->order_info->integral_rule_info . ',&nbsp;';} echo $this->translate('交易完成确认收货后才得到积分'); ?>)：<font size="4" color="#ff4a00"><?php echo $this->order_info->integral_num; ?><?php echo $this->translate('积分'); ?></font></p>
+                                <?php } ?>
+                                <?php if ($this->order_info->integral_type_2_num > 0) { ?>
+                                    <p style="text-align: right;margin-bottom: 10px;"><?php echo $this->translate('等级积分'); ?>(<?php if ($this->order_info->integral_type_2_num_rule_info != '') {echo $this->order_info->integral_type_2_num_rule_info . ',&nbsp;';} echo $this->translate('交易完成确认收货后才得到积分'); ?>)：<font size="4" color="#ff4a00"><?php echo $this->order_info->integral_type_2_num; ?><?php echo $this->translate('积分'); ?></font></p>
+                                <?php } ?>
+                                <dl class="total-list">
+                                    <?php if($this->order_info->goods_weight_amount > 0) { ?>
+                                    <dt><?php echo $this->translate('商品总重量'); ?>：</dt>
+                                    <dd><?php echo $this->order_info->goods_weight_amount.'</font>'.$this->translate('千克'); ?></dd>
+                                    <?php } ?>
+                                    <dt><?php echo $this->translate('商品总计'); ?>：</dt>
+                                    <dd><?php echo $this->order_info->currency_symbol . $this->order_info->goods_amount; ?></dd>
+                                    <dt><?php echo $this->translate('购买优惠'); ?>：</dt>
+                                    <dd><?php echo '-'.$this->order_info->currency_symbol . $this->order_info->buy_pre_fee; ?></dd>
+                                    <dt><?php echo $this->translate('会员优惠'); ?>：</dt>
+                                    <dd><?php echo '-'.$this->order_info->currency_symbol . $this->order_info->buy_pre_fee; ?></dd>
+                                    <?php if($this->order_info->coupon_pre_fee > 0) { ?>
+                                        <dt><?php echo $this->translate('优惠券优惠'); ?>：</dt>
+                                        <dd><?php echo '-'.$this->order_info->currency_symbol . $this->order_info->coupon_pre_fee; ?></dd>
+                                    <?php } ?>
+                                    <?php if(isset($this->order_info->integral_buy_price) and $this->order_info->integral_buy_price > 0) { ?>
+                                        <dt><?php echo $this->translate('积分购买'); ?>：</dt>
+                                        <dd><?php echo '-'.$this->order_info->currency_symbol . $this->order_info->integral_buy_price; ?></dd>
+                                    <?php } ?>
+                                    <?php
+                                    if(isset($this->order_amount_log) and !empty($this->order_amount_log)) {
+                                        foreach($this->order_amount_log as $amount_log) {
+                                            ?>
+                                            <dt><?php echo $amount_log['order_edit_amount_info']; ?>：</dt>
+                                            <dd><?php echo $amount_log['order_edit_amount_type']; ?><?php echo $this->order_info->currency_symbol.ltrim($amount_log['order_edit_number'], '-'); ?></dd>
+                                        <?php } } ?>
+                                    <dt><?php echo $this->translate('商品运费'); ?>：</dt>
+                                    <dd><?php echo $this->order_info->currency_symbol . $this->order_info->express_fee; ?></dd>
+                                    <dt><?php echo $this->translate('支付手续'); ?>：</dt>
+                                    <dd><?php echo $this->order_info->currency_symbol . $this->order_info->pay_fee; ?></dd>
+                                    <dt><?php echo $this->translate('订单总额'); ?>：</dt>
+                                    <dd><b><?php echo $this->order_info->currency_symbol . $this->order_info->order_amount ?></b><?php echo $this->order_info->currency_unit; ?></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

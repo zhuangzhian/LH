@@ -1,0 +1,63 @@
+2019-12-14T14:08:58+08:00 ERR (3): Exception:
+1: Statement could not be executed (42S02 - 1146 - Table 'sql_127_0_0_14.dbshop_links' doesn't exist)
+2: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sql_127_0_0_14.dbshop_links' doesn't exist
+Trace:
+#0 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(238): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(195): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\wwwroot\dbshop14\module\Links\src\Links\Model\LinksTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->select(Object(Closure))
+#4 D:\wwwroot\dbshop14\module\Shopfront\src\Shopfront\Controller\IndexController.php(78): Links\Model\LinksTable->listLinks(Array)
+#5 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(82): Shopfront\Controller\IndexController->indexAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\wwwroot\dbshop14\index.php(43): Zend\Mvc\Application->run()
+#16 {main}
+2019-12-14T14:09:28+08:00 ERR (3): Exception:
+1: Statement could not be executed (42S02 - 1146 - Table 'sql_127_0_0_14.dbshop_links' doesn't exist)
+2: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sql_127_0_0_14.dbshop_links' doesn't exist
+Trace:
+#0 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(238): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(195): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\wwwroot\dbshop14\module\Links\src\Links\Model\LinksTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->select(Object(Closure))
+#4 D:\wwwroot\dbshop14\module\Shopfront\src\Shopfront\Controller\IndexController.php(78): Links\Model\LinksTable->listLinks(Array)
+#5 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(82): Shopfront\Controller\IndexController->indexAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\wwwroot\dbshop14\index.php(43): Zend\Mvc\Application->run()
+#16 {main}
+2019-12-14T14:09:32+08:00 ERR (3): Exception:
+1: Statement could not be executed (42S02 - 1146 - Table 'sql_127_0_0_14.dbshop_links' doesn't exist)
+2: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sql_127_0_0_14.dbshop_links' doesn't exist
+Trace:
+#0 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(238): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(195): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\wwwroot\dbshop14\module\Links\src\Links\Model\LinksTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->select(Object(Closure))
+#4 D:\wwwroot\dbshop14\module\Shopfront\src\Shopfront\Controller\IndexController.php(78): Links\Model\LinksTable->listLinks(Array)
+#5 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(82): Shopfront\Controller\IndexController->indexAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(118): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(93): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\wwwroot\dbshop14\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(314): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\wwwroot\dbshop14\index.php(43): Zend\Mvc\Application->run()
+#16 {main}

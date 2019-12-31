@@ -1,0 +1,252 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('我的订单'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box">
+                    <h3 class="right-more-title">
+                        <form class="form-search" style="margin: 0;" method="get">
+                            <?php echo $this->translate('我的订单'); ?>
+                            <div class="pull-right">
+                                <input type="text" name="search_order_sn" value="<?php echo isset($_GET['search_order_sn']) ? $this->escapehtml($_GET['search_order_sn']) : ''; ?>" placeholder="<?php echo $this->translate('输入订单号'); ?>" style="height:16px;width: 240px;padding-top: 5px;margin-bottom: 3px;">&nbsp;<button type="submit" class="btn btn-small btn-primary" style="width: 50px;"><?php echo $this->translate('搜索'); ?></button>
+                            </div>
+                        </form>
+                    </h3>
+
+                    <?php if($this->frontwebsite()->getIphoneSmsConfig('shop_phone_sms', 'phone_sms_type') and $user_info['user_phone'] == '') { ?>
+                        <div style="color: red;"><?php echo $this->translate('设置手机号码，可以接收到订单处理的短信通知。'); ?><a href="<?php echo $this->url('fronthome/default', array('action'=>'useredit')); ?>"><b><?php echo $this->translate('点击去设置手机号码'); ?></b></a></div>
+                    <?php } ?>
+                    <div class="box-hd-more">
+                        <div class="pull-left left-menu-more">
+                            <div class="uc-order-list-type">
+                                <a <?php if ($this->order_state == 10) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default'); ?>"><?php echo $this->translate('有效订单'); ?><?php if ($this->order_state_num[10]>0) { ?><span class="badge"><?php echo $this->order_state_num[10]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == 15) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>15)); ?>"><?php echo $this->translate('付款中'); ?><?php if ($this->order_state_num[15]>0) { ?><span class="badge"><?php echo $this->order_state_num[15]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == 20) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>20)); ?>"><?php echo $this->translate('已付款'); ?><?php if ($this->order_state_num[20]>0) { ?><span class="badge"><?php echo $this->order_state_num[20]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == 30) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>30)); ?>"><?php echo $this->translate('未发货'); ?><?php if ($this->order_state_num[30]>0) { ?><span class="badge"><?php echo $this->order_state_num[30]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == 40) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>40)); ?>"><?php echo $this->translate('已发货'); ?><?php if ($this->order_state_num[40]>0) { ?><span class="badge"><?php echo $this->order_state_num[40]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == 60) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>60)); ?>"><?php echo $this->translate('交易完成'); ?><?php if ($this->order_state_num[60]>0) { ?><span class="badge badge-success"><?php echo $this->order_state_num[60]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == -40) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>-40)); ?>"><?php echo $this->translate('退货订单'); ?><?php if ($this->order_state_num[-40]>0) { ?><span class="badge badge-important"><?php echo $this->order_state_num[-40]; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->order_state == 0) echo 'class="current"'; ?> href="<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>0)); ?>"><?php echo $this->translate('无效订单'); ?><?php if ($this->order_state_num[0]>0) { ?><span class="badge badge-important"><?php echo $this->order_state_num[0]; ?></span><?php } ?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-bd">
+                        <?php
+                        if ($this->order_list->getTotalItemCount() > 0) {
+                        ?>
+                            <div class="uc-order-list-box">
+                                <ul class="uc-order-detail-list">
+                                    <?php foreach ($this->order_list as $order_value) {
+                                        $i = 0;
+                                        $goodsArray = unserialize($order_value['goods_serialize']);
+                                        $rowspan    = count($goodsArray);
+                                        ?>
+                                            <li class="uc-order-detail-item">
+                                                <table class="order-detail-table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th colspan="3" class="column-info column-t">
+                                                            <div class="column-content">
+                                                                <span class="order-status"><?php echo $this->frontwebsite()->getOneOrderStateInfo($order_value['order_state']); ?></span>
+                                                                <?php echo $this->translate('订单编号'); ?>：<a href="<?php echo $this->url('frontorder/default/order_id', array('action'=>'showorder', 'order_id'=>$order_value['order_id'], 'order_state'=>$order_value['order_state'])); ?>"><?php echo $order_value['order_sn']; ?></a>
+                                                                <span class="sep">|</span>
+                                                                <?php echo $this->escapeHtml($order_value['buyer_name']); ?>
+                                                                <span class="sep">|</span>
+                                                                <?php echo date("Y-m-d H:i:s",$order_value['order_time']); ?>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="column-detail column-l">
+                                                            <ul class="order-goods-list">
+                                                                <?php if(is_array($goodsArray) and !empty($goodsArray)) foreach($goodsArray as $goods_key => $goods_value) { ?>
+                                                                    <li <?php if($i == 0) echo 'class="first"'; ?>>
+                                                                        <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goods_value['goods_id'], 'class_id'=>$goods_value['class_id'])); ?>" target="_blank">
+                                                                            <img alt="<?php echo strip_tags($goods_value['goods_name']); ?>" title="<?php echo strip_tags($goods_value['goods_name']); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goods_value['goods_image'])); ?>" class="goods-thumb">
+                                                                        </a>
+                                                                        <a class="goods-name" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$goods_value['goods_id'], 'class_id'=>$goods_value['class_id'])); ?>" target="_blank"><?php echo strip_tags($goods_value['goods_name']); ?></a>
+                                                                        <span class="goods-price"><?php echo $order_value['currency_symbol'] . $goods_value['goods_shop_price'] . $order_value['currency_unit']; ?></span>
+                                                                        <span style="display: block;"><?php echo strip_tags($goods_value['goods_extend_info']); ?></span>
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td style="border: 0;">
+                                                                                    <button class="btn btn-small" onclick="again_buy('<?php echo $goods_value['goods_name']; ?>',<?php echo $goods_value['goods_id']; ?>,'<?php echo (isset($goods_value['goods_color']) ? $goods_value['goods_color'] : ''); ?>','<?php echo (isset($goods_value['goods_size']) ? $goods_value['goods_size'] :''); ?>', '<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($goods_value['goods_image'])); ?>',<?php echo $goods_value['class_id']; ?>);"><?php echo $this->translate('再次购买'); ?></button>
+                                                                                    &nbsp;
+                                                                                </td>
+                                                                                <td style="border: 0;">
+                                                                                    <?php if ($order_value['order_state'] == 60 and $this->order_state != -40) { ?>
+                                                                                    &nbsp;
+                                                                                    <a style="color: #fff;border:1px;" href="<?php echo $this->url('frontorder/default/order_goods_id', array('action'=>'goodscomment', 'order_goods_id'=>$goods_key, 'order_state'=>$this->order_state, 'page'=>$this->page)); ?>" class="btn btn-small btn-primary">
+                                                                                        <?php if(isset($goods_value['comment_state'])) { ?>
+                                                                                            <?php echo $this->translate('已经评价'); ?>
+                                                                                        <?php } else { ?>
+                                                                                            <?php echo $this->translate('尚未评价'); ?>
+                                                                                        <?php } ?>
+                                                                                    </a>
+                                                                                    <?php } ?>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </li>
+                                                                    <?php $i++; } ?>
+                                                            </ul>
+                                                        </td>
+                                                        <td class="column-price">
+                                                            <div class="order-info order-price"><?php echo $order_value['currency_symbol'] . $order_value['order_amount'] . $order_value['currency_unit']; ?></div>
+                                                        </td>
+                                                        <td class="column-action column-r">
+                                                            <div class="order-info order-action">
+                                                                <a href="<?php echo $this->url('frontorder/default/order_id', array('action'=>'showorder', 'order_id'=>$order_value['order_id'], 'order_state'=>$order_value['order_state'])); ?>"><?php echo $this->translate('订单详情'); ?><i class="iconfont"></i></a>
+                                                                <?php if ($order_value['order_state'] == 10 or ($order_value['order_state'] == 30 and $order_value['pay_code'] == 'hdfk')) { ?>
+                                                                    <?php if ($order_value['order_state'] == 10) { ?>
+                                                                    <button class="btn btn-small btn-primary" onclick="order_pay('<?php echo $this->url('frontorder/default/order_id', array('action'=>'orderpay', 'order_id'=>$order_value['order_id'])); ?>', <?php echo $order_value['order_id']; ?>);"><?php echo $this->translate('立即付款'); ?></button>
+                                                                    <?php } ?>
+                                                                    <button class="btn btn-small" onclick="if(window.confirm('<?php echo $this->translate('您确实要取消该订单吗？'); ?>')) {location.href='<?php echo $this->url('frontorder/default/order_id', array('action'=>'changestate', 'order_id'=>$order_value['order_id'], 'order_state'=>0, 'page'=>$this->page)); ?>'};"><?php echo $this->translate('取消订单'); ?></button>
+                                                                <?php } else if ($order_value['order_state'] == 0) { ?>
+                                                                    <button class="btn btn-small" onclick="if(window.confirm('<?php echo $this->translate('您确实要删除该订单吗？'); ?>')) {location.href='<?php echo $this->url('frontorder/default/order_id', array('action'=>'delOrder', 'order_id'=>$order_value['order_id'], 'order_state'=>0, 'page'=>$this->page)); ?>'};"><?php echo $this->translate('删除订单'); ?></button>
+                                                                <?php } else if ($order_value['order_state'] == 40 and !empty($order_value['pay_time']) and $this->order_state != -40) {
+                                                                    ?>
+                                                                    <?php if(($order_value['pay_code'] == 'alipay' or $order_value['pay_code'] == 'malipay') and $order_value['ot_order_state'] == 25) { ?>
+                                                                        <a href="https://www.alipay.com/" class="btn btn-small btn-primary" style="color: #fff;" target="_blank"><?php echo $this->translate('确认收货'); ?></a>
+                                                                    <?php } else { ?>
+                                                                        <button class="btn btn-small btn-primary" onclick="location.href='<?php echo $this->url('frontorder/default/order_id', array('action'=>'orderReceipt', 'order_id'=>$order_value['order_id'], 'order_state'=>$this->order_state, 'page'=>$this->page)); ?>'"><?php echo $this->translate('确认收货'); ?></button>
+                                                                    <?php } ?>
+                                                                <?php } ?>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        <?php } ?>
+                                </ul>
+                            </div>
+                            <div>
+                                    <?php echo ( count($this->order_list) > 0 ) ? $this->paginationControl($this->order_list, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('frontorder/default/order_page', array('action'=>'index', 'order_state'=>$this->order_state)))) : ""; ?>
+                            </div>
+                        <?php } else { ?>
+                            <?php echo $this->translate('暂时无订单！'); ?>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal" name="pay_form" id="pay_form" action="" method="post">
+    <div id="myModalPay" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel"><?php echo $this->translate('订单付款'); ?>&nbsp;[<?php echo $this->translate('订单号'); ?>：<span id="order-sn"></span>]</h3>
+        </div>
+        <div class="modal-body" id="pay-list-show">
+
+        </div>
+        <div class="modal-footer">
+            <input type="hidden" name="payment_pee" id="payment_pee" value="">
+            <strong><?php echo $this->translate('订单金额'); ?>：<span id="order-amount"></span></strong>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary"><?php echo $this->translate('点击支付'); ?></button>
+        </div>
+    </div>
+</form>
+
+<form action="" method="post" id="to_cart" name="to_cart">
+	<input type="hidden" name="buy_goods_num" id="buy_goods_num" value="1" />
+    <input type="hidden" name="goods_id" id="goods_id" value="" />
+    <input type="hidden" name="class_id" id="class_id" value="" />
+    <input type="hidden" name="select_color_value" id="select_color_value" value="" />
+    <input type="hidden" name="select_size_value" id="select_size_value" value="" />
+</form>
+<script>
+function again_buy(goods_name,goods_id,goods_color,goods_size,goods_image,class_id) {
+	$('#goods_id').val(goods_id);
+	$('#select_color_value').val(goods_color);
+	$('#select_size_value').val(goods_size);
+	$('#class_id').val(class_id);
+	
+	$.post("<?php echo $this->url('frontcart/default', array('action'=>'addCart')); ?>",$('#to_cart').formSerialize(),
+	function(data){
+		if(data == 'true') {
+			$("#message_show").html('<img border="0" src="'+goods_image+'" style=" width:65px;border:1px solid #D7D7D7">'+goods_name+'&nbsp;<strong><?php echo $this->translate('添加购物车成功'); ?></stong>');
+			$("#message_url").html('<a href="<?php echo $this->url('frontcart/default'); ?>" class="btn btn-primary"><?php echo $this->translate('去购物车结算'); ?></a>&nbsp;<a class="btn" data-dismiss="modal"><?php echo $this->translate('关闭'); ?></a>');
+		} else {
+			$("#message_show").html(data);
+			$("#message_url").html('<a class="btn" data-dismiss="modal"><?php echo $this->translate('关闭'); ?></a>');
+		}
+		$('#myModal').modal('show');
+  }); 
+}
+/**
+ * 点击支付的操作
+ * @param pay_url
+ * @param order_id
+ */
+function order_pay(pay_url, order_id) {
+    $("#pay_form").attr('action',pay_url);
+    $('#pay-list-show').html('');
+
+    $.post('<?php echo $this->url('frontorder/default/order_id', array('action'=>'getOrderPay')); ?>', {'order_id':order_id}, function(data){
+            if (data)
+            {
+                if(data.state != 'true') {
+                    alert(data.message);
+                    return;
+                }
+
+                $('#order-amount').html(data['order']['order_amount']);
+                $('#order-sn').html(data['order']['order_sn']);
+                $('#payment_pee').val(data['order']['pay_fee']);
+
+                var html = '';
+                for(var i in data['payment']){
+                    html += '<div class="control-group">';
+                    html += '<label class="control-label" style="width: 80px;">';
+                    html += '<input type="radio" name="payment_code" onclick="order_fee(\''+data['payment'][i]['editaction']+'\');" value="'+data['payment'][i]['editaction']+'" '+(data['payment'][i]['editaction']==data['order']['pay_code'] ? "checked" : '')+' >';
+                    html += '</label>';
+                    html += '<div class="controls" style="margin-left: 90px;">';
+                    html += '<img src="<?php echo $this->basePath(); ?>'+data['payment'][i]['payment_logo']['content']+'" style="border:1px solid #D7D7D7; margin-left:8px;">';
+                    html += '&nbsp;<input type="hidden" name="payment_price_'+data['payment'][i]['editaction']+'" id="payment_price_'+data['payment'][i]['editaction']+'" value="'+data['payment'][i]['payment_fee']['content']+'">'+data['payment'][i]['payment_name']['content'];
+                    if(data['payment'][i]['payment_fee']['content'] > 0) {
+                        html += '&nbsp;&nbsp;[<strong><?php echo $this->translate('支付手续费'); ?>：'+data['payment'][i]['payment_fee']['content']+'</strong>]';
+                    }
+                    html += '</div></div>';
+                }
+                $('#pay-list-show').html(html);
+            }
+        },
+        'json');
+
+    $('#myModalPay').modal('show');
+}
+function order_fee(payment_code) {
+    var order_amount = Subtr(parseFloat($('#order-amount').html()), $('#payment_pee').val());
+    order_amount = accAdd(order_amount, $('#payment_price_'+payment_code).val());
+
+    $('#payment_pee').val($('#payment_price_'+payment_code).val());
+    $('#order-amount').html(order_amount);
+}
+</script>

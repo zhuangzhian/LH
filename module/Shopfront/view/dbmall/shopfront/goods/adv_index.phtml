@@ -1,0 +1,890 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="<?php echo $this->basePath('public/css/dbmall/js/jqzoom/js/jquery.jqzoom-core.js'); ?>"></script>
+<link href="<?php echo $this->basePath('public/css/dbmall/js/jqzoom/css/jquery.jqzoom.css'); ?>" rel="stylesheet">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.jqzoom').jqzoom({
+            zoomType: 'standard',
+            lens:true,
+            preloadImages: true,
+            alwaysOn:false,
+            zoomWidth: 300,
+            zoomHeight: 300
+        });
+    });
+</script>
+<style type="text/css">
+ul#thumblist li{float:left;padding-right:2px;list-style:none;}
+ul#thumblist li a{display:block;border:1px solid #CCC;}
+ul#thumblist li a.zoomThumbActive{
+border:1px solid red;
+}
+</style>
+
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a><span class="sep">/</span>
+    <?php if($this->class_menu) { foreach($this->class_menu as $menu_val) {
+            ?>
+            <a href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$menu_val['class_id'])); ?>"><?php echo $this->escapeHtml($menu_val['class_name']); ?></a><span class="sep">/</span>
+        <?php } }  ?>
+    <span><?php echo $this->escapeHtml($this->goods_info->goods_name); ?></span>
+</div>
+
+<div class="goods-detail container">
+    <form action="<?php echo $this->url('frontcart/default'); ?>" method="post" name="add_goods_cart" id="add_goods_cart">
+    <div class="goods-detail-info row clearfix">
+        <div class="span15">
+            <div style="font-size: 23px; font-weight: bold; color: #333;">
+                <?php echo $this->escapeHtml($this->goods_info->goods_name); ?> <span style="color: #ed145b;"><?php echo $this->escapeHtml($this->goods_info->goods_extend_name); ?></span>
+            </div>
+            <div class="span8 J_mi_goodsPic_block">
+                <div id="J_mi_goodsPicBox" class="goods-pic-box ">
+                    <div style="margin: 20px 0 10px; width: 430px;height: 410px;">
+                        <a rel='gal1' href="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_title_image)); ?>" title="<?php echo $this->escapeHtml($this->goods_info->goods_name); ?>" class="jqzoom"><img class="goods-big-pic" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_title_image)); ?>"></a>
+                    </div>
+                    <br>
+                    <div class="goods-small-pic clearfix">
+                        <ul id="thumblist" class="clearfix">
+                            <?php
+                            if($this->goods_images) {
+                            $imageCount = count($this->goods_images) - 1;
+                            foreach($this->goods_images as $image_k => $image_v) {
+                            ?>
+                            <li><a <?php if ($this->goods_info->goods_image_id==$image_v['goods_image_id']) echo 'class="zoomThumbActive"'; ?> href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($image_v['goods_title_image'])); ?>',largeimage: '<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($image_v['goods_title_image'])); ?>'}"><img src='<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($image_v['goods_thumbnail_image'])); ?>'></a></li>
+                            <?php
+                            } }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <?php $userGroupPriceShowState = $this->frontwebsite()->getDbshopGoodsIni('dbshop_goods_usergroup_price_show'); ?>
+            <div class="span7">
+                <dl class="goods-info-box">
+                    <dt class="goods-info-head">
+                    <dl>
+                        <dd>
+                            <strong><?php echo $this->translate('货　号'); ?>：</strong><span id="goods_item"><?php echo $this->escapeHtml($this->goods_info->goods_item); ?></span>
+                        </dd>
+                        <?php $front_goods_price=intval($this->goods_info->goods_price); if( $front_goods_price>0) { ?>
+                        <dd>
+                            <strong><?php echo $this->translate('市场价'); ?>：</strong><del><?php echo $this->frontwebsite()->shopPriceExtend($this->goods_info->goods_price); ?></del>
+                        </dd>
+                        <?php } if ($this->goods_info->goods_preferential_price <= 0) { ?>
+                        <dd>
+                            <strong><?php echo $this->translate('店铺价'); ?>：</strong><span style="color: #ED145B;font-size: 20px;font-weight:bold;" id="goods_price"><?php echo $this->frontwebsite()->shopPriceExtend($this->goods_info->goods_shop_price); ?></span>
+                        </dd>
+                            <?php
+                            if($userGroupPriceShowState == 1) {
+                                ?>
+                                <dd class="group_price" style="<?php if(empty($this->group_price)) { ?>display: none;<?php } ?>"><strong><?php echo $this->translate('会员价'); ?>：</strong>
+                                <span class="group_price" id="group_price_str">
+                                    <?php
+                                    if(isset($this->group_price) and !empty($this->group_price)) {
+                                        foreach($this->group_price as $group_price_value) {
+                                            ?>
+                                            <?php echo $this->escapeHtml($group_price_value['group_name']); ?><strong style="color:#ED145B;"><?php echo $this->frontwebsite()->shopPriceExtend($group_price_value['group_price']); ?></strong>&nbsp;
+                                        <?php } } ?>
+                                </span>
+                                </dd>
+                            <?php } ?>
+                        <?php } else { ?>
+                        <dd>
+                            <strong><?php echo $this->translate('优惠价'); ?>：</strong><span style="color: #ED145B;font-size: 20px;font-weight:bold;" id="goods_price"><?php echo $this->frontwebsite()->shopPriceExtend($this->goods_info->goods_preferential_price); ?></span>
+                        </dd>
+                            <?php $this->goods_info->goods_shop_price =$this->goods_info->goods_preferential_price;  } ?>
+
+                        <?php if (isset($this->brand_info) and !empty($this->brand_info)) { ?>
+                        <dd>
+                            <strong><?php echo $this->translate('品　牌'); ?>：</strong><a href="<?php echo $this->url('frontbrand/default/front-brand-id', array('action'=>'brandGoods', 'brand_id'=>$this->brand_info->brand_id)); ?>"><?php echo $this->escapeHtml($this->brand_info->brand_name); ?></a>
+                        </dd>
+                        <?php } ?>
+
+                        <?php if(isset($this->click_coupon) and !empty($this->click_coupon)) { ?>
+                            <dd>
+                                <strong><?php echo $this->translate('优惠券'); ?>：</strong>
+                                <?php foreach ($this->click_coupon as $clickCouponValue) { ?>
+                                    <div style="min-width: 50px;height: 26px;background:#E5004F;line-height:26px;color: #fff;display: inline-block;text-align: center;">
+                                        &nbsp;<?=$this->translate('满')?><?=$this->frontwebsite()->currencyPrice($clickCouponValue['shopping_amount'], $this->frontwebsite()->getFrontDefaultCurrency())?><?=$this->translate('减')?><?=$this->frontwebsite()->currencyPrice($clickCouponValue['shopping_discount'], $this->frontwebsite()->getFrontDefaultCurrency())?> &nbsp;&nbsp;
+                                    </div>
+                                    <span style="border-right:1px dashed #fff;position: relative;left: -14px;"></span>
+                                    <div style="width: 10px;height: 10px;border-radius: 50%;background: #fff;display: inline-block;margin-left: -10px;position: relative;">
+                                    </div>
+                                <?php } ?>
+                                <span>
+                          <a style="text-decoration: underline;" href="<?php echo $this->url('frontgoods/default',array('action'=>'clickCoupon'), array('query'=>array('goods_id'=>$this->goods_info->goods_id)));?>" target="_blank"><?=$this->translate('点击领券')?></a>
+                      </span>
+                            </dd>
+                        <?php } ?>
+
+                        <?php
+                        if (isset($this->goods_custom) and !empty($this->goods_custom)) {
+                            foreach($this->goods_custom as $gc_value) {
+                                ?>
+                                <dd>
+                                    <strong><?php echo $this->escapeHtml($gc_value['custom_title']); ?>：</strong>
+                                    <?php echo $this->escapeHtml($gc_value['custom_content']); ?>
+                                </dd>
+                            <?php } } ?>
+                        <dd>
+                            <strong><?php echo $this->translate('库　存'); ?>：</strong><span id="goods_stock_show"><?php echo $this->goods_stock; ?></span>
+                        </dd>
+                        <?php if($this->goods_info->goods_weight > 0) { ?>
+                        <dd>
+                            <strong><?php echo $this->translate('重　量'); ?>：</strong><?php echo $this->goods_info->goods_weight; ?><?php echo $this->translate('千克'); ?>
+                        </dd>
+                        <?php } ?>
+                        <dd style="margin-bottom: 8px;">
+                            <strong><?php echo $this->translate('评　分'); ?>：</strong><span data-class="icon-stat-5" class="icon-stat icon-stat-<?php if (isset($this->goods_rating->rating)) echo str_replace(array('.5', '.0'), array('half', ''), number_format($this->goods_rating->rating,1)); else echo '0'; ?> J_mi_goods_starNum"></span>
+                            <span id="goods_comment_num"></span>
+                        </dd>
+                    <?php if(isset($this->goods_info->goods_integral_num) and $this->goods_info->goods_integral_num > 0) { ?>
+                        <strong style="font-size: 14px;"><?php echo $this->translate('可用'); ?>&nbsp;<span id="goods_integral"><?php echo $this->goods_info->goods_integral_num; ?></span>&nbsp;<?php echo $this->translate('消费积分进行购买'); ?></strong>
+                    <?php } ?>
+
+                    <?php if(isset($this->relation_goods_array) and !empty($this->relation_goods_array)) { ?>
+                        <div class="clearfix" style="margin-bottom: 10px;margin-top: 10px;">
+                            <div>
+                                <?php foreach($this->relation_goods_array as $relationGoods) { ?>
+                                    <a title="<?php echo $this->escapeHtml($relationGoods['goods_name']); ?>" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$relationGoods['goods_id'], 'class_id'=>$relationGoods['one_class_id'])); ?>">
+                                        <img src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($relationGoods['goods_thumbnail_image'])); ?>" style="border: 1px solid <?php echo ($relationGoods['goods_id'] == $this->goods_info->goods_id ? '#ee330a' : '#D7D7D7'); ?>;width: 40px;margin-right: 5px;">
+                                    </a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                        <?php
+                        if(isset($this->goods_spec_group_array) and !empty($this->goods_spec_group_array)) {
+                            if(isset($this->spec_tag_id)) {
+                        ?>
+                        <dd class="goods-info-head-colors clearfix">
+                                <?php foreach ($this->goods_spec_group_array as $spec_group_value) {
+                                    ?>
+                                    <span><?php echo $this->escapeHtml($spec_group_value['tag_group_name']); ?>：</span>
+                                        <div class="clearfix goods_spec_<?php echo $spec_group_value['tag_group_id']; ?> goods_spec_tag_item">
+                                            <?php foreach ($this->spec_tag_id[$spec_group_value['tag_group_id']] as $spec_tag_id) { ?>
+                                            <div class="colorli">
+                                                <?php if(!empty($this->spec_tag[$spec_tag_id]['tag_str'])) { ?>
+                                                    <a id="spec_tag_<?php echo $spec_tag_id; ?>" href="javascript:;" onclick="select_goods_spec(<?php echo $spec_tag_id; ?>, <?php echo $spec_group_value['tag_group_id']; ?>);" style="width: 25px;" alt="<?php echo $this->escapeHtml($this->spec_tag[$spec_tag_id]['tag_name']); ?>" title="<?php echo $this->escapeHtml($this->spec_tag[$spec_tag_id]['tag_name']); ?>">
+                                                        <span style="background-color: <?php echo $this->spec_tag[$spec_tag_id]['tag_str']; ?>;" class="square"></span>
+                                                    </a>
+                                                <?php } else { ?>
+                                                    <a id="spec_tag_<?php echo $spec_tag_id; ?>" href="javascript:;" onclick="select_goods_spec(<?php echo $spec_tag_id; ?>, <?php echo $spec_group_value['tag_group_id']; ?>);" style="cursor: pointer;" alt="<?php echo $this->escapeHtml($this->spec_tag[$spec_tag_id]['tag_name']); ?>"><?php echo $this->escapeHtml($this->spec_tag[$spec_tag_id]['tag_name']); ?></a>
+                                                <?php } ?>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                <?php } ?>
+                            <input type="hidden" id="selected_spec_tag_id_str" name="selected_spec_tag_id_str" value="" />
+                        </dd>
+                        <?php } } ?>
+
+                        <dd id="goodsDetailBtnBox" class="goods-info-head-cart">
+                            <div style="margin-bottom:8px;">
+                                <?php echo $this->translate('我想买'); ?>：
+                                <button class="btn btn-primary" id="add_down" style="cursor: pointer;height: 30px;line-height: 30px;" type="button">-</button>
+                                <input type="text" style="width:25px;margin-bottom:2px;" name="buy_goods_num" id="buy_goods_num" value="<?php echo ($this->goods_info->goods_cart_buy_min_num > 1 ? $this->goods_info->goods_cart_buy_min_num : 1); ?>">
+                                <button class="btn btn-primary" id="add_up" style="cursor: pointer; pointer;height: 30px;line-height: 30px;" type="button">+</button>
+                                <label for="buy_goods_num" generated="true" class="error" style="display: inline-block;"></label>
+                            </div>
+                            <?php if ($this->goods_info->goods_state == 1) { ?>
+                            <input type="hidden" id="goods_id" name="goods_id" value="<?php echo $this->goods_info->goods_id; ?>" />
+                            <input type="hidden" id="class_id" name="class_id" value="<?php echo $this->class_id; ?>" />
+                            <button type="submit" class="btn btn-primary goods-add-cart-btn" id="add_cart_submit">
+                                <i class="iconfont "></i><?php echo $this->translate('加入购物车'); ?></button>
+                            <button type="button" title="<?php echo $this->translate('收藏商品'); ?>" onclick="add_favorites_js(<?php echo $this->goods_info->goods_id; ?>, <?php echo $this->class_id; ?>);" class="btn btn-dake  goods-collect-btn">
+                                <i class="iconfont"></i>
+                            </button>
+                                <?php if($this->frontwebsite()->getDbshopGoodsIni('dbshop_goods_QRcode')) { ?>
+                                    &nbsp;<img alt="<?php echo $this->translate('手机扫描后，在手机中访问该商品'); ?>" title="<?php echo $this->translate('手机扫描后，在手机中访问该商品'); ?>" width="60px" src="<?php echo  $this->basePath($this->frontwebsite()->createQRcode($this->serverUrl().$this->url('m_goods/default', array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->class_id)), $this->goods_info->goods_id, 'goods')); ?>">
+                                <?php } ?>
+                            <?php } ?>
+                            <?php if ($this->goods_info->goods_state == 2) { ?>
+                                <b style="color: red;font-size: 18px;"><?php echo $this->translate('该商品已经下架！'); ?></b>
+                            <?php } ?>
+                        </dd>
+                        <dd>
+                            <?php echo $this->translate('最近'); ?><span id="ajax_order_count"><?php echo $this->order_count; ?></span><?php echo $this->translate('人已经购买'); ?>
+                        </dd>
+                        <?php
+                        if (isset($GLOBALS['extendModule']['modules']) and !empty($GLOBALS['extendModule']['modules']) and in_array('Dbdistribution', $GLOBALS['extendModule']['modules'])) {
+                            $shareGoodsImage = $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_title_image));
+                            $shareGoodsImage = strpos($shareGoodsImage, 'http') !== false ? $shareGoodsImage : $this->serverUrl() . $shareGoodsImage;
+                            ?>
+                            <dd>
+                                <a class="bshareDiv" href="http://www.bshare.cn/share"><?php echo $this->translate('分享按钮'); ?></a><script type="text/javascript" charset="utf-8" src="https://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=999&amp;img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&amp;w=147&amp;h=21"></script>
+                                <script type="text/javascript" charset="utf-8">
+                                    $.get('<?=$this->url('frontgoods/default', array('action'=>'getGoodsShareUrl', 'goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->class_id))?>','', function(html){
+                                        bShare.addEntry({
+                                            title: "<?php echo $this->escapeHtml($this->goods_info->goods_name); ?>",
+                                            url: html,
+                                            summary: "<?php echo $this->escapeHtml($this->goods_info->goods_description); ?>",
+                                            pic: "<?php echo $shareGoodsImage; ?>"
+                                        });
+                                    });
+                                </script>
+                            </dd>
+                            <?php
+                        } else {
+                            $goods_share_info = $this->frontwebsite()->getDbshopGoodsShare();
+                            if(!empty($goods_share_info['share_type'])) {
+                                echo "<script>var dbshop_baidushare_path='". $this->basePath('/public/js/baiduShare/')."';</script>";
+                                if($goods_share_info['share_type'] == '/baidu/window.php' or $goods_share_info['share_type'] == '/baidu/httpswindow.php') {
+                                    echo $goods_share_info['share_code'];
+                                } else {
+                                    echo '<dd>'.$goods_share_info['share_code'].'</dd>';
+                                }
+                            }
+                        }
+                        ?>
+                    </dl>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        <script>
+            //购物车添加
+            $(document).ready(function() {
+                $("#add_goods_cart").validate({
+                    rules: {
+                        buy_goods_num: {
+                            required: true,
+                            number:true,
+                            min:<?php if($this->goods_info->goods_cart_buy_min_num > 0) echo $this->goods_info->goods_cart_buy_min_num; else echo 1; ?>
+                            <?php if($this->goods_info->goods_cart_buy_max_num > 0) { ?>
+                            ,
+                            max:<?php echo $this->goods_info->goods_cart_buy_max_num; } ?>
+                        }
+                        <?php if (isset($this->spec_tag_id)) { ?>
+                        ,
+                        selected_spec_tag_id_str: {
+                            required: true
+                        }
+                        <?php } ?>
+                    },
+                    messages: {
+                        buy_goods_num: {
+                            required: "<?php echo $this->translate('购物数量不能为空！'); ?>",
+                            number:"<?php echo $this->translate('购物数量必须为数字！'); ?>",
+                            min:"<?php echo sprintf($this->translate('购物数量最少为%s！'),($this->goods_info->goods_cart_buy_min_num > 0 ? $this->goods_info->goods_cart_buy_min_num : 1)); ?>"
+                            <?php if($this->goods_info->goods_cart_buy_max_num > 0) { ?>
+                            ,
+                            max:"<?php echo sprintf($this->translate('购物数量最多为%s！'),$this->goods_info->goods_cart_buy_max_num ); ?>"<?php } ?>
+                        }
+                        <?php if (isset($this->spec_tag_id)) { ?>
+                        ,
+                        selected_spec_tag_id_str: {
+                            required: "<?php echo $this->translate('请选择商品规格'); ?>"
+                        }
+                        <?php } ?>
+                    },
+                    submitHandler:function(form){
+                        add_cart_js();
+                    }
+                });
+            });
+            //添加购物车
+            function add_cart_js() {
+                $.post("<?php echo $this->url('frontcart/default', array('action'=>'addCart')); ?>",$('#add_goods_cart').formSerialize(),
+                    function(data){
+                        if(data == 'true') {
+                            $("#message_show").html('<img border="0" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_thumbnail_image)); ?>" style=" width:65px;border:1px solid #D7D7D7"><?php echo $this->escapeHtml($this->goods_info->goods_name); ?>&nbsp;<strong><?php echo $this->translate('添加购物车成功'); ?></stong>');
+                            $("#message_url").html('<a data-dismiss="modal" class="btn btn-primary"><?php echo $this->translate('继续购物'); ?></a><a href="<?php echo $this->url('frontcart/default'); ?>" class="btn btn-primary"><?php echo $this->translate('去购物车结算'); ?></a>');
+
+                            var cart_goods_num = parseInt($('#top_cart').html()) + 1;
+                            $('#top_cart').css('display','');
+                            $('#top_cart').html(cart_goods_num);
+
+                        } else {
+                            if(data.indexOf("Login") != -1) {
+                                alert(data);
+                                window.location.href = '<?php echo $this->url('frontuser/default', array('action' => 'login')); ?>';
+                            } else {
+                                $("#message_show").html(data);
+                                $("#message_url").html('<a class="btn" data-dismiss="modal"><?php echo $this->translate('关闭'); ?></a>');
+                            }
+                        }
+                        $('#myModal').modal('show');
+                    });
+            }
+            $("#add_up").click(function() {
+                var buy_num = $("#buy_goods_num").val();
+                var max_num = <?php echo $this->goods_info->goods_cart_buy_max_num; ?>;
+                if(buy_num >= max_num && max_num != 0) {
+                    alert('<?php echo $this->translate('您已经到了购买上限！'); ?>');
+                    return false;
+                }
+                $("#buy_goods_num").val(accAdd(buy_num,1));
+            });
+            $("#add_down").click(function() {
+                var buy_num = $("#buy_goods_num").val();
+                var min_num = 1;
+                if(buy_num <= min_num) {
+                    alert('<?php echo $this->translate('您已经到了购买下限！'); ?>');
+                    return false;
+                }
+                $("#buy_goods_num").val(Subtr(buy_num,1));
+            });
+            function select_goods_spec(tag_id, tag_group_id) {
+                if($('#spec_tag_'+tag_id).attr('class') == 'coloractive') {
+                    $('#spec_tag_'+tag_id).attr('class', '');
+
+                } else {
+                    $('.goods_spec_'+tag_group_id+' a').each(function() {
+                        $('#'+this.id).attr('class', '');
+                    });
+                    $('#spec_tag_'+tag_id).attr('class', 'coloractive');
+                }
+
+                var spec_tag_name_str = '';
+                var spec_tag_id_str = [];
+                $('.goods_spec_tag_item a').each(function () {
+                    if($('#'+this.id).attr('class') == 'coloractive') {
+                        spec_tag_id_str.push(this.id.replace('spec_tag_', ''));
+                    }
+                });
+                $('#selected_spec_tag_id_str').val(spec_tag_id_str);
+
+                get_goods_stock();
+            }
+            //如果有尺寸和颜色，并且已经选择了，那么获取相关库存
+            function get_goods_stock() {
+                var selected_spec_tag_id_str = $('#selected_spec_tag_id_str').val();
+                if(selected_spec_tag_id_str != '') {
+                    $.post("<?php echo $this->url('frontgoods/default',array('action'=>'goodsStock','goods_id'=>$this->goods_info->goods_id)); ?>",{spec_tag_id_str:selected_spec_tag_id_str},
+                        function(data){
+                            if(data != '') {
+                                $('#goods_stock_show').html(data.stock);
+                                $('#goods_item').html(data.goods_item);
+                                <?php if ($this->goods_info->goods_preferential_price <= 0) { ?>
+                                $('#goods_price').html(data.price);
+                                $('#goods_j').html(data.discount);
+                                <?php } ?>
+                                <?php if($userGroupPriceShowState == 1 and $this->goods_info->goods_preferential_price <= 0) { ?>
+                                if(data.group_price_str == '') {
+                                    $('.group_price').hide();
+                                } else {
+                                    $('.group_price').show();
+                                    $('#group_price_str').html(data.group_price_str);
+                                }
+                                <?php } ?>
+                                if(data.goods_integral > 0) $('#goods_integral').html(data.goods_integral);
+                            }
+                        },
+                        'json');
+                }
+            }
+        </script>
+        <div class="span5">
+            <div style="border: 1px solid #ed6343;">
+                <div style="background-color: #ed6343;padding: 5px;color: #fff;">
+                    <strong>&nbsp;<?php echo $this->frontwebsite()->websiteInfo('shop_name'); ?>&nbsp;<?php echo $this->translate('品质保证'); ?></strong>
+                </div>
+                <div style="min-height:50px; font-size: 13px; padding: 8px;"><?php echo nl2br($this->escapeHtml($this->frontwebsite()->getSystemContent('goods_quality'))); ?></div>
+            </div>
+
+            <?php
+            //品质保证广告
+            $goods_info_right_ad = $this->frontwebsite()->getShopAd('goods', 'goods_info_right', 'pc', $this->class_id);
+            if($goods_info_right_ad) {
+                ?>
+                <div style="padding-top: 6px;">
+                    <div>
+                        <?php echo $goods_info_right_ad; ?>
+                    </div>
+                </div>
+            <?php } ?>
+
+        </div>
+    </div>
+    </form>
+
+    <div class="row goods-detail-desc">
+        <?php if ($this->combination_goods_array) { ?>
+        <div class="span20" style="margin-bottom: 30px;">
+            <table style="border:1px solid #ed6343;" width="100%">
+                <tr>
+                    <td bgcolor="#ed6343" colspan="4"><font color="#FFFFFF" size="3"><?php echo $this->translate('组合商品'); ?></font></td>
+                </tr>
+                <tr>
+                    <td width="15%"><img border="0" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_thumbnail_image)); ?>" style=" width:150px;border:1px solid #D7D7D7"><span class="dbshop_symbol">+</span></td>
+                    <td width="70%">
+                        <ul class="thumbnails" style="margin-bottom:0;">
+                            <?php $combination_goods_count=count($this->combination_goods_array)-1;
+                            foreach ($this->combination_goods_array as $combination_key => $combination_goods_value) { ?>
+                                <li style="margin-bottom:0;margin-left: 30px; width: 200px;"><a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$combination_goods_value['goods_id'], 'class_id'=>$combination_goods_value['one_class_id'])); ?>" target="_blank" title="<?php echo $this->escapeHtml($combination_goods_value['goods_name']); ?>"><img border="0" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($combination_goods_value['goods_thumbnail_image'])); ?>" style=" width:150px;border:1px solid #D7D7D7" /></a><?php if($combination_goods_count != $combination_key) { ?>&nbsp;<span class="dbshop_symbol">+</span>&nbsp;<?php } ?>
+                                    <br />
+                                    <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$combination_goods_value['goods_id'], 'class_id'=>$combination_goods_value['one_class_id'])); ?>" target="_blank"><?php echo $this->escapeHtml($this->DbshopCommonFun()->dbshopCutStr($combination_goods_value['goods_name'], 15)); ?></a>
+                                    <br />
+                                    <input type="hidden" name="one_combination_price_<?php echo $combination_goods_value['goods_id']; ?>" id="one_combination_price_<?php echo $combination_goods_value['goods_id']; ?>" value="<?php echo $this->frontwebsite()->shopPrice($combination_goods_value['goods_shop_price']); ?>" />
+                                    <label class="checkbox"><input type="checkbox" onclick="count_combination_price();" name="combination_goods_id[]" value="<?php echo $combination_goods_value['goods_id']; ?>" /><?php echo $this->frontwebsite()->shopPriceExtend($combination_goods_value['goods_shop_price']); ?></label>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </td>
+                    <td width="3%"><span class="dbshop_symbol">=</span></td>
+                    <td width="12%">
+                        <?php $base_goods_price = $this->frontwebsite()->shopPrice($this->goods_info->goods_shop_price); ?>
+                        <input type="hidden" name="base_goods_price" id="base_goods_price" value="<?php echo $base_goods_price; ?>" />
+                        <strong style="font-size:16px"><?php echo $this->translate('店铺价'); ?>：<?php echo $this->frontwebsite()->shopPriceSymbol().'<span id="show_combination_count_price">'.$base_goods_price.'</span>'.$this->frontwebsite()->shopPriceUnit(); ?></strong>
+                        <br />
+                        <?php if ($this->goods_info->goods_state == 1) { ?>
+                        <input type="button" class="btn btn-primary" onclick="combination_goods_add_cart();" value="<?php echo $this->translate('组合购买'); ?>"></td>
+                        <?php } ?>
+                </tr>
+            </table>
+        </div>
+        <?php } ?>
+        <!--S left side-->
+        <div class="span5">
+            <?php if (isset($this->related_goods_array) and !empty($this->related_goods_array)) { ?>
+            <div class="xm-box goods-alsobuy xm-goods-side-list">
+                <div class="box-hd">
+                    <div class="title"><?php echo $this->translate('相关商品'); ?></div>
+                </div>
+                <div class="box-bd">
+                    <ul>
+                        <?php foreach ($this->related_goods_array as $related_goods_value) { ?>
+                            <li>
+                                <a title="<?php echo $this->escapeHtml($related_goods_value['goods_name']); ?>" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$related_goods_value['related_goods_id'], 'class_id'=>$related_goods_value['one_class_id'])); ?>">
+                                    <h2><?php echo $this->escapeHtml($related_goods_value['goods_name']); ?></h2><h2 style="color: #ed6343;font-weight: bold;"><?php echo $this->frontwebsite()->shopPriceExtend($related_goods_value['goods_shop_price']); ?></h2>
+                                    <div class="star">&nbsp;</div>
+                                    <img alt="<?php echo $this->escapeHtml($related_goods_value['goods_name']); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($related_goods_value['goods_thumbnail_image'])); ?>" class="leftImg">
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+            <?php } ?>
+            <div id="goodsRectScan" class="xm-box goods-recent">
+                <div class="box-hd">
+                    <div class="title"> <?php echo $this->translate('浏览历史'); ?> </div>
+                </div>
+                <div class="box-bd" id="browser_history">
+                    <?php if(!defined('FRONT_CACHE_STATE') or FRONT_CACHE_STATE != 'true') { ?>
+                        <ul class="clearfix">
+                            <?php
+                            if(isset($_COOKIE['view_goods'])) {
+                                $viewGoodsArray = unserialize($_COOKIE['view_goods']);
+                                if(is_array($viewGoodsArray) and !empty($viewGoodsArray)) {
+                                    foreach($viewGoodsArray as $vGoodsValue) {
+                                        ?>
+                                        <li>
+                                            <a target="_blank" title="<?php echo $this->escapeHtml($vGoodsValue['goods_name']); ?>" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$vGoodsValue['goods_id'], 'class_id'=>$vGoodsValue['class_id'])); ?>">
+                                                <img alt="<?php echo $this->escapeHtml($vGoodsValue['goods_name']); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($vGoodsValue['image'])); ?>">
+                                            </a>
+                                        </li>
+                                    <?php } } } ?>
+                        </ul>
+                    <?php } ?>
+                </div>
+            </div>
+
+            <?php
+            //浏览历史下面广告1
+            $goods_view_log_down1_ad = $this->frontwebsite()->getShopAd('goods', 'goods_view_log_down1', 'pc', $this->class_id);
+            if($goods_view_log_down1_ad) {
+                ?>
+                <div style="padding-top: 6px;">
+                    <div>
+                        <?php echo $goods_view_log_down1_ad; ?>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php
+            //浏览历史下面广告2
+            $goods_view_log_down2_ad = $this->frontwebsite()->getShopAd('goods', 'goods_view_log_down2', 'pc', $this->class_id);
+            if($goods_view_log_down2_ad) {
+                ?>
+                <div style="padding-top: 6px;">
+                    <div>
+                        <?php echo $goods_view_log_down2_ad; ?>
+                    </div>
+                </div>
+            <?php } ?>
+
+        </div>
+        <!--E left side-->
+        <div class="span15">
+            <div id="goodsDetail" class="xm-box  goods-detail-box ">
+                <div class="box-hd" id="sticky_navigation">
+                    <ul class="items clearfix J_pro_related_btns">
+                        <li class="current">
+                            <a href="#goodsDesc"><?php echo $this->translate('详细信息'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#goodsComment"><?php echo $this->translate('商品评价'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#goodsFaq"><?php echo $this->translate('商品咨询'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#serQue"><?php echo $this->translate('售后服务'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#goodsBuyQue"><?php echo $this->translate('如何购买'); ?></a>
+                        </li>
+                    </ul>
+                </div>
+                <?php if(isset($this->goods_attribute) and !empty($this->goods_attribute)) { ?>
+                    <div id="goodsParam" class="edit_table_css" style="padding-top: 25px;">
+                        <div>
+                            <table style="width: 100%;">
+                                <tbody>
+                                <?php
+                                $b_num = count($this->goods_attribute)-1;
+                                foreach($this->goods_attribute as $b_key => $b_val) {
+                                    $b_y_num = $b_key%3; if ($b_key == 0) echo '<tr>';
+                                    if ($b_y_num==0 and $b_key!=0) echo '</tr><tr>';
+                                    if ($b_num==$b_key) {
+                                        ?>
+
+                                        <td width="<?php echo 33*(3-$b_y_num); ?>%" colspan="<?php echo (3-$b_y_num); ?>"><?php echo $b_val; ?></td>
+                                        </tr>
+                                    <?php } else { ?>
+
+                                        <td width="33%"><?php echo $b_val; ?></td>
+                                    <?php
+                                    }
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <?php } ?>
+                <div id="goodsDesc" class="box-bd edit_table_css">
+                    <?php echo $this->frontwebsite()->shopGoogsBody($this->goods_info->goods_body); ?>
+                </div>
+            </div>
+
+            <!--E 规格-->
+            <!--S 商品评论 -->
+            <div id="goodsComment" class="xm-box goods-detail-comment ">
+                <div class="box-hd">
+                    <div class="title">
+                        <?php echo $this->translate('商品评价'); ?>
+                    </div>
+                </div>
+                <div id="J_goods_detail_comment" class="box-bd">
+                    <div class="com-body" id="list_goodscomment">
+
+                    </div>
+                </div>
+            </div>
+            <!--E 商品评论 -->
+            <!-- FAQ  -->
+            <div id="goodsFaq" class="xm-box goods-detail-faq">
+                <div class="box-hd">
+                    <div class="title"><?php echo $this->translate('商品咨询'); ?></div>
+                </div>
+                <div class="box-bd">
+                    <div class="message_one">
+                    </div>
+                    <div id="list_goodsask">
+
+                    </div>
+                    <form method="post" name="ask_form" id="ask_form">
+                    <div class="faq-input">
+                        <input type="hidden" name="goods_id" value="<?php echo $this->goods_info->goods_id; ?>" />
+                        <?php echo $this->translate('咨询内容'); ?><input type="text" id="goods_ask_content" name="goods_ask_content" placeholder="<?php echo $this->translate('您有任何问题，可以通过这里向卖家咨询'); ?>" class="input-content J_mi_ask_content">
+                        <button type="submit" class="btn btn-primary ques-btn J_mi_ask"><?php echo $this->translate('提交咨询'); ?></button>
+                        <?php if ($this->frontwebsite()->websiteCaptchaState('goods_ask_captcha') == 'true') { ?>
+                        <br>
+                        <?php echo $this->translate('验证码'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input-small" id="captcha_code" name="captcha_code" placeholder="<?php echo $this->translate('输入验证码'); ?>">&nbsp;<span id="ask_captcha_id"></span>
+                        <?php } ?>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!-- FAQ END -->
+            <!-- 常见问题 -->
+            <div id="serQue" class="common-question">
+                <div class="question-hd clearfix">
+                    <div class="title_a"><?php echo $this->translate('售后服务'); ?></div>
+                </div>
+                <div class="question-bd">
+                    <?php echo $this->frontwebsite()->getSystemContent('buy_service'); ?>
+                </div>
+            </div>
+            <div id="goodsBuyQue" class="common-question" style="margin-top: 30px;">
+                <div class="question-hd clearfix">
+                    <div class="title_a"><?php echo $this->translate('如何购买'); ?></div>
+                </div>
+                <div class="question-bd">
+                    <?php echo $this->frontwebsite()->getSystemContent('buy'); ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 跟随 导航 -->
+<div class="goods-sub-bar" id="goodsSubBar">
+    <div class="container">
+        <div class="row">
+            <div class="span5">
+                <dl class="goods-sub-bar-info clearfix">
+                    <dt><img src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_thumbnail_image)); ?>"></dt>
+                    <dd>
+                        <strong><?php echo $this->escapeHtml($this->goods_info->goods_name); ?></strong>
+                        <p>
+                            <em><span class="J_mi_goodsPrice"><?php echo $this->frontwebsite()->shopPriceExtend($this->goods_info->goods_shop_price); ?></span></em>
+                            <?php $front_goods_price=intval($this->goods_info->goods_price); if( $front_goods_price>0) { ?>
+                            <del><span class="J_mi_marketPrice"><?php echo $this->frontwebsite()->shopPriceExtend($this->goods_info->goods_price); ?></span></del>
+                            <?php } ?>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="span15">
+                <div class="fr" id="goodsSubBarBtnBox">
+                    <?php if ($this->goods_info->goods_state == 1) { ?>
+                    <a href="javascript:;"  onclick="goods_menu_add_cart();" class="btn btn-primary goods-add-cart-btn" >
+                        <i class="iconfont">&#xe624;</i><?php echo $this->translate('加入购物车'); ?></a>
+                    <?php } ?>
+
+
+                </div>
+                <div class="goods-desc-menu" id="goodsSubMenu">
+                    <ul class="items clearfix J_pro_related_btns">
+                        <li class="current">
+                            <a href="#goodsDesc"><?php echo $this->translate('详细信息'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#goodsComment"><?php echo $this->translate('商品评价'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#goodsFaq"><?php echo $this->translate('商品咨询'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#serQue"><?php echo $this->translate('售后服务'); ?></a>
+                        </li>
+                        <li>
+                            <a href="#goodsBuyQue"><?php echo $this->translate('如何购买'); ?></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $("#ask_form").validate({
+            success : function(label){
+                label.addClass('validate_right').text('OK!');
+            },
+            rules: {
+                goods_ask_content: {
+                    required: true
+                }
+                <?php if ($this->frontwebsite()->websiteCaptchaState('goods_ask_captcha') == 'true') { ?>
+                ,
+                captcha_code: {
+                    required:true,
+                    remote :{
+                        url : '<?php echo $this->url('shopfront/default/captcha-check',array('action'=>'captcha','captcha_check'=>1)); ?>',
+                        type : 'post',
+                        date : {
+                            captcha_code :function(){
+                                return $("#captcha_code").val();
+                            }
+                        }
+                    }
+                }
+                <?php } ?>
+            },
+            messages: {
+                goods_ask_content: {
+                    required: "<?php echo $this->translate('请输入商品咨询内容！'); ?>"
+                }
+                <?php if ($this->frontwebsite()->websiteCaptchaState('goods_ask_captcha') == 'true') { ?>
+                ,
+                captcha_code: {
+                    required:"<?php echo $this->translate('验证码不能为空！'); ?>",
+                    remote : "<?php echo $this->translate('验证码错误！'); ?>"
+                }
+                <?php } ?>
+            },
+            submitHandler:function(form){
+                add_goods_ask_js();
+            }
+        });
+    });
+
+    function goods_menu_add_cart() {
+        var alert_message = '';
+        <?php if ($this->goods_color and $this->goods_color_array) { ?>
+        var js_select_color_value = $('#select_color_value').val();
+        if(js_select_color_value == '') alert_message += "<?php echo $this->translate('请选择').$this->goods_color->extend_name; ?>\n";
+        <?php } if ($this->goods_size and $this->goods_size_array) { ?>
+        var js_select_size_value = $('#select_size_value').val();
+        if(js_select_size_value == '') alert_message += "<?php echo $this->translate('请选择').$this->goods_size->extend_name; ?>";
+        <?php } ?>
+        if(alert_message != '') {
+            alert(alert_message);
+            return false;
+        }
+        $('#add_cart_submit').click();
+    }
+    //添加收藏
+    function add_favorites_js(goods_id,class_id) {
+        $.post("<?php echo $this->url('frontuser/default',array('action'=>'addFavorites')); ?>",{goods_id:goods_id,class_id:class_id},
+            function(data){
+                if(data == 'true') {
+                    $("#message_show").html('<?php echo $this->translate('该商品成功加入收藏！'); ?>');
+                    $("#message_url").html('<a class="btn" data-dismiss="modal"><?php echo $this->translate('关闭'); ?></a>');
+                } else {
+                    var message = '';
+                    if(data == 'login_false') {
+                        message = '<?php echo $this->translate('您还没有登录，无法收藏商品！'); ?>';
+                    } else if (data == 'goods_exists') {
+                        message = '<?php echo $this->translate('您已经收藏过该商品！'); ?>';
+                    } else {
+                        message = '<?php echo $this->translate('商品收藏不成功！'); ?>';
+                    }
+                    $("#message_show").html(message);
+                    $("#message_url").html('<a class="btn btn-warning" data-dismiss="modal"><?php echo $this->translate('关闭'); ?></a>');
+                }
+                $('#myModal').modal('show');
+            });
+    }
+
+    //加入对图片的延迟加载
+    $('#goodsDesc img').each(function(){
+        $(this).addClass('dbshopImgLoading');
+        $(this).attr('data-original', $(this).attr('src'));
+    });
+    $("img.dbshopImgLoading").lazyload({ effect : "fadeIn", skip_invisible : true, failure_limit : 1000 });
+
+    //菜单置顶
+    $(function() {
+        if($('#sticky_navigation').html() != null) {
+            var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
+            var sticky_navigation = function(){
+                var scroll_top = $(window).scrollTop();
+                if (scroll_top > sticky_navigation_offset_top) {
+                    $('#goodsSubBar').addClass('goods-sub-bar-play');
+                } else {
+                    $('#goodsSubBar').removeClass('goods-sub-bar-play');
+                }
+            };
+            sticky_navigation();
+            $(window).scroll(function() {
+                sticky_navigation();
+            });
+        }
+    });
+
+    //添加商品咨询
+    function add_goods_ask_js() {
+        $.post("<?php echo $this->url('frontgoods/default', array('action'=>'addAsk')); ?>",$('#ask_form').formSerialize(),
+            function(data){
+                if(data == 'true') {
+                    $('#goods_ask_content').val('');
+                    <?php if ($this->frontwebsite()->websiteCaptchaState('goods_ask_captcha') == 'true') { ?>
+                    $('#captcha_code').val('');
+                    captchaAdd();
+                    <?php } ?>
+                    show_message('.message_one','<?php echo date("Y-m-d H:i:s",time()); ?>','<?php echo $this->translate('您的咨询信息已经成功提交，卖家审核回复后，将正常显示！'); ?>','alert-success');
+                } else {
+                    show_message('.message_one','<?php echo date("Y-m-d H:i:s",time()); ?>',data,'alert-error');
+                }
+            });
+    }
+
+    <?php if ($this->combination_goods_array) { ?>
+    //组合商品js
+    /*------计算组合商品价格-------------*/
+    function count_combination_price() {
+        var combination_price = $('#base_goods_price').val();
+        $("input[name='combination_goods_id[]']").each(function() {
+            if (this.checked == true) {
+                combination_price = accAdd(combination_price, $('#one_combination_price_'+this.value).val());
+            }
+        });
+        $('#show_combination_count_price').html(combination_price);
+    }
+    /*------提交组合商品-------------*/
+    function combination_goods_add_cart() {
+        $("input[name='combination_goods_id[]']").each(function() {
+            if (this.checked == true) {
+                $.post("<?php echo $this->url('frontcart/default', array('action'=>'getAddCartInfo')); ?>",{goods_id:this.value},
+                    function (data) {
+                        if(data != '') {
+                            $.post("<?php echo $this->url('frontcart/default', array('action'=>'addCart')); ?>",{goods_id:data.goods_id, class_id:data.class_id, buy_goods_num:1, select_color_value:data.select_color_value, select_size_value:data.select_size_value, selected_spec_tag_id_str:data.selected_spec_tag_id_str});
+                        }
+                    },'json');
+            }
+        });
+        $.post("<?php echo $this->url('frontcart/default', array('action'=>'getAddCartInfo')); ?>",{goods_id:<?php echo $this->goods_info->goods_id; ?>,class_id:<?php echo $this->class_id; ?>},
+            function (data) {
+                if(data != '') {
+                    $.post("<?php echo $this->url('frontcart/default', array('action'=>'addCart')); ?>",{goods_id:data.goods_id, class_id:data.class_id, buy_goods_num:1, select_color_value:data.select_color_value, select_size_value:data.select_size_value, selected_spec_tag_id_str:data.selected_spec_tag_id_str});
+                }
+            },'json');
+
+        setTimeout(function(){
+            $("#message_show").html('<?php echo $this->translate('组合商品添加购物车成功！'); ?>');
+            $("#message_url").html('<a href="" class="btn btn-primary"><?php echo $this->translate('继续购物'); ?></a><a href="<?php echo $this->url('frontcart/default'); ?>" class="btn btn-primary"><?php echo $this->translate('去购物车结算'); ?></a>');
+            $('#myModal').modal('show');
+        }, 2000);
+    }
+    <?php } ?>
+
+    <?php if ($this->frontwebsite()->websiteCaptchaState('goods_ask_captcha') == 'true') { ?>
+    //验证码添加
+    function captchaAdd() {
+        $.get("<?php echo $this->url('shopfront/default',array('action'=>'captcha')); ?>",{},
+            function(data){
+                $("#ask_captcha_id").html('<img src="<?php echo $this->basePath('/'); ?>'+data.captcha_file+'" border="0" >&nbsp;&nbsp;<a href="javascript:;" onclick="captchaAdd()"><?php echo $this->translate('更换验证码'); ?></a>');
+            },'json');
+    }
+    captchaAdd();
+    <?php } ?>
+    //商品评价列表
+    function comment_ajax_list(list_url) {
+        $.get(list_url,'', function(html){
+            $("#list_goodscomment").html(html);
+        });
+    }
+    comment_ajax_list('<?php echo $this->url('frontgoods/default',array('action'=>'listComment'),array('query'=>array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->class_id))); ?>');
+    //商品咨询列表获取
+    function ask_ajax_list(list_url) {
+        $.get(list_url,'', function(html){
+            $("#list_goodsask").html(html);
+        });
+    }
+    ask_ajax_list('<?php echo $this->url('frontgoods/default',array('action'=>'goodsAsk'),array('query'=>array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->class_id))); ?>');
+
+    <?php if(defined('FRONT_CACHE_STATE') and FRONT_CACHE_STATE == 'true') { ?>
+    $.get('<?php echo $this->url('frontgoods/default',array('action'=>'browserhistory'),array('query'=>array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->class_id))); ?>','', function(html){
+        $("#browser_history").html(html);
+    });
+    $.get('<?php echo $this->url('frontgoods/default',array('action'=>'ajaxgoodsStock'),array('query'=>array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->class_id))); ?>','', function(data){
+        $("#goods_stock_show").html(data.goods_stock);
+        $("#ajax_order_count").html(data.order_count);
+    },'json');
+    <?php } ?>
+
+    $("#goodsDesc img").each(function(i){
+        if(this.width>880) {
+            this.width = 880;
+        }
+    });
+</script>

@@ -1,0 +1,27 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a><span class="sep">/</span>
+    <span><?php echo $this->translate('商品品牌'); ?></span>
+</div>
+
+<div class="container">
+    <div class="xm-line-box goods-list-box">
+        <div class="box-bd">
+            <ul class="thumbnails">
+                <?php if ($this->brand_array) { foreach ($this->brand_array as $brand_value) { ?>
+                    <li class="span3">
+                        <a class="thumbnail" href="<?php echo $this->url('frontbrand/default/front-brand-id', array('action'=>'brandGoods', 'brand_id'=>$brand_value['brand_id'])); ?>" title="<?php echo $brand_value['brand_name']; ?>"><img src="<?php echo ($brand_value['brand_logo'] != '' ? $this->basePath($brand_value['brand_logo']) : $this->basePath($this->frontwebsite()->getGoodsUploadIni('brand', 'brand_image_default'))); ?>"  border="0" alt="<?php echo $brand_value['brand_name']; ?>"></a>
+                    </li>
+                <?php } } else { echo '<li>' . $this->translate('暂无品牌') . '</li>'; } ?>
+            </ul>
+        </div>
+    </div>
+</div>

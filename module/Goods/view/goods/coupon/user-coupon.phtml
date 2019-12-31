@@ -1,0 +1,54 @@
+<div id="sticky_navigation" style="height:30px;border-bottom:4px solid #DFDFDF;">
+    <p class="pull-left" style="font-size:16px; line-height:30px;"><strong><?php echo $this->escapeHtml($this->coupon_info->coupon_name) . '(' . $this->translate('优惠券') . ')'; ?></strong></p>
+    <p class="pull-right">
+        <a href="<?php echo $this->url('coupon/default'); ?>" class="btn btn-small"><i class="icon-arrow-left"></i> <?php echo $this->translate('返回优惠券列表'); ?></a>
+    </p>
+</div>
+<table class="table table-hover">
+    <thead style="background:#CCC;">
+    <tr>
+        <th width="20%"><?php echo $this->translate('获得者'); ?></th>
+        <th width="20%"><?php echo $this->translate('获得时间'); ?></th>
+        <?php if ($this->coupon_info->get_coupon_type == 'buy') { ?>
+        <th width="15%"><?php echo $this->translate('订单编号(获得)'); ?></th>
+        <?php } ?>
+        <th width="10%"><?php echo $this->translate('优惠券状态'); ?></th>
+        <th width="15%"><?php echo $this->translate('订单编号(已用)'); ?></th>
+        <th width="15%"><?php echo $this->translate('时间(已用)'); ?></th>
+    </tr>
+    </thead>
+    <?php
+    if ($this->user_coupon_list) {
+        foreach ($this->user_coupon_list as $coupon_value) {
+            ?>
+            <tr>
+                <td><?php echo $this->escapeHtml($coupon_value['user_name']); ?></td>
+                <td><?php echo date("Y-m-d H:i:s", $coupon_value['get_time']); ?></td>
+                <?php if ($this->coupon_info->get_coupon_type == 'buy') { ?>
+                <td><?php echo $coupon_value['get_order_sn']; ?></td>
+                <?php } ?>
+                <td>
+                    <?php
+                    $couponStateArray = array(0=>$this->translate('未生效'), 1=>$this->translate('可用'), 2=>$this->translate('已用'), 3=>$this->translate('已过期'));
+                    echo $couponStateArray[$coupon_value['coupon_use_state']];
+                    ?>
+                </td>
+                <td>
+                    <?php echo empty($coupon_value['used_order_sn']) ? $this->translate('该优惠券未使用，无订单编号') : $coupon_value['used_order_sn']; ?>
+                </td>
+                <td>
+                    <?php echo empty($coupon_value['used_time']) ? $this->translate('该优惠券未使用，无时间') : date("Y-m-d H:i:s", $coupon_value['used_time']); ?>
+                </td>
+            </tr>
+            <?php
+        } ?>
+        <tr>
+            <td colspan="<?php echo $this->coupon_info->get_coupon_type == 'buy' ? 6 : 5; ?>" style="background:#FFF">
+                <?php echo ( count($this->user_coupon_list) > 0 ) ? $this->paginationControl($this->user_coupon_list,'Sliding','common/pager',array('page_url'=>$this->url('coupon/default/coupon_page',array('action'=>'userCoupon', 'id'=>$this->coupon_info->coupon_id)))) : ''; ?>
+            </td>
+        </tr>
+    <?php } else {
+        ?>
+        <tr><td colspan="<?php echo $this->coupon_info->get_coupon_type == 'buy' ? 6 : 5; ?>"><?php echo $this->translate('暂无优惠券信息'); ?></td></tr>
+    <?php } ?>
+</table>

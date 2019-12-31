@@ -1,0 +1,79 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a><span class="sep">/</span>
+    <?php if($this->class_menu) { foreach($this->class_menu as $menu_val) {
+            ?>
+            <a href="<?php echo $this->url('frontarticle/default/cms_class_id', array('action'=>'index', 'cms_class_id'=>$menu_val['article_class_id'])); ?>"><?php echo $this->escapeHtml($menu_val['article_class_name']); ?></a><span class="sep">/</span>
+        <?php } } ?>
+    <span><?php echo $this->escapeHtml($this->article_body->article_title . $this->article_body->article_title_extend); ?></span>
+</div>
+
+<div class="container clearfix">
+    <div class="row">
+
+        <div class="row exchange">
+            <div class="col col-4 exchange-side">
+                <div class="uc-nav-box ">
+                    <div class="box-hd">
+                        <h3 class="title"><?php echo $this->translate('顶级分类'); ?></h3>
+                    </div>
+                    <div class="box-bd">
+                        <ul class="uc-nav-list saled">
+                            <?php if($this->t_class) foreach ($this->t_class as $t_class_val) { ?>
+                                <li <?php if($t_class_val['article_class_id'] == $this->article_class_info->article_class_id) echo 'class="current"'; ?>><a href="<?php echo $this->url('frontarticle/default/cms_class_id', array('action'=>'index', 'cms_class_id'=>$t_class_val['article_class_id'])); ?>"><?php echo $this->escapeHtml($t_class_val['article_class_name']); ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+                <?php  if ($this->c_class) { ?>
+                    <div class="uc-nav-box">
+                        <div class="box-hd">
+                            <h3 class="title"><?php echo $this->translate('同级分类'); ?></h3>
+                        </div>
+                        <div class="box-bd">
+                            <ul class="uc-nav-list feature">
+                                <?php foreach($this->c_class as $c_class_val) { ?>
+                                    <li <?php if($c_class_val['article_class_id'] == $this->article_class_info->article_class_id) echo 'class="current"'; ?>><a href="<?php echo $this->url('frontarticle/default/cms_class_id', array('action'=>'index', 'cms_class_id'=>$c_class_val['article_class_id'])); ?>"><?php echo $this->escapeHtml($c_class_val['article_class_name']); ?></a></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+            <!-- .span4 END -->
+            <div class="col col-16 exchange-right">
+
+                <div class="xm-box exchange service-right marginLeft20">
+                    <div class="box-hd">
+                        <h2 class="title"><?php echo $this->escapeHtml($this->article_body->article_title . $this->article_body->article_title_extend); ?></h2>
+                    </div>
+                    <div class="bd" style="padding-bottom: 5px;">
+                        <p>
+                        <?php echo $this->translate('作者'); ?>：<?php echo $this->article_body->article_writer != '' ? $this->article_body->article_writer : $this->translate('匿名'); ?>&nbsp;&nbsp;&nbsp;<?php echo date("Y-m-d H:i:s", $this->article_body->article_add_time); ?>
+                            <?php
+                            $goods_share_info = $this->frontwebsite()->getDbshopGoodsShare();
+                            if(!empty($goods_share_info['share_type'])) {
+                                echo "<script>var dbshop_baidushare_path='". $this->basePath('/public/js/baiduShare/')."';</script>";
+                            ?>
+                                <?php echo $goods_share_info['share_code']; ?>
+                            <?php } ?>
+                        </p>
+                        <br>
+                        <div style="font-size:16px;" class="edit_table_css">
+                            <?php echo $this->article_body->article_body; ?>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

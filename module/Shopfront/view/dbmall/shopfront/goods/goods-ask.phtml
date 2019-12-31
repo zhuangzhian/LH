@@ -1,0 +1,24 @@
+<ul class="faq-list J_mi_question">
+    <?php if ($this->goods_ask_list->getTotalItemCount() > 0) { ?>
+        <?php foreach ($this->goods_ask_list as $ask_value) { ?>
+            <li style="margin-bottom: 15px;margin-top: 15px;padding-bottom: 15px;">
+                <h3 class="question">
+                    <span class="icon-ques">Q</span>
+                    <?php echo $this->frontwebsite()->userNameHide($ask_value['ask_writer']); ?> | <?php echo date("Y-m-d H:i:s", $ask_value['ask_time']); ?><br>
+                    <?php echo $this->escapeHtml($ask_value['ask_content']); ?>
+                </h3>
+                <?php if($ask_value['reply_ask_content'] != '') { ?>
+                <p class="answer">
+                    <span class="icon-ques icon-ans stard">A</span>
+                    <?php echo $this->translate('店主'); ?> | <?php echo date("Y-m-d H:i:s", $ask_value['reply_ask_time']); ?><br>
+                    <?php echo $this->escapeHtml($ask_value['reply_ask_content']); ?>
+
+                </p>
+                <?php } ?>
+            </li>
+        <?php } ?>
+        <li> <?php echo ( count($this->goods_ask_list) > 0 ) ? $this->paginationControl($this->goods_ask_list, 'Sliding', 'site/ajax-dbpage',array('page_url'=>$this->url('frontgoods/default',array('action'=>'goodsAsk','goods_id'=>$this->goods_id,'class_id'=>$this->class_id)), 'ajaxFunction'=>'ask_ajax_list')) : ""; ?> </li>
+    <?php } else { ?>
+    <li><strong><?php echo $this->translate('该商品暂无咨询信息！'); ?></strong></li>
+    <?php } ?>
+</ul>

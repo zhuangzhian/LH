@@ -1,0 +1,65 @@
+<div id="sticky_navigation" style="height:30px;border-bottom:4px solid #DFDFDF;">
+    <p class="pull-left" style="font-size:16px; line-height:30px;"><strong><?php echo $this->translate('文章设置'); ?></strong></p>
+    <p class="pull-right">
+        <a href="<?php echo $this->url('admintheme/default'); ?>" class="btn btn-small"><i class="icon-arrow-left"></i> <?php echo $this->translate('返回专题列表'); ?></a>&nbsp;
+        <a href="<?php echo $this->myviewalias()->dbshopHelpUrl('theme_set'); ?>" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+    </p>
+</div>
+<table class="table table-hover">
+    <thead style="background:#CCC;">
+    <tr>
+        <th width="4%">ID</th>
+        <th width="6%"><?php echo $this->translate('专题名称'); ?></th>
+        <th width="6%"><?php echo $this->translate('专题标记'); ?></th>
+        <th width="5%"><?php echo $this->translate('专题模板'); ?></th>
+        <th width="15%"><?php echo $this->translate('专题URL'); ?></th>
+        <th width="3%"><?php echo $this->translate('专题状态'); ?></th>
+        <th width="11%"><?php echo $this->translate('操作'); ?></th>
+    </tr>
+    </thead>
+    <?php if($this->theme_list) { foreach ($this->theme_list as $theme_value) { ?>
+        <tr>
+            <td><?php echo $theme_value['theme_id']; ?></td>
+            <td><?php echo $this->escapeHtml($theme_value['theme_name']); ?></td>
+            <td><?php echo $this->escapeHtml($theme_value['theme_sign']); ?></td>
+            <td><?php echo $theme_value['theme_template']; ?></td>
+            <td></td>
+            <td><?php if($theme_value['theme_state']==1) echo $this->translate('启用'); else echo $this->translate('禁用'); ?></td>
+            <td>
+                <?php if(isset($theme_value['theme_config']['goods_set'])) { ?>
+                    <a href="<?php echo $this->url('admintheme/default',array('action'=>'goodsList'), array('query'=>array('theme_id'=>$theme_value['theme_id'], 'item_type'=>'goods_set'))); ?>"><?php echo $this->translate('商品设置'); ?></a>
+                    <span>|</span>
+                <?php } ?>
+                <?php if(isset($theme_value['theme_config']['ad_set'])) { ?>
+                    <a href="<?php echo $this->url('admintheme/default',array('action'=>'adList'), array('query'=>array('theme_id'=>$theme_value['theme_id'], 'item_type'=>'ad_set'))); ?>"><?php echo $this->translate('广告设置'); ?></a>
+                    <span>|</span>
+                <?php } ?>
+                <?php if(isset($theme_value['theme_config']['cms_set'])) { ?>
+                    <a href="<?php echo $this->url('admintheme/default',array('action'=>'cmsList'), array('query'=>array('theme_id'=>$theme_value['theme_id'], 'item_type'=>'cms_set'))); ?>"><?php echo $this->translate('文章设置'); ?></a>
+                    <span>|</span>
+                <?php } ?>
+                <a href="<?php echo $this->url('admintheme/default',array('action'=>'edit'), array('query'=>array('theme_id'=>$theme_value['theme_id']))); ?>"><?php echo $this->translate('编辑'); ?></a>
+                <span>|</span>
+                <a href="javascript:;" onclick="return theme_del_js(<?php echo $theme_value['theme_id']; ?>);"><?php echo $this->translate('删除'); ?></a>
+            </td>
+        </tr>
+    <?php } } ?>
+</table>
+
+<script>
+    //导航删除js
+    function theme_del_js(theme_id) {
+        if(window.confirm('<?php echo $this->translate('您确实要删除该专题吗？'); ?>')) {
+            $.post("<?php echo $this->url('admintheme/default',array('action'=>'del')); ?>",{theme_id:theme_id},
+                function(data){
+                    if(data != 'false') {
+                        window.location.href='<?php echo $this->url('admintheme/default'); ?>';
+                        return true;
+                    } else {
+                        alert('<?php echo $this->translate('专题删除失败！'); ?>');
+                    }
+                });
+        }
+        return false;
+    }
+</script>

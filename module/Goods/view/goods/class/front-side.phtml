@@ -1,0 +1,66 @@
+<div id="sticky_navigation" style="height:30px;border-bottom:4px solid #DFDFDF;">
+    <p class="pull-left" style="font-size:16px; line-height:30px;"><strong><?php echo $this->translate('前台侧边显示设置'); ?></strong>&nbsp;[<font color="red">特别提示：当前如无内容，前台侧边默认显示分类信息；有内容，则显示当前信息。</font>]</p>
+    <p class="pull-right">
+        <a href="<?php echo $this->url('class/default',array('action'=>'addFrontSide','controller'=>'class')); ?>" class="btn btn-small btn-primary"><i class="icon-plus icon-white"></i> <?php echo $this->translate('添加侧边显示'); ?></a>&nbsp;
+        <a href="<?php echo $this->myviewalias()->dbshopHelpUrl('class_front_side_set'); ?>" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+    </p>
+</div>
+<form action="<?php echo $this->url('class/default',array('action'=>'allFrontsieUpdate','controller'=>'class')); ?>" name="frontside_form" id="frontside_form" method="post">
+    <table class="table table-hover">
+        <thead style="background:#CCC;">
+        <tr>
+            <th width="40%"><?php echo $this->translate('显示名称'); ?></th>
+            <th width="20%"><?php echo $this->translate('排序'); ?></th>
+            <th width="15%"><?php echo $this->translate('新窗口打开'); ?></th>
+            <th width="25%"><?php echo $this->translate('操作'); ?></th>
+        </tr>
+        </thead>
+        <?php
+        if ($this->frontside_array) {
+            foreach ($this->frontside_array as $side_val) {
+                ?>
+                <tr>
+                    <td>
+                        <?php if($side_val['frontside_topid'] > 0) echo str_repeat('&nbsp;',  5); ?><i class="icon-chevron-right"></i><?php echo $this->escapeHtml($side_val['frontside_name']); ?>
+                    </td>
+                    <td><input type="text" class="span8" name="frontside_sort[<?php echo $side_val['frontside_id']; ?>]" value="<?php echo $side_val['frontside_sort']; ?>"></td>
+                    <td><?php if($side_val['frontside_new_window'] == 1) { echo $this->translate('是'); } else { echo $this->translate('否');} ?></td>
+                    <td>
+                        <a href="<?php echo $this->url('class/default',array('action'=>'editFrontSide','controller'=>'class'), array('query'=>array('frontside_id'=>$side_val['frontside_id']))); ?>"><?php echo $this->translate('编辑'); ?></a>
+                        <span>|</span>
+                        <a href="javascript:;" onclick="return frontside_del_js(<?php echo $side_val['frontside_id']; ?>);"><?php echo $this->translate('删除'); ?></a>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+            <tr>
+                <td colspan="4" style="background: #FFF">
+                    <div class="pull-left span6" style="height: 30px; line-height: 30px;">
+                        <button type="submit" class="btn btn-small btn-primary"><i class="icon-tasks icon-white"></i> <?php echo $this->translate('批量修改'); ?></button>
+                    </div>
+                </td>
+            </tr>
+        <?php } else {
+            ?>
+            <tr><td colspan="5"><?php echo $this->translate('暂无显示设置'); ?></td></tr>
+        <?php } ?>
+    </table>
+</form>
+<script>
+    //删除操作js
+    function frontside_del_js(frontside_id) {
+        if(window.confirm('<?php echo $this->translate('您确实要删除该显示吗？如果该显示下级有显示，将一并被删除！'); ?>')) {
+            $.post("<?php echo $this->url('class/default',array('action'=>'delFrontSide','controller'=>'class')); ?>",{frontside_id:frontside_id},
+                function(data){
+                    if(data == 'true') {
+                        window.location.href='<?php echo $this->url('class/default', array('controller'=>'class', 'action'=>'frontSide')); ?>';
+                        return true;
+                    } else {
+                        alert('<?php echo $this->translate('删除失败！'); ?>');
+                    }
+                });
+        }
+        return false;
+    }
+</script>

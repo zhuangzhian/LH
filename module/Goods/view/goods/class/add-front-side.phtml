@@ -1,0 +1,148 @@
+<div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+        <li><h5><?php echo $this->translate('侧边显示'); ?></h5></li>
+        <li class="active"><a data-toggle="tab" href="#express_a"><?php echo $this->translate('基本信息'); ?></a></li>
+    </ul>
+    <form class="form-horizontal" name="frontside_form" id="frontside_form" method="post" action="">
+        <div class="tab-content">
+            <div id="sticky_navigation" style="height:30px;border-bottom:4px solid #DFDFDF;">
+                <div class="pull-left" style="font-size:16px;line-height:30px;"><strong><?php if($this->frontside_info) echo $this->translate('编辑'); else echo $this->translate('新加'); ?><?php echo $this->translate('侧边显示'); ?></strong></div>
+                <div class="pull-right">
+                    <a href="<?php echo $this->url('class/default', array('controller'=>'class', 'action'=>'frontSide')); ?>" class="btn btn-small"><i class="icon-arrow-left"></i> <?php echo $this->translate('返回侧边显示列表'); ?></a>&nbsp;
+                    <a href="<?php echo $this->serverUrl(true); ?>" class="btn btn-small btn-warning"><i class="icon-repeat icon-white"></i> <?php echo $this->translate('刷新'); ?></a>&nbsp;
+                    <?php if($this->frontside_info) { ?>
+                        <a href="javascript:;" onclick="return frontside_del_js(<?php echo $this->frontside_info->frontside_id ?>);" class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> <?php echo $this->translate('删除侧边显示'); ?></a>&nbsp;
+                    <?php } ?>
+                    <button type="submit" class="btn btn-small btn-primary"><i class="icon-ok icon-white"></i> <?php echo $this->translate('保存侧边显示信息'); ?></button>&nbsp;
+                    <a href="<?php echo $this->myviewalias()->dbshopHelpUrl('class_front_side_set'); ?>" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+                </div>
+            </div>
+            <div id="express_a" class="tab-pane active">
+                <div class="well admin_add_header_well"><?php echo $this->translate('基本信息'); ?></div>
+                <div class="well admin_add_well">
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('显示名称'); ?><span class="must_add_value">*</span>：</label>
+                        <div class="controls">
+                            <input type="text" id="frontside_name"  name="frontside_name" class="span8" value="<?php echo ($this->frontside_info ? $this->escapeHtml($this->frontside_info->frontside_name) : ''); ?>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('链接地址'); ?>：</label>
+                        <div class="controls">
+                            <input type="text" id="frontside_url"  name="frontside_url" placeholder="<?php echo $this->translate('外网地址请自行加入 http:// 或 https://  [ 如: http://www.baidu.com ]'); ?>" class="span8" value="<?php echo ($this->frontside_info ? $this->frontside_info->frontside_url : ''); ?>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('显示层级'); ?>：</label>
+                        <div class="controls">
+                            <select name="frontside_topid" id="frontside_topid" class="span2">
+                                <option value="0"><?php echo $this->translate('顶级显示'); ?></option>
+                                <?php
+                                if ($this->frontside_array and (!isset($this->frontside_info) or (isset($this->frontside_info->frontside_topid) and $this->frontside_info->frontside_topid > 0))) {
+                                foreach ($this->frontside_array as $side_val) {
+                                    if(isset($this->frontside_info->frontside_id) and $this->frontside_info->frontside_id == $side_val['frontside_id']) continue;
+                                    if($side_val['frontside_topid'] > 0) continue;
+                                ?>
+                                <option value="<?php echo $side_val['frontside_id']; ?>" <?php if(isset($this->frontside_info->frontside_topid) and $this->frontside_info->frontside_topid == $side_val['frontside_id']) echo 'selected'; ?>><?php echo $this->escapeHtml($side_val['frontside_name']); ?></option>
+                                <?php } } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group goods_class">
+                        <label for="input01" class="control-label"><?php echo $this->translate('商品分类'); ?>：</label>
+                        <div class="controls">
+                            <select name="frontside_class_id" id="frontside_class_id" onchange="select_goods_class();" class="span3">
+                                <option value="0"><?php echo $this->translate('不使用商品分类'); ?></option>
+                                <?php
+                                if ($this->goods_class) {
+                                    foreach ($this->goods_class as $class_val) {
+                                        ?>
+                                        <option value="<?php echo $class_val['class_id'] ?>" <?php if(isset($this->frontside_info->frontside_class_id) and $class_val['class_id'] == $this->frontside_info->frontside_class_id) echo 'selected'; ?> ><?php echo str_repeat('&nbsp;', $class_val['class_level'] * 5).$class_val['class_name']; ?></option>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('新窗口打开'); ?>：</label>
+                        <div class="controls">
+                            <label class="radio inline"><input type="radio" value="1" <?php if(($this->frontside_info and $this->frontside_info->frontside_new_window == 1) or !$this->frontside_info) echo 'checked="checked"'; ?> name="frontside_new_window"><?php echo $this->translate('是'); ?></label>
+                            <label class="radio inline"><input type="radio" value="0" <?php if($this->frontside_info and $this->frontside_info->frontside_new_window == 0) echo 'checked="checked"'; ?> name="frontside_new_window"><?php echo $this->translate('否'); ?></label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('排序'); ?><span class="must_add_value">*</span>：</label>
+                        <div class="controls">
+                            <input type="text" class="span1" name="frontside_sort" id="frontside_sort" value="<?php echo ($this->frontside_info ? $this->frontside_info->frontside_sort : 255); ?>" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function() {
+        $("#navigation_form").validate({
+            rules: {
+                frontside_name: {
+                    required: true,
+                    maxlength:60
+                },
+                frontside_sort: {
+                    required: true,
+                    number: true,
+                    min:1,
+                    max:255
+                }
+            },
+            messages: {
+                frontside_name: {
+                    required: "<?php echo $this->translate('显示名称不能为空！'); ?>",
+                    maxlength: "<?php echo $this->translate('显示名称最多输入60个汉字！'); ?>"
+                },
+                frontside_sort: {
+                    required: "<?php echo $this->translate('排序不能为空！'); ?>",
+                    number: "<?php echo $this->translate('排序必须为数字！'); ?>",
+                    min: "<?php echo $this->translate('排序最小为1！'); ?>",
+                    max: "<?php echo $this->translate('排序最大为255！'); ?>"
+                }
+            }
+        });
+    });
+
+    //删除操作js
+    function frontside_del_js(frontside_id) {
+        if(window.confirm('<?php echo $this->translate('您确实要删除该显示吗？如果该显示下级有显示，将一并被删除！'); ?>')) {
+            $.post("<?php echo $this->url('class/default',array('action'=>'delFrontSide','controller'=>'class')); ?>",{frontside_id:frontside_id},
+                function(data){
+                    if(data == 'true') {
+                        window.location.href='<?php echo $this->url('class/default', array('controller'=>'class', 'action'=>'frontSide')); ?>';
+                        return true;
+                    } else {
+                        alert('<?php echo $this->translate('删除失败！'); ?>');
+                    }
+                });
+        }
+        return false;
+    }
+
+    function select_goods_class() {
+        var class_id   = $('#frontside_class_id').val();
+        var class_name = $("#frontside_class_id").find("option:selected").text();
+        var class_url  = '<?php echo $this->url('shopfront/default'); ?>list/'+class_id;
+        if(class_id > 0) {
+            $('#frontside_name').val($.trim(class_name));
+            $('#frontside_url').val(class_url);
+        } else {
+            $('#frontside_name').val('');
+            $('#frontside_url').val('');
+        }
+
+    }
+
+</script>

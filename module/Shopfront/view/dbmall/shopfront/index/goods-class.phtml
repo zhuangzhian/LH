@@ -1,0 +1,47 @@
+<ul class="nav-category-list">
+    <?php
+    if ($this->goods_class) {
+        foreach ($this->goods_class as $class_key => $class_val) {
+            if($class_val['class_state'] == 0) continue;
+            ?>
+            <li class="nav-category-item <?php if($class_key == 0) echo 'nav-category-item-first'; ?>">
+                <?php if ($class_val['class_top_id'] == 0) { ?>
+                    <div class="nav-category-content"> <a href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$class_val['class_id'])); ?>" class="title"><?php echo $this->escapeHtml($class_val['class_name']); ?></a>
+                        <?php if (isset($class_val['sub_class']) and !empty($class_val['sub_class'])) { ?>
+                            <div class="links">
+                                <?php foreach($class_val['sub_class'] as $sub_value) { ?>
+                                    <a href="<?php echo $this->url('frontgoodslist/default', array('class_id'=>$sub_value['class_id'])); ?>"><?php echo $this->escapeHtml($sub_value['class_name']); ?></a>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </li>
+        <?php } } ?>
+
+    <?php
+    if ($this->frontside_array) {
+        foreach ($this->frontside_array as $frontside_key => $frontside_val) {
+            ?>
+            <li class="nav-category-item <?php if($frontside_key == 0) echo 'nav-category-item-first'; ?>">
+                <?php if ($frontside_val['frontside_topid'] == 0) { ?>
+                    <div class="nav-category-content"> <a href="<?php echo $frontside_val['frontside_url']; ?>" class="title" <?php if($frontside_val['frontside_new_window'] == 1) echo 'target="_blank"'; ?>><?php echo $this->escapeHtml($frontside_val['frontside_name']); ?></a>
+                        <?php if (isset($frontside_val['sub']) and !empty($frontside_val['sub'])) { ?>
+                            <div class="links">
+                                <?php foreach($frontside_val['sub'] as $sub_value) { ?>
+                                    <a href="<?php echo $sub_value['frontside_url']; ?>" <?php if($sub_value['frontside_new_window'] == 1) echo 'target="_blank"'; ?>><?php echo $this->escapeHtml($sub_value['frontside_name']); ?></a>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </li>
+        <?php } } ?>
+</ul>
+<script>
+    $("#J_categoryContainer li").hover(function() {
+        $(this).addClass("current");
+    }, function() {
+        $(this).removeClass("current");
+    });
+</script>

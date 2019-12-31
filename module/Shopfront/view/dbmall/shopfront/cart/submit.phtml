@@ -1,0 +1,28 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="xm-plain-box">
+        <div class="box-hd">
+            <h3 class="title"><?php echo $this->translate('恭喜您！订单提交成功，祝您购物愉快！'); ?></h3>
+        </div>
+    </div>
+    <div class="box-hd">
+        <p style="font-size:16px;"><strong><?php echo $this->translate('您当前的订单金额'); ?>：<font color="color:#ED145B"><?php echo $this->order_total; ?></font></strong></p>
+        <p style="font-size:16px;"><strong><?php echo $this->translate('请牢记您的订单号'); ?>：<font color="color:#ED145B"><?php echo $this->order_sn; ?></font></strong></p>
+        <hr>
+        <p style="text-align: center;">
+            <input type="button" class="btn" onClick="location.href='<?php echo $this->url('shopfront/default'); ?>'" value="<?php echo $this->translate('继续去购物'); ?>">&nbsp;&nbsp;
+            <?php if($this->order_state == 10) {?>
+                <input type="button" class="btn btn-primary"  onclick="location.href='<?php echo $this->url('frontorder/default/order_id', array('action'=>'orderpay', 'order_id'=>$this->order_id)); ?>'" value="<?php echo $this->translate('马上去支付'); ?>">&nbsp;&nbsp;
+            <?php } ?>
+            <input type="button" class="btn" onClick="location.href='<?php echo $this->url('frontorder/default/order_state', array('action'=>'index', 'order_state'=>$this->order_state)); ?>'" value="<?php echo $this->translate('查看订单详情'); ?>">
+        </p>
+    </div>
+</div>

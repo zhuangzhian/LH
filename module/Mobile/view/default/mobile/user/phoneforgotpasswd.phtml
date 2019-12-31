@@ -1,0 +1,75 @@
+<p class="ect-padding-lr ect-margin-tb ect-margin-bottom0"><?php echo $this->translate('您可通过 手机号码 重置密码'); ?>
+    <a href="<?php echo $this->url('m_user/default',array('action'=>'forgotpasswd')); ?>" class="btn btn-primary ect-colorf"><?php echo $this->translate('点击通过电子邮箱重置'); ?></a>
+</p>
+<?php if(isset($this->step) and $this->step == 2){ ?>
+    <form class="validforms" method="post" action="<?php echo $this->url('m_user/default',array('action'=>'phoneforgotpasswdedit')); ?>">
+        <input type="hidden" name="step" value="step3">
+        <div class="flow-consignee ect-bg-colorf">
+            <section>
+                <ul>
+                    <li>
+                        <div class="input-text"><b><?php echo $this->translate('用户名称'); ?>：</b><span><?php echo $this->escapeHtml($this->user_name); ?></span></div>
+                    </li>
+                    <li>
+                        <div class="input-text"><b><?php echo $this->translate('手机号码'); ?>：</b><span><?php echo $this->escapeHtml($this->user_phone); ?></span></div>
+                    </li>
+                    <li>
+                        <div class="input-text code"><b><?php echo $this->translate('手机验证码'); ?>：</b><span>
+                        <input type="text" datatype="*" id="phone_code" style="width: 80%;" name="phone_code" ajaxurl="<?php echo $this->url('mobile/default',array('action'=>'checkphoneCaptcha')); ?>" placeholder="<?php echo $this->translate('请输入手机验证码'); ?>" nullmsg="<?php echo $this->translate('请输入手机验证码'); ?>">
+                        </span>
+                            <input type="button"class="pull-right" id="get_phone_code" value="<?php echo $this->translate('获取验证码'); ?>">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="ect-padding-lr ect-padding-tb"> <input type="submit" value="下一步" class="btn btn-info ect-btn-info ect-colorf"></div>
+    </form>
+    <script>
+        var waittime = 60;
+        function captchatime() {
+            if (waittime == 0) {
+                $('#get_phone_code').removeAttr("disabled");
+                $('#get_phone_code').val('<?php echo $this->translate('发送验证码'); ?>');
+                waittime = 60;
+            }
+            else {
+                $('#get_phone_code').val("<?php echo $this->translate('重新发送'); ?>(" + waittime + ")");
+                waittime--;
+                setTimeout(function() {
+                        captchatime()
+                    },
+                    1000)
+            }
+        }
+        document.getElementById("get_phone_code").onclick=function(){
+            $.ajax({
+                type : 'POST',
+                url	 : '<?php echo $this->url('frontuser/default',array('action'=>'sendPhoneCode')); ?>',
+                //data : "user_phone="+$('#user_phone').val()+"&checkrepeat=true&captcha_security="+$('#captcha_security').val(),
+                success: function(msg){
+                    if(msg != '') {
+                        alert(msg);
+                        return false;
+                    } else {
+                        $('#get_phone_code').attr("disabled", true);
+                        captchatime();
+                    }
+                }
+            });
+        }
+    </script>
+<?php } else { ?>
+    <form class="validforms" method="post">
+        <div class="flow-consignee ect-bg-colorf">
+            <section>
+                <ul>
+                    <li>
+                        <div class="input-text"><b><?php echo $this->translate('手机号码'); ?>：</b><span><input type="text" datatype="m" id="user_phone" class="inputBg" name="user_phone" placeholder="<?php echo $this->translate('会员手机号码'); ?>" nullmsg="<?php echo $this->translate('请填写正确的手机号码'); ?>"></span></div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="ect-padding-lr ect-padding-tb"> <input type="submit" value="下一步" class="btn btn-info ect-btn-info ect-colorf"></div>
+    </form>
+<?php } ?>

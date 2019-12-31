@@ -1,0 +1,69 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('我的咨询'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box">
+                    <div class="box-hd">
+                        <h3 class="title">
+                            <?php echo $this->translate('我的咨询'); ?>
+                        </h3>
+                    </div>
+                    <div class="box-bd">
+                        <?php if ($this->ask_list->getTotalItemCount() > 0) { ?>
+                        <div class="uc-order-list-box">
+                            <ul class="uc-order-detail-list">
+                                <li class="uc-order-detail-item">
+                                    <table class="order-detail-table">
+                                        <thead>
+                                        <tr>
+                                            <th colspan="2" class="column-info column-t">
+                                                <div class="column-content"><?php echo $this->translate('咨询信息'); ?></div></th>
+                                            <th class="column-info column-t"><?php echo $this->translate('操作'); ?></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach ($this->ask_list as $ask_value) { ?>
+                                        <tr>
+                                            <td colspan="2" class="column-detail column-l" style="padding: 5px;">
+                                                <p><strong><?php echo $this->translate('咨询时间'); ?>：</strong><?php echo date('Y-m-d H:i:s',$ask_value['ask_time']); ?></p>
+                                                <p><strong><?php echo $this->translate('咨询商品'); ?>：</strong><?php echo $this->escapeHtml($ask_value['goods_name']); ?></p>
+                                                <p><strong><?php echo $this->translate('咨询内容'); ?>：</strong><?php echo $this->escapeHtml($ask_value['ask_content']); ?></p>
+                                                <?php if ($ask_value['reply_ask_content'] != '') { ?>
+                                                <p style="margin-top: 15px;"><strong><?php echo $this->translate('回复时间'); ?>：</strong><?php echo date("Y-m-d H:i",$ask_value['reply_ask_time']); ?></p>
+                                                <p><strong><?php echo $this->translate('回复人'); ?>：</strong><?php echo $this->escapeHtml($ask_value['reply_ask_writer']); ?></p>
+                                                <p><strong><?php echo $this->translate('回复内容'); ?>：</strong><?php echo $this->escapeHtml($ask_value['reply_ask_content']); ?></p>
+                                                <?php } ?>
+                                            </td>
+                                            <td class="column-action column-r"><a href="<?php echo $this->url('fronthome/default/front-ask-id', array('action'=>'askdel','ask_id'=>$ask_value['ask_id'])); ?>" style="color: #fff;" class="btn btn-small btn-primary" onclick="return window.confirm('<?php echo $this->translate('您确实要删除该商品咨询吗？'); ?>');"><?php echo $this->translate('删除'); ?></a></td>
+                                        </tr>
+                                        <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
+                        <?php echo ( count($this->ask_list) > 0 ) ? $this->paginationControl($this->ask_list, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('fronthome/default', array('action'=>'goodsask')))) : ""; ?>
+                        <?php } else { ?>
+                        <p><?php echo $this->translate('暂无商品咨询！'); ?></p>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

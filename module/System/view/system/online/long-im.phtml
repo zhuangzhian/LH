@@ -1,0 +1,46 @@
+<div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+        <li><h5><?php echo $this->translate('珑客服设置'); ?></h5></li>
+        <li class="active"><a data-toggle="tab" href="#long_a"><?php echo $this->translate('基本信息'); ?></a></li>
+    </ul>
+    <form class="form-horizontal" name="online_style_form" id="online_style_form" method="post" action="">
+        <div class="tab-content">
+            <div id="sticky_navigation" style="height:30px;border-bottom:4px solid #DFDFDF;">
+                <div class="pull-left" style="font-size:16px;line-height:30px;"><strong><?php echo $this->translate('珑客服设置'); ?></strong></div>
+                <div class="pull-right">
+                    <a href="<?php echo $this->serverUrl(true); ?>" class="btn btn-small btn-warning"><i class="icon-repeat icon-white"></i> <?php echo $this->translate('刷新'); ?></a>&nbsp;
+                    <button type="submit" class="btn btn-small btn-primary"><i class="icon-ok icon-white"></i> <?php echo $this->translate('保存设置信息'); ?></button>&nbsp;
+                    <a href="https://doc.loongdom.cn/index.php?title=%E7%8F%91%E5%AE%A2%E6%9C%8D%E5%BC%80%E9%80%9A%E6%96%B9%E6%B3%95" target="_blank" class="btn btn-small btn-info"><i class="icon-info-sign icon-white"></i> <?php echo $this->translate('查看帮助说明'); ?></a>
+                </div>
+            </div>
+            <div id="long_a" class="tab-pane active">
+                <div class="well admin_add_header_well"><?php echo $this->translate('基本信息'); ?></div>
+                <div class="well admin_add_well">
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('珑客服ID'); ?>：</label>
+                        <div class="controls">
+                            <input type="text" id="longImID"  name="longImID" class="span4" value="<?php if(isset($this->imConfig['longImID'])) echo $this->escapeHtml($this->imConfig['longImID']); ?>">
+                            <a href="https://www.longkefu.net/" target="_blank" class="btn btn-primary btn-small"><?php echo $this->translate('点击查看珑客服官网'); ?></a>
+                            <span class="text-info">珑客服为DBShop团队开发的在线WebIM客服系统</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('范围'); ?>：</label>
+                        <div class="controls">
+                            <label class="checkbox inline"><input type="checkbox" name="longImRange[]" <?php if(isset($this->imConfig['longImRange']) && !empty($this->imConfig['longImRange']) && in_array('pc', $this->imConfig['longImRange'])) echo 'checked="checked"'; ?> value="pc" /><?php echo $this->translate('电脑端'); ?></label>
+                            <label class="checkbox inline"><input type="checkbox" name="longImRange[]" <?php if(isset($this->imConfig['longImRange']) && !empty($this->imConfig['longImRange']) && in_array('phone', $this->imConfig['longImRange'])) echo 'checked="checked"'; ?> value="phone" /><?php echo $this->translate('手机端'); ?></label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="input01" class="control-label"><?php echo $this->translate('状态'); ?>：</label>
+                        <div class="controls">
+                            <label class="checkbox inline"><input type="checkbox" id="longImIDState" name="longImIDState" <?php if(isset($this->imConfig['longImIDState']) && $this->imConfig['longImIDState'] == 'true') echo 'checked="checked"'; ?> value="true" /><?php echo $this->translate('启用'); ?></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>

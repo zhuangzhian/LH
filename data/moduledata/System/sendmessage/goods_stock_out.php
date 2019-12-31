@@ -1,0 +1,1 @@
+{shopname}站点的商品 {goodsname} 库存不足，当前库存仅为 {goodsstock}

@@ -1,0 +1,39 @@
+<?php
+$url = $this->page_url;
+$parameterGet = $this->DbshopCommonFun()->dbshopRequesthelper();
+
+if ($parameterGet != ""){
+  $parameterGet = "?".$parameterGet;
+}
+//为了获取类似#这样的html定位符
+$parameterGet .= ((isset($this->more) and !empty($this->more)) ? $this->more : '');
+?>
+
+<?php if ($this->pageCount): ?>
+<div class="xm-pagenavi">
+    <?php if (isset($this->previous)): ?>
+        <a href="<?php echo $url.'/'.$this->previous.$parameterGet; ?>" class="numbers first iconfont"></a>
+    <?php else: ?>
+        <span class="numbers first iconfont"></span>
+    <?php endif; ?>
+
+    <?php foreach ($this->pagesInRange as $page): ?>
+        <?php if ($page != $this->current): ?>
+            <a class="numbers current" href="<?php echo $url.'/'.$page.$parameterGet; ?>">
+                    <?php echo $page; ?>
+            </a>
+        <?php else: ?>
+            <span class="numbers current">
+                <?php echo $page; ?>
+            </span>
+        <?php endif; ?>
+    <?php endforeach; ?>
+
+    <?php if (isset($this->next)): ?>
+        <a href="<?php echo $url.'/'.$this->next.$parameterGet; ?>" class="numbers last iconfont"></a>
+    <?php else: ?>
+        <span class="numbers last iconfont"></span>
+    <?php endif; ?>
+
+</div>
+<?php endif; ?>

@@ -1,0 +1,99 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a><span class="sep">/</span>
+    <?php if($this->class_menu) { foreach($this->class_menu as $menu_val) {
+        if($menu_val['article_class_id'] != $this->article_class_info->article_class_id) {
+            ?>
+            <a href="<?php echo $this->url('frontarticle/default/cms_class_id', array('action'=>'index', 'cms_class_id'=>$menu_val['article_class_id'])); ?>"><?php echo $this->escapeHtml($menu_val['article_class_name']); ?></a><span class="sep">/</span>
+        <?php } } } ?>
+    <span><?php echo $this->escapeHtml($this->article_class_info->article_class_name); ?></span>
+</div>
+
+<div class="container clearfix">
+<div class="row">
+
+<div class="row exchange">
+<div class="col col-4 exchange-side">
+    <div class="uc-nav-box ">
+        <div class="box-hd">
+            <h3 class="title"><?php echo $this->translate('同级分类'); ?></h3>
+        </div>
+        <div class="box-bd">
+            <ul class="uc-nav-list saled">
+                <?php if ($this->c_class) {
+                foreach ($this->c_class as $c_value) {
+                    ?>
+                    <li <?php if ($c_value['article_class_id'] == $this->article_class_info->article_class_id) echo 'class="current"'; ?>>
+                        <a href="<?php echo $this->url('frontarticle/default/cms_class_id',array('action'=>'index','cms_class_id'=>$c_value['article_class_id'])); ?>"><?php echo $this->escapeHtml($c_value['article_class_name']); ?></a>
+                    </li>
+                <?php } } ?>
+            </ul>
+        </div>
+    </div>
+    <?php if (isset($this->sub_class) and !empty($this->sub_class)) { ?>
+    <div class="uc-nav-box">
+        <div class="box-hd">
+            <h3 class="title"><?php echo $this->translate('下级分类'); ?></h3>
+        </div>
+        <div class="box-bd">
+            <ul class="uc-nav-list feature">
+                <?php foreach($this->sub_class as $sub_class_val) { ?>
+                    <li><a href="<?php echo $this->url('frontarticle/default/cms_class_id', array('action'=>'index', 'cms_class_id'=>$sub_class_val['article_class_id'])); ?>"><?php echo $this->escapeHtml($sub_class_val['article_class_name']); ?></a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+    <?php } ?>
+</div>
+<!-- .span4 END -->
+<div class="col col-16 exchange-right">
+
+<div class="xm-box exchange service-right marginLeft20 phone" style="display: block;">
+    <div class="box-hd">
+        <h2 class="title"><?php echo $this->escapeHtml($this->article_class_info->article_class_name); ?></h2>
+    </div>
+    <div>
+        <table class="table">
+            <tbody>
+            <?php if ($this->article_list->getTotalItemCount() > 0) {
+            foreach($this->article_list as $article_value) {
+            ?>
+            <tr>
+                <td style="width: 80%;">
+                <a href="<?php echo $this->url('frontarticle/default/cms_id',array('action'=>'content','cms_id'=>$article_value['article_id'])); ?>"><?php echo $this->escapeHtml($article_value['article_title']); ?></a>
+                </td>
+                <td>
+                    <?php echo date("Y-m-d H:i", $article_value['article_add_time']); ?>
+                </td>
+            </tr>
+            <?php } ?>
+            <tr>
+                <td colspan="2">
+                    <?php echo ( count($this->article_list) > 0 ) ? $this->paginationControl($this->article_list, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('frontarticle/default/cms_class_id',array('action'=>'index', 'cms_class_id'=>$this->article_class_info->article_class_id)))) : ""; ?>
+                </td>
+            </tr>
+            <?php } else { ?>
+             <tr>
+                 <td colspan="2">
+                     <?php echo $this->translate('暂无文章！'); ?>
+                 </td>
+             </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>

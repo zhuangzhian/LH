@@ -1,0 +1,36 @@
+<ul class="content">
+    <?php if ($this->goods_comment->getTotalItemCount() > 0) { ?>
+        <?php foreach ($this->goods_comment as $comment_value) { ?>
+            <li>
+                <div class="article">
+                    <h3 class="art_star clearfix">
+                        <div class="leftPart">
+                            <span class="icon-stat icon-stat-<?php echo $comment_value['goods_evaluation']; ?>"></span>
+                        </div>
+                        <div class="rightPart"> <?php echo date("Y-m-d H:i:s", $comment_value['comment_time']); ?> </div>
+                    </h3>
+                    <div class="art_content">
+                        <?php echo $this->escapeHtml($comment_value['comment_body']); ?>
+                    </div>
+                    <div class="art_info clearfix">&nbsp;</div>
+                </div>
+                <div class="head_photo">
+                    <img alt="<?php echo $this->frontwebsite()->userNameHide($comment_value['comment_writer']); ?>" src="<?php echo $this->basePath((empty($comment_value['user_avatar']) ? $this->frontwebsite()->getUserIni('default_avatar') : $comment_value['user_avatar'])); ?>">
+                    <h3 class="name"><?php echo $this->frontwebsite()->userNameHide($comment_value['comment_writer']); ?></h3>
+                </div>
+                <?php if($comment_value['reply_body'] != '') { ?>
+                    <div class="article">
+                        
+                        <div class="art_info clearfix">&nbsp;</div>
+                    </div>
+                <?php } ?>
+            </li>
+        <?php } ?>
+        <li> <?php echo ( count($this->goods_comment) > 0 ) ? $this->paginationControl($this->goods_comment, 'Sliding', 'site/ajax-dbpage',array('page_url'=>$this->url('frontgoods/default',array('action'=>'listComment','goods_id'=>$this->goods_id,'class_id'=>$this->class_id)), 'ajaxFunction'=>'comment_ajax_list')) : ""; ?> </li>
+    <?php } else { ?>
+    <li><strong><?php echo $this->translate('该商品暂无评价！'); ?></strong></li>
+    <?php } ?>
+</ul>
+<script>
+    $('#goods_comment_num').html('&nbsp;<a href="#goodsComment"><?php echo $this->goods_comment->getTotalItemCount(); ?><?php echo $this->translate('篇口碑报告'); ?></a>');
+</script>

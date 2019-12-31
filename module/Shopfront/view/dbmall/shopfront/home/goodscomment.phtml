@@ -1,0 +1,131 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('商品评价'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-order-detail-box">
+                    <div class="box-hd">
+                        <h3 class="title">
+                            <?php echo $this->translate('商品评价'); ?>
+                        </h3>
+                        <div class="more">
+                            <a href="<?php echo $this->url('frontorder/default/order_page', array('action'=>'index', 'page'=>$this->page, 'order_state'=>$this->order_state)); ?>" class="btn btn-primary btn-small"><?php echo $this->translate('返回订单列表'); ?></a>
+                        </div>
+                    </div>
+                    <div class="box-bd">
+                        <div class="order-detail-tables">
+                            <table class="order-detail-table">
+                                <thead>
+                                <tr>
+                                    <th colspan="4" class="column-info">
+                                        <div class="column-content"><?php echo $this->translate('评价信息'); ?>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="column-detail">
+                                            <ul class="order-goods-list">
+                                                <li class="first">
+                                                    <a href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->goods_info->class_id)); ?>" target="_blank"><img alt="<?php echo $this->escapeHtml($this->goods_info->goods_name); ?>" src="<?php echo $this->basePath($this->frontwebsite()->shopGoodsImage($this->goods_info->goods_image)); ?>" class="goods-thumb"></a>
+                                                    <a class="goods-name" href="<?php echo $this->url('frontgoods/default', array('goods_id'=>$this->goods_info->goods_id, 'class_id'=>$this->goods_info->class_id)); ?>" target="_blank"><?php echo $this->escapeHtml($this->goods_info->goods_name); ?></a>
+                                                    <span class="goods-amount">x <?php echo $this->goods_info->buy_num; ?></span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td class="column-price">
+                                            <div class="order-info order-price"><?php echo $this->goods_info->goods_item; ?></div>
+                                        </td>
+                                        <td class="column-date">
+                                            <?php echo $this->goods_info->goods_extend_info; ?>
+                                        </td>
+                                        <td class="column-action">
+                                            <?php if ($this->goods_info->comment_state) echo $this->translate('已评价'); else echo $this->translate('未评价'); ?>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="order-detail-total clearfix">
+                                <?php if ($this->goods_info->comment_state and isset($this->goodsCommentInfo) and !empty($this->goodsCommentInfo)) { ?>
+                                    <P><?php echo $this->translate('评价时间'); ?>：<?php echo date("Y-m-d H:i:s", $this->goodsCommentInfo->comment_time); ?></P>
+                                    <p><?php echo $this->translate('商品评价'); ?>：<?php echo $this->escapeHtml($this->goodsCommentInfo->comment_body); ?></p>
+                                    <p><?php echo $this->translate('商品评分'); ?>：<span class="icon-stat icon-stat-<?php echo $this->goodsCommentInfo->goods_evaluation; ?> J_mi_goods_starNum" data-class="icon-stat-5"></span></p>
+                                <?php } else { ?>
+                                    <form class="form-horizontal" id="goods_comment" name="goods_comment" method="post">
+                                        <div class="control-group">
+                                            <label class="control-label"><?php echo $this->translate('商品评分'); ?>：</label>
+                                            <div class="controls" id="goods_info">
+                                                <label class="radio inline"><input type="radio" name="goods_evaluation" value="5" checked="checked" />
+                                                    <div class="rating"><span class="icon-stat icon-stat-5 J_mi_goods_starNum" data-class="icon-stat-5"></span></div>
+                                                </label>
+                                                <label class="radio inline"><input type="radio" name="goods_evaluation" value="4" />
+                                                    <div class="rating"><span class="icon-stat icon-stat-4 J_mi_goods_starNum" data-class="icon-stat-5"></span></div>
+                                                </label>
+                                                <label class="radio inline"><input type="radio" name="goods_evaluation" value="3" />
+                                                    <div class="rating"><span class="icon-stat icon-stat-3 J_mi_goods_starNum" data-class="icon-stat-5"></span></div>
+                                                </label>
+                                                <label class="radio inline"><input type="radio" name="goods_evaluation" value="2" />
+                                                    <div class="rating"><span class="icon-stat icon-stat-2 J_mi_goods_starNum" data-class="icon-stat-5"></span></div>
+                                                </label>
+                                                <label class="radio inline"><input type="radio" name="goods_evaluation" value="1" />
+                                                    <div class="rating"><span class="icon-stat icon-stat-1 J_mi_goods_starNum" data-class="icon-stat-5"></span></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label"><?php echo $this->translate('商品评价'); ?>：</label>
+                                            <div class="controls">
+                                                <textarea class="span8" rows="4" name="comment_body" id="comment_body"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="offset3">
+                                            <button class="btn btn-primary" type="submit"><?php echo $this->translate('点击提交'); ?></button>
+                                        </div>
+                                    </form>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php if (!$this->goods_info->comment_state) { ?>
+    <script>
+        //商品评价
+        $(document).ready(function() {
+            $("#goods_comment").validate({
+                rules: {
+                    comment_body: {
+                        required: true,
+                        minlength:2,
+                        maxlength:600
+                    }
+                },
+                messages: {
+                    comment_body: {
+                        required: "<?php echo $this->translate('请输入评价内容！'); ?>",
+                        minlength:"<?php echo $this->translate('评价内容最少两个汉字！'); ?>",
+                        maxlength:"<?php echo $this->translate('评价内容最多600个汉字！'); ?>"
+                    }
+                }
+            });
+        });
+    </script>
+<?php } ?>

@@ -1,0 +1,25 @@
+<div class="ect-margin-tb ect-pro-list ect-margin-bottom0 ect-border-bottom0">
+    <ul class="msg">
+        <li>
+            <p><?=$this->translate('分销用户数'); ?>：<?=$this->user_list->getTotalItemCount(); ?></p>
+            <p><?=$this->translate('已到账收入'); ?>：<?=$this->f_cost?></p>
+            <p><?=$this->translate('未到账收入'); ?>：<?=$this->n_cost?></p>
+        </li>
+    <?php if ($this->user_list->getTotalItemCount() > 0) { ?>
+    <?php foreach ($this->user_list as $user_value) { ?>
+        <li>
+            <p><?php echo $this->translate('用户'); ?>：<?=$this->escapeHtml($user_value['user_name']); ?></p>
+            <p><?php echo $this->translate('已到账'); ?>：<?php echo $user_value['f1_cost'] + $user_value['f2_cost']; ?></p>
+            <p><?php echo $this->translate('未到账'); ?>：<?php echo $user_value['n1_cost'] + $user_value['n2_cost']; ?></p>
+        </li>
+        <?php } ?>
+        <p>
+            <?php echo $this->user_list->getTotalItemCount() > 0 ? $this->paginationControl($this->user_list, 'Sliding', 'mobile/page',array('page_url'=>$this->url('m_home/default', array('action'=>'distribution')))) : ""; ?>
+        </p>
+    <?php } else { ?>
+        <li>
+        <p class="text-center ect-margin-tb ect-padding-tb"><?php echo $this->translate('您还没有分销用户！'); ?></p>
+        </li>
+    <?php } ?>
+    </ul>
+</div>

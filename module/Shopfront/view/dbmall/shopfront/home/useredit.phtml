@@ -1,0 +1,190 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('账户信息'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-order-detail-box">
+                    <div class="box-hd">
+                        <h3 class="title">
+                            <?php echo $this->translate('账户信息'); ?>
+                        </h3>
+                        <?php echo $this->partial('shopfront/home/user-menu.phtml'); ?>
+                    </div>
+                    <div class="box-bd">
+                        <div class="message_one"></div>
+                        <form class="form-horizontal" enctype="multipart/form-data" method="post" name="user_edit_form" id="user_edit_form">
+                            <div class="control-group">
+                                <label class="control-label"><?php echo $this->translate('头像'); ?>：</label>
+                                <div class="controls">
+                                    <?php if(isset($this->user_info) and !empty($this->user_info->user_avatar)) { ?>
+                                        <img src="<?php echo $this->basePath($this->user_info->user_avatar); ?>" />
+                                        <input type="hidden" name="old_user_avatar" id="old_user_avatar" value="<?php echo $this->user_info->user_avatar; ?>" />
+                                    <?php } else { ?>
+                                        <img src="<?php echo $this->basePath($this->frontwebsite()->getUserIni('default_avatar')); ?>" />
+                                    <?php } ?>
+                                    <input type="file" name="user_avatar" id="user_avatar" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"><?php echo $this->translate('用户名称'); ?>：</label>
+                                <div class="controls">
+                                    <input type="text" class="span5" id="user_name" value="<?php echo $this->escapeHtml($this->user_info->user_name); ?>" readonly="readonly" name="user_name">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"><?php echo $this->translate('会员分组'); ?>：</label>
+                                <div class="controls"> <strong><?php echo $this->user_group->group_name; ?></strong> </div>
+                            </div>
+                            <?php
+                            $userEmailRegisterState = $this->frontwebsite()->getRegOrLoginIni('register_email_state');
+                            $userPhoneRegisterState = $this->frontwebsite()->getRegOrLoginIni('register_phone_state');
+                            ?>
+                            <div class="control-group">
+                                <label class="control-label"><?php echo $this->translate('电子邮箱'); ?>
+                                    <?php if ($userEmailRegisterState == 'true') { ?>
+                                        <span class="must_add_value">*</span>
+                                    <?php } ?>
+                                    ：</label>
+                                <div class="controls">
+                                    <input type="text" class="span5" id="user_email" value="<?php echo $this->escapeHtml($this->user_info->user_email); ?>" name="user_email">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="input01" class="control-label"><?php echo $this->translate('性别'); ?><span class="must_add_value">*</span>：</label>
+                                <div class="controls">
+                                    <select id="user_sex" name="user_sex" class="span2">
+                                        <option value="3" <?php if($this->user_info and $this->user_info->user_sex==3) { echo 'selected="selected"'; } ?>><?php echo $this->translate('保密'); ?></option>
+                                        <option value="1" <?php if($this->user_info and $this->user_info->user_sex==1) { echo 'selected="selected"'; } ?>><?php echo $this->translate('男'); ?></option>
+                                        <option value="2" <?php if($this->user_info and $this->user_info->user_sex==2) { echo 'selected="selected"'; } ?>><?php echo $this->translate('女'); ?></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="input01" class="control-label"><?php echo $this->translate('手机号码'); ?>
+                                    <?php if ($userPhoneRegisterState == 'true') { ?>
+                                        <span class="must_add_value">*</span>
+                                    <?php } ?>
+                                    ：</label>
+                                <div class="controls">
+                                    <input type="text" id="user_phone"  name="user_phone" value="<?php echo ($this->user_info ? $this->escapeHtml($this->user_info->user_phone) : ''); ?>" class="span3">
+                                    <?php if($this->frontwebsite()->getIphoneSmsConfig('shop_phone_sms', 'phone_sms_type') and empty($this->user_info->user_phone)) { ?>
+                                        &nbsp;&nbsp;<font color="red"><?php echo $this->translate('填写正确的手机号码，可以接收到商家的短信通知'); ?></font>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="input01" class="control-label"><?php echo $this->translate('生日'); ?>：</label>
+                                <div class="controls">
+                                    <input type="text" id="user_birthday"  name="user_birthday" value="<?php echo ($this->user_info ? $this->escapeHtml($this->user_info->user_birthday) : ''); ?>" onclick="WdatePicker({el:'user_birthday'})" class="span3 Wdate">
+                                </div>
+                            </div>
+                            <?php if($this->user_reg_extend['inputArray']) {
+                                foreach($this->user_reg_extend['inputArray'] as $exValue) {
+                                    ?>
+                                    <div class="control-group">
+                                        <label for="input01" class="control-label"><?php echo $exValue['field_title']; ?><?php if($exValue['field_null'] == 2) { ?><span class="must_add_value">*</span><?php } ?>：</label>
+                                        <div class="controls">
+                                            <?php echo $exValue['input']; ?>
+                                        </div>
+                                    </div>
+                                <?php } } ?>
+                            <div class="offset3">
+                                <button class="btn btn-primary" type="submit"><?php echo $this->translate('保存修改'); ?></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="<?php echo $this->basePath('/public/js/DatePicker/WdatePicker.js'); ?>"></script>
+<script>
+<?php if ($this->success_msg != '') { ?>
+show_message('.message_one','<?php echo date("Y-m-d H:i:s",time()); ?>','<?php echo $this->success_msg; ?>','alert-success');
+<?php } ?>
+
+//客户保存验证
+$(document).ready(function() {
+	$("#user_edit_form").validate({
+		rules: {
+			user_email: {
+                <?php if ($userEmailRegisterState == 'true') { ?>
+				required: true,
+                <?php } ?>
+				email: true,
+				remote :{
+					url : '<?php echo $this->url('frontuser/default/user_id',array('action'=>'check','controller'=>'user','module'=>'user','check_type'=>'user_email','user_id'=>($this->user_info ? $this->user_info->user_id : '0'))); ?>',
+					type : 'post',
+					date : {
+						user_email :function(){
+							return $('#user_email').val();
+						}
+					}
+				}
+			}
+            <?php if (isset($this->user_reg_extend['jsCheck']['jsStart']) and !empty($this->user_reg_extend['jsCheck']['jsStart'])) { echo ','.implode(',', $this->user_reg_extend['jsCheck']['jsStart']); } ?>
+            ,
+            user_phone: {
+                <?php if ($userPhoneRegisterState == 'true') { ?>
+                required: true,
+                <?php } ?>
+                isMobile: true,
+                remote :{
+                    url : '<?php echo $this->url('frontuser/default/user_id',array('action'=>'check','controller'=>'user','module'=>'user','check_type'=>'user_phone','user_id'=>($this->user_info ? $this->user_info->user_id : '0'))); ?>',
+                    type : 'post',
+                    date : {
+                        user_phone :function(){
+                            return $('#user_phone').val();
+                        }
+                    }
+                }
+            }
+		},
+		messages: {
+			user_email: {
+                <?php if ($userEmailRegisterState == 'true') { ?>
+				required: "<?php echo $this->translate('请输入电子邮箱！'); ?>",
+                <?php } ?>
+				email: "<?php echo $this->translate('电子邮箱格式错误！'); ?>",
+				remote: "<?php echo $this->translate('该邮箱已经存在'); ?>"
+			}
+            <?php if (isset($this->user_reg_extend['jsCheck']['jsEnd']) and !empty($this->user_reg_extend['jsCheck']['jsEnd'])) { echo ','.implode(',', $this->user_reg_extend['jsCheck']['jsEnd']); } ?>
+            ,
+            user_phone: {
+                <?php if ($userPhoneRegisterState == 'true') { ?>
+                required: "<?php echo $this->translate('手机号码不能为空！'); ?>",
+                <?php } ?>
+                isMobile: "<?php echo $this->translate('请输入正确的手机号码！'); ?>",
+                remote: "<?php echo $this->translate('该手机号码已经存在'); ?>"
+            }
+		},
+        submitHandler:function(form){
+            check_user_form(form);
+        }
+	});
+});
+function check_user_form(form) {
+    <?php
+    if(isset($this->user_reg_extend['jsCheck']['jsCheckboxAndRadio']) and !empty($this->user_reg_extend['jsCheck']['jsCheckboxAndRadio'])) {
+        echo implode('', $this->user_reg_extend['jsCheck']['jsCheckboxAndRadio']);
+    } ?>
+
+    form.submit();
+}
+</script>

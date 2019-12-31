@@ -1,0 +1,31 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->title_name; ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-favorite-box">
+                    <h3 class="right-more-title">
+                        <?php echo $this->title_name; ?>
+                    </h3>
+                    <div class="box-bd">
+                        <?php echo $this->partial($this->partial_template_file); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

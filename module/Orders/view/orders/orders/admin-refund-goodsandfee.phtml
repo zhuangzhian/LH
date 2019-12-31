@@ -1,0 +1,17 @@
+<div class="well admin_add_header_well"><?php echo $this->translate('订单退货退款操作'); ?></div>
+<div class="well admin_add_well">
+    <div class="control-group">
+        <label for="input01" class="control-label"><strong><?php echo $this->translate('退款金额'); ?>：</strong></label>
+        <div class="controls">
+            <label style="line-height: 30px;"><strong><?php echo $this->order_info->order_amount; ?></strong></label>
+        </div>
+        <label for="input01" class="control-label"><strong><?php echo $this->translate('退货退款(取消)说明'); ?>：</strong></label>
+        <div class="controls">
+            <textarea class="span8" name="state_info" id="state_info" rows="3"></textarea>
+        </div>
+        <label for="input01" class="control-label"><strong><?php echo $this->translate('解释说明'); ?>：</strong></label>
+        <div class="controls">
+            <label style="line-height: 30px;"><strong style="color: red;"><?php echo $this->translate('退货退款处理，相当于取消订单的操作，同时订单款项将自动存入下单者的账户余额'); ?></strong></label>
+        </div>
+    </div>
+</div>

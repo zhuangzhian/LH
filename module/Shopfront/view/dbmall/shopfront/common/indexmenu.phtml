@@ -1,0 +1,45 @@
+<div class="nav-category nav-category-toggled" id="J_categoryContainer">
+    <a href="javascript:;" class="btn-category-list"><?php echo $this->translate('商品分类'); ?><span id="goodsclass-b"><i class="iconfont"></i></span></a>
+    <div class="nav-category-section" id="j_nav-category-section" style="display: none;">
+    </div>
+</div>
+<script>
+    $('#J_categoryContainer').mouseover(function(){
+        $('#j_nav-category-section').css('display', 'block');
+        $('#goodsclass-b').html('<i class="iconfont"></i>');
+    });
+    $("#J_categoryContainer").mouseout(function(){
+        $('#j_nav-category-section').css('display', 'none');
+        $('#goodsclass-b').html('<i class="iconfont"></i>');
+    });
+    $.get('<?php echo $this->url('shopfront/default',array('action'=>'goodsClass')); ?>',{}, function(html){
+        $("#j_nav-category-section").html(html);
+    });
+</script>
+<div class="nav-main">
+    <ul class="nav-main-list J_menuNavMain clearfix">
+        <li class="nav-main-item">
+            <a href="<?php echo $this->url('shopfront/default'); ?>"><span class="text"><?php echo $this->translate('首页'); ?></span></a>
+        </li>
+        <?php
+        $shop_middle_menu = $this->frontwebsite()->shopFrontMenu(2);
+        if(is_array($shop_middle_menu) and !empty($shop_middle_menu)) {
+        foreach($shop_middle_menu as $middle_value) {
+        ?>
+            <li class="nav-main-item">
+                <a href="<?php echo $middle_value['navigation_url']; ?>" <?php if($middle_value['navigation_new_window'] == 1) echo 'target="_blank"'; ?>><span class="text <?php if(is_array($middle_value['sub_navigation']) and !empty($middle_value['sub_navigation'])) echo 'with-submenu'; ?>"><?php echo $middle_value['navigation_title']; ?></span></a>
+                <?php
+                if(is_array($middle_value['sub_navigation']) and !empty($middle_value['sub_navigation'])) {
+                    echo '<div class="submenu submenu-wrapper">';
+                    foreach($middle_value['sub_navigation'] as $n_value) {
+                        ?>
+                        <a href="<?php echo $n_value['navigation_url']; ?>" <?php if($n_value['navigation_new_window'] == 1) echo 'target="_blank"'; ?> class="basic"><?php echo $n_value['navigation_title']; ?></a>
+                        <?php
+                    }
+                    echo '</div>';
+                }
+                ?>
+            </li>
+        <?php } } ?>
+    </ul>
+</div>

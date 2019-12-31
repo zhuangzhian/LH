@@ -1,0 +1,38 @@
+<?php
+$url = $this->page_url;
+$parameterGet = $this->DbshopCommonFun()->dbshopRequesthelper();
+if ($parameterGet != ""){
+  $array = explode('&', $parameterGet);
+  $array = array_unique($array);
+  $parameterGet = "?".implode('&', $array);
+}
+?>
+
+<?php if ($this->pageCount): ?>
+    <div class="xm-pagenavi" style="padding: 0;">
+        <?php if (isset($this->previous)): ?>
+            <a href="javascript:;" onclick="<?php echo $this->ajaxFunction; ?>('<?php echo $url.'/'.$this->previous.$parameterGet; ?>');" class="numbers first iconfont"></a>
+        <?php else: ?>
+            <span class="numbers first iconfont"></span>
+        <?php endif; ?>
+
+        <?php foreach ($this->pagesInRange as $page): ?>
+            <?php if ($page != $this->current): ?>
+                <a class="numbers current" href="javascript:;" onclick="<?php echo $this->ajaxFunction; ?>('<?php echo $url.'/'.$page.$parameterGet; ?>');">
+                    <?php echo $page; ?>
+                </a>
+            <?php else: ?>
+                <span class="numbers current">
+                <?php echo $page; ?>
+            </span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        <?php if (isset($this->next)): ?>
+            <a href="javascript:;" onclick="<?php echo $this->ajaxFunction; ?>('<?php echo $url.'/'.$this->next.$parameterGet; ?>'"  class="numbers last iconfont"></a>
+        <?php else: ?>
+            <span class="numbers last iconfont"></span>
+        <?php endif; ?>
+
+    </div>
+<?php endif; ?>

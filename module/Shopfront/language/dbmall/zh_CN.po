@@ -1,0 +1,3598 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DBShop V1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-27 "
+"14:34+0800\n"
+"PO-Revision-Date: 2018-10-27 14:34+0800\n"
+"Last-Translator: Baron <baron@loongdom."
+"cn>\n"
+"Language-Team: DBShop <team@dbshop.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../../src\n"
+"X-Poedit-SearchPath-1: ../../view/"
+"dbmall\n"
+
+#: ../../src/Shopfront/Controller/BrandController.php:30
+#: ../../view/dbmall/shopfront/brand/index.phtml:12
+msgid "商品品牌"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:33
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:97
+#: ../../view/dbmall/shopfront/common/header.phtml:67
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:71
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:171
+msgid "购物车"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:56
+msgid "没有购物数量，请从新选择！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:62
+msgid "商品不存在，无法加入购物车！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:73
+msgid ""
+"商品没有您选择的属性存在，无法加入购物"
+"车！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:108
+msgid ""
+"购物数量超过商品库存数量，请从新购买！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:111
+#: ../../src/Shopfront/Controller/CartController.php:188
+#, php-format
+msgid "该商品最少需要购买%s个"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:114
+#: ../../src/Shopfront/Controller/CartController.php:117
+#: ../../src/Shopfront/Controller/CartController.php:190
+#: ../../src/Shopfront/Controller/CartController.php:192
+#, php-format
+msgid "该商品最多购买%s个"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:159
+msgid "购物车添加失败！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:277
+msgid "设置收货地址"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:302
+msgid "订单确认"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:427
+msgid "虚拟商品订单确认"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:501
+#: ../../src/Shopfront/Controller/CartController.php:695
+msgid "订单完成"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:574
+#: ../../src/Shopfront/Controller/CartController.php:798
+#: ../../src/Shopfront/Controller/OrderController.php:192
+msgid "商品购物，订单号为："
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:608
+#: ../../src/Shopfront/Controller/CartController.php:834
+msgid "商品库存不足"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:608
+#: ../../src/Shopfront/Controller/CartController.php:834
+msgid "去购物车中删除库存不足的商品"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:633
+#: ../../src/Shopfront/Controller/CartController.php:860
+msgid "提交订单提醒"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:1068
+#: ../../view/dbmall/shopfront/cart/step.phtml:243
+#: ../../view/dbmall/shopfront/cart/step.phtml:278
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:188
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:223
+msgid "发票抬头"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/CartController.php:1069
+#: ../../view/dbmall/shopfront/cart/step.phtml:264
+#: ../../view/dbmall/shopfront/cart/step.phtml:280
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:209
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:225
+msgid "发票内容"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodsController.php:182
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:105
+#: ../../view/dbmall/shopfront/goods/index.phtml:105
+msgid "折"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodsController.php:218
+msgid ""
+"不是有效的商品信息，无法提交商品咨询"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodsController.php:223
+msgid "验证码错误，请重新提交！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodsController.php:229
+msgid "游客"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodsController.php:231
+#: ../../src/Shopfront/Controller/GoodsController.php:294
+msgid "商品咨询保存不成功"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodsController.php:250
+msgid "新的商品咨询"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/GoodslistController.php:146
+msgid "商品搜索"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:31
+#: ../../view/dbmall/shopfront/home/index.phtml:11
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:12
+msgid "中心首页"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:54
+msgid "账户信息-基本信息"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:79
+msgid "会员基本信息修改成功！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:94
+msgid "账户信息-密码修改"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:119
+msgid "会员密码修改成功！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:121
+msgid "会员密码修改失败,原始密码错误！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:140
+msgid "账户信息-QQ绑定"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:165
+msgid "该QQ已经在系统绑定，不能重复绑定！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:165
+#: ../../src/Shopfront/Controller/HomeController.php:177
+#: ../../src/Shopfront/Controller/UserController.php:315
+#: ../../src/Shopfront/Controller/UserController.php:337
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:101
+msgid "返回"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:177
+msgid "绑定失败，请稍后再试！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:204
+msgid ""
+"该绑定方式的配置信息错误，必须在公网上进"
+"行测试！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeController.php:218
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:11
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:23
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:17
+msgid "我的咨询"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomeaddressController.php:32
+#: ../../view/dbmall/shopfront/cart/step.phtml:19
+#: ../../view/dbmall/shopfront/cart/step.phtml:25
+#: ../../view/dbmall/shopfront/home/address.phtml:11
+#: ../../view/dbmall/shopfront/home/address.phtml:23
+#: ../../view/dbmall/shopfront/home/address.phtml:34
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:20
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:211
+#: ../../view/dbmall/shopfront/home/showorder.phtml:234
+msgid "收货地址"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomefavoritesController.php:34
+#: ../../view/dbmall/shopfront/home/goodsfavorites.phtml:11
+#: ../../view/dbmall/shopfront/home/goodsfavorites.phtml:23
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:15
+msgid "我的收藏"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:35
+#: ../../src/Shopfront/Controller/HomemoneyController.php:68
+#: ../../src/Shopfront/Controller/HomemoneyController.php:101
+#: ../../src/Shopfront/Controller/HomemoneyController.php:133
+#: ../../src/Shopfront/Controller/HomemoneyController.php:163
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:11
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:28
+#: ../../view/dbmall/shopfront/home/index.phtml:34
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:18
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:11
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:28
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:11
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:28
+msgid "账户余额"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:208
+msgid ""
+"您的账户余额小于提现额，无法申请提现！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:213
+msgid "提现申请失败！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:229
+msgid "进行充值处理"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:233
+msgid "充值处理未成功！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:247
+msgid "会员充值"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:248
+msgid "会员充值，充值会员:"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:261
+#: ../../src/Shopfront/Controller/OrderController.php:463
+#: ../../view/dbmall/shopfront/home/orderpay.phtml:19
+#: ../../view/dbmall/shopfront/home/paycheck-pay.phtml:19
+msgid "微信扫码支付"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:283
+msgid "充值支付成功。"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:283
+msgid "返回充值列表"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:312
+msgid ""
+"支付不成功，如有疑问，请联系管理员。"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:363
+msgid "充值完成"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:363
+msgid "充值记录页"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomemoneyController.php:379
+msgid ""
+"已经有一个正在处理中的提现申请，需要处理"
+"完毕后，才能进行再次申请。"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:30
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:11
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:23
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:32
+msgid "退货申请"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:55
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:11
+msgid "退货详情"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:79
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:11
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:23
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:99
+msgid "申请退货"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:115
+msgid "申请退货没有成功！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:130
+msgid "删除退货记录失败！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:137
+msgid "此订单编号不符合查询条件"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/HomerefundController.php:144
+msgid ""
+"此订单编号已经存在于退货记录中，不能重复"
+"申请。"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:29
+#: ../../view/dbmall/shopfront/common/header.phtml:35
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:13
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:11
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:23
+#: ../../view/dbmall/shopfront/index/ajaxheader.phtml:32
+msgid "我的订单"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:70
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:14
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:11
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:23
+msgid "虚拟商品"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:87
+msgid "获取虚拟商品信息失败！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:110
+#: ../../view/dbmall/shopfront/home/index.phtml:117
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:122
+#: ../../view/dbmall/shopfront/home/showorder.phtml:11
+msgid "订单详情"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:163
+#: ../../src/Shopfront/Controller/OrderController.php:186
+#: ../../src/Shopfront/Controller/OrderController.php:708
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:133
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:135
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:260
+msgid "确认收货"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:229
+#: ../../src/Shopfront/Controller/OrderController.php:716
+msgid "确认收货交易完成"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:295
+msgid "买家自行取消"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:304
+msgid "订单取消"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:504
+msgid "付款进行中"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:504
+#: ../../src/Shopfront/Controller/OrderController.php:609
+#: ../../src/Shopfront/Controller/OrderController.php:762
+#: ../../src/Shopfront/Controller/OrderController.php:766
+msgid "支付完成"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:553
+#: ../../src/Shopfront/Controller/OrderController.php:656
+msgid "订单付款完成"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:704
+msgid "发货完成"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:705
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:80
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:79
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:76
+msgid "管理员"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:762
+#: ../../src/Shopfront/Controller/OrderController.php:766
+#: ../../src/Shopfront/Controller/OrderController.php:779
+#: ../../src/Shopfront/Controller/OrderController.php:781
+#: ../../src/Shopfront/Controller/OrderController.php:782
+msgid "返回订单"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:770
+msgid "订单总金额"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:771
+msgid "商品编号"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:772
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:31
+msgid "商品名称"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:773
+msgid "购买数量"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:774
+msgid "商品单价"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:775
+msgid "商品规格"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:776
+#: ../../view/dbmall/shopfront/cart/step.phtml:147
+msgid "配送费用"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:777
+msgid "确认付款"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:778
+msgid "提交支付凭证"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:779
+msgid "支付凭证提交完成，等待管理员审核！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:781
+msgid ""
+"余额支付失败，您的账户余额不足，请您充值"
+"后再次进行支付。"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:782
+msgid ""
+"您订单中的付款货币，与系统当前默认货币不"
+"匹配，无法进行支付。"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:784
+msgid "线下支付说明"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:785
+msgid "支付凭证信息"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:786
+msgid ""
+"请输入支付凭证信息证明您已经完成付款！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:787
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:26
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:30
+#: ../../view/dbmall/shopfront/home/showorder.phtml:30
+msgid "返回订单列表"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/OrderController.php:862
+msgid "商品购买，订单编号为："
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:61
+#: ../../view/dbmall/shopfront/user/login.phtml:13
+#: ../../view/dbmall/shopfront/user/login.phtml:51
+msgid "会员登录"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:79
+#: ../../src/Shopfront/Controller/UserController.php:438
+msgid "您的帐户处于关闭状态！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:79
+#: ../../src/Shopfront/Controller/UserController.php:80
+#: ../../src/Shopfront/Controller/UserController.php:242
+#: ../../src/Shopfront/Controller/UserController.php:247
+#: ../../src/Shopfront/Controller/UserController.php:438
+#: ../../src/Shopfront/Controller/UserController.php:439
+#: ../../src/Shopfront/Controller/UserController.php:593
+#: ../../src/Shopfront/Controller/UserController.php:598
+msgid "返回首页"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:80
+#: ../../src/Shopfront/Controller/UserController.php:439
+msgid "您的帐户处于待审核状态！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:110
+msgid ""
+"登录失败，用户名或密码错误，请重新登录！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:141
+#: ../../view/dbmall/shopfront/user/register.phtml:13
+msgid "会员注册"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:176
+#: ../../src/Shopfront/Controller/UserController.php:512
+msgid "会员注册默认起始积分数："
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:236
+#: ../../src/Shopfront/Controller/UserController.php:587
+msgid "会员注册审核邮件"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:237
+#: ../../src/Shopfront/Controller/UserController.php:303
+#: ../../src/Shopfront/Controller/UserController.php:588
+msgid "亲爱的"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:237
+#: ../../src/Shopfront/Controller/UserController.php:588
+msgid ""
+"您好，感谢您注册我们的会员，请点击会员审"
+"核链接进行认证审核 "
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:238
+#: ../../src/Shopfront/Controller/UserController.php:589
+msgid "点击审核会员 "
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:238
+#: ../../src/Shopfront/Controller/UserController.php:589
+msgid ""
+"如果您无法点击审核链接，请复制下面的链接"
+"地址在浏览器中打开，完成审核 "
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:242
+#: ../../src/Shopfront/Controller/UserController.php:593
+msgid ""
+"您的帐户注册成功，需要验证邮件后方可使"
+"用，请登录您的邮箱进行验证！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:244
+#: ../../src/Shopfront/Controller/UserController.php:595
+msgid ""
+"发送验证邮件失败，请联系网站管理员进行处"
+"理"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:247
+#: ../../src/Shopfront/Controller/UserController.php:598
+msgid ""
+"您的帐户注册成功，需要人工审核后才可使"
+"用！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:302
+msgid "会员密码修改"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:303
+msgid "您好，请点击下面的链接进行密码修改"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:304
+msgid "点击修改密码 "
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:304
+msgid ""
+"如果您无法点击修改链接，请复制下面的链接"
+"地址在浏览器中打开，完成密码修改 "
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:310
+#, php-format
+msgid ""
+"已经向您的邮箱 %s 发送了一封邮件，请根据"
+"邮件内容完成新密码设定"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:312
+msgid ""
+"无法向您的邮箱发送邮件，请联系管理员处"
+"理！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:315
+msgid ""
+"您输入的信息错误，没有匹配的会员信息！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:315
+msgid "请重新输入"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:337
+msgid "两次输入的密码不相同！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:341
+msgid "您的新密码已经修改生效，请登录测试"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:341
+#: ../../view/dbmall/shopfront/common/header.phtml:37
+#: ../../view/dbmall/shopfront/index/ajaxheader.phtml:34
+msgid "登录"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:347
+msgid ""
+"该密码修改链接无效，请确认其正确性，如有"
+"疑问请联系管理员处理！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:408
+msgid "您的帐户已经验证成功！可正常使用！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:411
+msgid ""
+"您的帐户已经验证成功！可以正常使用！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:412
+msgid ""
+"您的帐户验证失败，请确认您的链接是否正"
+"确！"
+msgstr ""
+
+#: ../../src/Shopfront/Controller/UserController.php:632
+msgid ""
+"该登录方式的配置信息错误，必须在公网上进"
+"行测试！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/content.phtml:11
+#: ../../view/dbmall/shopfront/article/index.phtml:11
+#: ../../view/dbmall/shopfront/article/single.phtml:11
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:11
+#: ../../view/dbmall/shopfront/brand/index.phtml:11
+#: ../../view/dbmall/shopfront/common/indexmenu.phtml:22
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:33
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:11
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:11
+#: ../../view/dbmall/shopfront/goods/index.phtml:33
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:10
+#: ../../view/dbmall/shopfront/home/address.phtml:10
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:10
+#: ../../view/dbmall/shopfront/home/coupon.phtml:10
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:10
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:10
+#: ../../view/dbmall/shopfront/home/goodsfavorites.phtml:10
+#: ../../view/dbmall/shopfront/home/home-right-empty.phtml:10
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:10
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:10
+#: ../../view/dbmall/shopfront/home/index.phtml:10
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:10
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:10
+#: ../../view/dbmall/shopfront/home/qqset.phtml:10
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:10
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:10
+#: ../../view/dbmall/shopfront/home/showorder.phtml:10
+#: ../../view/dbmall/shopfront/home/useredit.phtml:10
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:10
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:10
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:10
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:10
+#: ../../view/dbmall/shopfront/index/index.phtml:51
+msgid "首页"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/content.phtml:26
+msgid "顶级分类"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/content.phtml:39
+#: ../../view/dbmall/shopfront/article/index.phtml:27
+msgid "同级分类"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/content.phtml:60
+msgid "作者"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/content.phtml:60
+msgid "匿名"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/index.phtml:44
+msgid "下级分类"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/article/index.phtml:86
+msgid "暂无文章！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:12
+msgid "品牌商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:40
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:110
+msgid "全部"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:60
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:34
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:134
+msgid "价格从高到低"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:63
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:37
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:137
+msgid "价格从低到高"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:66
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:40
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:140
+msgid "人气从高到低"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:69
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:43
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:143
+msgid "人气从低到高"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:77
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:51
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:151
+msgid "共"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:77
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:51
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:151
+msgid "个"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:77
+#: ../../view/dbmall/shopfront/cart/index.phtml:23
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:51
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:151
+msgid "商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:98
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:72
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:172
+msgid "收藏"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:119
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:93
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:211
+#: ../../view/dbmall/shopfront/index/index.phtml:385
+msgid "已成功加入购物车"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:139
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:726
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:113
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:231
+#: ../../view/dbmall/shopfront/goods/index.phtml:760
+msgid "该商品成功加入收藏！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:145
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:731
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:119
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:237
+#: ../../view/dbmall/shopfront/goods/index.phtml:765
+msgid "您还没有登录，无法收藏商品！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:147
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:733
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:121
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:239
+#: ../../view/dbmall/shopfront/goods/index.phtml:767
+msgid "您已经收藏过该商品！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:149
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:735
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:123
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:241
+#: ../../view/dbmall/shopfront/goods/index.phtml:769
+msgid "商品收藏不成功！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/brand-goods.phtml:152
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:117
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:291
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:727
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:738
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:126
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:244
+#: ../../view/dbmall/shopfront/goods/index.phtml:312
+#: ../../view/dbmall/shopfront/goods/index.phtml:761
+#: ../../view/dbmall/shopfront/goods/index.phtml:772
+#: ../../view/dbmall/shopfront/home/address.phtml:155
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:145
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:195
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:195
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:198
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:147
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:197
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:75
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:143
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:193
+#: ../../view/dbmall/shopfront/user/register.phtml:140
+msgid "关闭"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/brand/index.phtml:23
+msgid "暂无品牌"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:15
+msgid "我的购物车"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:24
+#: ../../view/dbmall/shopfront/cart/step.phtml:86
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:32
+msgid "货号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:25
+#: ../../view/dbmall/shopfront/cart/step.phtml:87
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:33
+msgid "规格"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:26
+#: ../../view/dbmall/shopfront/cart/step.phtml:88
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:34
+msgid "数量"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:27
+#: ../../view/dbmall/shopfront/cart/step.phtml:89
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:35
+msgid "价格"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:28
+#: ../../view/dbmall/shopfront/cart/step.phtml:90
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:36
+msgid "总价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:29
+#: ../../view/dbmall/shopfront/home/address.phtml:38
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:36
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:59
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:34
+msgid "操作"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:39
+#: ../../view/dbmall/shopfront/cart/step.phtml:104
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:50
+#: ../../view/dbmall/shopfront/home/coupon.phtml:71
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:42
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:68
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:133
+#: ../../view/dbmall/shopfront/home/showorder.phtml:42
+#: ../../view/dbmall/shopfront/home/showorder.phtml:68
+msgid "无"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:65
+#: ../../view/dbmall/shopfront/cart/step.phtml:117
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:63
+msgid "单品重:"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:65
+#: ../../view/dbmall/shopfront/cart/index.phtml:88
+#: ../../view/dbmall/shopfront/cart/step.phtml:117
+#: ../../view/dbmall/shopfront/cart/step.phtml:137
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:63
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:83
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:145
+#: ../../view/dbmall/shopfront/goods/index.phtml:146
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:127
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:195
+#: ../../view/dbmall/shopfront/home/showorder.phtml:135
+msgid "千克"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:70
+#: ../../view/dbmall/shopfront/cart/index.phtml:76
+#: ../../view/dbmall/shopfront/cart/step.phtml:122
+#: ../../view/dbmall/shopfront/cart/step.phtml:128
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:68
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:74
+msgid "或"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:70
+#: ../../view/dbmall/shopfront/cart/index.phtml:76
+#: ../../view/dbmall/shopfront/cart/index.phtml:95
+#: ../../view/dbmall/shopfront/cart/index.phtml:98
+#: ../../view/dbmall/shopfront/cart/step.phtml:122
+#: ../../view/dbmall/shopfront/cart/step.phtml:128
+#: ../../view/dbmall/shopfront/cart/step.phtml:164
+#: ../../view/dbmall/shopfront/cart/step.phtml:173
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:68
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:74
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:109
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:118
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:119
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:122
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:187
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:190
+#: ../../view/dbmall/shopfront/home/showorder.phtml:127
+#: ../../view/dbmall/shopfront/home/showorder.phtml:130
+msgid "积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:79
+#: ../../view/dbmall/shopfront/home/address.phtml:55
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:52
+#: ../../view/dbmall/shopfront/home/goodsfavorites.phtml:45
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:72
+msgid "删除"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:88
+#: ../../view/dbmall/shopfront/cart/step.phtml:137
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:83
+msgid "商品总重:"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:90
+msgid "应付总额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:90
+msgid "不含运费"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:92
+msgid "优惠金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:95
+#: ../../view/dbmall/shopfront/cart/step.phtml:164
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:109
+msgid "获得消费积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:98
+#: ../../view/dbmall/shopfront/cart/step.phtml:173
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:118
+msgid "获得等级积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:103
+msgid "去结算"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:104
+#: ../../view/dbmall/shopfront/cart/submit.phtml:21
+msgid "继续去购物"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:106
+msgid "您确实要清空购物车吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:106
+msgid "清空购物车"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:111
+msgid ""
+"您的购物车中没有商品，赶快去挑选您中意的"
+"商品吧！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:112
+msgid "点击去商城首页购物"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/index.phtml:122
+msgid "您确实要将购物车中的该商品删除吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:13
+msgid "收货地址选择"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:19
+#: ../../view/dbmall/shopfront/home/address.phtml:26
+msgid "添加收货地址"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:29
+#: ../../view/dbmall/shopfront/home/address.phtml:35
+msgid "邮编"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:29
+#: ../../view/dbmall/shopfront/home/address.phtml:36
+msgid "手机"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:29
+#: ../../view/dbmall/shopfront/home/address.phtml:37
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:235
+#: ../../view/dbmall/shopfront/home/showorder.phtml:258
+msgid "固定电话"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:30
+msgid "修改地址"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:41
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:44
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:71
+msgid "下一步"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:42
+msgid "修改购物车"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:55
+#: ../../view/dbmall/shopfront/home/address.phtml:73
+msgid "地址信息添加"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:59
+#: ../../view/dbmall/shopfront/home/address.phtml:77
+msgid "收货人姓名"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:61
+#: ../../view/dbmall/shopfront/home/address.phtml:82
+msgid "填写收货人姓名"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:65
+#: ../../view/dbmall/shopfront/home/address.phtml:86
+msgid "省市区"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:69
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:260
+#: ../../view/dbmall/shopfront/cart/step.phtml:245
+#: ../../view/dbmall/shopfront/cart/step.phtml:256
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:190
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:201
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:710
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:713
+#: ../../view/dbmall/shopfront/goods/index.phtml:284
+#: ../../view/dbmall/shopfront/goods/index.phtml:289
+#: ../../view/dbmall/shopfront/goods/index.phtml:744
+#: ../../view/dbmall/shopfront/goods/index.phtml:747
+#: ../../view/dbmall/shopfront/home/address.phtml:91
+#: ../../view/dbmall/shopfront/home/address.phtml:262
+msgid "请选择"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:84
+#: ../../view/dbmall/shopfront/home/address.phtml:107
+msgid "街道地址"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:86
+#: ../../view/dbmall/shopfront/home/address.phtml:112
+msgid "填写街道详细地址"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:90
+#: ../../view/dbmall/shopfront/cart/step.phtml:33
+#: ../../view/dbmall/shopfront/home/address.phtml:116
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:223
+#: ../../view/dbmall/shopfront/home/showorder.phtml:246
+msgid "邮政编码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:92
+#: ../../view/dbmall/shopfront/home/address.phtml:120
+msgid "填写邮政编码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:96
+#: ../../view/dbmall/shopfront/cart/step.phtml:34
+#: ../../view/dbmall/shopfront/home/address.phtml:124
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:229
+#: ../../view/dbmall/shopfront/home/showorder.phtml:252
+#: ../../view/dbmall/shopfront/home/useredit.phtml:77
+#: ../../view/dbmall/shopfront/user/login.phtml:25
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:30
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:53
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:58
+#: ../../view/dbmall/shopfront/user/register.phtml:53
+msgid "手机号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:98
+#: ../../view/dbmall/shopfront/home/address.phtml:129
+msgid "添加手机号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:102
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:104
+#: ../../view/dbmall/shopfront/home/address.phtml:133
+#: ../../view/dbmall/shopfront/home/address.phtml:139
+msgid "电话号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:104
+#: ../../view/dbmall/shopfront/home/address.phtml:137
+msgid "区号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:104
+#: ../../view/dbmall/shopfront/home/address.phtml:141
+msgid "分机"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:108
+#: ../../view/dbmall/shopfront/home/address.phtml:145
+msgid "默认地址"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:118
+#: ../../view/dbmall/shopfront/home/address.phtml:156
+#: ../../view/dbmall/shopfront/home/useredit.phtml:106
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:56
+msgid "保存修改"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:147
+#: ../../view/dbmall/shopfront/home/address.phtml:186
+msgid "请输入收货人姓名！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:148
+#: ../../view/dbmall/shopfront/home/address.phtml:187
+msgid "收货人姓名最长为30个汉字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:151
+#: ../../view/dbmall/shopfront/home/address.phtml:190
+msgid "省市区不能为空"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:154
+#: ../../view/dbmall/shopfront/home/address.phtml:193
+msgid "街道地址不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:155
+#: ../../view/dbmall/shopfront/home/address.phtml:194
+msgid "街道地址最长90个汉字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:158
+#: ../../view/dbmall/shopfront/home/address.phtml:197
+#: ../../view/dbmall/shopfront/home/useredit.phtml:171
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:168
+#: ../../view/dbmall/shopfront/user/register.phtml:254
+msgid "手机号码不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:161
+#: ../../view/dbmall/shopfront/home/address.phtml:200
+msgid "邮政编码不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:188
+msgid "请添加收货地址！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:198
+msgid "请选择收货地址！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/setaddress.phtml:243
+#: ../../view/dbmall/shopfront/home/address.phtml:245
+msgid "编辑"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:12
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:17
+msgid "确认订单信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:20
+msgid "《重新选择收货地址"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:24
+#: ../../view/dbmall/shopfront/home/address.phtml:33
+msgid "收货人"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:35
+msgid "座机号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:41
+msgid "配送方式"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:46
+msgid "费用"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:57
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:251
+#: ../../view/dbmall/shopfront/home/showorder.phtml:274
+msgid "送货时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:57
+msgid ""
+"送货时间仅作参考，快递公司会尽量满足您的"
+"要求"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:61
+msgid "只工作日送货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:64
+msgid "工作日、双休日与假日均可送货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:67
+msgid "只双休日、假日送货(工作日不用送)"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:79
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:25
+msgid "商品清单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:79
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:25
+msgid "《返回修改购物车"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:85
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:31
+msgid "产品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:139
+#: ../../view/dbmall/shopfront/cart/step.phtml:146
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:85
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:92
+msgid "应付金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:148
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:93
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:234
+#: ../../view/dbmall/shopfront/home/showorder.phtml:345
+msgid "支付手续费"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:149
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:94
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:131
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:199
+#: ../../view/dbmall/shopfront/home/showorder.phtml:139
+msgid "购买优惠"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:150
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:95
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:133
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:201
+#: ../../view/dbmall/shopfront/home/showorder.phtml:141
+msgid "会员优惠"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:152
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:97
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:136
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:204
+#: ../../view/dbmall/shopfront/home/showorder.phtml:144
+msgid "优惠券优惠"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:155
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:100
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:140
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:208
+#: ../../view/dbmall/shopfront/home/showorder.phtml:148
+msgid "积分购买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:181
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:126
+msgid "应付总金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:196
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:141
+msgid "有可用优惠券:"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:198
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:143
+msgid "选择优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:214
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:159
+msgid "使用积分购买:"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:216
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:161
+msgid "本订单可用"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:216
+#: ../../view/dbmall/shopfront/cart/step.phtml:217
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:161
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:162
+#: ../../view/dbmall/shopfront/home/index.phtml:38
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:119
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:187
+#: ../../view/dbmall/shopfront/home/showorder.phtml:127
+msgid "消费积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:217
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:162
+msgid "您拥有"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:223
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:168
+#: ../../view/dbmall/shopfront/common/footer.phtml:61
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:59
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:179
+#: ../../view/dbmall/shopfront/home/showorder.phtml:187
+msgid "支付方式"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:231
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:176
+msgid "手续费"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:239
+#: ../../view/dbmall/shopfront/cart/step.phtml:271
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:184
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:216
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:163
+#: ../../view/dbmall/shopfront/home/showorder.phtml:171
+msgid "购物发票"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:250
+#: ../../view/dbmall/shopfront/cart/step.phtml:261
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:195
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:206
+msgid "点击添加发票抬头"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:251
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:196
+msgid "新添加的信息，刷新当前页即可出现"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:254
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:199
+msgid "收票人"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:264
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:209
+msgid "明细"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:275
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:220
+msgid "个人发票"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:276
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:221
+msgid "公司发票"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:287
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:232
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:241
+#: ../../view/dbmall/shopfront/home/showorder.phtml:264
+msgid "买家留言"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:298
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:243
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:11
+msgid "确认订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:300
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:245
+msgid "返回上一步"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:335
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:263
+msgid "积分必须为数字"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:340
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:268
+msgid ""
+"输入的积分数量超过了您拥有的积分数！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:345
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:273
+msgid ""
+"输入的积分数量超过了订单中可用积分购买的"
+"最大量！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:354
+#: ../../view/dbmall/shopfront/cart/stepvirtual.phtml:282
+msgid ""
+"输入的积分数量超过订单应付总额，请重新输"
+"入！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/step.phtml:421
+msgid "请选择合适的配送方式！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/submit.phtml:13
+msgid ""
+"恭喜您！订单提交成功，祝您购物愉快！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/submit.phtml:17
+msgid "您当前的订单金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/submit.phtml:18
+msgid "请牢记您的订单号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/submit.phtml:23
+msgid "马上去支付"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/cart/submit.phtml:25
+msgid "查看订单详情"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/footer.phtml:33
+msgid "帮助中心"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/footer.phtml:47
+msgid "服务支持"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/footer.phtml:75
+msgid "关于我们"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/footer.phtml:89
+msgid "客服中心"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/header.phtml:18
+#: ../../view/dbmall/shopfront/index/ajaxheader.phtml:15
+msgid "欢迎您"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/header.phtml:18
+#: ../../view/dbmall/shopfront/index/ajaxheader.phtml:15
+msgid "退出"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/header.phtml:34
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:8
+#: ../../view/dbmall/shopfront/index/ajaxheader.phtml:31
+msgid "用户中心"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/header.phtml:38
+#: ../../view/dbmall/shopfront/index/ajaxheader.phtml:35
+msgid "注册"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/header.phtml:58
+msgid "手机扫描后，访问手机站点"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/header.phtml:62
+msgid "简简单单搜索"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/index.phtml:93
+msgid "版权所有"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/index.phtml:104
+msgid "提示"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/index.phtml:129
+msgid "返回顶部"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/indexmenu.phtml:2
+#: ../../view/dbmall/shopfront/index/index.phtml:4
+msgid "商品分类"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/kefu.phtml:9
+msgid "查看在线客服"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/kefu.phtml:11
+msgid "展开"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/kefu.phtml:12
+msgid "关闭在线客服"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/kefu.phtml:14
+msgid "收缩"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/common/kefu.phtml:41
+#: ../../view/dbmall/shopfront/common/kefu.phtml:43
+msgid "在线客服"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:75
+#: ../../view/dbmall/shopfront/goods/index.phtml:75
+msgid "货　号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:79
+#: ../../view/dbmall/shopfront/goods/index.phtml:79
+msgid "市场价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:83
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:414
+#: ../../view/dbmall/shopfront/goods/index.phtml:83
+#: ../../view/dbmall/shopfront/goods/index.phtml:448
+msgid "店铺价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:88
+#: ../../view/dbmall/shopfront/goods/index.phtml:88
+msgid "会员价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:101
+#: ../../view/dbmall/shopfront/goods/index.phtml:101
+msgid "优惠价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:105
+#: ../../view/dbmall/shopfront/goods/index.phtml:105
+msgid "您节省"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:110
+#: ../../view/dbmall/shopfront/goods/index.phtml:110
+msgid "品　牌"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:116
+#: ../../view/dbmall/shopfront/goods/index.phtml:116
+msgid "优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:119
+#: ../../view/dbmall/shopfront/goods/index.phtml:119
+msgid "满"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:119
+#: ../../view/dbmall/shopfront/goods/index.phtml:119
+msgid "减"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:126
+#: ../../view/dbmall/shopfront/goods/index.phtml:126
+msgid "点击领券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:141
+#: ../../view/dbmall/shopfront/goods/index.phtml:142
+msgid "库　存"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:145
+#: ../../view/dbmall/shopfront/goods/index.phtml:146
+msgid "重　量"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:149
+#: ../../view/dbmall/shopfront/goods/index.phtml:150
+msgid "评　分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:153
+#: ../../view/dbmall/shopfront/goods/index.phtml:154
+msgid "可用"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:153
+#: ../../view/dbmall/shopfront/goods/index.phtml:154
+msgid "消费积分进行购买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:196
+#: ../../view/dbmall/shopfront/goods/index.phtml:207
+msgid "我想买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:206
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:632
+#: ../../view/dbmall/shopfront/goods/index.phtml:217
+#: ../../view/dbmall/shopfront/goods/index.phtml:666
+#: ../../view/dbmall/shopfront/index/index.phtml:164
+#: ../../view/dbmall/shopfront/index/index.phtml:225
+#: ../../view/dbmall/shopfront/index/index.phtml:286
+#: ../../view/dbmall/shopfront/index/index.phtml:347
+#: ../../view/dbmall/shopfront/index/index.phtml:391
+msgid "加入购物车"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:207
+#: ../../view/dbmall/shopfront/goods/index.phtml:218
+msgid "收藏商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:211
+#: ../../view/dbmall/shopfront/goods/index.phtml:222
+msgid "手机扫描后，在手机中访问该商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:215
+#: ../../view/dbmall/shopfront/goods/index.phtml:226
+msgid "该商品已经下架！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:219
+#: ../../view/dbmall/shopfront/goods/index.phtml:230
+msgid "最近"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:219
+#: ../../view/dbmall/shopfront/goods/index.phtml:230
+msgid "人已经购买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:258
+#: ../../view/dbmall/shopfront/goods/index.phtml:274
+msgid "购物数量不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:259
+#: ../../view/dbmall/shopfront/goods/index.phtml:275
+msgid "购物数量必须为数字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:260
+#: ../../view/dbmall/shopfront/goods/index.phtml:276
+#, php-format
+msgid "购物数量最少为%s！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:263
+#: ../../view/dbmall/shopfront/goods/index.phtml:279
+#, php-format
+msgid "购物数量最多为%s！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:268
+msgid "请选择商品规格"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:282
+#: ../../view/dbmall/shopfront/goods/index.phtml:303
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:194
+msgid "添加购物车成功"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:283
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:820
+#: ../../view/dbmall/shopfront/goods/index.phtml:304
+#: ../../view/dbmall/shopfront/goods/index.phtml:854
+msgid "继续购物"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:283
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:820
+#: ../../view/dbmall/shopfront/goods/index.phtml:304
+#: ../../view/dbmall/shopfront/goods/index.phtml:854
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:195
+msgid "去购物车结算"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:300
+#: ../../view/dbmall/shopfront/goods/index.phtml:321
+msgid "您已经到了购买上限！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:309
+#: ../../view/dbmall/shopfront/goods/index.phtml:330
+msgid "您已经到了购买下限！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:366
+#: ../../view/dbmall/shopfront/goods/index.phtml:400
+msgid "品质保证"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:392
+#: ../../view/dbmall/shopfront/goods/index.phtml:426
+msgid "组合商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:417
+#: ../../view/dbmall/shopfront/goods/index.phtml:451
+msgid "组合购买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:428
+#: ../../view/dbmall/shopfront/goods/index.phtml:462
+msgid "相关商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:447
+#: ../../view/dbmall/shopfront/goods/index.phtml:481
+msgid "浏览历史"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:500
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:640
+#: ../../view/dbmall/shopfront/goods/index.phtml:534
+#: ../../view/dbmall/shopfront/goods/index.phtml:674
+msgid "详细信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:503
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:553
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:643
+#: ../../view/dbmall/shopfront/goods/index.phtml:537
+#: ../../view/dbmall/shopfront/goods/index.phtml:587
+#: ../../view/dbmall/shopfront/goods/index.phtml:677
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:11
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:23
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:66
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:91
+msgid "商品评价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:506
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:566
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:646
+#: ../../view/dbmall/shopfront/goods/index.phtml:540
+#: ../../view/dbmall/shopfront/goods/index.phtml:600
+#: ../../view/dbmall/shopfront/goods/index.phtml:680
+msgid "商品咨询"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:509
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:591
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:649
+#: ../../view/dbmall/shopfront/goods/index.phtml:543
+#: ../../view/dbmall/shopfront/goods/index.phtml:625
+#: ../../view/dbmall/shopfront/goods/index.phtml:683
+msgid "售后服务"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:512
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:599
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:652
+#: ../../view/dbmall/shopfront/goods/index.phtml:546
+#: ../../view/dbmall/shopfront/goods/index.phtml:633
+#: ../../view/dbmall/shopfront/goods/index.phtml:686
+msgid "如何购买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:577
+#: ../../view/dbmall/shopfront/goods/index.phtml:611
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:45
+msgid "咨询内容"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:577
+#: ../../view/dbmall/shopfront/goods/index.phtml:611
+msgid ""
+"您有任何问题，可以通过这里向卖家咨询"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:578
+#: ../../view/dbmall/shopfront/goods/index.phtml:612
+msgid "提交咨询"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:581
+#: ../../view/dbmall/shopfront/goods/index.phtml:615
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:42
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:41
+#: ../../view/dbmall/shopfront/user/login.phtml:41
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:64
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:42
+#: ../../view/dbmall/shopfront/user/register.phtml:83
+msgid "验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:581
+#: ../../view/dbmall/shopfront/goods/index.phtml:615
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:44
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:43
+#: ../../view/dbmall/shopfront/user/login.phtml:43
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:66
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:44
+#: ../../view/dbmall/shopfront/user/register.phtml:85
+msgid "输入验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:690
+#: ../../view/dbmall/shopfront/goods/index.phtml:724
+msgid "请输入商品咨询内容！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:695
+#: ../../view/dbmall/shopfront/goods/index.phtml:729
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:94
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:102
+#: ../../view/dbmall/shopfront/user/login.phtml:126
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:172
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:102
+#: ../../view/dbmall/shopfront/user/register.phtml:283
+msgid "验证码不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:696
+#: ../../view/dbmall/shopfront/goods/index.phtml:730
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:95
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:103
+#: ../../view/dbmall/shopfront/user/login.phtml:127
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:105
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:173
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:103
+#: ../../view/dbmall/shopfront/user/register.phtml:284
+msgid "验证码错误！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:780
+#: ../../view/dbmall/shopfront/goods/index.phtml:814
+msgid ""
+"您的咨询信息已经成功提交，卖家审核回复"
+"后，将正常显示！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:819
+#: ../../view/dbmall/shopfront/goods/index.phtml:853
+msgid "组合商品添加购物车成功！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/adv_index.phtml:831
+#: ../../view/dbmall/shopfront/goods/index.phtml:865
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:104
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:112
+#: ../../view/dbmall/shopfront/user/login.phtml:139
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:182
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:112
+#: ../../view/dbmall/shopfront/user/register.phtml:310
+msgid "更换验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:194
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:248
+msgid "开始"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:199
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:253
+msgid "结束"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:203
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:257
+msgid "立即领取"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:205
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:259
+msgid "已领取"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:224
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:278
+msgid "优惠"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:225
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:279
+msgid "全品类通用"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:226
+#: ../../view/dbmall/shopfront/goods/click-coupon.phtml:280
+msgid "可领取"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/goods-ask.phtml:13
+msgid "店主"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/goods-ask.phtml:22
+msgid "该商品暂无咨询信息！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/goods-search.phtml:12
+msgid "商品搜索结果"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:36
+msgid "当前分类"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:66
+msgid "最近浏览"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/goodslist.phtml:131
+msgid "最新"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/list-comment.phtml:23
+msgid "店主回复"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/list-comment.phtml:34
+msgid "该商品暂无评价！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/goods/list-comment.phtml:38
+msgid "篇口碑报告"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:30
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:55
+#: ../../view/dbmall/shopfront/home/index.phtml:87
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:72
+#: ../../view/dbmall/shopfront/home/orderpay.phtml:18
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:23
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:23
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:41
+#: ../../view/dbmall/shopfront/home/showorder.phtml:23
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:32
+msgid "订单编号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:32
+msgid "必须是已发货或者已收货的订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:33
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:202
+msgid "点击查询"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:37
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:65
+msgid "退货商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:43
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:56
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:45
+msgid "退款方式"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:46
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:49
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:27
+msgid "退款到账户余额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:49
+msgid "退款到银行卡"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:52
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:49
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:27
+msgid "退款到第三方支付"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:57
+msgid "开户行"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:63
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:81
+msgid "姓名"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:69
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:51
+msgid "收款卡号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:75
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:54
+msgid "支付名称"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:87
+msgid "收款帐号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:93
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:62
+msgid "退货原因"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:95
+msgid "最多100字"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:124
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:196
+msgid "订单编号不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:127
+msgid "退货原因不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:149
+msgid "开户行 姓名 收款卡号 不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:155
+msgid "支付名称 姓名 收款账号 不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:163
+msgid "退货申请提交成功！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:172
+msgid "需要 点击查询 按钮，添加退货商品！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/addrefund.phtml:218
+msgid "修改编号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/address.phtml:43
+msgid "默认"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/address.phtml:55
+msgid "修改"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/address.phtml:267
+msgid "您确实要删除该收货地址吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/address.phtml:274
+msgid "收货地址删除失败！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:11
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:23
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:39
+#: ../../view/dbmall/shopfront/home/user-menu.phtml:15
+msgid "支付宝绑定"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:30
+#: ../../view/dbmall/shopfront/home/qqset.phtml:30
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:30
+msgid "绑定状态"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:33
+msgid "已经与支付宝绑定完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:34
+#: ../../view/dbmall/shopfront/home/qqset.phtml:34
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:34
+msgid "未绑定"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:41
+msgid "点击完成支付宝绑定"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:46
+msgid "支付宝解绑"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:48
+msgid "点击解绑支付宝"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/alipayset.phtml:49
+#: ../../view/dbmall/shopfront/home/qqset.phtml:49
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:49
+msgid ""
+"如果您要解绑并且从来没有设置过登陆密码，"
+"请在解绑前设置登录密码，否则解绑后将无法"
+"登陆"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:11
+#: ../../view/dbmall/shopfront/home/coupon.phtml:22
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:16
+msgid "我的优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:27
+msgid "全部优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:29
+#: ../../view/dbmall/shopfront/home/coupon.phtml:58
+msgid "未生效优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:31
+#: ../../view/dbmall/shopfront/home/coupon.phtml:58
+msgid "可用优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:33
+#: ../../view/dbmall/shopfront/home/coupon.phtml:58
+msgid "已用优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:35
+#: ../../view/dbmall/shopfront/home/coupon.phtml:58
+msgid "过期优惠券"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:44
+msgid "优惠券名称"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:45
+msgid "优惠券描述"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:46
+msgid "优惠券状态"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:47
+msgid "有效期"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:48
+msgid "使用优惠券的订单号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:67
+msgid "长期有效"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:69
+msgid "已经过期"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/coupon.phtml:84
+msgid "暂无优惠券！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:35
+msgid "咨询信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:43
+msgid "咨询时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:44
+msgid "咨询商品"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:47
+msgid "回复时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:48
+msgid "回复人"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:49
+msgid "回复内容"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:52
+msgid "您确实要删除该商品咨询吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsask.phtml:62
+msgid "暂无商品咨询！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:35
+msgid "评价信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:58
+msgid "已评价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:58
+msgid "未评价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:65
+msgid "评价时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:67
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:71
+msgid "商品评分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:97
+msgid "点击提交"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:123
+msgid "请输入评价内容！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:124
+msgid "评价内容最少两个汉字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodscomment.phtml:125
+msgid "评价内容最多600个汉字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsfavorites.phtml:45
+msgid "您确实要删除该收藏商品吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/goodsfavorites.phtml:53
+msgid "暂无商品收藏！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/home-money-menu.phtml:1
+msgid "账户余额记录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/home-money-menu.phtml:3
+msgid "账户消费记录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/home-money-menu.phtml:5
+msgid "账户充值记录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/home-money-menu.phtml:7
+msgid "账户提现记录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/home-money-menu.phtml:9
+msgid "账户退款记录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:30
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:30
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:30
+msgid "输入金额或备注信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:30
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:25
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:25
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:30
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:30
+msgid "搜索"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:43
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:52
+#: ../../view/dbmall/shopfront/home/index.phtml:34
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:43
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:52
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:43
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:52
+msgid "充值"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:45
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:52
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:45
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:52
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:45
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:52
+msgid "提现"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:52
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:52
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:52
+msgid "消费"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:52
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:52
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:52
+msgid "退款"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:57
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:57
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:57
+msgid "时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:58
+msgid "操作金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:59
+msgid "余额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:60
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:60
+msgid "类型"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:61
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:61
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:59
+msgid "状态"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:62
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:62
+msgid "操作者"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:63
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:63
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:62
+msgid "备注"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:74
+msgid "完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:75
+msgid "进行中"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:92
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:82
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:94
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:90
+msgid "暂无记录！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:105
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:107
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:103
+msgid "充值处理情况"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:107
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:109
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:105
+msgid "已经完成充值"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:108
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:110
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:106
+msgid "未完成充值"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:118
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:120
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:116
+msgid "账户充值操作"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:122
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:124
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:120
+msgid "选择支付方式"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:135
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:137
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:133
+msgid "填写充值金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:143
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:145
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:141
+msgid "立刻充值"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:155
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:157
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:153
+msgid "余额提现操作"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:159
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:161
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:157
+msgid "可提现金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:167
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:169
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:58
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:165
+msgid "提现金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:173
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:175
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:171
+msgid "支付名称/开户银行"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:175
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:177
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:173
+msgid "支付名称如 支付宝"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:179
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:181
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:177
+msgid "账户名称/开户名称"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:185
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:187
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:183
+msgid "账号/卡号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:193
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:195
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:191
+msgid "申请提现"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:215
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:217
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:213
+msgid "充值金额不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:216
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:218
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:214
+msgid "充值金额必须为数字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:217
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:219
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:215
+msgid "充值金额最小为 1"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:220
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:222
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:218
+msgid "请选择支付方式"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:248
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:250
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:246
+msgid "提现金额不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:249
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:251
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:247
+msgid "提现金额必须为数字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:250
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:252
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:248
+msgid "提现金额最小为 0.01"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:251
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:253
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:249
+msgid "提现金额最大为 "
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:254
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:256
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:252
+msgid "支付名称/开户银行 不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:257
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:259
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:255
+msgid "账户名称/开户名称 不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homemoney.phtml:260
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:262
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:258
+msgid "账号/卡号 不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:25
+msgid "输入订单编号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:33
+msgid "退货记录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:41
+msgid "点此申请退货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:49
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:27
+msgid "退款到银行"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:50
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:28
+msgid "等待处理"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:50
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:28
+msgid "退款成功"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:50
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:28
+msgid "退款拒绝"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:57
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+msgid "申请时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:58
+msgid "处理状态"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:69
+msgid "查看退货详情"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:93
+msgid "您确实要删除该记录吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/homerefund.phtml:100
+msgid "退货记录删除失败！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:32
+msgid "用户等级"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:36
+msgid "用户积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:40
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:122
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:190
+#: ../../view/dbmall/shopfront/home/showorder.phtml:130
+msgid "等级积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:42
+msgid "用户提醒"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:43
+msgid "待支付订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:44
+msgid "待发货订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/index.phtml:45
+msgid "已发货订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:19
+#: ../../view/dbmall/shopfront/home/useredit.phtml:11
+#: ../../view/dbmall/shopfront/home/useredit.phtml:23
+msgid "账户信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/left_menu.phtml:34
+msgid "用户退出"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:25
+msgid "输入订单号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:31
+msgid ""
+"设置手机号码，可以接收到订单处理的短信通"
+"知。"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:31
+msgid "点击去设置手机号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:36
+msgid "有效订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:38
+msgid "付款中"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:40
+msgid "已付款"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:42
+msgid "未发货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:44
+msgid "已发货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:46
+msgid "交易完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:48
+msgid "退货订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:50
+msgid "无效订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:96
+msgid "再次购买"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:104
+msgid "已经评价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:106
+msgid "尚未评价"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:125
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:28
+#: ../../view/dbmall/shopfront/home/showorder.phtml:28
+msgid "立即付款"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:127
+msgid "您确实要取消该订单吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:127
+msgid "取消订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:129
+msgid "您确实要删除该订单吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:129
+msgid "删除订单"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:151
+msgid "暂时无订单！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:164
+#: ../../view/dbmall/shopfront/home/showorder.phtml:301
+msgid "订单付款"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:164
+#: ../../view/dbmall/shopfront/home/showorder.phtml:301
+msgid "订单号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:171
+#: ../../view/dbmall/shopfront/home/showorder.phtml:308
+msgid "订单金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderlist.phtml:172
+#: ../../view/dbmall/shopfront/home/showorder.phtml:309
+msgid "点击支付"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderpay.phtml:21
+#: ../../view/dbmall/shopfront/home/paycheck-pay.phtml:21
+msgid "微信二维码扫码支付"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderpay.phtml:43
+msgid "订单支付成功！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/orderpay.phtml:47
+msgid "订单支付失败！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck-pay.phtml:18
+msgid "账户充值"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck-pay.phtml:43
+msgid "充值支付成功！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck-pay.phtml:47
+msgid "充值支付失败！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:58
+msgid "充值金额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:70
+msgid "系统充值"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:73
+msgid "未完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:73
+msgid "去支付"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/paycheck.phtml:74
+msgid "已完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/qqset.phtml:11
+#: ../../view/dbmall/shopfront/home/qqset.phtml:23
+#: ../../view/dbmall/shopfront/home/qqset.phtml:39
+#: ../../view/dbmall/shopfront/home/user-menu.phtml:9
+msgid "QQ绑定"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/qqset.phtml:33
+msgid "已经与QQ绑定完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/qqset.phtml:46
+msgid "QQ解绑"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/qqset.phtml:48
+msgid "点击解绑QQ"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:26
+#: ../../view/dbmall/shopfront/home/showorder.phtml:26
+msgid "订单状态"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:39
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:206
+#: ../../view/dbmall/shopfront/home/showorder.phtml:39
+#: ../../view/dbmall/shopfront/home/showorder.phtml:229
+msgid "快递单号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:83
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:151
+#: ../../view/dbmall/shopfront/home/showorder.phtml:91
+msgid "下单时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:85
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:92
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:100
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:108
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:153
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:160
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:168
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:176
+#: ../../view/dbmall/shopfront/home/showorder.phtml:93
+#: ../../view/dbmall/shopfront/home/showorder.phtml:100
+#: ../../view/dbmall/shopfront/home/showorder.phtml:108
+#: ../../view/dbmall/shopfront/home/showorder.phtml:116
+msgid "年"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:85
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:92
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:100
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:108
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:153
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:160
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:168
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:176
+#: ../../view/dbmall/shopfront/home/showorder.phtml:93
+#: ../../view/dbmall/shopfront/home/showorder.phtml:100
+#: ../../view/dbmall/shopfront/home/showorder.phtml:108
+#: ../../view/dbmall/shopfront/home/showorder.phtml:116
+msgid "月"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:85
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:92
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:100
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:108
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:153
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:160
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:168
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:176
+#: ../../view/dbmall/shopfront/home/showorder.phtml:93
+#: ../../view/dbmall/shopfront/home/showorder.phtml:100
+#: ../../view/dbmall/shopfront/home/showorder.phtml:108
+#: ../../view/dbmall/shopfront/home/showorder.phtml:116
+msgid "日"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:85
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:92
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:100
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:108
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:153
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:160
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:168
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:176
+#: ../../view/dbmall/shopfront/home/showorder.phtml:93
+#: ../../view/dbmall/shopfront/home/showorder.phtml:100
+#: ../../view/dbmall/shopfront/home/showorder.phtml:108
+#: ../../view/dbmall/shopfront/home/showorder.phtml:116
+msgid "时"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:85
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:92
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:100
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:108
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:153
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:160
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:168
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:176
+#: ../../view/dbmall/shopfront/home/showorder.phtml:93
+#: ../../view/dbmall/shopfront/home/showorder.phtml:100
+#: ../../view/dbmall/shopfront/home/showorder.phtml:108
+#: ../../view/dbmall/shopfront/home/showorder.phtml:116
+msgid "分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:89
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:157
+#: ../../view/dbmall/shopfront/home/showorder.phtml:97
+msgid "付款时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:97
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:165
+#: ../../view/dbmall/shopfront/home/showorder.phtml:105
+msgid "发货时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:105
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:173
+#: ../../view/dbmall/shopfront/home/showorder.phtml:113
+msgid "完成时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:119
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:122
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:187
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:190
+#: ../../view/dbmall/shopfront/home/showorder.phtml:127
+#: ../../view/dbmall/shopfront/home/showorder.phtml:130
+msgid "交易完成确认收货后才得到积分"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:126
+#: ../../view/dbmall/shopfront/home/showorder.phtml:134
+msgid "商品总重量："
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:129
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:197
+#: ../../view/dbmall/shopfront/home/showorder.phtml:137
+msgid "商品总计"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:150
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:218
+#: ../../view/dbmall/shopfront/home/showorder.phtml:158
+msgid "商品运费"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:152
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:220
+#: ../../view/dbmall/shopfront/home/showorder.phtml:160
+msgid "支付手续"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:154
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:222
+#: ../../view/dbmall/shopfront/home/showorder.phtml:162
+msgid "订单总额"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:175
+#: ../../view/dbmall/shopfront/home/showorder.phtml:183
+msgid "支付信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:184
+#: ../../view/dbmall/shopfront/home/showorder.phtml:192
+msgid "支付证明"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:193
+#: ../../view/dbmall/shopfront/home/showorder.phtml:216
+msgid "配送信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:197
+#: ../../view/dbmall/shopfront/home/showorder.phtml:220
+msgid "收货人员"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:201
+#: ../../view/dbmall/shopfront/home/showorder.phtml:224
+msgid "快递信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:265
+#: ../../view/dbmall/shopfront/home/showorder.phtml:282
+msgid "物流信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/receiptorder.phtml:282
+msgid "您确定要确认收货吗？"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:30
+msgid "退货状态"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:31
+msgid "返回列表"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:37
+msgid "申请详情"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:42
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+msgid "秒"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:49
+msgid "开户银行"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:50
+msgid "开户姓名"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:55
+msgid "真实姓名"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:56
+msgid "收款账号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:82
+msgid "处理详情"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:87
+msgid "等待处理，暂无信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:91
+msgid "处理结果："
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:92
+msgid "处理时间："
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:96
+msgid "退货金额："
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:100
+msgid "处理意见："
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:141
+msgid "已申请退货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/refundshow.phtml:194
+msgid "商品总重量"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/showorder.phtml:79
+msgid "该商品已经退货"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/showorder.phtml:201
+msgid "取消说明"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/user-menu.phtml:3
+msgid "基本信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/user-menu.phtml:6
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:11
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:23
+msgid "密码修改"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/user-menu.phtml:12
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:11
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:23
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:39
+msgid "微信绑定"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:31
+msgid "头像"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:43
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:24
+msgid "用户名称"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:49
+msgid "会员分组"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:57
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:25
+#: ../../view/dbmall/shopfront/user/login.phtml:24
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:33
+#: ../../view/dbmall/shopfront/user/register.phtml:45
+msgid "电子邮箱"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:67
+msgid "性别"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:70
+msgid "保密"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:71
+msgid "男"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:72
+msgid "女"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:85
+msgid ""
+"填写正确的手机号码，可以接收到商家的短信"
+"通知"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:90
+msgid "生日"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:162
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:123
+#: ../../view/dbmall/shopfront/user/register.phtml:247
+msgid "请输入电子邮箱！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:164
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:91
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:124
+#: ../../view/dbmall/shopfront/user/register.phtml:248
+msgid "电子邮箱格式错误！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:165
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:125
+#: ../../view/dbmall/shopfront/user/register.phtml:249
+msgid "该邮箱已经存在"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:173
+#: ../../view/dbmall/shopfront/user/register.phtml:255
+msgid "请输入正确的手机号码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/useredit.phtml:174
+msgid "该手机号码已经存在"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:32
+msgid "原始密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:40
+msgid "新密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:48
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:35
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:36
+#: ../../view/dbmall/shopfront/user/register.phtml:32
+msgid "确认密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:100
+msgid "请输入原始密码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:101
+msgid "原始密码至少输入6位！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:102
+msgid "原始密码密码最长为20位！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:106
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:91
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:91
+msgid "请输入新密码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:107
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:92
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:92
+#: ../../view/dbmall/shopfront/user/register.phtml:267
+msgid "至少输入6位密码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:108
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:93
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:93
+#: ../../view/dbmall/shopfront/user/register.phtml:268
+msgid "密码最长为20位！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:111
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:96
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:96
+#: ../../view/dbmall/shopfront/user/register.phtml:271
+msgid "请输入确认密码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:112
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:97
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:97
+#: ../../view/dbmall/shopfront/user/register.phtml:272
+msgid "至少输入6位确认密码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:113
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:98
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:98
+#: ../../view/dbmall/shopfront/user/register.phtml:273
+msgid "确认密码最长为20位！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/userpasswd.phtml:114
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:99
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:99
+#: ../../view/dbmall/shopfront/user/register.phtml:274
+msgid "两次输入的密码不一致！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:33
+msgid "商品数量"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:44
+msgid "未付款"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:47
+msgid "获取商品信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:57
+msgid "暂无虚拟商品！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:69
+msgid "虚拟商品信息"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:91
+msgid "账号"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/virtual-goods.phtml:95
+msgid "密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:33
+msgid "已经与微信绑定完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:41
+msgid "点击完成微信绑定"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:46
+msgid "微信解绑"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/weixinset.phtml:48
+msgid "点击解绑微信"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:60
+msgid "审核人"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:61
+msgid "审核时间"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:71
+msgid "处理中"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:72
+msgid "提现完成"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/home/withdraw-log.phtml:73
+msgid "拒绝提现"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:13
+msgid "找回密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:23
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:51
+msgid "重置方式"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:26
+msgid "点击通过手机号码重置"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:30
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:23
+#: ../../view/dbmall/shopfront/user/login.phtml:23
+#: ../../view/dbmall/shopfront/user/login.phtml:28
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:26
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:49
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:24
+#: ../../view/dbmall/shopfront/user/register.phtml:20
+msgid "会员名称"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:32
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:28
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:51
+#: ../../view/dbmall/shopfront/user/register.phtml:22
+msgid "输入会员名称"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:36
+msgid "会员邮箱"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:38
+msgid "输入会员邮箱"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:49
+msgid "提交找回密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:87
+msgid "请输入会员名称！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswd.phtml:90
+msgid "请输入会员邮箱！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:13
+msgid "重新设置密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:29
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:30
+msgid "会员新密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:31
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:32
+msgid "输入新密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:37
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:38
+#: ../../view/dbmall/shopfront/user/register.phtml:34
+msgid "输入确认密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/forgotpasswdedit.phtml:48
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:49
+msgid "提交设定新密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:34
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:55
+#: ../../view/dbmall/shopfront/user/register.phtml:26
+msgid "会员密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:36
+#: ../../view/dbmall/shopfront/user/register.phtml:28
+msgid "输入会员密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:53
+msgid "还不是会员，去注册会员"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:54
+msgid "会员忘记密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:59
+#: ../../view/dbmall/shopfront/user/register.phtml:105
+msgid "其他登录"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:118
+#: ../../view/dbmall/shopfront/user/register.phtml:241
+msgid "请输入会员登录名称！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/login.phtml:121
+#: ../../view/dbmall/shopfront/user/register.phtml:266
+msgid "请输入密码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:13
+msgid "会员信息补充或绑定已有账户"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:35
+#: ../../view/dbmall/shopfront/user/register.phtml:47
+msgid "输入电子邮件"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:41
+msgid "提交补充信息(建立账户)"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:57
+msgid "请输入会员密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:62
+msgid "提交绑定现有账户"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:118
+msgid "请输入客户登录名称！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:119
+msgid "客户登录名称最长为30个汉字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:120
+msgid "该用户名已经存在！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:144
+msgid "会员名称不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/otherregister.phtml:147
+msgid "会员密码不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:13
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswdedit.phtml:13
+msgid "重置密码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:36
+#: ../../view/dbmall/shopfront/user/register.phtml:60
+msgid "手机验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:39
+msgid "发送手机验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:54
+msgid "点击通过电子邮箱重置"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:60
+msgid "输入注册时的手机号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:104
+#: ../../view/dbmall/shopfront/user/register.phtml:261
+msgid "手机验证码不能为空！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:115
+msgid "发送验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:119
+msgid "重新发送"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/phoneforgotpasswd.phtml:169
+msgid "请填写正确的手机号码！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:55
+msgid "输入手机号码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:62
+msgid "输入手机验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:63
+#: ../../view/dbmall/shopfront/user/register.phtml:323
+msgid "获取验证码"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:90
+#: ../../view/dbmall/shopfront/user/register.phtml:134
+msgid "注册协议"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:92
+msgid "同意"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:92
+msgid "点击查看注册协议"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:100
+msgid "提交注册用户"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:242
+msgid "会员登录名称最长为30个汉字！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:243
+msgid "该会员名已经存在！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:256
+msgid "该手机号码已经存在！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:262
+msgid "手机验证码错误！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:277
+msgid "必须勾选同意注册协议才能注册！"
+msgstr ""
+
+#: ../../view/dbmall/shopfront/user/register.phtml:327
+msgid "重新获取"
+msgstr ""

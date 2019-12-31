@@ -1,0 +1,92 @@
+<div class="header_menu">
+    <div class="container">
+        <div class="header-nav clearfix">
+            <?php echo $this->partial('site/headermenu'); ?>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container breadcrumbs">
+    <a href="<?php echo $this->url('shopfront/default'); ?>"><?php echo $this->translate('首页'); ?></a>
+    <span class="sep">/</span><span><?php echo $this->translate('我的优惠券'); ?></span>
+</div>
+<div class="container">
+    <div class="uc-full-box">
+        <div class="row">
+            <div class="span4">
+                <?php echo $this->partial('shopfront/home/left_menu.phtml'); ?>
+            </div>
+            <div class="span16">
+                <div class="xm-line-box uc-box uc-favorite-box">
+                    <h3 class="right-more-title">
+                        <?php echo $this->translate('我的优惠券'); ?>
+                    </h3>
+                    <div class="box-hd-more">
+                        <div class="pull-left left-menu-more">
+                            <div class="uc-order-list-type">
+                                <a <?php if ($this->state == 'all') echo 'class="current"'; ?> href="<?php echo $this->url('frontcoupon/default', array('action'=>'index'), array('query'=>array('state'=>'all'))); ?>"><?php echo $this->translate('全部优惠券'); ?><?php if ($this->order_state_num['all']>0) { ?><span class="badge"><?php echo $this->coupon_num['all']; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->state == '0') echo 'class="current"'; ?> href="<?php echo $this->url('frontcoupon/default', array('action'=>'index'), array('query'=>array('state'=>'0'))); ?>"><?php echo $this->translate('未生效优惠券'); ?><?php if ($this->order_state_num['0']>0) { ?><span class="badge"><?php echo $this->coupon_num['0']; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->state == '1') echo 'class="current"'; ?> href="<?php echo $this->url('frontcoupon/default', array('action'=>'index'), array('query'=>array('state'=>'1'))); ?>"><?php echo $this->translate('可用优惠券'); ?><?php if ($this->order_state_num['1']>0) { ?><span class="badge"><?php echo $this->coupon_num['1']; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->state == '2') echo 'class="current"'; ?> href="<?php echo $this->url('frontcoupon/default', array('action'=>'index'), array('query'=>array('state'=>'2'))); ?>"><?php echo $this->translate('已用优惠券'); ?><?php if ($this->order_state_num['2']>0) { ?><span class="badge"><?php echo $this->coupon_num['2']; ?></span><?php } ?></a>
+                                <span class="sep">|</span>
+                                <a <?php if ($this->state == '3') echo 'class="current"'; ?> href="<?php echo $this->url('frontcoupon/default', array('action'=>'index'), array('query'=>array('state'=>'3'))); ?>"><?php echo $this->translate('过期优惠券'); ?><?php if ($this->order_state_num['3']>0) { ?><span class="badge"><?php echo $this->coupon_num['3']; ?></span><?php } ?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-bd">
+                        <?php if ($this->user_coupon_list) { ?>
+                            <table class="table table-bordered table-hover" style="margin-top: 15px;">
+                                <thead>
+                                <tr>
+                                    <th width="15%"><?php echo $this->translate('优惠券名称'); ?></th>
+                                    <th width="25%"><?php echo $this->translate('优惠券描述'); ?></th>
+                                    <th width="10%"><?php echo $this->translate('优惠券状态'); ?></th>
+                                    <th width="20%"><?php echo $this->translate('有效期'); ?></th>
+                                    <th width="20%"><?php echo $this->translate('使用优惠券的订单号'); ?></th>
+                                </tr>
+                                </thead>
+                                <?php foreach ($this->user_coupon_list as $coupon_value) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $this->escapeHtml($coupon_value['coupon_name']); ?></td>
+                                        <td><?php echo $this->escapeHtml($coupon_value['coupon_info']); ?></td>
+                                        <td>
+                                            <?php
+                                            $couponStateArray = array(0=>$this->translate('未生效优惠券'), 1=>$this->translate('可用优惠券'), 2=>$this->translate('已用优惠券'), 3=>$this->translate('过期优惠券'));
+                                            echo $couponStateArray[$coupon_value['coupon_use_state']];
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            $start_time = empty($coupon_value['coupon_start_use_time']) ? '' : date("Y-m-d H:i", $coupon_value['coupon_start_use_time']);
+                                            $end_time   = empty($coupon_value['coupon_expire_time']) ? '' : date("Y-m-d H:i", $coupon_value['coupon_expire_time']);
+                                            if($start_time == '' and $end_time == '') {
+                                                $start_and_end_time = $this->translate('长期有效');
+                                            } elseif ($end_time != '' and time() > $coupon_value['coupon_expire_time']) {
+                                                $start_and_end_time = '<font color="#FF0000">' . $this->translate('已经过期') . '</font>';
+                                            } else {
+                                                $start_and_end_time = (empty($start_time) ? $this->translate('无') : $start_time) . ' / ' . (empty($end_time) ? $this->translate('无') : $end_time);
+                                            }
+
+                                            echo $start_and_end_time; ?>
+                                        </td>
+                                        <td><?php echo $coupon_value['used_order_sn']; ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                            <div>
+                                <?php echo ( count($this->user_coupon_list) > 0 ) ? $this->paginationControl($this->user_coupon_list, 'Sliding', 'site/dbpage',array('page_url'=>$this->url('frontcoupon/default/coupon_page', array('action'=>'index', 'id'=>0), array('query'=>array('state'=>$this->state))))) : ""; ?>
+                            </div>
+                        <?php } else { ?>
+                            <?php echo $this->translate('暂无优惠券！'); ?>
+                        <?php } ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=7,8,9">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+    $dbshop_shop_name        = $this->frontwebsite()->websiteInfo('shop_name');
+    $dbshop_shop_extend_name = $this->frontwebsite()->websiteInfo('shop_extend_name');
+    $dbshop_shop_keywords    = trim($dbshop_shop_name . ',' . $this->frontwebsite()->websiteInfo('shop_keywords'), ',');
+    $dbshop_shop_description = trim($dbshop_shop_name . ',' . $this->frontwebsite()->websiteInfo('shop_description'), ',');
+    
+    $this->headtitle($this->title_name);
+	$this->headtitle($this->extend_title_name);
+
+    if(isset($this->dbTongJiPage) and $this->dbTongJiPage == 'index') {
+        $this->headtitle($dbshop_shop_name);
+        $this->headtitle($dbshop_shop_extend_name);
+    } else {
+        $dbshop_shop_keywords    = $dbshop_shop_name;
+        $dbshop_shop_description = $dbshop_shop_name;
+        $this->headtitle($dbshop_shop_name);
+    }
+    
+    echo $this->headTitle()->setSeparator(' - ');
+?>
+
+<?php
+    $title_and_extend_title_name = (!empty($this->title_name) ?  $this->title_name. ',' : '') . (!empty($this->extend_title_name) ?  $this->extend_title_name . ',' : '');
+
+    $this->headMeta()->appendName('keywords',        $title_and_extend_title_name . $this->extend_keywords . $dbshop_shop_keywords);
+    $this->headMeta()->appendName('description',     $title_and_extend_title_name . $this->extend_description . $dbshop_shop_description);
+    $this->headMeta()->appendName('author',          DBSHOP_FRONT_COPYRIGHT);
+    $this->headMeta()->appendName('copyright',       DBSHOP_FRONT_COPYRIGHT . ' Inc. All Rights Reserved');
+    
+    $this->headMeta()->setProperty('og:type',        'website');
+    $this->headMeta()->setProperty('og:title',       $title_and_extend_title_name . $dbshop_shop_name);
+    $this->headMeta()->setProperty('og:description', $title_and_extend_title_name . $this->extend_description . $dbshop_shop_description);
+    $this->headMeta()->setProperty('og:site_name',   $dbshop_shop_name);
+    $this->headMeta()->setProperty('og:url',         $this->serverUrl(true));
+	
+    echo $this->headMeta();
+?>
+
+<link href="<?php echo ($this->frontwebsite()->websiteInfo('shop_ico') != '' ? $this->basePath($this->frontwebsite()->websiteInfo('shop_ico')) : ''); ?>" rel="shortcut icon">
+<link href="<?php
+$dbshop_front_template_dir = 'default';
+$dbshop_front_template_css = 'default';
+if((defined('DBSHOP_TEMPLATE') and DBSHOP_TEMPLATE != '' and DBSHOP_TEMPLATE != $dbshop_front_template_dir) or (defined('DBSHOP_TEMPLATE_CSS') and DBSHOP_TEMPLATE_CSS != '' and DBSHOP_TEMPLATE_CSS != $dbshop_front_template_css)) {
+    $dbshop_front_template_dir = DBSHOP_TEMPLATE;
+    $dbshop_front_template_css = DBSHOP_TEMPLATE_CSS;
+}
+echo $this->basePath('public/css/'.$dbshop_front_template_dir.'/css/'.$dbshop_front_template_css.'.css'); 
+?>" rel="stylesheet">
+<script type="text/javascript">
+if (/MSIE 6/.test(navigator.userAgent)) {
+	window.location = '<?php echo $this->basePath('public/support-browser.html'); ?>';
+}
+</script>
+<!--[if lte IE 8]>
+<script src="<?php echo $this->basePath('public/js/html5.js'); ?>"></script>
+<![endif]-->
+<?php 
+$dbshopApplication = 'Product';
+if($dbshopApplication != 'Product') {
+?>
+<script src="<?php echo $this->basePath('public/js/jquery.js'); ?>"></script>
+<script src="<?php echo $this->basePath('public/js/bootstrap.min.js'); ?>"></script>
+<script src="<?php echo $this->basePath('public/js/jquery.validate.js'); ?>"></script>
+<script src="<?php echo $this->basePath('public/js/jquery.form.js'); ?>"></script>
+<script src="<?php echo $this->basePath('public/js/common.js'); ?>"></script>
+<?php 
+} else {
+?>
+<script src="<?php echo $this->basePath('public/css/'.$dbshop_front_template_dir.'/js/frontJs.js'); ?>"></script>
+<?php }?>
+</head>
+<body id="dbshop-body">
+<?php echo $this->partial('site/header'); ?>
+<?php echo $this->content; ?>
+<?php echo $this->partial('site/footer'); ?>
+
+<?php
+$shop_footer_menu = $this->frontwebsite()->shopFrontMenu(3);
+if(is_array($shop_footer_menu) and !empty($shop_footer_menu)) {
+echo '<p>';
+	$footer_count = count($shop_footer_menu)-1;
+	foreach($shop_footer_menu as $footer_key => $footer_value) { ?>
+        <a href="<?php echo $footer_value['navigation_url']; ?>" <?php if($footer_value['navigation_new_window'] == 1) echo 'target="_blank"'; ?>><?php echo $footer_value['navigation_title']; ?></a><?php if($footer_count != $footer_key) echo '<span class="sep">|</span>';
+	}
+echo '</p>';
+} ?>
+<p>Copyright &copy;<?php echo DBSHOP_YEAR_COPYRIGHT; ?> <a href="<?php echo DBSHOP_FRONT_COPYRIGHT_URL; ?>" target="_blank"><?php echo DBSHOP_FRONT_COPYRIGHT; ?></a> <?php echo $this->translate('版权所有');
+if ($this->frontwebsite()->websiteInfo('shop_icp')) echo '<br /><a href="http://www.beian.miit.gov.cn/" target="_blank" style="color: #fff;">'.$this->frontwebsite()->websiteInfo('shop_icp').'</a>';
+echo '<br />'.$this->frontwebsite()->getSystemContent('statistics');
+?></p>
+
+<p align="center">
+    <?php
+    $footerImages = $this->frontwebsite()->frontFooter();
+    foreach ($footerImages as $iValue) {
+        if(!empty($iValue['image'])) {
+            ?>
+            <a href="<?=(empty($iValue['url']) ? 'javascript:;' : $iValue['url'])?>" target="_blank"><img src="<?=$this->basePath($iValue['image'])?>" style="height: 32px"></a>
+            <?php
+        }   }
+    ?>
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <h3><?php echo $this->frontwebsite()->websiteInfo('shop_name'); ?> <?php echo $this->translate('提示'); ?></h3>
+  </div>
+  <div class="modal-body">
+    <p id="message_show"></p>
+  </div>
+  <div class="modal-footer" id="message_url">
+  </div>
+</div>
+<!--[if lte IE 8]>
+<script>
+    $("#dbshop-body").prepend('<p style="color:red;">您的浏览器版本有点低，对站点的某些视觉效果支持不是很好，您可以考虑去 升级浏览器版本 或者安装 <a href="http://rj.baidu.com/soft/detail/14744.html" target="_blank">Chrome</a> 、<a href="http://www.firefox.com.cn/" target="_blank">Firefox</a> 、<a href="http://www.baidu.com/s?wd=IE9" target="_blank">IE9或更高版本</a> 等其他浏览器!</p>');
+</script>
+<![endif]-->
+
+<?php if(isset($this->kefu_html) and $this->kefu_html != '') echo $this->partial('site/kefu', array('kefuHtml'=>$this->kefu_html)); ?>
+
+<style type="text/css">
+    .go-top{position:fixed;width:40px;bottom:15%;right:0;z-index:890;}
+    .go-top .go-top-box{width:100%;margin-bottom:3px;background:#d9d9d9;text-align:center;}
+    .go-top .go-top-box a{display:block;height:35px;padding-top:5px;}
+    .go-top .go-top-box a:hover{background:#777777;text-decoration:none;}
+    .go-top .go-top-box a:hover .asid_title,.go-top .go-top-box .asid_title{color:#fff;font-size:12px;display:block;padding-left:6px;line-height:18px;width:30px;margin-top:-2px;}
+</style>
+<div class="go-top" id="go-top">
+    <div class="go-top-box relative" style="display:none;">
+        <a href="#"><img alt="<?php echo $this->translate('返回顶部'); ?>" title="<?php echo $this->translate('返回顶部'); ?>" class="adid_icon" src="<?php echo $this->basePath('public/img/icon_back.png'); ?>"></a>
+    </div>
+</div>
+<script>
+    (function(e){e.fn.hhShare=function(t){var n={cenBox:"go-top-box",icon:"adid_icon",addClass:"red_bag",titleClass:"asid_title",triangle:"asid_share_triangle",showBox:"asid_sha_layer"},r=e.extend(n,t);this.each(function(){var t=e(this),n=e("."+r.cenBox).last();n.hide(),e("."+r.triangle+","+"."+r.showBox).hide(),e("."+r.cenBox).live({mouseenter:function(){var t=e(this).find("."+r.icon),n=e(this).find("."+r.icon).attr("alt");t.hide(),e(this).addClass(r.addClass),e(this).children("a").append('<b class="'+r.titleClass+'">'+n+"</b>"),e(this).find("."+r.triangle+","+"."+r.showBox).show()},mouseleave:function(){var t=e(this).find("."+r.icon),n=e(this).find("."+r.icon).attr("alt");t.show(),e(this).removeClass(r.addClass),e(this).find("."+r.titleClass).remove(),e(this).find("."+r.triangle+","+"."+r.showBox).hide()}}),e(window).scroll(function(){e(window).scrollTop()>100?n.fadeIn():n.fadeOut()}),n.click(function(){return e("body,html").animate({scrollTop:0},500),!1})})}})(jQuery);
+    $(function(){
+        $('#go-top').hhShare({
+            icon       : 'adid_icon'
+        });
+    });
+</script>
+
+<?php $imConfig = $this->frontwebsite()->longImConfig(); if(isset($imConfig['longImIDState']) && $imConfig['longImIDState'] == 'true' && !empty($imConfig['longImRange']) && in_array('pc', $imConfig['longImRange'])) { ?>
+    <script src="https://www.longkefu.net/longkefu.js?ID=<?php echo $this->escapeHtml($imConfig['longImID']); ?>" type="text/javascript"></script>
+<?php } ?>
+</body>
+</html>
+

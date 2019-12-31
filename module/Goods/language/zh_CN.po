@@ -1,0 +1,3053 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DBShop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-13 00:17+0800\n"
+"PO-Revision-Date: 2017-10-13 00:17+0800\n"
+"Last-Translator: Baron <baron@loongdom.cn>\n"
+"Language-Team: DBShop <team@dbshop.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../src/Goods/Controller/AskController.php:69
+#: ../src/Goods/Controller/AskController.php:142
+#: ../view/goods/ask/index.phtml:2
+msgid "商品咨询"
+msgstr ""
+
+#: ../src/Goods/Controller/AskController.php:69
+msgid "删除商品咨询"
+msgstr ""
+
+#: ../src/Goods/Controller/AskController.php:116
+#: ../src/Goods/Controller/AskController.php:142
+#: ../view/goods/ask/index.phtml:58
+msgid "商品咨询回复"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:51
+#: ../src/Goods/Controller/AttributeController.php:83
+#: ../src/Goods/Controller/AttributeController.php:116
+#: ../view/goods/attribute/index.phtml:2
+#: ../view/goods/brand/brandajaxgoods.phtml:11
+#: ../view/goods/class/ajaxgoods.phtml:13 ../view/goods/goods/add.phtml:10
+#: ../view/goods/goods/add.phtml:685 ../view/goods/goods/adv-add.phtml:10
+#: ../view/goods/goods/adv-add.phtml:626 ../view/goods/goods/index.phtml:30
+#: ../view/goods/tag/ajaxgoods.phtml:12
+msgid "商品属性"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:51
+msgid "添加商品属性"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:83
+msgid "更新商品属性"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:116
+msgid "删除商品属性"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:176
+#: ../src/Goods/Controller/AttributeController.php:207
+#: ../src/Goods/Controller/AttributeController.php:235
+msgid "商品属性值"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:176
+msgid "添加商品属性值"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:207
+msgid "更新商品属性值"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:235
+msgid "删除商品属性值"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:288
+#: ../src/Goods/Controller/AttributeController.php:315
+#: ../src/Goods/Controller/AttributeController.php:343
+#: ../view/goods/goods/add.phtml:690 ../view/goods/goods/adv-add.phtml:631
+msgid "商品属性组"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:288
+#: ../view/goods/attribute/attribute-group.phtml:4
+msgid "添加属性组"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:315
+msgid "更新属性组"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:343
+#: ../view/goods/attribute/add-attribute-group.phtml:15
+msgid "删除属性组"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:371
+msgid "下拉"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:372
+msgid "单选"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:373
+msgid "多选"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:374
+msgid "单行表单"
+msgstr ""
+
+#: ../src/Goods/Controller/AttributeController.php:375
+msgid "文本域"
+msgstr ""
+
+#: ../src/Goods/Controller/BrandController.php:56
+#: ../src/Goods/Controller/BrandController.php:89
+#: ../src/Goods/Controller/BrandController.php:115
+#: ../view/goods/brand/add.phtml:15 ../view/goods/brand/index.phtml:2
+#: ../view/goods/coupon/add.phtml:109 ../view/goods/coupon/add.phtml:131
+#: ../view/goods/coupon/add.phtml:204 ../view/goods/coupon/add.phtml:264
+#: ../view/goods/goods/add.phtml:117 ../view/goods/goods/adv-add.phtml:117
+#: ../view/goods/promotions/add.phtml:128
+#: ../view/goods/promotions/add.phtml:150
+msgid "商品品牌"
+msgstr ""
+
+#: ../src/Goods/Controller/BrandController.php:56
+msgid "添加商品品牌"
+msgstr ""
+
+#: ../src/Goods/Controller/BrandController.php:89
+msgid "更新商品品牌"
+msgstr ""
+
+#: ../src/Goods/Controller/BrandController.php:94
+msgid "商品品牌编辑成功！"
+msgstr ""
+
+#: ../src/Goods/Controller/BrandController.php:115
+msgid "删除商品品牌"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:75
+#: ../src/Goods/Controller/ClassController.php:159
+#: ../src/Goods/Controller/ClassController.php:233
+#: ../view/goods/class/index.phtml:2
+msgid "管理分类"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:75
+#: ../view/goods/class/index.phtml:4
+msgid "添加分类"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:159
+msgid "更新分类"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:165
+msgid "商品分类编辑成功！"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:233
+#: ../view/goods/class/add.phtml:21 ../view/goods/class/index.phtml:33
+msgid "删除分类"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:332
+#: ../src/Goods/Controller/ClassController.php:365
+#: ../src/Goods/Controller/ClassController.php:392
+msgid "侧边显示设置"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:332
+#: ../view/goods/class/front-side.phtml:4
+msgid "添加侧边显示"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:365
+msgid "更新侧边显示"
+msgstr ""
+
+#: ../src/Goods/Controller/ClassController.php:392
+#: ../view/goods/class/add-front-side.phtml:14
+msgid "删除侧边显示"
+msgstr ""
+
+#: ../src/Goods/Controller/CommentController.php:108
+#: ../src/Goods/Controller/CommentController.php:173
+#: ../src/Goods/Controller/CommentController.php:223
+#: ../view/goods/comment/index.phtml:2 ../view/goods/goods/add.phtml:17
+#: ../view/goods/goods/add.phtml:713 ../view/goods/goods/adv-add.phtml:17
+#: ../view/goods/goods/adv-add.phtml:654
+msgid "商品评价"
+msgstr ""
+
+#: ../src/Goods/Controller/CommentController.php:108
+#: ../view/goods/comment/edit.phtml:56
+msgid "商品评价回复"
+msgstr ""
+
+#: ../src/Goods/Controller/CommentController.php:173
+#: ../src/Goods/Controller/CommentController.php:223
+msgid "删除商品评价"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:72
+#: ../src/Goods/Controller/CouponController.php:130
+#: ../src/Goods/Controller/CouponController.php:171
+#: ../view/goods/coupon/add.phtml:3 ../view/goods/coupon/add.phtml:13
+#: ../view/goods/coupon/index.phtml:2 ../view/goods/coupon/user-coupon.phtml:2
+msgid "优惠券"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:72
+#: ../view/goods/coupon/index.phtml:4
+msgid "添加优惠券"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:130
+msgid "编辑优惠券"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:160
+#: ../src/Goods/Controller/CouponController.php:163
+msgid "该优惠券不存在！"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:166
+msgid "存在未使用的优惠券，无法删除！"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:171
+msgid "删除优惠券"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:212
+#: ../src/Goods/Controller/GoodsController.php:1169
+#: ../src/Goods/Controller/GoodsController.php:1213
+#: ../src/Goods/Controller/GoodsController.php:1258
+#: ../view/goods/brand/brandajaxgoods.phtml:79
+#: ../view/goods/brand/brandajaxgoods.phtml:117
+#: ../view/goods/class/ajaxgoods.phtml:80
+#: ../view/goods/class/ajaxgoods.phtml:123 ../view/goods/coupon/add.phtml:238
+#: ../view/goods/goods/add.phtml:150 ../view/goods/goods/add.phtml:554
+#: ../view/goods/goods/add.phtml:611 ../view/goods/goods/add.phtml:652
+#: ../view/goods/goods/adv-add.phtml:150 ../view/goods/goods/adv-add.phtml:494
+#: ../view/goods/goods/adv-add.phtml:552 ../view/goods/goods/adv-add.phtml:593
+#: ../view/goods/goods/index.phtml:104 ../view/goods/goods/index.phtml:189
+#: ../view/goods/goods/index.phtml:229 ../view/goods/tag/ajaxgoods.phtml:32
+msgid "上架"
+msgstr ""
+
+#: ../src/Goods/Controller/CouponController.php:212
+#: ../src/Goods/Controller/GoodsController.php:1169
+#: ../src/Goods/Controller/GoodsController.php:1213
+#: ../src/Goods/Controller/GoodsController.php:1258
+#: ../view/goods/brand/brandajaxgoods.phtml:81
+#: ../view/goods/brand/brandajaxgoods.phtml:117
+#: ../view/goods/class/ajaxgoods.phtml:82
+#: ../view/goods/class/ajaxgoods.phtml:123 ../view/goods/coupon/add.phtml:238
+#: ../view/goods/goods/add.phtml:151 ../view/goods/goods/add.phtml:554
+#: ../view/goods/goods/add.phtml:611 ../view/goods/goods/add.phtml:652
+#: ../view/goods/goods/adv-add.phtml:151 ../view/goods/goods/adv-add.phtml:494
+#: ../view/goods/goods/adv-add.phtml:552 ../view/goods/goods/adv-add.phtml:593
+#: ../view/goods/goods/index.phtml:106 ../view/goods/goods/index.phtml:189
+#: ../view/goods/goods/index.phtml:230 ../view/goods/tag/ajaxgoods.phtml:32
+msgid "下架"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:286
+#: ../src/Goods/Controller/GoodsController.php:610
+#: ../src/Goods/Controller/GoodsController.php:970
+#: ../view/goods/goods/index.phtml:3
+msgid "管理商品"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:286
+#: ../view/goods/coupon/add.phtml:212 ../view/goods/goods/index.phtml:10
+msgid "添加商品"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:610
+msgid "更新商品"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:613
+msgid "商品编辑成功！"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:790
+msgid "虚拟商品添加失败！"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:812
+#: ../view/goods/goods/add-virtual-goods.phtml:107
+msgid "未交易"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:812
+#: ../view/goods/goods/add-virtual-goods.phtml:108
+msgid "已交易"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:812
+#: ../view/goods/coupon/user-coupon.phtml:32
+#: ../view/goods/goods/add-virtual-goods.phtml:109
+msgid "已过期"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:813
+#: ../view/goods/goods/add-virtual-goods.phtml:48
+#: ../view/goods/goods/add-virtual-goods.phtml:59
+#: ../view/goods/goods/add-virtual-goods.phtml:95
+msgid "手动添加"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:813
+#: ../view/goods/goods/add-virtual-goods.phtml:49
+#: ../view/goods/goods/add-virtual-goods.phtml:60
+#: ../view/goods/goods/add-virtual-goods.phtml:95
+msgid "自动生成"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:813
+#: ../view/goods/goods/add-virtual-goods.phtml:50
+#: ../view/goods/goods/add-virtual-goods.phtml:61
+#: ../view/goods/goods/add-virtual-goods.phtml:95
+msgid "自动重复"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:832
+msgid "获取虚拟商品信息失败！"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:861
+msgid "虚拟商品删除失败！"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:970
+#: ../view/goods/goods/add.phtml:33 ../view/goods/goods/adv-add.phtml:33
+msgid "删除商品"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:996
+msgid "商品索引设置成功！"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:1064
+msgid "无需要更新的商品索引！"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:1287
+msgid "已下架"
+msgstr ""
+
+#: ../src/Goods/Controller/GoodsController.php:1417
+msgid "错误类型修改！"
+msgstr ""
+
+#: ../src/Goods/Controller/PromotionsController.php:59
+#: ../src/Goods/Controller/PromotionsController.php:102
+#: ../src/Goods/Controller/PromotionsController.php:133
+#: ../view/goods/coupon/add.phtml:5 ../view/goods/coupon/add.phtml:147
+msgid "优惠规则"
+msgstr ""
+
+#: ../src/Goods/Controller/PromotionsController.php:59
+msgid "添加商品优惠规则"
+msgstr ""
+
+#: ../src/Goods/Controller/PromotionsController.php:102
+msgid "编辑商品优惠规则"
+msgstr ""
+
+#: ../src/Goods/Controller/PromotionsController.php:107
+msgid "优惠规则编辑成功！"
+msgstr ""
+
+#: ../src/Goods/Controller/PromotionsController.php:133
+msgid "删除商品优惠规则"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:73
+#: ../src/Goods/Controller/TagController.php:120
+#: ../src/Goods/Controller/TagController.php:149 ../view/goods/tag/add.phtml:13
+#: ../view/goods/tag/index.phtml:2
+msgid "普通商品标签"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:73
+#: ../src/Goods/Controller/TagController.php:192
+msgid "添加商品标签"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:120
+#: ../src/Goods/Controller/TagController.php:255
+msgid "更新商品标签"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:149
+#: ../src/Goods/Controller/TagController.php:290
+msgid "删除商品标签"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:192
+msgid "特殊商品标签"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:255
+#: ../src/Goods/Controller/TagController.php:290
+#: ../view/goods/tag/add-spec-tag.phtml:13 ../view/goods/tag/spec-tag.phtml:2
+msgid "特定商品标签"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:382
+#: ../src/Goods/Controller/TagController.php:409
+#: ../src/Goods/Controller/TagController.php:448
+msgid "商品标签组"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:382
+msgid "添加商品标签组"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:409
+msgid "更新商品标签组"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:416
+msgid "标签组编辑成功！"
+msgstr ""
+
+#: ../src/Goods/Controller/TagController.php:448
+msgid "删除商品标签组"
+msgstr ""
+
+#: ../src/Goods/Event/Listener.php:401
+msgid "商品缺货提醒"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:2
+msgid "咨询数："
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:4
+#: ../view/goods/attribute/add-attribute-group.phtml:18
+#: ../view/goods/attribute/add.phtml:18
+#: ../view/goods/attribute/attribute-group.phtml:5
+#: ../view/goods/attribute/attribute-value.phtml:9
+#: ../view/goods/attribute/index.phtml:5 ../view/goods/brand/add.phtml:24
+#: ../view/goods/brand/index.phtml:5
+#: ../view/goods/class/add-front-side.phtml:17 ../view/goods/class/add.phtml:25
+#: ../view/goods/class/front-side.phtml:5 ../view/goods/class/index.phtml:5
+#: ../view/goods/comment/edit.phtml:5 ../view/goods/comment/index.phtml:4
+#: ../view/goods/coupon/add.phtml:18 ../view/goods/coupon/index.phtml:5
+#: ../view/goods/goods/add-virtual-goods.phtml:16
+#: ../view/goods/goods/add.phtml:37 ../view/goods/goods/adv-add.phtml:37
+#: ../view/goods/goods/clear-goods-image.phtml:5
+#: ../view/goods/goods/goods-index.phtml:12 ../view/goods/goods/index.phtml:15
+#: ../view/goods/promotions/add.phtml:23 ../view/goods/promotions/index.phtml:5
+#: ../view/goods/tag/add-spec-tag.phtml:21
+#: ../view/goods/tag/add-tag-group.phtml:23 ../view/goods/tag/add.phtml:21
+#: ../view/goods/tag/index.phtml:6 ../view/goods/tag/spec-tag.phtml:5
+#: ../view/goods/tag/tag-group.phtml:5
+msgid "查看帮助说明"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:10 ../view/goods/ask/index.phtml:62
+#: ../view/goods/brand/brandajaxgoods.phtml:8
+#: ../view/goods/class/ajaxgoods.phtml:9 ../view/goods/comment/edit.phtml:60
+#: ../view/goods/comment/index.phtml:10 ../view/goods/coupon/add.phtml:222
+#: ../view/goods/goods/add-virtual-goods.phtml:81
+#: ../view/goods/goods/add.phtml:46 ../view/goods/goods/add.phtml:539
+#: ../view/goods/goods/add.phtml:595 ../view/goods/goods/add.phtml:637
+#: ../view/goods/goods/adv-add.phtml:46 ../view/goods/goods/adv-add.phtml:479
+#: ../view/goods/goods/adv-add.phtml:536 ../view/goods/goods/adv-add.phtml:578
+#: ../view/goods/goods/index.phtml:27 ../view/goods/tag/ajaxgoods.phtml:9
+msgid "商品名称"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:11 ../view/goods/ask/index.phtml:68
+msgid "咨询内容"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:12
+msgid "咨询人"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:13 ../view/goods/ask/index.phtml:83
+#: ../view/goods/comment/edit.phtml:15 ../view/goods/comment/edit.phtml:81
+msgid "显示"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:14
+msgid "回复"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:15
+msgid "咨询时间"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:16
+#: ../view/goods/attribute/attribute-group.phtml:15
+#: ../view/goods/attribute/attribute-value.phtml:21
+#: ../view/goods/attribute/index.phtml:17 ../view/goods/brand/index.phtml:16
+#: ../view/goods/class/front-side.phtml:15 ../view/goods/class/index.phtml:16
+#: ../view/goods/comment/ajaxcomment.phtml:6
+#: ../view/goods/comment/edit.phtml:16 ../view/goods/comment/index.phtml:14
+#: ../view/goods/comment/userajaxcomment.phtml:7
+#: ../view/goods/coupon/add.phtml:226 ../view/goods/coupon/index.phtml:20
+#: ../view/goods/goods/add-virtual-goods.phtml:89
+#: ../view/goods/goods/add.phtml:499 ../view/goods/goods/add.phtml:543
+#: ../view/goods/goods/add.phtml:600 ../view/goods/goods/add.phtml:641
+#: ../view/goods/goods/adv-add.phtml:439 ../view/goods/goods/adv-add.phtml:483
+#: ../view/goods/goods/adv-add.phtml:541 ../view/goods/goods/adv-add.phtml:582
+#: ../view/goods/goods/clear-goods-image.phtml:14
+#: ../view/goods/goods/goods-index.phtml:55
+#: ../view/goods/promotions/index.phtml:15 ../view/goods/tag/ajaxgoods.phtml:14
+#: ../view/goods/tag/index.phtml:19 ../view/goods/tag/spec-tag.phtml:15
+#: ../view/goods/tag/tag-group.phtml:17
+msgid "操作"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:26 ../view/goods/ask/index.phtml:124
+msgid "点击关闭显示"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:26 ../view/goods/ask/index.phtml:121
+msgid "点击开启显示"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:30 ../view/goods/ask/index.phtml:74
+msgid "咨询回复"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:32
+msgid "您确实要删除该商品咨询吗？"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:32
+#: ../view/goods/attribute/attribute-group.phtml:26
+#: ../view/goods/attribute/attribute-value.phtml:32
+#: ../view/goods/attribute/index.phtml:30 ../view/goods/brand/index.phtml:31
+#: ../view/goods/class/ajaxgoods.phtml:138
+#: ../view/goods/class/front-side.phtml:31
+#: ../view/goods/comment/ajaxcomment.phtml:17
+#: ../view/goods/comment/edit.phtml:31
+#: ../view/goods/comment/userajaxcomment.phtml:18
+#: ../view/goods/coupon/add.phtml:239 ../view/goods/coupon/add.phtml:403
+#: ../view/goods/coupon/index.phtml:81
+#: ../view/goods/goods/add-virtual-goods.phtml:114
+#: ../view/goods/goods/add-virtual-goods.phtml:181
+#: ../view/goods/goods/add.phtml:513 ../view/goods/goods/add.phtml:555
+#: ../view/goods/goods/add.phtml:613 ../view/goods/goods/add.phtml:653
+#: ../view/goods/goods/add.phtml:1221 ../view/goods/goods/add.phtml:1256
+#: ../view/goods/goods/add.phtml:1313 ../view/goods/goods/add.phtml:1367
+#: ../view/goods/goods/add.phtml:1421 ../view/goods/goods/adv-add.phtml:453
+#: ../view/goods/goods/adv-add.phtml:495 ../view/goods/goods/adv-add.phtml:554
+#: ../view/goods/goods/adv-add.phtml:594 ../view/goods/goods/adv-add.phtml:976
+#: ../view/goods/goods/adv-add.phtml:1011
+#: ../view/goods/goods/adv-add.phtml:1068
+#: ../view/goods/goods/adv-add.phtml:1122
+#: ../view/goods/goods/adv-add.phtml:1176
+#: ../view/goods/goods/clear-goods-image.phtml:23
+#: ../view/goods/goods/index.phtml:209 ../view/goods/goods/index.phtml:224
+#: ../view/goods/promotions/index.phtml:41 ../view/goods/tag/ajaxgoods.phtml:33
+#: ../view/goods/tag/ajaxgoods.phtml:45 ../view/goods/tag/index.phtml:42
+#: ../view/goods/tag/spec-tag.phtml:27 ../view/goods/tag/tag-group.phtml:30
+msgid "删除"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:38 ../view/goods/comment/edit.phtml:37
+msgid "回复时间"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:39 ../view/goods/comment/edit.phtml:38
+msgid "回复人"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:40 ../view/goods/comment/edit.phtml:39
+msgid "回复内容"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:80 ../view/goods/comment/edit.phtml:78
+msgid "显示状态"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:84 ../view/goods/comment/edit.phtml:82
+msgid "不显示"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:90 ../view/goods/comment/edit.phtml:88
+#: ../view/goods/coupon/add.phtml:43 ../view/goods/coupon/index.phtml:71
+#: ../view/goods/promotions/add.phtml:60
+#: ../view/goods/promotions/index.phtml:37
+msgid "关闭"
+msgstr ""
+
+#: ../view/goods/ask/index.phtml:91
+msgid "回复商品咨询"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:3
+msgid "属性组信息"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:4
+#: ../view/goods/attribute/add-attribute-group.phtml:22
+#: ../view/goods/attribute/add.phtml:4 ../view/goods/attribute/add.phtml:22
+#: ../view/goods/brand/add.phtml:4 ../view/goods/brand/add.phtml:28
+#: ../view/goods/class/add-front-side.phtml:4
+#: ../view/goods/class/add-front-side.phtml:21 ../view/goods/class/add.phtml:4
+#: ../view/goods/class/add.phtml:29 ../view/goods/coupon/add.phtml:4
+#: ../view/goods/coupon/add.phtml:22
+#: ../view/goods/goods/add-virtual-goods.phtml:4
+#: ../view/goods/goods/add-virtual-goods.phtml:20
+#: ../view/goods/goods/add.phtml:4 ../view/goods/goods/add.phtml:41
+#: ../view/goods/goods/adv-add.phtml:4 ../view/goods/goods/adv-add.phtml:41
+#: ../view/goods/goods/goods-index.phtml:4
+#: ../view/goods/goods/goods-index.phtml:16
+#: ../view/goods/promotions/add.phtml:4 ../view/goods/promotions/add.phtml:27
+#: ../view/goods/tag/add-spec-tag.phtml:4
+#: ../view/goods/tag/add-spec-tag.phtml:25
+#: ../view/goods/tag/add-tag-group.phtml:4
+#: ../view/goods/tag/add-tag-group.phtml:27 ../view/goods/tag/add.phtml:4
+#: ../view/goods/tag/add.phtml:25
+msgid "基本信息"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:10
+#: ../view/goods/attribute/add.phtml:10
+#: ../view/goods/attribute/attribute-group.phtml:26
+#: ../view/goods/attribute/attribute-value.phtml:32
+#: ../view/goods/attribute/index.phtml:30 ../view/goods/brand/add.phtml:15
+#: ../view/goods/brand/index.phtml:29
+#: ../view/goods/class/add-front-side.phtml:9 ../view/goods/class/add.phtml:16
+#: ../view/goods/class/front-side.phtml:29 ../view/goods/coupon/add.phtml:13
+#: ../view/goods/coupon/index.phtml:79
+#: ../view/goods/goods/add-virtual-goods.phtml:114
+#: ../view/goods/goods/add-virtual-goods.phtml:181
+#: ../view/goods/goods/add.phtml:28 ../view/goods/goods/adv-add.phtml:28
+#: ../view/goods/goods/index.phtml:202 ../view/goods/promotions/add.phtml:14
+#: ../view/goods/promotions/index.phtml:39
+#: ../view/goods/tag/add-spec-tag.phtml:13
+#: ../view/goods/tag/add-tag-group.phtml:14 ../view/goods/tag/add.phtml:13
+#: ../view/goods/tag/index.phtml:40 ../view/goods/tag/spec-tag.phtml:27
+#: ../view/goods/tag/tag-group.phtml:30
+msgid "编辑"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:10
+#: ../view/goods/attribute/add.phtml:10 ../view/goods/brand/add.phtml:15
+#: ../view/goods/class/add-front-side.phtml:9 ../view/goods/class/add.phtml:16
+#: ../view/goods/coupon/add.phtml:13 ../view/goods/goods/add.phtml:28
+#: ../view/goods/goods/adv-add.phtml:28 ../view/goods/promotions/add.phtml:14
+#: ../view/goods/tag/add-spec-tag.phtml:13
+#: ../view/goods/tag/add-tag-group.phtml:14 ../view/goods/tag/add.phtml:13
+msgid "新加"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:10
+msgid "属性组"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:12
+msgid "返回属性组列表"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:13
+#: ../view/goods/attribute/add.phtml:13 ../view/goods/brand/add.phtml:18
+#: ../view/goods/class/add-front-side.phtml:12 ../view/goods/class/add.phtml:19
+#: ../view/goods/coupon/add.phtml:16
+#: ../view/goods/goods/add-virtual-goods.phtml:15
+#: ../view/goods/goods/add.phtml:31 ../view/goods/goods/adv-add.phtml:31
+#: ../view/goods/promotions/add.phtml:17
+#: ../view/goods/tag/add-spec-tag.phtml:16
+#: ../view/goods/tag/add-tag-group.phtml:17 ../view/goods/tag/add.phtml:16
+msgid "刷新"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:17
+msgid "保存属性组信息"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:25
+#: ../view/goods/attribute/attribute-group.phtml:13
+msgid "属性组名称"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:31
+#: ../view/goods/attribute/attribute-group.phtml:14
+msgid "属性组排序"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:58
+msgid "请输入属性组名称！"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:59
+msgid "属性组名称最长为30个汉字！"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:62
+msgid "属性组排序必须为数字"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:63
+msgid "属性组排序最小为1"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:64
+msgid "属性组排序最大为255"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:71
+#: ../view/goods/attribute/attribute-group.phtml:45
+msgid "您确实要删除该属性组吗？"
+msgstr ""
+
+#: ../view/goods/attribute/add-attribute-group.phtml:78
+#: ../view/goods/attribute/attribute-group.phtml:52
+msgid "属性组删除失败，属性组下存在属性！"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:3
+msgid "属性信息"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:10
+msgid "属性"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:12
+#: ../view/goods/attribute/attribute-value.phtml:5
+msgid "返回属性列表"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:15
+msgid "删除属性"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:17
+msgid "保存属性信息"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:25
+#: ../view/goods/attribute/attribute-group.phtml:2
+#: ../view/goods/attribute/index.phtml:14
+msgid "属性分组"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:28
+msgid "请选择属性组"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:36 ../view/goods/attribute/index.phtml:15
+msgid "属性类型"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:46 ../view/goods/attribute/index.phtml:13
+msgid "属性名称"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:52
+#: ../view/goods/attribute/attribute-value.phtml:7
+#: ../view/goods/brand/index.phtml:15
+#: ../view/goods/class/add-front-side.phtml:76
+#: ../view/goods/class/ajaxgoods.phtml:7
+#: ../view/goods/class/front-side.phtml:13 ../view/goods/goods/add.phtml:599
+#: ../view/goods/goods/adv-add.phtml:540
+#: ../view/goods/tag/add-tag-group.phtml:70 ../view/goods/tag/ajaxgoods.phtml:7
+msgid "排序"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:84
+msgid "请选择属性分组！"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:87
+msgid "请输入属性名称！"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:88
+msgid "属性名称最长为60个汉字！"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:91
+msgid "属性排序必须为数字"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:92
+msgid "属性排序最小为1"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:93
+msgid "属性排序最大为255"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:100 ../view/goods/attribute/index.phtml:49
+msgid "您确实要删除该属性吗？"
+msgstr ""
+
+#: ../view/goods/attribute/add.phtml:107 ../view/goods/attribute/index.phtml:56
+msgid "属性删除失败！"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-group.phtml:35
+#: ../view/goods/attribute/attribute-value.phtml:41
+#: ../view/goods/attribute/index.phtml:39 ../view/goods/brand/index.phtml:40
+#: ../view/goods/class/front-side.phtml:40 ../view/goods/class/index.phtml:46
+#: ../view/goods/tag/tag-group.phtml:39
+msgid "批量修改"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:2
+msgid "属性值"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:6
+#: ../view/goods/attribute/attribute-value.phtml:19
+msgid "属性值名称"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:8
+msgid "保存属性值"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:20
+msgid "属性值排序"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:64
+msgid "请输入属性值名称！"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:65
+msgid "属性值名称最长为60个汉字！"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:68
+msgid "排序必须为数字"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:69
+msgid "排序最小为1"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:70
+msgid "排序最大为255"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:78
+msgid "您确实要删除该属性值吗？"
+msgstr ""
+
+#: ../view/goods/attribute/attribute-value.phtml:85
+msgid "属性值删除失败！"
+msgstr ""
+
+#: ../view/goods/attribute/index.phtml:4
+msgid "添加属性"
+msgstr ""
+
+#: ../view/goods/attribute/index.phtml:16
+msgid "属性排序"
+msgstr ""
+
+#: ../view/goods/attribute/index.phtml:30
+msgid "属性值设置"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:3
+msgid "品牌信息"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:6 ../view/goods/brand/add.phtml:68
+msgid "品牌商品"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:8 ../view/goods/brand/add.phtml:80
+#: ../view/goods/class/add.phtml:9 ../view/goods/class/add.phtml:149
+#: ../view/goods/goods/add.phtml:19 ../view/goods/goods/add.phtml:724
+#: ../view/goods/goods/adv-add.phtml:19 ../view/goods/goods/adv-add.phtml:665
+msgid "搜索引擎优化"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:17
+msgid "返回品牌列表"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:20
+msgid "删除品牌"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:21
+msgid "保存品牌并继续编辑"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:23
+msgid "保存品牌"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:33
+msgid "品牌名称"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:39
+msgid "品牌logo"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:52
+msgid "品牌排序"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:58
+msgid "品牌描述"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:85 ../view/goods/class/add.phtml:154
+msgid "扩展标题"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:91
+msgid "商品品牌关键词"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:97
+msgid "商品品牌描述"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:143
+msgid "请输入品牌名称！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:144
+msgid "品牌名称最短2个字符！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:145
+msgid "品牌名称最长为50位字符！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:148
+msgid "品牌排序必须为数字"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:149
+msgid "品牌排序最小为1"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:150
+msgid "品牌排序最大为255"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:153 ../view/goods/class/add.phtml:248
+msgid "扩展标题最长为30个字符！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:156
+msgid "商品品牌关键字最长为80个字符！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:159
+msgid "商品品牌描述最长为300个字符！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:166 ../view/goods/brand/index.phtml:53
+msgid "您确实要删除该品牌吗？"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:173 ../view/goods/brand/index.phtml:60
+msgid "品牌删除失败！"
+msgstr ""
+
+#: ../view/goods/brand/add.phtml:193
+msgid "品牌logo删除失败！"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:5
+msgid "删"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:9
+#: ../view/goods/class/ajaxgoods.phtml:10 ../view/goods/coupon/add.phtml:223
+#: ../view/goods/goods/add.phtml:58 ../view/goods/goods/add.phtml:336
+#: ../view/goods/goods/add.phtml:540 ../view/goods/goods/add.phtml:596
+#: ../view/goods/goods/add.phtml:638 ../view/goods/goods/adv-add.phtml:58
+#: ../view/goods/goods/adv-add.phtml:276 ../view/goods/goods/adv-add.phtml:480
+#: ../view/goods/goods/adv-add.phtml:537 ../view/goods/goods/adv-add.phtml:579
+#: ../view/goods/goods/adv-add.phtml:1315 ../view/goods/goods/index.phtml:28
+#: ../view/goods/tag/ajaxgoods.phtml:10
+msgid "商品货号"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:10
+#: ../view/goods/class/ajaxgoods.phtml:12 ../view/goods/coupon/add.phtml:224
+#: ../view/goods/goods/add.phtml:541 ../view/goods/goods/add.phtml:597
+#: ../view/goods/goods/add.phtml:639 ../view/goods/goods/adv-add.phtml:481
+#: ../view/goods/goods/adv-add.phtml:538 ../view/goods/goods/adv-add.phtml:580
+#: ../view/goods/goods/index.phtml:29 ../view/goods/tag/ajaxgoods.phtml:11
+msgid "商品价格"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:12
+#: ../view/goods/class/ajaxgoods.phtml:14 ../view/goods/class/index.phtml:15
+#: ../view/goods/coupon/add.phtml:39 ../view/goods/coupon/add.phtml:225
+#: ../view/goods/coupon/index.phtml:18
+#: ../view/goods/goods/add-virtual-goods.phtml:87
+#: ../view/goods/goods/add.phtml:542 ../view/goods/goods/add.phtml:598
+#: ../view/goods/goods/add.phtml:640 ../view/goods/goods/adv-add.phtml:482
+#: ../view/goods/goods/adv-add.phtml:539 ../view/goods/goods/adv-add.phtml:581
+#: ../view/goods/promotions/index.phtml:14 ../view/goods/tag/ajaxgoods.phtml:13
+msgid "状态"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:21
+#: ../view/goods/brand/brandajaxgoods.phtml:47
+#: ../view/goods/class/ajaxgoods.phtml:22
+#: ../view/goods/class/ajaxgoods.phtml:48 ../view/goods/goods/index.phtml:41
+#: ../view/goods/goods/index.phtml:72
+msgid "始"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:27
+#: ../view/goods/brand/brandajaxgoods.phtml:53
+#: ../view/goods/class/ajaxgoods.phtml:28
+#: ../view/goods/class/ajaxgoods.phtml:54 ../view/goods/goods/index.phtml:47
+#: ../view/goods/goods/index.phtml:78
+msgid "终"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:61
+#: ../view/goods/class/ajaxgoods.phtml:62 ../view/goods/goods/add.phtml:693
+#: ../view/goods/goods/adv-add.phtml:634 ../view/goods/goods/index.phtml:86
+msgid "选择属性组"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:77
+#: ../view/goods/class/ajaxgoods.phtml:78
+#: ../view/goods/class/ajaxgoods.phtml:134 ../view/goods/goods/index.phtml:102
+#: ../view/goods/goods/index.phtml:113 ../view/goods/tag/ajaxgoods.phtml:44
+msgid "选择"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:89
+#: ../view/goods/class/ajaxgoods.phtml:90 ../view/goods/goods/index.phtml:137
+msgid "搜索"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:97
+#: ../view/goods/class/ajaxgoods.phtml:98 ../view/goods/goods/index.phtml:144
+msgid "返回"
+msgstr ""
+
+#: ../view/goods/brand/brandajaxgoods.phtml:116
+#: ../view/goods/class/ajaxgoods.phtml:122 ../view/goods/coupon/index.phtml:38
+#: ../view/goods/goods/index.phtml:187 ../view/goods/promotions/index.phtml:33
+#: ../view/goods/tag/ajaxgoods.phtml:31 ../view/goods/tag/index.phtml:37
+#: ../view/goods/tag/spec-tag.phtml:25 ../view/goods/tag/tag-group.phtml:27
+msgid "无"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:2
+msgid "前台添加商品品牌导航"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:2
+msgid "请点击这里"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:4
+msgid "添加品牌"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:12
+msgid "品牌名称 (品牌ID)"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:13
+msgid "品牌图片"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:14 ../view/goods/class/index.phtml:13
+#: ../view/goods/tag/index.phtml:18 ../view/goods/tag/spec-tag.phtml:14
+msgid "商品数量"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:25
+msgid "暂无LOGO"
+msgstr ""
+
+#: ../view/goods/brand/index.phtml:46
+msgid "暂无商品品牌"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:3
+#: ../view/goods/class/add-front-side.phtml:9
+msgid "侧边显示"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:11
+msgid "返回侧边显示列表"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:16
+msgid "保存侧边显示信息"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:24
+#: ../view/goods/class/front-side.phtml:12
+msgid "显示名称"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:30
+msgid "链接地址"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:32
+msgid "外网地址请自行加入 http:// 或 https://  [ 如: http://www.baidu.com ]"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:36
+msgid "显示层级"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:39
+msgid "顶级显示"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:52 ../view/goods/class/add.phtml:16
+#: ../view/goods/coupon/add.phtml:108 ../view/goods/coupon/add.phtml:117
+#: ../view/goods/coupon/add.phtml:203 ../view/goods/coupon/add.phtml:250
+#: ../view/goods/goods/add.phtml:5 ../view/goods/goods/add.phtml:382
+#: ../view/goods/goods/adv-add.phtml:5 ../view/goods/goods/adv-add.phtml:322
+#: ../view/goods/goods/index.phtml:33 ../view/goods/promotions/add.phtml:127
+#: ../view/goods/promotions/add.phtml:136
+msgid "商品分类"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:55
+msgid "不使用商品分类"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:69
+#: ../view/goods/class/front-side.phtml:14
+msgid "新窗口打开"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:71
+#: ../view/goods/class/ajaxgoods.phtml:120
+#: ../view/goods/class/front-side.phtml:27 ../view/goods/tag/tag-group.phtml:28
+msgid "是"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:72
+#: ../view/goods/class/ajaxgoods.phtml:120
+#: ../view/goods/class/front-side.phtml:27 ../view/goods/tag/tag-group.phtml:28
+msgid "否"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:105
+msgid "显示名称不能为空！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:106
+msgid "显示名称最多输入60个汉字！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:109
+msgid "排序不能为空！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:110
+msgid "排序必须为数字！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:111
+msgid "排序最小为1！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:112
+msgid "排序最大为255！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:120
+#: ../view/goods/class/front-side.phtml:53
+msgid "您确实要删除该显示吗？如果该显示下级有显示，将一并被删除！"
+msgstr ""
+
+#: ../view/goods/class/add-front-side.phtml:127
+#: ../view/goods/class/front-side.phtml:60 ../view/goods/goods/add.phtml:1180
+#: ../view/goods/goods/adv-add.phtml:935
+#: ../view/goods/goods/clear-goods-image.phtml:39
+#: ../view/goods/tag/add-spec-tag.phtml:125 ../view/goods/tag/add.phtml:151
+msgid "删除失败！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:3
+msgid "分类信息"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:6 ../view/goods/class/add.phtml:112
+msgid "分类商品"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:8
+msgid "分类显示"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:18
+msgid "返回分类列表"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:22
+msgid "保存分类并继续编辑"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:24
+msgid "保存分类"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:34
+msgid "分类名称"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:39
+msgid "可以一次性添加多个分类，一行一个分类，用回车换行即可。"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:44
+msgid "分类状态"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:47 ../view/goods/goods/add.phtml:438
+#: ../view/goods/goods/adv-add.phtml:378
+#: ../view/goods/goods/goods-index.phtml:30
+msgid "启用"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:48
+msgid "禁用"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:53
+msgid "上级分类"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:56
+msgid "顶级分类"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:70
+msgid "分类图标"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:83
+msgid "分类描述"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:89
+msgid "分类图片"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:102 ../view/goods/class/index.phtml:14
+msgid "分类排序"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:124
+msgid "分类显示(标签组)"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:160
+msgid "商品分类关键词"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:166
+msgid "商品分类描述"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:230
+msgid "请输入分类名称！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:231
+msgid "分类名称最短2个字符！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:232
+msgid "分类名称最长为50位字符！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:235
+msgid "请选择分类状态"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:239
+msgid "上级分类不能为自己下级分类或本身分类！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:243
+msgid "分类排序必须为数字"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:244
+msgid "分类排序最小为1"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:245
+msgid "分类排序最大为255"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:251
+msgid "商品分类关键字最长为80个字符！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:254
+msgid "商品分类描述最长为300个字符！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:261 ../view/goods/class/index.phtml:59
+msgid "您确实要删除该分类吗？"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:268 ../view/goods/class/index.phtml:66
+msgid "该分类下还有子分类，无法删除该分类！"
+msgstr ""
+
+#: ../view/goods/class/add.phtml:287
+msgid "分类图片删除失败！"
+msgstr ""
+
+#: ../view/goods/class/ajaxgoods.phtml:11
+msgid "分类推荐"
+msgstr ""
+
+#: ../view/goods/class/ajaxgoods.phtml:135
+msgid "更新排序"
+msgstr ""
+
+#: ../view/goods/class/ajaxgoods.phtml:136
+msgid "增加推荐"
+msgstr ""
+
+#: ../view/goods/class/ajaxgoods.phtml:137
+msgid "取消推荐"
+msgstr ""
+
+#: ../view/goods/class/front-side.phtml:2
+msgid "前台侧边显示设置"
+msgstr ""
+
+#: ../view/goods/class/front-side.phtml:46
+msgid "暂无显示设置"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:12
+msgid "商品分类名称 (分类ID)"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:27
+msgid "已启用"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:27 ../view/goods/goods/add.phtml:404
+#: ../view/goods/goods/adv-add.phtml:344
+msgid "已禁用"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:29
+msgid "添加子类"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:31
+msgid "分类编辑"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:35
+msgid "商品添加"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:37
+msgid "分类预览"
+msgstr ""
+
+#: ../view/goods/class/index.phtml:52
+msgid "暂无商品分类"
+msgstr ""
+
+#: ../view/goods/comment/ajaxcomment.phtml:3
+#: ../view/goods/comment/edit.phtml:12 ../view/goods/comment/edit.phtml:66
+#: ../view/goods/comment/userajaxcomment.phtml:4
+msgid "评价内容"
+msgstr ""
+
+#: ../view/goods/comment/ajaxcomment.phtml:4
+#: ../view/goods/comment/edit.phtml:14 ../view/goods/comment/index.phtml:11
+#: ../view/goods/comment/userajaxcomment.phtml:5
+msgid "评价时间"
+msgstr ""
+
+#: ../view/goods/comment/ajaxcomment.phtml:5
+#: ../view/goods/comment/edit.phtml:11 ../view/goods/comment/index.phtml:12
+#: ../view/goods/comment/userajaxcomment.phtml:6
+msgid "评价人"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:2 ../view/goods/goods/add.phtml:28
+#: ../view/goods/goods/adv-add.phtml:28
+msgid "商品"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:2
+msgid "的评价"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:4
+msgid "返回商品评价"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:13
+msgid "评价等级"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:29 ../view/goods/comment/edit.phtml:72
+msgid "评价回复"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:31 ../view/goods/goods/add.phtml:1272
+#: ../view/goods/goods/adv-add.phtml:1027
+msgid "您确实要删除该条评价吗？"
+msgstr ""
+
+#: ../view/goods/comment/edit.phtml:89
+msgid "回复商品评价"
+msgstr ""
+
+#: ../view/goods/comment/index.phtml:2
+msgid "评价数："
+msgstr ""
+
+#: ../view/goods/comment/index.phtml:13
+msgid "评价总数"
+msgstr ""
+
+#: ../view/goods/comment/index.phtml:26
+msgid "编辑查看"
+msgstr ""
+
+#: ../view/goods/comment/userajaxcomment.phtml:25
+msgid "暂无商品评价！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:6 ../view/goods/coupon/add.phtml:50
+msgid "获取规则"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:7 ../view/goods/coupon/add.phtml:167
+msgid "使用规则"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:15 ../view/goods/coupon/user-coupon.phtml:4
+msgid "返回优惠券列表"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:17
+msgid "保存优惠券"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:27 ../view/goods/coupon/index.phtml:11
+msgid "优惠券名称"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:33 ../view/goods/coupon/index.phtml:12
+msgid "优惠券描述"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:35
+msgid "前台也会显示。"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:42 ../view/goods/coupon/index.phtml:71
+#: ../view/goods/promotions/add.phtml:59
+#: ../view/goods/promotions/index.phtml:37
+#: ../view/goods/tag/add-tag-group.phtml:54
+msgid "开启"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:55 ../view/goods/coupon/add.phtml:172
+#: ../view/goods/promotions/add.phtml:44
+msgid "开始时间"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:57 ../view/goods/coupon/add.phtml:174
+#: ../view/goods/promotions/add.phtml:46
+msgid "请在此填写有效的开始时间，为空，则不限时间。"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:61 ../view/goods/coupon/add.phtml:178
+#: ../view/goods/promotions/add.phtml:50
+msgid "结束时间"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:63 ../view/goods/coupon/add.phtml:180
+#: ../view/goods/promotions/add.phtml:52
+msgid "请在此填写有效的结束时间，为空，则不限时间。"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:67 ../view/goods/coupon/index.phtml:19
+msgid "获取方式"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:70
+msgid "购物直接获取"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:71
+msgid "点击直接获取(登录用户)"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:72
+msgid "注册直接获取"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:77
+msgid "购物满"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:79
+msgid "元 获得优惠券"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:83
+msgid "指定客户组"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:86 ../view/goods/promotions/add.phtml:75
+msgid "所有客户"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:87 ../view/goods/coupon/add.phtml:92
+#: ../view/goods/promotions/add.phtml:76 ../view/goods/promotions/add.phtml:81
+msgid "个性化客户组"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:104 ../view/goods/coupon/add.phtml:198
+msgid "指定商品类型"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:107 ../view/goods/coupon/add.phtml:201
+#: ../view/goods/promotions/add.phtml:126
+msgid "所有商品"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:152 ../view/goods/promotions/add.phtml:100
+msgid "购物金额满"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:154 ../view/goods/coupon/add.phtml:161
+#: ../view/goods/promotions/add.phtml:102
+#: ../view/goods/promotions/add.phtml:110
+msgid "元"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:158 ../view/goods/promotions/add.phtml:106
+msgid "优惠(立减)"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:190
+msgid "使用渠道"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:192
+msgid "PC"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:193
+msgid "微信(手机)"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:194
+msgid "APP"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:202
+msgid "个别商品"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:215 ../view/goods/goods/add.phtml:531
+#: ../view/goods/goods/add.phtml:588 ../view/goods/goods/add.phtml:630
+#: ../view/goods/goods/adv-add.phtml:471 ../view/goods/goods/adv-add.phtml:529
+#: ../view/goods/goods/adv-add.phtml:571
+#: ../view/goods/tag/add-spec-tag.phtml:57 ../view/goods/tag/add.phtml:73
+msgid "请输入需要添加的商品部分或者全部名称"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:215
+msgid "点击添加商品"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:216
+msgid "在输入框中输入商品部分或者全部名称，然后点击添加按钮，即可添加商品"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:306
+msgid "优惠券名称不能为空！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:309 ../view/goods/promotions/add.phtml:193
+msgid "购物金额满不能为空！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:310 ../view/goods/promotions/add.phtml:194
+msgid "购物金额满必须为数字！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:311 ../view/goods/coupon/add.phtml:316
+#: ../view/goods/promotions/add.phtml:195
+#: ../view/goods/promotions/add.phtml:200
+msgid "数字最小为1"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:314 ../view/goods/promotions/add.phtml:198
+msgid "优惠立减不能为空！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:315 ../view/goods/promotions/add.phtml:199
+msgid "优惠立减必须为数字！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:391 ../view/goods/goods/add.phtml:1301
+#: ../view/goods/goods/add.phtml:1355 ../view/goods/goods/add.phtml:1408
+#: ../view/goods/goods/adv-add.phtml:1056
+#: ../view/goods/goods/adv-add.phtml:1110
+#: ../view/goods/goods/adv-add.phtml:1163
+#: ../view/goods/tag/add-spec-tag.phtml:146 ../view/goods/tag/add.phtml:171
+msgid "该商品不存在，请从新选择！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:409
+msgid "商品添加失败！"
+msgstr ""
+
+#: ../view/goods/coupon/add.phtml:415 ../view/goods/goods/add.phtml:910
+#: ../view/goods/goods/adv-add.phtml:851 ../view/goods/goods/index.phtml:260
+msgid "您确实要删除该商品吗？"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:13 ../view/goods/promotions/index.phtml:13
+msgid "有效时间"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:14
+msgid "已发放数"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:15
+msgid "未使用数"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:16
+msgid "已使用数"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:17
+msgid "已过期数"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:34 ../view/goods/promotions/index.phtml:29
+msgid "长期有效"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:36 ../view/goods/promotions/index.phtml:31
+msgid "已经过期"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:74
+msgid "注册获取"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:74
+msgid "下单(购买)获取"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:88
+#: ../view/goods/coupon/user-coupon.phtml:52
+msgid "暂无优惠券信息"
+msgstr ""
+
+#: ../view/goods/coupon/index.phtml:94
+msgid "您确实要删除该优惠券吗？"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:10
+msgid "获得者"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:11
+msgid "获得时间"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:13
+msgid "订单编号(获得)"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:15
+msgid "优惠券状态"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:16
+msgid "订单编号(已用)"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:17
+msgid "时间(已用)"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:32
+msgid "未生效"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:32
+msgid "可用"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:32
+msgid "已用"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:37
+msgid "该优惠券未使用，无订单编号"
+msgstr ""
+
+#: ../view/goods/coupon/user-coupon.phtml:40
+msgid "该优惠券未使用，无时间"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:3
+#: ../view/goods/goods/add.phtml:101 ../view/goods/goods/adv-add.phtml:101
+#: ../view/goods/goods/index.phtml:117 ../view/goods/goods/index.phtml:195
+msgid "虚拟商品"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:11
+msgid "虚拟商品补货"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:14
+msgid "返回虚拟商品列表"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:23
+msgid "发送方式"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:25
+msgid "会员中心"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:25
+msgid "会员中心显示"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:26
+msgid "电子邮件"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:26
+msgid "发送到买家电子邮件，邮件服务器必须能正常运行"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:26
+#: ../view/goods/goods/add-virtual-goods.phtml:27
+msgid "买家购买该商品，每次只能购买一个，才能使用该发送方式"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:27
+msgid "手机短信"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:27
+msgid "通过手机短信发送给买家，手机短信设置必须正确"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:32
+msgid "注意事项"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:34
+msgid "当类型设置为 自动生成 或 自动重复 时，只需要添加一条信息即可。"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:38
+msgid "补货商品名称"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:44
+#: ../view/goods/goods/add-virtual-goods.phtml:82
+msgid "账号"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:55
+#: ../view/goods/goods/add-virtual-goods.phtml:84
+msgid "密码"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:66
+msgid "有效日期至"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:74
+msgid "点击给虚拟商品补货"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:83
+msgid "账号类型"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:85
+msgid "密码类型"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:86
+msgid "到期时间"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:88
+msgid "订单编号"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:152
+msgid "账号不能为空！"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:155
+msgid "密码不能为空！"
+msgstr ""
+
+#: ../view/goods/goods/add-virtual-goods.phtml:229
+msgid "您确实要删除该虚拟商品吗？"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:3 ../view/goods/goods/adv-add.phtml:3
+msgid "商品信息"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:6 ../view/goods/goods/add.phtml:479
+#: ../view/goods/goods/adv-add.phtml:6 ../view/goods/goods/adv-add.phtml:419
+msgid "商品图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:7 ../view/goods/goods/add.phtml:416
+#: ../view/goods/goods/adv-add.phtml:7 ../view/goods/goods/adv-add.phtml:356
+msgid "商品库存"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:8 ../view/goods/goods/add.phtml:165
+#: ../view/goods/goods/add.phtml:170 ../view/goods/goods/adv-add.phtml:8
+#: ../view/goods/goods/adv-add.phtml:165 ../view/goods/goods/adv-add.phtml:170
+msgid "优惠价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:9 ../view/goods/goods/add.phtml:202
+#: ../view/goods/goods/adv-add.phtml:9 ../view/goods/goods/adv-add.phtml:202
+msgid "销售规格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:11 ../view/goods/goods/add.phtml:663
+#: ../view/goods/goods/adv-add.phtml:11 ../view/goods/goods/adv-add.phtml:604
+msgid "商品标签"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:12 ../view/goods/goods/add.phtml:565
+#: ../view/goods/goods/adv-add.phtml:12 ../view/goods/goods/adv-add.phtml:505
+msgid "商品自定义"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:13 ../view/goods/goods/add.phtml:582
+#: ../view/goods/goods/adv-add.phtml:13 ../view/goods/goods/adv-add.phtml:523
+msgid "关联商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:14 ../view/goods/goods/add.phtml:525
+#: ../view/goods/goods/adv-add.phtml:14 ../view/goods/goods/adv-add.phtml:465
+msgid "相关商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:15 ../view/goods/goods/add.phtml:624
+#: ../view/goods/goods/adv-add.phtml:15 ../view/goods/goods/adv-add.phtml:565
+msgid "组合商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:30 ../view/goods/goods/adv-add.phtml:30
+msgid "返回列表"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:34 ../view/goods/goods/adv-add.phtml:34
+msgid "保存商品并继续编辑"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:36 ../view/goods/goods/adv-add.phtml:36
+msgid "保存商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:48 ../view/goods/goods/adv-add.phtml:48
+msgid "输入商品名称"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:52 ../view/goods/goods/adv-add.phtml:52
+msgid "商品扩展名称"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:60 ../view/goods/goods/adv-add.phtml:60
+msgid "输入商品货号"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:61 ../view/goods/goods/adv-add.phtml:61
+#, php-format
+msgid ""
+"商品货号留空，会自动生成，自动生成的货号前缀到 %s系统管理->系统设置->商品设"
+"置%s 进行设置"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:65 ../view/goods/goods/adv-add.phtml:65
+msgid "市场价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:71 ../view/goods/goods/adv-add.phtml:71
+msgid "本店价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:73 ../view/goods/goods/adv-add.phtml:73
+msgid "输入本店价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:77 ../view/goods/goods/add.phtml:337
+#: ../view/goods/goods/adv-add.phtml:77 ../view/goods/goods/adv-add.phtml:277
+#: ../view/goods/goods/adv-add.phtml:1316
+msgid "会员价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:96 ../view/goods/goods/adv-add.phtml:96
+#: ../view/goods/goods/index.phtml:32
+msgid "商品类型"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:99 ../view/goods/goods/adv-add.phtml:99
+msgid "选择类型"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:100 ../view/goods/goods/adv-add.phtml:100
+#: ../view/goods/goods/index.phtml:115 ../view/goods/goods/index.phtml:194
+msgid "实物商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:103 ../view/goods/goods/adv-add.phtml:103
+msgid ""
+"虚拟商品需要保存后，在商品列表中，找到该商品进行具体的虚拟商品信息添加。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:107 ../view/goods/goods/adv-add.phtml:107
+msgid "积分购买"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:109 ../view/goods/goods/adv-add.phtml:109
+msgid "输入购买该商品需要的积分数"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:110 ../view/goods/goods/adv-add.phtml:110
+msgid "点击将价格换算为积分"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:111 ../view/goods/goods/adv-add.phtml:111
+msgid "点击取消积分购买"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:112 ../view/goods/goods/adv-add.phtml:112
+msgid ""
+"当积分数为0该商品不支持积分购买，如果这里输入的积分大于0，则该商品支持积分购"
+"买，这里的积分指的是 消费积分。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:113 ../view/goods/goods/adv-add.phtml:113
+msgid "点击去设置积分与基础货币换算比例"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:120 ../view/goods/goods/adv-add.phtml:120
+msgid "选择品牌"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:134 ../view/goods/goods/adv-add.phtml:134
+msgid "虚拟销量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:136 ../view/goods/goods/adv-add.phtml:136
+msgid "输入虚拟销量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:137 ../view/goods/goods/adv-add.phtml:137
+msgid "PC前端体现在商品详情页面中的购买人数；PHONE端体现在销量上。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:141 ../view/goods/goods/adv-add.phtml:141
+msgid "商品重量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:143 ../view/goods/goods/adv-add.phtml:143
+msgid "千克"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:147 ../view/goods/goods/adv-add.phtml:147
+#: ../view/goods/goods/index.phtml:31
+msgid "商品状态"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:156 ../view/goods/goods/adv-add.phtml:156
+msgid "商品详述"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:172 ../view/goods/goods/adv-add.phtml:172
+#, php-format
+msgid ""
+"当设置了优惠价格，且在下面的优惠时间内，则购买商品价格都为优惠价格，%s即使销"
+"售价格中设置了不同规格的价格，也无效。需要等优惠期过后，才有效。%s"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:176 ../view/goods/goods/adv-add.phtml:176
+#: ../view/goods/goods/index.phtml:172
+msgid "优惠开始时间"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:178 ../view/goods/goods/add.phtml:184
+#: ../view/goods/goods/adv-add.phtml:178 ../view/goods/goods/adv-add.phtml:184
+msgid "当优惠价价格为有效价格时，在此设置时间才有效，为空，则不限时间。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:182 ../view/goods/goods/adv-add.phtml:182
+msgid "优惠结束时间"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:188 ../view/goods/goods/adv-add.phtml:188
+msgid "客户组价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:194 ../view/goods/goods/adv-add.phtml:194
+msgid "购物数价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:209
+msgid ""
+"如果您觉得当前的销售规格太简单，可去 系统管理>系统设置>商品设置 内，将商品规"
+"格切换为高级规格模式。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:214 ../view/goods/goods/adv-add.phtml:215
+msgid "切换规格模式"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:217 ../view/goods/goods/add.phtml:219
+#: ../view/goods/goods/adv-add.phtml:218 ../view/goods/goods/adv-add.phtml:220
+msgid "切换规格模式会刷新当前页面，当前的规格信息会被清除！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:217 ../view/goods/goods/adv-add.phtml:218
+msgid "切换到普通规格模式"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:219 ../view/goods/goods/adv-add.phtml:220
+msgid "切换到高级规格模式"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:226 ../view/goods/goods/add.phtml:277
+#: ../view/goods/goods/add.phtml:332
+msgid "颜色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:232
+msgid "显示文字"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:233
+msgid "显示颜色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:235
+msgid ""
+"此为前台商品详情中的规格显示设置，显示文字即为显示颜色文字，显示颜色即为显示"
+"下面的颜色色块。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:239
+msgid "军绿色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:240
+msgid "天蓝色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:241
+msgid "巧克力色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:242
+msgid "桔红色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:243
+msgid "浅灰色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:246
+msgid "浅绿色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:247
+msgid "浅黄色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:248
+msgid "卡其色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:249
+msgid "深灰色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:250
+msgid "深紫色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:253
+msgid "深蓝色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:254
+msgid "白色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:255
+msgid "粉红色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:256
+msgid "紫罗兰色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:257
+msgid "紫色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:260
+msgid "红色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:261
+msgid "绿色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:262
+msgid "蓝色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:263
+msgid "褐色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:264
+msgid "酒红色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:267
+msgid "黄色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:268
+msgid "黑色"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:269
+msgid "空值不显示"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:294 ../view/goods/goods/add.phtml:333
+msgid "尺寸"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:311
+msgid "均码"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:334 ../view/goods/goods/adv-add.phtml:274
+#: ../view/goods/goods/adv-add.phtml:1313
+msgid "价格"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:335 ../view/goods/goods/adv-add.phtml:275
+#: ../view/goods/goods/adv-add.phtml:1314
+msgid "库存"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:390 ../view/goods/goods/adv-add.phtml:330
+msgid ""
+"说明：商品主分类 用来精确统计商品销量及对应分类销量使用，防止统计数据出现误"
+"差。如 一件女士裙装 它的所属分类层级是 服装->女装->裙装 那么这个 裙装 分类就"
+"是该商品的主分类。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:395 ../view/goods/goods/adv-add.phtml:335
+msgid "选择商品分类"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:396 ../view/goods/goods/adv-add.phtml:336
+msgid "选择商品主分类"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:411 ../view/goods/goods/adv-add.phtml:351
+msgid "还没有商品分类"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:411 ../view/goods/goods/adv-add.phtml:351
+msgid "马上去创建商品分类"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:421 ../view/goods/goods/adv-add.phtml:361
+msgid "库存数量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:427 ../view/goods/goods/adv-add.phtml:367
+msgid "库存状态"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:439 ../view/goods/goods/adv-add.phtml:379
+msgid ""
+"当启用了库存状态，前台库存显示下拉菜单选中的文字，不显示库存数量，同时正常购"
+"物库存不减少！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:443 ../view/goods/goods/adv-add.phtml:383
+msgid "商品缺货时数量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:449 ../view/goods/goods/adv-add.phtml:389
+msgid "缺货状态"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:460 ../view/goods/goods/adv-add.phtml:400
+msgid "前台商品缺货状态下显示的文字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:464 ../view/goods/goods/adv-add.phtml:404
+msgid "购物车购买最少数量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:470 ../view/goods/goods/adv-add.phtml:410
+msgid "购物车购买最多数量"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:486 ../view/goods/goods/adv-add.phtml:426
+msgid "点击获取在编辑器中新上传的商品图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:494 ../view/goods/goods/add.phtml:1164
+#: ../view/goods/goods/add.phtml:1167 ../view/goods/goods/add.phtml:1180
+#: ../view/goods/goods/adv-add.phtml:434 ../view/goods/goods/adv-add.phtml:919
+#: ../view/goods/goods/adv-add.phtml:922 ../view/goods/goods/adv-add.phtml:935
+#: ../view/goods/goods/clear-goods-image.phtml:13
+#: ../view/goods/goods/clear-goods-image.phtml:39
+msgid "图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:495 ../view/goods/goods/adv-add.phtml:435
+#: ../view/goods/goods/clear-goods-image.phtml:12
+msgid "图片名称"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:496 ../view/goods/goods/adv-add.phtml:436
+msgid "封面图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:497 ../view/goods/goods/adv-add.phtml:437
+msgid "切换显示"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:497 ../view/goods/goods/adv-add.phtml:437
+msgid ""
+"前台模板的商品详细页面，有切换效果时，显示；这里的设置并不影响图片的显示，这"
+"个选项只是针对切换效果。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:498 ../view/goods/goods/adv-add.phtml:438
+msgid "图片排序"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:512 ../view/goods/goods/add.phtml:1221
+#: ../view/goods/goods/add.phtml:1256 ../view/goods/goods/adv-add.phtml:452
+#: ../view/goods/goods/adv-add.phtml:976 ../view/goods/goods/adv-add.phtml:1011
+#: ../view/goods/tag/ajaxgoods.phtml:46
+msgid "更新"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:531 ../view/goods/goods/adv-add.phtml:471
+msgid "点击添加相关商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:532 ../view/goods/goods/adv-add.phtml:472
+msgid "在输入框中输入商品部分或者全部名称，然后点击添加按钮，即可添加相关商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:533 ../view/goods/goods/adv-add.phtml:473
+msgid "如果您不添加，系统将在前台自动随机显示该商品的相关其他商品。"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:560 ../view/goods/goods/add.phtml:618
+#: ../view/goods/goods/add.phtml:658 ../view/goods/goods/adv-add.phtml:500
+#: ../view/goods/goods/adv-add.phtml:559 ../view/goods/goods/adv-add.phtml:599
+msgid "本操作，需要您保存商品后再进行该设置！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:574 ../view/goods/goods/adv-add.phtml:514
+msgid "前台显示"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:588 ../view/goods/goods/adv-add.phtml:529
+msgid "点击添加关联商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:589 ../view/goods/goods/adv-add.phtml:530
+msgid "在输入框中输入商品部分或者全部名称，然后点击添加按钮，即可添加关联商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:630 ../view/goods/goods/adv-add.phtml:571
+msgid "点击添加组合商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:631 ../view/goods/goods/adv-add.phtml:572
+msgid "在输入框中输入商品部分或者全部名称，然后点击添加按钮，即可添加组合商品"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:671 ../view/goods/goods/adv-add.phtml:612
+msgid "未分组"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:729 ../view/goods/goods/adv-add.phtml:670
+msgid "商品关键词"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:735 ../view/goods/goods/adv-add.phtml:676
+msgid "商品描述"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:839 ../view/goods/goods/adv-add.phtml:780
+msgid "商品名称不能为空！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:840 ../view/goods/goods/adv-add.phtml:781
+msgid "商品名称最少两个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:841 ../view/goods/goods/adv-add.phtml:782
+msgid "商品名称最长80个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:844 ../view/goods/goods/adv-add.phtml:785
+msgid "本店价格不能为空！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:845 ../view/goods/goods/adv-add.phtml:786
+msgid "价格必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:846 ../view/goods/goods/adv-add.phtml:787
+msgid "价格最长20个数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:847 ../view/goods/goods/adv-add.phtml:788
+msgid "本店价格最小为0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:850 ../view/goods/goods/adv-add.phtml:791
+msgid "商品类型不能为空！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:853 ../view/goods/goods/adv-add.phtml:794
+msgid "库存不能为空！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:854 ../view/goods/goods/adv-add.phtml:795
+msgid "库存必须为整数！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:855 ../view/goods/goods/add.phtml:878
+#: ../view/goods/goods/add.phtml:882 ../view/goods/goods/add.phtml:886
+#: ../view/goods/goods/adv-add.phtml:796 ../view/goods/goods/adv-add.phtml:819
+#: ../view/goods/goods/adv-add.phtml:823 ../view/goods/goods/adv-add.phtml:827
+msgid "数量最多11个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:859 ../view/goods/goods/adv-add.phtml:800
+msgid "重量必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:860 ../view/goods/goods/adv-add.phtml:801
+msgid "重量最长20个数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:861 ../view/goods/goods/adv-add.phtml:802
+msgid "重量最小为0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:864 ../view/goods/goods/adv-add.phtml:805
+msgid "商品简述最多600个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:867 ../view/goods/goods/adv-add.phtml:808
+msgid "市场价格必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:868 ../view/goods/goods/adv-add.phtml:809
+msgid "市场价格最长20个数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:869 ../view/goods/goods/adv-add.phtml:810
+msgid "市场价格最小为0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:872 ../view/goods/goods/adv-add.phtml:813
+msgid "优惠价格必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:873 ../view/goods/goods/adv-add.phtml:814
+msgid "优惠价格最长20个数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:874 ../view/goods/goods/adv-add.phtml:815
+msgid "优惠价格最小为0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:877 ../view/goods/goods/add.phtml:881
+#: ../view/goods/goods/add.phtml:885 ../view/goods/goods/adv-add.phtml:818
+#: ../view/goods/goods/adv-add.phtml:822 ../view/goods/goods/adv-add.phtml:826
+msgid "必须输入整数！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:889 ../view/goods/goods/adv-add.phtml:830
+msgid "扩展标题最多80个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:892 ../view/goods/goods/adv-add.phtml:833
+msgid "商品关键字最多200个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:895 ../view/goods/goods/adv-add.phtml:836
+msgid "商品描述最多500个字符！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:898 ../view/goods/goods/adv-add.phtml:839
+msgid "虚拟销量必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:899 ../view/goods/goods/adv-add.phtml:840
+msgid "虚拟销量最小为0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:902 ../view/goods/goods/adv-add.phtml:843
+msgid "积分购买必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:903 ../view/goods/goods/adv-add.phtml:844
+msgid "积分购买最小为0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:917 ../view/goods/goods/adv-add.phtml:858
+#: ../view/goods/goods/index.phtml:267
+msgid "商品删除失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1089 ../view/goods/goods/adv-add.phtml:1397
+msgid "销售规格中的商品价格不能为空，且不能小于0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1098 ../view/goods/goods/adv-add.phtml:1406
+msgid "销售规格中的商品库存不能为空,且必须为数字不能小于0！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1134 ../view/goods/goods/adv-add.phtml:889
+msgid "更新显示失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1151 ../view/goods/goods/adv-add.phtml:906
+msgid "图片排序必须为数字！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1156 ../view/goods/goods/adv-add.phtml:911
+msgid "图片排序不能大于255或小于0"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1164 ../view/goods/goods/adv-add.phtml:919
+msgid "更新成功！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1167 ../view/goods/goods/adv-add.phtml:922
+msgid "更新失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1173 ../view/goods/goods/adv-add.phtml:928
+#: ../view/goods/goods/clear-goods-image.phtml:32
+msgid "您确实删除图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1198 ../view/goods/goods/adv-add.phtml:953
+msgid "上传商品图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1261 ../view/goods/goods/adv-add.phtml:1016
+msgid "无新的商品图片"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1279 ../view/goods/goods/adv-add.phtml:1034
+msgid "评价删除失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1319 ../view/goods/goods/adv-add.phtml:1074
+msgid "该相关商品已经存在，无需再次添加！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1321 ../view/goods/goods/adv-add.phtml:1076
+msgid "相关商品添加失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1327 ../view/goods/goods/adv-add.phtml:1082
+msgid "您确实要删除该相关商品吗？"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1333 ../view/goods/goods/adv-add.phtml:1088
+msgid "相关商品删除失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1373 ../view/goods/goods/adv-add.phtml:1128
+msgid "该组合商品已经存在，无需再次添加！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1375 ../view/goods/goods/adv-add.phtml:1130
+msgid "组合商品添加失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1381 ../view/goods/goods/adv-add.phtml:1136
+msgid "您确实要删除该组合商品吗？"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1387 ../view/goods/goods/adv-add.phtml:1142
+msgid "组合商品删除失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1427 ../view/goods/goods/adv-add.phtml:1182
+msgid "该关联商品已经存在，无需再次添加！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1429 ../view/goods/goods/adv-add.phtml:1184
+msgid "关联商品添加失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1435 ../view/goods/goods/adv-add.phtml:1190
+msgid "您确实要删除该关联商品吗？"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1441 ../view/goods/goods/adv-add.phtml:1196
+msgid "关联商品删除失败！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1451 ../view/goods/goods/adv-add.phtml:1206
+msgid "请先输入商品价格！"
+msgstr ""
+
+#: ../view/goods/goods/add.phtml:1455 ../view/goods/goods/adv-add.phtml:1210
+msgid "积分转换失败！"
+msgstr ""
+
+#: ../view/goods/goods/adv-add.phtml:208
+msgid ""
+"暂无规格信息，首先在 商品标签->商品标签分组 中设置规格组，然后在 商品标签->普"
+"通商品标签 中设置对应规格组的规格信息。"
+msgstr ""
+
+#: ../view/goods/goods/adv-add.phtml:227
+msgid "选择规格组"
+msgstr ""
+
+#: ../view/goods/goods/clear-goods-image.phtml:2
+#: ../view/goods/goods/index.phtml:13
+msgid "删除无用的商品图片"
+msgstr ""
+
+#: ../view/goods/goods/clear-goods-image.phtml:2
+msgid "这些图片在任何商品中都无法看到，不属于任何商品"
+msgstr ""
+
+#: ../view/goods/goods/clear-goods-image.phtml:4
+msgid "返回商品列表"
+msgstr ""
+
+#: ../view/goods/goods/clear-goods-image.phtml:11
+msgid "图片ID"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:3
+#: ../view/goods/goods/goods-index.phtml:9
+#: ../view/goods/goods/goods-index.phtml:28
+msgid "商品索引"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:11
+msgid "保存索引设置"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:20
+msgid "正在更新索引……，请您耐心等待，更新过程中请不要关闭此页面！"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:22
+msgid "索引说明"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:24
+msgid ""
+"首次开启，如果系统内已经有商品，请点击下面的 <b>更新按钮</b> 进行更新。想了"
+"解 <b>商品索引</b> 请点击右上角 <b>查看帮助说明</b>。"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:34
+msgid "商品总数"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:36
+#: ../view/goods/goods/goods-index.phtml:43
+#: ../view/goods/goods/goods-index.phtml:51
+msgid "个"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:40
+msgid "未索引商品数"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:44
+msgid "未索引商品包括没有设置商品分类或者商品分类被禁用的商品"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:49
+msgid "已索引商品数"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:57
+msgid "点击更新商品索引"
+msgstr ""
+
+#: ../view/goods/goods/goods-index.phtml:76
+msgid "索引更新成功！"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:3
+msgid "商品数："
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:60 ../view/goods/promotions/add.phtml:7
+#: ../view/goods/promotions/add.phtml:118
+msgid "优惠商品"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:108 ../view/goods/goods/index.phtml:190
+msgid "缺货"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:120 ../view/goods/goods/index.phtml:197
+msgid "可积分购买"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:126
+msgid "选择分类"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:168 ../view/goods/goods/index.phtml:174
+msgid "优惠中"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:170
+msgid "优惠过期"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:181
+msgid "未设置商品分类，前台不能显示！"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:195
+msgid "需补货"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:205
+msgid "查看并补货"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:212
+msgid "商品预览"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:221
+msgid "全选"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:223
+msgid "请选择"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:225
+msgid "更改状态"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:232
+msgid "提交操作"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:248
+msgid "请至少选择一条商品信息！"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:252
+msgid "请选择操作事件！"
+msgstr ""
+
+#: ../view/goods/goods/index.phtml:255
+msgid "您确实要执行该操作吗？"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:3
+msgid "规则信息"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:5 ../view/goods/promotions/add.phtml:95
+msgid "促销规则"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:6 ../view/goods/promotions/add.phtml:67
+msgid "优惠客户组"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:14 ../view/goods/promotions/index.phtml:2
+msgid "优惠促销规则"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:16
+msgid "返回规则列表"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:19
+#: ../view/goods/promotions/index.phtml:41
+msgid "您确实要删除该优惠规则吗？"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:19
+msgid "删除促销规则"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:20
+msgid "保存促销规则并继续编辑"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:22
+msgid "保存促销规则"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:32
+msgid "规则名称"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:38
+msgid "规则描述"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:40
+msgid "前台购物车处显示此信息。"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:56
+msgid "规则状态"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:72
+msgid "选择客户组类型"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:123
+msgid "选择商品类型"
+msgstr ""
+
+#: ../view/goods/promotions/add.phtml:190
+msgid "优惠规则名称不能为空！"
+msgstr ""
+
+#: ../view/goods/promotions/index.phtml:4
+msgid "添加新规则"
+msgstr ""
+
+#: ../view/goods/promotions/index.phtml:11
+msgid "优惠规则名称"
+msgstr ""
+
+#: ../view/goods/promotions/index.phtml:12
+msgid "优惠规则描述"
+msgstr ""
+
+#: ../view/goods/promotions/index.phtml:48
+msgid "暂无促销规则"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:3 ../view/goods/tag/add.phtml:3
+msgid "标签信息"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:6
+#: ../view/goods/tag/add-spec-tag.phtml:51 ../view/goods/tag/add.phtml:6
+#: ../view/goods/tag/add.phtml:67
+msgid "标签商品"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:15 ../view/goods/tag/add.phtml:15
+msgid "返回标签列表"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:18 ../view/goods/tag/add.phtml:18
+msgid "删除标签"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:20 ../view/goods/tag/add.phtml:20
+msgid "保存标签信息"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:28 ../view/goods/tag/spec-tag.phtml:13
+msgid "标签类型"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:31
+#: ../view/goods/tag/add-spec-tag.phtml:87
+msgid "请选择标签类型"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:42
+#: ../view/goods/tag/add-tag-group.phtml:71 ../view/goods/tag/add.phtml:39
+#: ../view/goods/tag/index.phtml:16 ../view/goods/tag/spec-tag.phtml:12
+msgid "标签名称"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:57 ../view/goods/tag/add.phtml:73
+msgid "点击添加标签商品"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:58 ../view/goods/tag/add.phtml:74
+msgid "在输入框中输入商品部分或者全部名称，然后点击添加按钮，即可添加标签商品"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:90 ../view/goods/tag/add.phtml:112
+msgid "请输入标签名称！"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:91 ../view/goods/tag/add.phtml:113
+msgid "标签名称最长为60个汉字！"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:99 ../view/goods/tag/add.phtml:125
+#: ../view/goods/tag/index.phtml:55 ../view/goods/tag/spec-tag.phtml:38
+msgid "您确实要删除该标签吗？"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:106 ../view/goods/tag/add.phtml:132
+#: ../view/goods/tag/index.phtml:62 ../view/goods/tag/spec-tag.phtml:45
+msgid "标签删除失败！"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:118 ../view/goods/tag/add.phtml:144
+msgid "您确实要将此商品从该标签中删除吗？"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:156 ../view/goods/tag/add.phtml:181
+msgid "该标签商品已经存在，无需再次添加！"
+msgstr ""
+
+#: ../view/goods/tag/add-spec-tag.phtml:158 ../view/goods/tag/add.phtml:183
+msgid "标签商品添加失败！"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:3
+msgid "标签组信息"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:6
+#: ../view/goods/tag/add-tag-group.phtml:61
+msgid "组内标签"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:14
+msgid "标签组"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:16
+msgid "返回标签组列表"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:19
+msgid "删除标签组"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:21
+msgid "保存标签组信息并继续编辑"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:22
+msgid "保存标签组信息"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:32
+#: ../view/goods/tag/tag-group.phtml:13
+msgid "标签组名称"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:38
+#: ../view/goods/tag/tag-group.phtml:16
+msgid "标签组排序"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:44
+#: ../view/goods/tag/tag-group.phtml:14
+msgid "标签组标记"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:47
+msgid ""
+"标签组标记 只用于后台显示，用来区分名字相同的标签组，如 材质(家具)、材质（服"
+"装），其中的 家具 和 服装 就是标签组标记。"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:51
+#: ../view/goods/tag/tag-group.phtml:15
+msgid "用于(高级)商品规格"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:83
+msgid "该组还没有标签，可以"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:83
+msgid "点击这里去添加标签"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:108
+msgid "请输入标签组名称！"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:109
+msgid "标签组名称最长为30个汉字！"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:112
+msgid "标签组排序必须为数字"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:113
+msgid "标签组排序最小为1"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:114
+msgid "标签组排序最大为255"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:121
+#: ../view/goods/tag/tag-group.phtml:49
+msgid "您确实要删除该标签组吗？"
+msgstr ""
+
+#: ../view/goods/tag/add-tag-group.phtml:128
+#: ../view/goods/tag/tag-group.phtml:56
+msgid "标签组删除失败，标签组下存在标签！"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:28 ../view/goods/tag/index.phtml:17
+#: ../view/goods/tag/tag-group.phtml:2
+msgid "标签分组"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:31
+msgid "请选择标签组"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:44
+msgid "一次性可以添加多个标签，一行一个，用回车分行即可。"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:49 ../view/goods/tag/index.phtml:14
+msgid "标签排序"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:55
+msgid "颜色块设置"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:59
+msgid "点击取消"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:61
+msgid ""
+"当开启高级商品规格，且标签组为颜色时，这里需要选择颜色。用于商品编辑内的规格"
+"颜色显示。"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:109
+msgid "请选择标签分组！"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:116
+msgid "标签排序不能为空！"
+msgstr ""
+
+#: ../view/goods/tag/add.phtml:117
+msgid "标签排序最小为1！"
+msgstr ""
+
+#: ../view/goods/tag/index.phtml:2
+msgid "批量修改排序也可以到"
+msgstr ""
+
+#: ../view/goods/tag/index.phtml:2
+msgid "标签分组中进行修改"
+msgstr ""
+
+#: ../view/goods/tag/index.phtml:4
+msgid "批量更新标签排序"
+msgstr ""
+
+#: ../view/goods/tag/index.phtml:5
+msgid "添加普通商品标签"
+msgstr ""
+
+#: ../view/goods/tag/index.phtml:77
+msgid "请至少选择一条标签信息！"
+msgstr ""
+
+#: ../view/goods/tag/spec-tag.phtml:4
+msgid "添加特定商品标签"
+msgstr ""
+
+#: ../view/goods/tag/tag-group.phtml:4
+msgid "添加标签组"
+msgstr ""
